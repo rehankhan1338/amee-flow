@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
          
-$config['base_url'] = 'https://www.assessmentmadeeasy.com/ameeflow/'; 
+$config['base_url'] = 'https://www.dev-work.assessmentmadeeasy.com/ameeflow/'; 
 $config['ajax_base_url'] = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'].'/ameeflow/';
 $config['product_name'] = 'AMEE Flow';
 $config['short_product_desc'] = 'Balancing Energy, Workload, and Efficiency';
