@@ -40,7 +40,7 @@ class Master_alignment_map extends CI_Controller {
         }else{
             $this->load->view('system-admin/planning-documents/master-alignment-map/create',$this->data);
         }        
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
     }
     public function ajaxFields(){
         if(isset($_GET['mamId']) && $_GET['mamId']!='' && $_GET['mamId']>0){

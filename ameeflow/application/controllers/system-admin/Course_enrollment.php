@@ -42,7 +42,7 @@ class Course_enrollment extends CI_Controller {
             $this->load->view('system-admin/planning-documents/course-enrollment/create',$this->data);
         }
         
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
     }
 
     public function addIntoRecognitionFlow(){
@@ -74,7 +74,7 @@ class Course_enrollment extends CI_Controller {
         }else{
 
         }
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
     }
 
     public function resendCertificate(){
@@ -94,7 +94,7 @@ class Course_enrollment extends CI_Controller {
         $this->data['pageSubTitle'] = '';
         $this->load->view('system-admin/includes/header',$this->data);
         $this->load->view('system-admin/planning-documents/course-enrollment/create',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
     }
     
     public function ajaxFields(){

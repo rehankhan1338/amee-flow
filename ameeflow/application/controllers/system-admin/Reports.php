@@ -32,7 +32,7 @@ class Reports extends CI_Controller {
         $this->data['pageSubTitle'] = ''; 
 		$this->load->view('system-admin/includes/header',$this->data);
 		$this->load->view('system-admin/team-reports/sampling_plan/listing',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('system-admin/includes/footer',$this->data);
 	}
     public function ajaxGetSPTerms(){
 		$this->data['termsOptions'] = $this->Course_enrollment_mdl->spTermsByYr($_GET['uniAdminId'],$_GET['year']);
@@ -46,7 +46,7 @@ class Reports extends CI_Controller {
         $this->data['pageSubTitle'] = ''; 
 		$this->load->view('system-admin/includes/header',$this->data);
 		$this->load->view('system-admin/team-reports/loads_report/listing',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('system-admin/includes/footer',$this->data);
 	}
     public function general_report(){
         $this->data['shareReportFor'] = '3';
@@ -55,6 +55,6 @@ class Reports extends CI_Controller {
         $this->data['pageSubTitle'] = ''; 
 		$this->load->view('system-admin/includes/header',$this->data);
 		$this->load->view('system-admin/team-reports/general_reports/listing',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('system-admin/includes/footer',$this->data);
 	}
 }

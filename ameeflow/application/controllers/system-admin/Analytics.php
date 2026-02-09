@@ -32,7 +32,7 @@ class Analytics extends CI_Controller {
         $this->data['pageSubTitle'] = '';
         $this->load->view('system-admin/includes/header',$this->data);
         $this->load->view('system-admin/projects/analytics/listing',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
     }
     public function tasks(){
         $proencryptId = $this->uri->segment(4);
@@ -51,7 +51,7 @@ class Analytics extends CI_Controller {
              $this->data['pageSubTitle'] = '';
 			$this->load->view('system-admin/includes/header',$this->data);	 
 			$this->load->view('system-admin/projects/analytics/tasks-report',$this->data);
-			$this->load->view('Backend/includes/footer',$this->data);
+			$this->load->view('system-admin/includes/footer',$this->data);
 		}else{
 			redirect(base_url().'projects');
 		}
@@ -67,7 +67,7 @@ class Analytics extends CI_Controller {
         // // echo '<pre>';print_r($this->data['uniProjectManagersDataArr']);die;       
         
         // $this->load->view('system-admin/projects/analytics/listing',$this->data);
-        // $this->load->view('Backend/includes/footer',$this->data);
+        // $this->load->view('system-admin/includes/footer',$this->data);
     }
     public function viewTaskDetails(){        
         $this->data['taskDetailsArr'] = $this->Projects_mdl->taskDetailsArr($_GET['tId']);

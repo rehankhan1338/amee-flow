@@ -24,7 +24,7 @@ class Other_documents extends CI_Controller {
         // $universityId = $this->data['sessionDetailsArr']['universityId'];
         $this->load->view('system-admin/includes/header',$this->data);
         $this->load->view('system-admin/planning-documents/other-documents/manage',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
 	}
     public function ajaxDocFields(){        
         if(isset($_GET['docId']) && $_GET['docId']!='' && $_GET['docId']>0){

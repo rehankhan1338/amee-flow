@@ -26,7 +26,7 @@ class Projects extends CI_Controller {
         // $this->data['activeUsersDataArr'] = $this->Roles_mdl->activeUsersDataArrByUni($universityId);
         $this->load->view('system-admin/includes/header',$this->data);
         $this->load->view('system-admin/projects/manage',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
 	}
     public function ajaxProjectFields(){        
         if(isset($_GET['pId']) && $_GET['pId']!='' && $_GET['pId']>0){
@@ -52,7 +52,7 @@ class Projects extends CI_Controller {
         $this->data['proTaskListDataArr'] = $this->Projects_mdl->proTaskListDataArr($projectId);
         $this->load->view('system-admin/includes/header',$this->data);
         $this->load->view('system-admin/projects/tasks/list',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
 	}
     public function ajaxTaskFields(){        
         if(isset($_GET['tId']) && $_GET['tId']!='' && $_GET['tId']>0){

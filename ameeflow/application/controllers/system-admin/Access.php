@@ -18,7 +18,7 @@ class Access extends CI_Controller {
         $this->data['guestAccessDataArr'] = $this->Access_mdl->guestAccessDataArr($createdBy);
         $this->load->view('system-admin/includes/header',$this->data);
         $this->load->view('system-admin/guest-access/list',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
 	}
     public function ajaxFormFields(){        
         if(isset($_GET['gaId']) && $_GET['gaId']!='' && $_GET['gaId']>0){

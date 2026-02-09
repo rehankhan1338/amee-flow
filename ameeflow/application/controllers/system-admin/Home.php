@@ -16,7 +16,7 @@ class Home extends CI_Controller {
         $this->data['active_class'] = 'ameelab-menu';
 		$this->load->view('system-admin/includes/header',$this->data);
 		$this->load->view('Frontend/amee-lab',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('system-admin/includes/footer',$this->data);
 	}
 
     public function profile(){        
@@ -25,7 +25,7 @@ class Home extends CI_Controller {
         $this->data['pageSubTitle']='';
         $this->load->view('system-admin/includes/header',$this->data);
         $this->load->view('system-admin/profile/manage',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);   		
+        $this->load->view('system-admin/includes/footer',$this->data);   		
 	}
     public function updateProfile(){
 		echo $this->Users_mdl->updateSystemAdminProfile();

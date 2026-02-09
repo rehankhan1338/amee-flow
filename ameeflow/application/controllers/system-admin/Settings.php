@@ -17,7 +17,7 @@ class Settings extends CI_Controller {
         $this->data['emailsList'] = $this->Settings_mdl->universityEmailsListbyuId($this->session->userdata('AFSESS_UNIADMINID'));
         $this->load->view('system-admin/includes/header',$this->data);
         $this->load->view('system-admin/settings/emails',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('system-admin/includes/footer',$this->data);
 	}
     public function ajaxEmailFields(){        
         if(isset($_GET['eId']) && $_GET['eId']!='' && $_GET['eId']>0){
