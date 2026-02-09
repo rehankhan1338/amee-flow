@@ -116,7 +116,7 @@
 	
 	<!-- sidebar menu: : style can be found in sidebar.less -->
 		<ul class="sidebar-menu">
-			<li class="header header-4">MAIN NAVIGATION</li>
+			<li class="header">MAIN NAVIGATION</li>
 			<?php include(APPPATH.'views/Backend/includes/menu.php'); ?>
 		</ul>
 	</section>

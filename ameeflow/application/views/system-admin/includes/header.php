@@ -104,7 +104,7 @@
 				</div>
 			</div>	
 			<ul class="sidebar-menu">
-				<li class="header header-2 ">MAIN NAVIGATION</li>
+				<li class="header">MAIN NAVIGATION</li>
 				<?php include(APPPATH.'views/system-admin/includes/menu.php'); ?>
 			</ul>
 		</section>

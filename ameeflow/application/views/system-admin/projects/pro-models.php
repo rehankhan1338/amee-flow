@@ -50,22 +50,6 @@ function deleteProject(){
 		return false;
 	}
 }
-function deleteSingleProject(projectId){
-	var r = confirm("Are you sure you want to delete this project?");
-	if (r == true) {
-		$.ajax({
-			type: "POST",
-			url: '<?php echo base_url().$this->config->item('system_directory_name').'projects/deleteProject?pIds=';?>'+projectId,
-			beforeSend: function(){
-				$('#delpro'+projectId).prop("disabled", true);
-				$('#delpro'+projectId).html('<i class="fa fa-spinner fa-spin"></i>');
-			},
-			success: function(result, status, xhr){
-				window.location = '<?php echo base_url().$this->config->item('system_directory_name').'projects';?>';
-			}
-		});
-	}
-}
 function update_toggle_swtich_values(projectId,column_name){
 	if(projectId>0){
 		var checkstatus=$('#toggle-event-'+column_name+projectId).prop('checked');

@@ -4,9 +4,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'secondw6_ameeflow';
-$db['default']['password'] = 'HVqf41y1ZqdFC';
-$db['default']['database'] = 'secondw6_ameeflow';
+$db['default']['username'] = 'secondw6_dev_amee_usr';
+$db['default']['password'] = 'UIyk95NpA8k0p';
+$db['default']['database'] = 'secondw6_dev_amee_web';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = 'af_';
 $db['default']['pconnect'] = TRUE;

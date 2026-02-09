@@ -7,9 +7,9 @@ $CI = get_instance();
 
 $db_subdomain_name=$CI->config->item("subdomain_name");
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'secondw6_amee';
-$db['default']['password'] = '3ORTdGVMe=kD';
-$db['default']['database'] = 'secondw6_amee_web';
+$db['default']['username'] = 'secondw6_dev_amee_usr';
+$db['default']['password'] = 'UIyk95NpA8k0p';
+$db['default']['database'] = 'secondw6_dev_amee_web';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = 'tbl_';
 $db['default']['pconnect'] = FALSE;
