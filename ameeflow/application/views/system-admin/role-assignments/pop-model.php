@@ -72,6 +72,22 @@ function deleteUser(){
 		return false;
 	}
 }
+function deleteSingleUser(userId){
+	if(confirm('Are you sure you want to delete this user?')){
+        $.ajax({
+            type: "POST",
+            url: '<?php echo base_url().$this->config->item('system_directory_name').'roles/deleteUser?userIds=';?>'+userId,
+            beforeSend: function(){
+                $('#delrole'+userId).prop("disabled", true);
+                $('#delrole'+userId).html('<i class="fa fa-spinner fa-spin"></i>');
+            },
+            success: function(result, status, xhr){
+                window.location = '<?php echo base_url().$this->config->item('system_directory_name').'roles';?>';      
+            }
+        });
+    }
+    return false;
+}
 function update_toggle_swtich_values(userId,column_name){
 	if(userId>0){
 		var checkstatus=$('#toggle-event-'+column_name+userId).prop('checked');
