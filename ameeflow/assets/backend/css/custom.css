@@ -477,22 +477,28 @@ body.af-system-admin .content-wrapper {
 .af-alert-icon { margin-top: -3px; }
 
 /* ---------- Sticky Table Header (sticks below fixed navbar) ---------- */
+body.af-system-admin .table-responsive {
+	overflow: visible !important;  /* let page scroll, not the container */
+}
 body.af-system-admin .table thead th {
 	position: sticky;
-	top: 60px; /* height of fixed navbar */
-	z-index: 10;
+	top: 60px;  /* matches fixed navbar height */
+	z-index: 20;
 	background: #485b79;
 	color: #fff;
 	font-weight: 600;
 	font-size: .85rem;
 	border: none;
 	padding: 10px 12px;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+	box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 body.af-system-admin .table thead th a { color: #fff; }
-body.af-system-admin .table-responsive {
-	overflow-x: auto;
-	overflow-y: visible;
+body.af-system-admin .dataTables_wrapper .table thead th {
+	position: sticky;
+	top: 60px;
+	z-index: 20;
+	background: #485b79;
+	color: #fff;
 }
 
 /* ---------- Content area ---------- */
@@ -587,9 +593,6 @@ body.af-system-admin .alert { border-radius: 10px; border: none; }
 	}
 	.af-profile-header {
 		border-radius: 10px 10px 0 0;
-	}
-	body.af-system-admin .table thead th {
-		top: 60px;
 	}
 }
 
