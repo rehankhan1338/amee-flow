@@ -267,10 +267,19 @@ body.af-system-admin .content-wrapper,
 body.af-system-admin .main-footer {
 	margin-left: 0 !important;
 }
+/* Sticky footer: wrapper fills viewport, content grows, footer stays at bottom */
+body.af-system-admin .wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
 body.af-system-admin .content-wrapper {
-	min-height: calc(100vh - 140px) !important;
+	flex: 1 0 auto;
 	background: #f4f6f9 !important;
 	padding-top: 68px; /* offset for fixed navbar */
+}
+body.af-system-admin .af-footer {
+	flex-shrink: 0;
 }
 
 /* ---------- Header / Navbar ---------- */
@@ -671,17 +680,21 @@ body.af-system-admin .table tbody tr:last-child td:last-child  { border-radius: 
 
 /* ---------- DataTables wrapper layout ---------- */
 body.af-system-admin .dataTables_wrapper {
-	display: flex;
-	flex-wrap: wrap;
 	padding: 0;
 }
+body.af-system-admin .dataTables_wrapper > table {
+	width: 100% !important;
+}
 
-/* Hide the DataTables search if custom search exists */
+/* ---------- DataTables – top bar (search) ---------- */
+body.af-system-admin .af-dt-top {
+	display: flex;
+	justify-content: flex-end;
+	padding: 12px 16px 6px;
+}
 body.af-system-admin .dataTables_filter {
-	order: 1;
-	width: 50%;
 	text-align: right;
-	padding: 12px 16px 8px;
+	padding: 0;
 }
 body.af-system-admin .dataTables_filter label {
 	font-size: .84rem;
@@ -704,27 +717,35 @@ body.af-system-admin .dataTables_filter input:focus {
 	background: #fff;
 }
 
-/* Table takes full width */
-body.af-system-admin .dataTables_wrapper > .table-responsive,
-body.af-system-admin .dataTables_wrapper > table {
-	order: 2;
-	width: 100%;
+/* ---------- DataTables – bottom bar (info + length + pagination) ---------- */
+body.af-system-admin .af-dt-bottom {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	background: #f8f9fb;
+	border-top: 1px solid #eef0f3;
+	border-radius: 0 0 14px 14px;
+	padding: 6px 0;
 }
-
-/* --- Footer bar: info + length + pagination --- */
-body.af-system-admin .dataTables_length {
-	order: 4;
-	padding: 10px 16px;
+body.af-system-admin .af-dt-bottom .dataTables_info {
+	padding: 8px 16px;
+	font-size: .82rem;
+	color: #888;
+	flex: 1;
 }
-body.af-system-admin .dataTables_length label {
+body.af-system-admin .af-dt-bottom .dataTables_length {
+	padding: 8px 16px;
+}
+body.af-system-admin .af-dt-bottom .dataTables_length label {
 	font-size: .82rem;
 	font-weight: 500;
 	color: #777;
 	display: flex;
 	align-items: center;
 	gap: 6px;
+	margin: 0;
 }
-body.af-system-admin .dataTables_length select {
+body.af-system-admin .af-dt-bottom .dataTables_length select {
 	border: 1px solid #dce0e6;
 	border-radius: 6px;
 	padding: 3px 8px;
@@ -732,17 +753,8 @@ body.af-system-admin .dataTables_length select {
 	background: #f8f9fb;
 	outline: none;
 }
-
-body.af-system-admin .dataTables_info {
-	order: 3;
-	padding: 10px 16px;
-	font-size: .82rem;
-	color: #888;
-}
-
-body.af-system-admin .dataTables_paginate {
-	order: 5;
-	padding: 10px 16px;
+body.af-system-admin .af-dt-bottom .dataTables_paginate {
+	padding: 8px 16px;
 	margin-left: auto;
 }
 body.af-system-admin .dataTables_paginate .pagination {
@@ -772,49 +784,6 @@ body.af-system-admin .dataTables_paginate .paginate_button.current {
 body.af-system-admin .dataTables_paginate .paginate_button.disabled {
 	opacity: .4;
 	cursor: default;
-}
-
-/* DataTables custom dom wrappers */
-body.af-system-admin .af-dt-top {
-	display: flex;
-	justify-content: flex-end;
-	padding: 12px 16px 6px;
-}
-body.af-system-admin .af-dt-bottom {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	background: #f8f9fb;
-	border-top: 1px solid #eef0f3;
-	border-radius: 0 0 14px 14px;
-	padding: 6px 0;
-}
-body.af-system-admin .af-dt-bottom .dataTables_info {
-	padding: 8px 16px;
-	font-size: .82rem;
-	color: #888;
-	flex: 1;
-}
-body.af-system-admin .af-dt-bottom .dataTables_length {
-	padding: 8px 16px;
-}
-body.af-system-admin .af-dt-bottom .dataTables_paginate {
-	padding: 8px 16px;
-	margin-left: auto;
-}
-
-/* DataTables footer bar background (fallback for default dom) */
-body.af-system-admin .dataTables_info,
-body.af-system-admin .dataTables_length,
-body.af-system-admin .dataTables_paginate {
-	background: #f8f9fb;
-	border-top: 1px solid #eef0f3;
-}
-body.af-system-admin .af-dt-bottom .dataTables_info,
-body.af-system-admin .af-dt-bottom .dataTables_length,
-body.af-system-admin .af-dt-bottom .dataTables_paginate {
-	border-top: none;
-	background: transparent;
 }
 
 /* Alert */
@@ -931,3 +900,7 @@ body.af-system-admin ::-webkit-scrollbar { width: 6px; }
 body.af-system-admin ::-webkit-scrollbar-track { background: #f1f1f1; }
 body.af-system-admin ::-webkit-scrollbar-thumb { background: #485b79; border-radius: 3px; }
 body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
+
+.box-header>.box-tools{
+	position:initial !important;
+}
