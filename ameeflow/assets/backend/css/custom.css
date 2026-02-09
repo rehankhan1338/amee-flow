@@ -245,7 +245,7 @@ label.col-sm-4.control-label {color: #333;}
 .pmProList .project-box p {margin: 5px 0 0;font-size: 14px;color: #444;font-style: italic;cursor: pointer;}
 .pmProList .project-box p label{font-weight: 500;margin-left: 1px;}
 .pmProList .hover-arrow {position: absolute;bottom: 15px;right: 15px;opacity: 0.5;transform: translateX(-10px);transition: all 0.3s ease;font-weight: bold;color: #007BFF;}
-.pmProList .project-box:hover .hover-arrow {opacity: 1;transform: translateX(0);cursor: pointer;}
+.pmProList .project-box:hover .hover-arrow {opacity:1;transform: translateX(0);cursor: pointer;}
 
 
 /* ============================================================
