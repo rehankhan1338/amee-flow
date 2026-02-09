@@ -56,7 +56,8 @@ $(function(){
 		"searching": true,
 		"ordering": true,
 		"info": true,
-		"autoWidth": true
+		"autoWidth": false,
+		"dom": '<"af-dt-top"f>rt<"af-dt-bottom"ilp>'
 	});
 
 	if($('#editor').length > 0){
