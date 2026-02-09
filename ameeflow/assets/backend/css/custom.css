@@ -689,9 +689,15 @@ body.af-system-admin .dataTables_wrapper > table {
 /* ---------- DataTables – top bar (search) ---------- */
 body.af-system-admin .af-dt-top {
 	display: flex;
-	justify-content: flex-end;
 	padding: 12px 16px 6px;
 }
+div.dataTables_wrapper div.dataTables_filter{
+	width:100% !important;
+}
+div.dataTables_wrapper div.dataTables_filter label{
+	width:100% !important;
+}
+
 body.af-system-admin .dataTables_filter {
 	text-align: right;
 	padding: 0;
@@ -703,8 +709,8 @@ body.af-system-admin .dataTables_filter label {
 }
 body.af-system-admin .dataTables_filter input {
 	border: 1px solid #dce0e6;
-	border-radius: 8px;
-	padding: 5px 12px;
+	border-radius: 22px;
+	padding: 10px 12px;
 	font-size: .84rem;
 	margin-left: 6px;
 	outline: none;
@@ -893,6 +899,12 @@ body.af-system-admin .alert { border-radius: 10px; border: none; }
 		padding: 14px 15px;
 	}
 	.af-footer .d-flex { flex-direction: column; gap: 4px; }
+}
+
+@media (min-width: 768px) {
+	div.dataTables_wrapper div.dataTables_filter input{
+		width: 30% !important;
+	}
 }
 
 /* ---------- Scrollbar (system-admin only) ---------- */
