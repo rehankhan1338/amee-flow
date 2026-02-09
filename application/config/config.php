@@ -23,8 +23,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-         
-$config['base_url'] = 'https://dev-work.assessmentmadeeasy.com/'; 
+
+$urlHost = $_SERVER['HTTP_HOST'];
+$urlHostArr = explode('.', $urlHost);
+$subdomainName = $urlHostArr[0];
+
+$config['base_url'] = (isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : 'https') . '://' . $urlHost . '/';
+$config['site_domain'] = preg_replace('/^[^.]+\./', '', $urlHost); // e.g. assessmentmadeeasy.com
 $config['project_name_page_first'] = 'AMEE';
 $config['project_name_page_second'] = 'Accounts';
 
@@ -39,7 +44,7 @@ $config['support_roles_array_config']=array(
 	'2'=>array('name'=>'Tech Support','slug'=>'tech-support','status'=>'0')); 
 
 $config['admin_directory_name'] = 'admin';
-$config['subdomain_name'] = '';   
+$config['subdomain_name'] = $subdomainName;   
  
 /*
 |--------------------------------------------------------------------------

@@ -7,7 +7,7 @@ class Home extends CI_Controller {
 		$this->data['success_msg']=$this->session->flashdata('success');
 		$this->data['error_msg']=$this->session->flashdata('error'); 
 	 
-		$this->data['ameeFlowLnk'] = 'https://www.dev-work.assessmentmadeeasy.com/ameeflow/signin';
+		$this->data['ameeFlowLnk'] = base_url('ameeflow/signin');
 		$this->data['bravoLnk'] = 'https://www.bravofolio.com/';
  	 
  	}
