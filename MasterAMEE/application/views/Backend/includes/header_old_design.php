@@ -202,7 +202,7 @@ hs.wrapperClassName = 'draggable-header';
 	
 	<!-- sidebar menu: : style can be found in sidebar.less -->
 		<ul class="sidebar-menu">
-			<li class="header">MAIN NAVIGATION</li>
+			<li class="header header-6">MAIN NAVIGATION</li>
 			<?php include(APPPATH.'views/Backend/includes/menu.php'); ?>
 		</ul>
 	</section>
