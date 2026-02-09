@@ -6,6 +6,10 @@
         <div class="box-header no-border">
             <h3 class="box-title">Project Listing</h3>
             <div class="box-tools pull-right">                
+                <div class="input-group input-group-sm" style="display:inline-flex; width:250px; margin-right:10px; vertical-align:middle;">
+                    <input type="text" id="projectSearchInput" class="form-control" placeholder="Search projects..." style="height:34px;">
+                    <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearProjectSearch"><i class="fa fa-times"></i></span>
+                </div>
                 <button id="delProBtn" type="button" onclick="return deleteProject();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-danger'> Delete </button>
                 <button id="copyProBtn" type="button" onclick="return copyProject();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-warning'> Copy Project </button>
                 <button id="addProBtn" type="button" style="padding: 3px 15px; font-size:15px;" onclick="return manageProject('0');" class='btn btn-primary'> <i class="fa fa-plus"></i> Project</button>               
@@ -67,4 +71,20 @@ include(APPPATH.'views/system-admin/projects/pro-models.php');
 include(APPPATH.'views/system-admin/projects/copy-pro.php');
 // include(APPPATH.'views/system-admin/projects/role-assignment/assign-role.php');
 ?>
+
+<script type="text/javascript">
+$(function(){
+    $('#projectSearchInput').on('keyup', function(){
+        var searchText = $(this).val().toLowerCase();
+        $('#table_recordtbl1 tbody tr').each(function(){
+            var rowText = $(this).text().toLowerCase();
+            $(this).toggle(rowText.indexOf(searchText) > -1);
+        });
+    });
+
+    $('#clearProjectSearch').on('click', function(){
+        $('#projectSearchInput').val('').trigger('keyup').focus();
+    });
+});
+</script>
 </section>
