@@ -1,6 +1,14 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>    
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<style>
+    .select2-container--default .select2-selection--single { height:34px; border:1px solid #ced4da; border-radius:4px; }
+    .select2-container--default .select2-selection--single .select2-selection__rendered { line-height:32px; }
+    .select2-container--default .select2-selection--single .select2-selection__arrow { height:32px; }
+    .select2-container { vertical-align:middle; margin-right:10px; }
+</style>
     
 <section class="content">
     <div class="box">  
@@ -111,6 +119,9 @@ include(APPPATH.'views/system-admin/role-assignments/its-senior-roles.php');
 
 <script type="text/javascript">
 $(function(){
+    $('#unitFilter').select2({ placeholder: 'All Units', allowClear: true, width: '200px' });
+    $('#projectFilter').select2({ placeholder: 'All Projects', allowClear: true, width: '200px' });
+
     function filterRolesTable(){
         var selectedUnit = $('#unitFilter').val();
         var selectedProject = $('#projectFilter').val();
