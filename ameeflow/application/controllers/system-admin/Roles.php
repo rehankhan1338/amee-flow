@@ -20,13 +20,6 @@ class Roles extends CI_Controller {
         $this->data['pageTitle'] = 'Role Assignments';
         $this->data['pageSubTitle'] = '';
         $this->data['uniUsersDataArr'] = $this->Roles_mdl->acctUsersDataArr($this->data['useuniAdminId']);
-        $this->data['projectDataArr'] = $this->Projects_mdl->projectDataArr($this->data['useuniAdminId']);
-        // Build a projectId => projectName lookup map
-        $projectMap = array();
-        foreach($this->data['projectDataArr'] as $pro){
-            $projectMap[$pro['projectId']] = $pro['projectName'];
-        }
-        $this->data['projectMap'] = $projectMap;
         $this->load->view('system-admin/includes/header',$this->data);
         $this->load->view('system-admin/role-assignments/list',$this->data);
         $this->load->view('Backend/includes/footer',$this->data);
