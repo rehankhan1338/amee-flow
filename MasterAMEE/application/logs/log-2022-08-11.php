@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-08-11 06:19:21 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-08-11 06:19:21 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-08-11 06:19:22 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2022-08-11 06:19:23 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2022-08-11 06:19:23 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2022-08-11 06:19:23 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2022-08-11 06:19:23 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2022-08-11 06:19:23 --> 404 Page Not Found: News/wp-includes
+ERROR - 2022-08-11 06:19:24 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2022-08-11 06:19:24 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2022-08-11 06:19:24 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2022-08-11 06:19:24 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2022-08-11 06:19:24 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2022-08-11 06:19:24 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2022-08-11 06:19:25 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2022-08-11 06:19:25 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2022-08-11 06:19:25 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2022-08-11 06:19:25 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2022-08-11 15:24:15 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-11 15:24:17 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-08-11 15:24:18 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-08-11 15:24:19 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-08-11 18:42:52 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-11 21:41:27 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-11 23:05:02 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-11 23:09:31 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-11 23:54:49 --> 404 Page Not Found: Wp-loginphp/index

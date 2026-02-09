@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-11-04 00:45:16 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-04 01:02:33 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:02:33 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:02:33 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:02:33 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:03:25 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:03:25 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:03:25 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:03:25 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:04:04 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:04:04 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:04:04 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:04:04 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:04:46 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:04:46 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:04:46 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:04:47 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:05:31 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:05:31 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:05:31 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:05:33 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:06:13 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:06:14 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:06:14 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 01:06:14 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2024-11-04 03:41:21 --> 404 Page Not Found: Git/config
+ERROR - 2024-11-04 07:53:17 --> 404 Page Not Found: Wp-admin/setup-config.php
+ERROR - 2024-11-04 07:53:18 --> 404 Page Not Found: Wordpress/wp-admin
+ERROR - 2024-11-04 10:31:43 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-11-04 10:31:44 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-11-04 10:32:04 --> 404 Page Not Found: Faviconico/index

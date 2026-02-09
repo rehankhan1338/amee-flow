@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-01-13 19:04:53 --> 404 Page Not Found: Blog/index
+ERROR - 2022-01-13 19:04:54 --> 404 Page Not Found: Wp/index
+ERROR - 2022-01-13 19:04:56 --> 404 Page Not Found: Wordpress/index
+ERROR - 2022-01-13 19:04:57 --> 404 Page Not Found: New/index
+ERROR - 2022-01-13 19:04:57 --> 404 Page Not Found: Old/index
+ERROR - 2022-01-13 19:04:58 --> 404 Page Not Found: Test/index
+ERROR - 2022-01-13 19:04:59 --> 404 Page Not Found: Main/index
+ERROR - 2022-01-13 19:05:00 --> 404 Page Not Found: Site/index
+ERROR - 2022-01-13 19:05:01 --> 404 Page Not Found: Backup/index
+ERROR - 2022-01-13 19:05:02 --> 404 Page Not Found: Demo/index
+ERROR - 2022-01-13 19:05:04 --> 404 Page Not Found: Tmp/index
+ERROR - 2022-01-13 19:05:04 --> 404 Page Not Found: Cms/index
+ERROR - 2022-01-13 19:05:05 --> 404 Page Not Found: Dev/index
+ERROR - 2022-01-13 19:05:06 --> 404 Page Not Found: Old-wp/index
+ERROR - 2022-01-13 19:05:07 --> 404 Page Not Found: Web/index
+ERROR - 2022-01-13 19:05:08 --> 404 Page Not Found: Old-site/index
+ERROR - 2022-01-13 19:05:09 --> 404 Page Not Found: Temp/index
+ERROR - 2022-01-13 19:05:10 --> 404 Page Not Found: 2018/index
+ERROR - 2022-01-13 19:05:11 --> 404 Page Not Found: 2019/index
+ERROR - 2022-01-13 19:05:11 --> 404 Page Not Found: Bk/index
+ERROR - 2022-01-13 19:05:13 --> 404 Page Not Found: Wp1/index
+ERROR - 2022-01-13 19:05:14 --> 404 Page Not Found: Wp2/index
+ERROR - 2022-01-13 19:05:14 --> 404 Page Not Found: V1/index
+ERROR - 2022-01-13 19:05:15 --> 404 Page Not Found: V2/index
+ERROR - 2022-01-13 19:05:16 --> 404 Page Not Found: Bak/index
+ERROR - 2022-01-13 19:05:17 --> 404 Page Not Found: Install/index
+ERROR - 2022-01-13 19:05:18 --> 404 Page Not Found: 2020/index
+ERROR - 2022-01-13 19:05:19 --> 404 Page Not Found: New-site/index

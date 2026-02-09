@@ -1,0 +1,35 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-06-15 10:26:49 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-06-15 10:26:57 --> 404 Page Not Found: Sitemapxml/index
+ERROR - 2025-06-15 10:28:44 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-06-15 10:28:51 --> 404 Page Not Found: Sitemapxml/index
+ERROR - 2025-06-15 10:29:13 --> 404 Page Not Found: Configjson/index
+ERROR - 2025-06-15 12:27:45 --> 404 Page Not Found: ALFA_DATA/alfacgiapi
+ERROR - 2025-06-15 12:37:46 --> 404 Page Not Found: Vscode/sftp.json
+ERROR - 2025-06-15 12:38:21 --> 404 Page Not Found: TelerikWebUIWebResourceaxd/index
+ERROR - 2025-06-15 12:38:55 --> 404 Page Not Found: Deployment-configjson/index
+ERROR - 2025-06-15 12:39:55 --> 404 Page Not Found: Sftp-configjson/index
+ERROR - 2025-06-15 12:40:29 --> 404 Page Not Found: Sftpjson/index
+ERROR - 2025-06-15 12:41:33 --> 404 Page Not Found: Git/config
+ERROR - 2025-06-15 12:41:53 --> 404 Page Not Found: Ftpconfig/index
+ERROR - 2025-06-15 12:43:01 --> 404 Page Not Found: Configjson/index
+ERROR - 2025-06-15 12:43:50 --> 404 Page Not Found: Config/configuration.yml
+ERROR - 2025-06-15 12:44:16 --> 404 Page Not Found: Config/databases.yml
+ERROR - 2025-06-15 12:45:15 --> 404 Page Not Found: Applicationproperties/index
+ERROR - 2025-06-15 12:46:02 --> 404 Page Not Found: Config/secrets.yml
+ERROR - 2025-06-15 12:47:05 --> 404 Page Not Found: Sites/default
+ERROR - 2025-06-15 12:47:40 --> 404 Page Not Found: Settingspy/index
+ERROR - 2025-06-15 12:48:50 --> 404 Page Not Found: App/etc
+ERROR - 2025-06-15 12:49:47 --> 404 Page Not Found: Aws/credentials
+ERROR - 2025-06-15 12:50:29 --> 404 Page Not Found: _fragment/index
+ERROR - 2025-06-15 12:51:23 --> 404 Page Not Found: Mailerini/index
+ERROR - 2025-06-15 12:51:47 --> 404 Page Not Found: Configjson/index
+ERROR - 2025-06-15 12:52:55 --> 404 Page Not Found: Ftpconfig/index
+ERROR - 2025-06-15 12:56:00 --> 404 Page Not Found: Sftpjson/index
+ERROR - 2025-06-15 17:09:25 --> 404 Page Not Found: Adminphp/index
+ERROR - 2025-06-15 17:09:38 --> 404 Page Not Found: Aboutphp/index
+ERROR - 2025-06-15 17:09:51 --> 404 Page Not Found: Gdftpsphp/index
+ERROR - 2025-06-15 17:10:12 --> 404 Page Not Found: Ssphp/index
+ERROR - 2025-06-15 17:10:30 --> 404 Page Not Found: As4AaPasdphp/index
+ERROR - 2025-06-15 17:10:41 --> 404 Page Not Found: Wp-content/plugins

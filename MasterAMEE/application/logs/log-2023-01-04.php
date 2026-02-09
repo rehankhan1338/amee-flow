@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-01-04 05:19:32 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-01-04 05:19:32 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-01-04 05:19:32 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-01-04 05:19:32 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-01-04 05:19:32 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-01-04 05:19:35 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-01-04 05:19:35 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-01-04 05:19:35 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-01-04 05:19:35 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-01-04 05:19:35 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-01-04 05:19:38 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-01-04 05:19:38 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-01-04 05:19:38 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-01-04 05:19:38 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-01-04 05:19:38 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-01-04 11:30:15 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-01-04 11:30:15 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2023-01-04 11:30:16 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2023-01-04 11:30:16 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2023-01-04 16:42:51 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-01-04 16:43:06 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-01-04 16:43:21 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-01-04 16:43:38 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-01-04 17:14:26 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-01-04 20:59:15 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-01-04 23:00:23 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-01-04 23:07:04 --> 404 Page Not Found: Wp-loginphp/index

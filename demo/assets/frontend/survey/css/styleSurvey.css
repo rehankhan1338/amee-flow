@@ -1,0 +1,28 @@
+*{padding:0;margin:0;list-style:none;box-sizing:border-box}
+body{overflow:hidden}
+body,html{width:100%;height:100%}
+body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}
+#preview-container{position:absolute;top:60px;left:0;bottom:0;right:0;padding-right:411px;margin-top:24px}
+#desktop-container{padding-left:24px;height:100%}
+#mobile-container{height:100%;width:411px;display:inline-block;position:absolute;top:0;right:0;overflow-y:auto}
+#preview-view{border:0;width:100%;height:100%;display:block;margin:0 auto}
+#phone-overlay{position:absolute;left:calc(50% - 181.5px);z-index:1;width:363px;height:781px;pointer-events:none;background-image:url(phone.svg);background-size:cover}
+#phone{height:100%;background-size:contain;padding:20px;position:relative;z-index:1}
+#inner-phone{height:735px;width:339px;overflow:hidden;margin:0;padding-top:35px;position:relative;top:12px;left:calc(50% - 170.5px);border-radius:0 0 18px 18px}
+#inner-phone iframe{width:339px!important}
+#preview-banner{position:fixed;top:0;left:0;right:0;z-index:2;background:#fff;overflow:hidden;border-bottom:2px solid #f5f5f5;min-width:350px}
+#preview-actions{padding:24px;height:60px;overflow:hidden}
+#mobile-view-switch-container{display:inline-block;height:36px;padding:0;margin-left:auto}
+#mobile-view-switch-container label[for=mobile-view-checkbox]{margin-right:12px;position:relative;top:-2px}
+label{font-weight:400}
+.mobile-view-switch{position:relative;display:inline-block;width:28px;height:16px}
+.mobile-view-switch input{opacity:0;width:0;height:0}
+input[type=checkbox],input[type=radio]{margin:4px 0 0;margin-top:1px\9;line-height:normal}
+input:checked+.mobile-view-slider{background-color:#0b6ed0}
+.mobile-view-slider:before{content:"";height:14px;width:14px;background-color:#fff;border-radius:50%;border:1px solid #aaa}
+.mobile-view-slider{cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:34px}
+.mobile-view-slider,.mobile-view-slider:before{position:absolute;-webkit-transition:.4s;transition:.4s}
+input:checked+.mobile-view-slider:before{-webkit-transform:translateX(13px);-ms-transform:translateX(13px);transform:translateX(13px)}
+.mobile-inactive #preview-container{padding-right:0}
+.mobile-inactive #desktop-container{padding-right:24px}
+.hide_mobile{display:none!important}

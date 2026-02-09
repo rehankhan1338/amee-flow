@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-03-16 02:09:51 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-03-16 02:10:21 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-03-16 03:05:44 --> 404 Page Not Found: Git/config
+ERROR - 2025-03-16 03:31:29 --> 404 Page Not Found: Git/config
+ERROR - 2025-03-16 03:45:02 --> 404 Page Not Found: Git/config
+ERROR - 2025-03-16 03:58:53 --> 404 Page Not Found: Git/config
+ERROR - 2025-03-16 04:00:46 --> 404 Page Not Found: Git/config
+ERROR - 2025-03-16 04:10:20 --> 404 Page Not Found: Git/config
+ERROR - 2025-03-16 04:15:13 --> 404 Page Not Found: Sftp-configjson/index
+ERROR - 2025-03-16 04:15:15 --> 404 Page Not Found: Vscode/sftp.json
+ERROR - 2025-03-16 06:57:19 --> 404 Page Not Found: Git/config
+ERROR - 2025-03-16 10:09:21 --> 404 Page Not Found: Assets/upload
+ERROR - 2025-03-16 10:10:04 --> 404 Page Not Found: Assets/upload
+ERROR - 2025-03-16 10:10:52 --> 404 Page Not Found: Assets/upload
+ERROR - 2025-03-16 10:19:56 --> 404 Page Not Found: Assets/upload
+ERROR - 2025-03-16 10:20:05 --> 404 Page Not Found: Assets/upload
+ERROR - 2025-03-16 23:31:24 --> 404 Page Not Found: Wp/index
+ERROR - 2025-03-16 23:31:28 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-03-16 23:31:33 --> 404 Page Not Found: Csun/index
+ERROR - 2025-03-16 23:31:38 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-03-16 23:31:45 --> 404 Page Not Found: Old/index
+ERROR - 2025-03-16 23:31:50 --> 404 Page Not Found: Backup/index
+ERROR - 2025-03-16 23:31:53 --> 404 Page Not Found: New/index
+ERROR - 2025-03-16 23:31:58 --> 404 Page Not Found: Test/index
+ERROR - 2025-03-16 23:32:07 --> 404 Page Not Found: Wp/index
+ERROR - 2025-03-16 23:32:14 --> 404 Page Not Found: Temp/index
+ERROR - 2025-03-16 23:32:19 --> 404 Page Not Found: Blog/index

@@ -1,0 +1,35 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-03-18 00:02:05 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2022-03-18 00:02:05 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2022-03-18 00:02:06 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2022-03-18 00:02:06 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2022-03-18 00:02:06 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2022-03-18 00:02:06 --> 404 Page Not Found: News/wp-includes
+ERROR - 2022-03-18 00:02:07 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2022-03-18 00:02:07 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2022-03-18 00:02:07 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2022-03-18 00:02:08 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2022-03-18 00:02:08 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2022-03-18 00:02:08 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2022-03-18 00:02:08 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2022-03-18 00:02:09 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2022-03-18 00:02:09 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2022-03-18 18:53:53 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-03-18 18:55:03 --> 404 Page Not Found: Test_404_page/index
+ERROR - 2022-03-18 20:56:07 --> 404 Page Not Found: Git/config
+ERROR - 2022-03-18 20:56:10 --> 404 Page Not Found: Git/config
+ERROR - 2022-03-18 20:56:19 --> 404 Page Not Found: DS_Store/index
+ERROR - 2022-03-18 20:56:20 --> 404 Page Not Found: DS_Store/index
+ERROR - 2022-03-18 22:31:18 --> 404 Page Not Found: Wp-admin/install.php
+ERROR - 2022-03-18 22:31:18 --> 404 Page Not Found: Wp/wp-admin
+ERROR - 2022-03-18 22:31:19 --> 404 Page Not Found: New/wp-admin
+ERROR - 2022-03-18 22:31:19 --> 404 Page Not Found: Old/wp-admin
+ERROR - 2022-03-18 22:31:20 --> 404 Page Not Found: Wordpress/wp-admin
+ERROR - 2022-03-18 22:31:20 --> 404 Page Not Found: Test/wp-admin
+ERROR - 2022-03-18 22:31:21 --> 404 Page Not Found: Blog/wp-admin
+ERROR - 2022-03-18 22:31:21 --> 404 Page Not Found: Cms/wp-admin
+ERROR - 2022-03-18 22:31:22 --> 404 Page Not Found: Web/wp-admin
+ERROR - 2022-03-18 22:31:22 --> 404 Page Not Found: Backup/wp-admin
+ERROR - 2022-03-18 22:31:22 --> 404 Page Not Found: Site/wp-admin
+ERROR - 2022-03-18 22:31:23 --> 404 Page Not Found: Oldsite/wp-admin

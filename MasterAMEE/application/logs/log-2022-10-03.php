@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-10-03 03:42:34 --> 404 Page Not Found: Stylephp/index
+ERROR - 2022-10-03 03:57:57 --> 404 Page Not Found: Stylephp/index
+ERROR - 2022-10-03 04:42:59 --> 404 Page Not Found: Stylephp/index
+ERROR - 2022-10-03 05:23:20 --> 404 Page Not Found: Stylephp/index
+ERROR - 2022-10-03 09:39:53 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:39:53 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:40:15 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:40:15 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:40:15 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:40:15 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:41:37 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:41:59 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:41:59 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:41:59 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:41:59 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 09:41:59 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-03 13:16:54 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-03 13:17:01 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-10-03 13:17:02 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-10-03 13:17:04 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-10-03 13:22:52 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-03 13:22:52 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-03 19:52:40 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2022-10-03 19:52:40 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2022-10-03 19:52:43 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2022-10-03 19:53:13 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2022-10-03 19:53:32 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2022-10-03 22:44:33 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-03 22:44:34 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-10-03 22:44:35 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-10-03 22:44:35 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-10-03 23:42:14 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-03 23:42:14 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-10-03 23:42:14 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-10-03 23:42:15 --> 404 Page Not Found: Wp/wp-login.php

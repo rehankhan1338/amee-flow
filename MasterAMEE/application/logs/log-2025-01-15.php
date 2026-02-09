@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-01-15 02:56:49 --> 404 Page Not Found: Adstxt/index
+ERROR - 2025-01-15 03:27:43 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-01-15 03:34:56 --> 404 Page Not Found: Wp-includes/js
+ERROR - 2025-01-15 03:34:57 --> 404 Page Not Found: Wp-includes/js
+ERROR - 2025-01-15 04:33:53 --> 404 Page Not Found: Wp/index
+ERROR - 2025-01-15 04:33:56 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-01-15 04:34:00 --> 404 Page Not Found: Demo/index
+ERROR - 2025-01-15 04:34:04 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-01-15 04:34:11 --> 404 Page Not Found: Old/index
+ERROR - 2025-01-15 04:34:16 --> 404 Page Not Found: Backup/index
+ERROR - 2025-01-15 04:34:25 --> 404 Page Not Found: New/index
+ERROR - 2025-01-15 04:34:37 --> 404 Page Not Found: Test/index
+ERROR - 2025-01-15 04:35:00 --> 404 Page Not Found: Wp/index
+ERROR - 2025-01-15 04:35:12 --> 404 Page Not Found: Temp/index
+ERROR - 2025-01-15 04:35:30 --> 404 Page Not Found: Blog/index
+ERROR - 2025-01-15 11:50:23 --> 404 Page Not Found: Env/index
+ERROR - 2025-01-15 12:04:35 --> 404 Page Not Found: Adstxt/index
+ERROR - 2025-01-15 13:33:36 --> 404 Page Not Found: Env/index
+ERROR - 2025-01-15 14:30:31 --> 404 Page Not Found: Env/index
+ERROR - 2025-01-15 17:13:16 --> 404 Page Not Found: Env/index
+ERROR - 2025-01-15 17:13:16 --> 404 Page Not Found: Actuator/env
+ERROR - 2025-01-15 17:13:17 --> 404 Page Not Found: admin/Actuator/env
+ERROR - 2025-01-15 17:13:18 --> 404 Page Not Found: Api/env
+ERROR - 2025-01-15 17:13:19 --> 404 Page Not Found: admin/Env/index
+ERROR - 2025-01-15 17:13:19 --> 404 Page Not Found: Api/actuator
+ERROR - 2025-01-15 18:21:18 --> 404 Page Not Found: Git/config
+ERROR - 2025-01-15 20:42:38 --> 404 Page Not Found: Git/config
+ERROR - 2025-01-15 21:01:22 --> 404 Page Not Found: Git/config
+ERROR - 2025-01-15 21:21:44 --> 404 Page Not Found: Faviconico/index

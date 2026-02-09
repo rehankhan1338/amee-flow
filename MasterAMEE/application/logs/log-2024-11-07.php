@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-11-07 02:12:56 --> 404 Page Not Found: Git/config
+ERROR - 2024-11-07 02:29:29 --> 404 Page Not Found: Wp-admin/setup-config.php
+ERROR - 2024-11-07 02:29:29 --> 404 Page Not Found: Wordpress/wp-admin
+ERROR - 2024-11-07 03:18:41 --> 404 Page Not Found: Git/config
+ERROR - 2024-11-07 03:26:49 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-07 04:36:43 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-07 05:13:57 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-07 08:24:29 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-07 10:14:31 --> 404 Page Not Found: Git/config
+ERROR - 2024-11-07 11:17:07 --> 404 Page Not Found: Git/config
+ERROR - 2024-11-07 12:15:16 --> 404 Page Not Found: Git/config
+ERROR - 2024-11-07 12:15:51 --> 404 Page Not Found: Git/config
+ERROR - 2024-11-07 12:53:05 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-11-07 12:53:05 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-11-07 12:53:05 --> 404 Page Not Found: Adstxt/index
+ERROR - 2024-11-07 12:53:05 --> 404 Page Not Found: Adstxt/index
+ERROR - 2024-11-07 12:53:06 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-11-07 12:53:07 --> 404 Page Not Found: Adstxt/index
+ERROR - 2024-11-07 12:53:08 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-11-07 12:53:08 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-11-07 12:53:08 --> 404 Page Not Found: Adstxt/index
+ERROR - 2024-11-07 12:53:08 --> 404 Page Not Found: Adstxt/index
+ERROR - 2024-11-07 13:43:07 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-07 13:53:43 --> 404 Page Not Found: Wp-admin/setup-config.php
+ERROR - 2024-11-07 13:53:43 --> 404 Page Not Found: Wordpress/wp-admin
+ERROR - 2024-11-07 14:19:41 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-07 15:40:17 --> 404 Page Not Found: Rest/V1
+ERROR - 2024-11-07 16:10:41 --> 404 Page Not Found: Git/config
+ERROR - 2024-11-07 21:18:23 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-07 23:04:59 --> 404 Page Not Found: Env/index

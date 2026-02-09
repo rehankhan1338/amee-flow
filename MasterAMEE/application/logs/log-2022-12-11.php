@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-12-11 02:35:50 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-12-11 02:35:52 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-12-11 02:35:53 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-12-11 02:35:54 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-12-11 06:03:54 --> 404 Page Not Found: Wordpress/index
+ERROR - 2022-12-11 06:03:56 --> 404 Page Not Found: Wp/index
+ERROR - 2022-12-11 06:03:59 --> 404 Page Not Found: Blog/index
+ERROR - 2022-12-11 06:04:01 --> 404 Page Not Found: Old/index
+ERROR - 2022-12-11 06:04:03 --> 404 Page Not Found: New/index
+ERROR - 2022-12-11 06:04:05 --> 404 Page Not Found: Test/index
+ERROR - 2022-12-11 06:04:07 --> 404 Page Not Found: Backup/index
+ERROR - 2022-12-11 06:04:09 --> 404 Page Not Found: Temp/index
+ERROR - 2022-12-11 14:55:36 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-12-11 20:54:24 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-12-11 20:54:25 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-12-11 20:54:26 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-12-11 20:54:27 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-12-11 21:39:35 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-12-11 21:41:26 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-12-11 21:41:26 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-12-11 21:41:26 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-12-11 21:41:26 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-12-11 21:41:27 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-12-11 21:41:27 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-12-11 21:41:27 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-12-11 21:41:28 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-12-11 21:41:29 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-12-11 21:41:29 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-12-11 21:41:30 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-12-11 21:41:30 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-12-11 21:41:31 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-12-11 21:41:32 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-12-11 21:41:32 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-12-11 23:02:54 --> 404 Page Not Found: Wp-loginphp/index

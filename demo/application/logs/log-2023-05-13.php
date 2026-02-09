@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-05-13 05:46:58 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-05-13 05:47:02 --> 404 Page Not Found: Radiophp/index
+ERROR - 2023-05-13 05:47:12 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-05-13 05:47:17 --> 404 Page Not Found: Wp-includes/sodium_compat
+ERROR - 2023-05-13 05:47:19 --> 404 Page Not Found: Eephp/index
+ERROR - 2023-05-13 05:47:28 --> 404 Page Not Found: Repeaterphp/index
+ERROR - 2023-05-13 05:47:34 --> 404 Page Not Found: Wso112233php/index
+ERROR - 2023-05-13 05:47:38 --> 404 Page Not Found: Seophp/index
+ERROR - 2023-05-13 13:53:28 --> 404 Page Not Found: Kcfinder/upload.php
+ERROR - 2023-05-13 13:53:34 --> 404 Page Not Found: Asset/kcfinder
+ERROR - 2023-05-13 13:53:41 --> 404 Page Not Found: Assets/kcfinder
+ERROR - 2023-05-13 13:53:49 --> 404 Page Not Found: Js/kcfinder
+ERROR - 2023-05-13 13:53:56 --> 404 Page Not Found: Assets/js
+ERROR - 2023-05-13 13:54:01 --> 404 Page Not Found: Assets/plugins
+ERROR - 2023-05-13 13:54:08 --> 404 Page Not Found: Plugins/kcfinder
+ERROR - 2023-05-13 13:54:14 --> 404 Page Not Found: Filemanager/dialog.php
+ERROR - 2023-05-13 13:54:23 --> 404 Page Not Found: Assets/filemanager
+ERROR - 2023-05-13 13:54:32 --> 404 Page Not Found: Assets/plugins
+ERROR - 2023-05-13 13:54:37 --> 404 Page Not Found: Phpformbuilder/plugins
+ERROR - 2023-05-13 13:55:21 --> 404 Page Not Found: Assets/tinymce
+ERROR - 2023-05-13 13:55:28 --> 404 Page Not Found: Scripts/filemanager
+ERROR - 2023-05-13 13:55:33 --> 404 Page Not Found: admin/Filemanager/dialog.php
+ERROR - 2023-05-13 13:55:38 --> 404 Page Not Found: Assets/plugins
+ERROR - 2023-05-13 13:55:45 --> 404 Page Not Found: Assets/elfinder
+ERROR - 2023-05-13 13:55:48 --> 404 Page Not Found: Assets/scripts
+ERROR - 2023-05-13 13:55:57 --> 404 Page Not Found: Assets/admin
+ERROR - 2023-05-13 13:56:10 --> 404 Page Not Found: Js/tinymce4
+ERROR - 2023-05-13 13:56:23 --> 404 Page Not Found: Tinymce/filemanager

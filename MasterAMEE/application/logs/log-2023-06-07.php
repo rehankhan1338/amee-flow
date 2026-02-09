@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-06-07 01:27:43 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-06-07 01:27:44 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-06-07 01:27:45 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-06-07 01:27:46 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-06-07 02:59:31 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-06-07 02:59:32 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2023-06-07 02:59:32 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2023-06-07 02:59:33 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2023-06-07 03:59:10 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-06-07 03:59:10 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-06-07 03:59:10 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-06-07 03:59:10 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-06-07 04:08:23 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-06-07 04:08:23 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-06-07 04:08:23 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-06-07 04:08:29 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-06-07 05:35:44 --> 404 Page Not Found: Env/index
+ERROR - 2023-06-07 05:36:14 --> 404 Page Not Found: Env/index
+ERROR - 2023-06-07 05:36:39 --> 404 Page Not Found: Env/index
+ERROR - 2023-06-07 06:16:05 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-06-07 06:16:05 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-06-07 06:16:05 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-06-07 06:16:05 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-06-07 07:59:08 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-06-07 07:59:09 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-06-07 07:59:09 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-06-07 07:59:10 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-06-07 18:13:40 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-06-07 18:29:27 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-06-07 22:21:54 --> 404 Page Not Found: Wp-loginphp/index

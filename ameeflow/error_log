@@ -1,0 +1,379 @@
+[04-Jul-2025 09:07:32 America/Chicago] PHP Fatal error:  Cannot redeclare Notifications_mdl::submitSharedEntry() in /home/secondw6/public_html/domains/amee/ameeflow/application/models/Notifications_mdl.php on line 530
+[04-Jul-2025 09:07:35 America/Chicago] PHP Fatal error:  Cannot redeclare Notifications_mdl::submitSharedEntry() in /home/secondw6/public_html/domains/amee/ameeflow/application/models/Notifications_mdl.php on line 530
+[30-Jul-2025 12:10:52 America/Chicago] PHP Fatal error:  Cannot use empty array elements in arrays in /home/secondw6/public_html/domains/amee/ameeflow/application/models/Users_mdl.php on line 166
+[30-Jul-2025 12:10:54 America/Chicago] PHP Fatal error:  Cannot use empty array elements in arrays in /home/secondw6/public_html/domains/amee/ameeflow/application/models/Users_mdl.php on line 166
+[21-Aug-2025 08:49:58 America/Chicago] SERVER -> CLIENT: 220 cloud-56df01.managed-vps.net ESMTP Exim 4.98.2 Thu, 21 Aug 2025 09:49:58 -0400
+
+[21-Aug-2025 08:49:58 America/Chicago] CLIENT -> SERVER: EHLO www.assessmentmadeeasy.com
+
+[21-Aug-2025 08:49:58 America/Chicago] SERVER -> CLIENT: 250-cloud-56df01.managed-vps.net Hello www.assessmentmadeeasy.com [165.140.156.147]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH LOGIN PLAIN
+250-CHUNKING
+250-STARTTLS
+250 HELP
+
+[21-Aug-2025 08:49:58 America/Chicago] CLIENT -> SERVER: STARTTLS
+
+[21-Aug-2025 08:49:58 America/Chicago] SERVER -> CLIENT: 220 TLS go ahead
+
+[21-Aug-2025 08:49:58 America/Chicago] CLIENT -> SERVER: EHLO www.assessmentmadeeasy.com
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 250-cloud-56df01.managed-vps.net Hello www.assessmentmadeeasy.com [165.140.156.147]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH LOGIN PLAIN
+250-CHUNKING
+250 HELP
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: AUTH LOGIN
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: aW5mb0Bhc3Nlc3NtZW50bWFkZWVhc3kuY29t
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: JlFyQCtGVW1xSHhp
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 235 Authentication succeeded
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: MAIL FROM:<info@assessmentmadeeasy.com>
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 250 OK
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: RCPT TO:<sakile.camara@csun.edu>
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 250 Accepted
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: RCPT TO:<tns.ankit@gmail.com>
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 250 Accepted
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: DATA
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: Date: Thu, 21 Aug 2025 08:49:58 -0500
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: To: Sakile <sakile.camara@csun.edu>
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: From: AMEE FLOW <info@assessmentmadeeasy.com>
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: Cc: Ankit <tns.ankit@gmail.com>
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: Subject: Yes TLS Amee flowsub
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: Message-ID: <6c405b8cc27d34fcfd1e7384b79cb691@www.assessmentmadeeasy.com>
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.13 (https://github.com/PHPMailer/PHPMailer)
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: MIME-Version: 1.0
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 	boundary="b1_6c405b8cc27d34fcfd1e7384b79cb691"
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: --b1_6c405b8cc27d34fcfd1e7384b79cb691
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: To view the message, please use an HTML compatible email viewer!
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: --b1_6c405b8cc27d34fcfd1e7384b79cb691
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: <p>Nice AmeeFlow product!</p>
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: --b1_6c405b8cc27d34fcfd1e7384b79cb691--
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: .
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 250 OK id=1up5fz-00000007tbe-09S2
+
+[21-Aug-2025 08:49:59 America/Chicago] CLIENT -> SERVER: QUIT
+
+[21-Aug-2025 08:49:59 America/Chicago] SERVER -> CLIENT: 221 cloud-56df01.managed-vps.net closing connection
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 220 cloud-56df01.managed-vps.net ESMTP Exim 4.98.2 Thu, 21 Aug 2025 10:03:34 -0400
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: EHLO www.assessmentmadeeasy.com
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 250-cloud-56df01.managed-vps.net Hello www.assessmentmadeeasy.com [165.140.156.147]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH LOGIN PLAIN
+250-CHUNKING
+250-STARTTLS
+250 HELP
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: STARTTLS
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 220 TLS go ahead
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: EHLO www.assessmentmadeeasy.com
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 250-cloud-56df01.managed-vps.net Hello www.assessmentmadeeasy.com [165.140.156.147]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH LOGIN PLAIN
+250-CHUNKING
+250 HELP
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: AUTH LOGIN
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: aW5mb0Bhc3Nlc3NtZW50bWFkZWVhc3kuY29t
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: JlFyQCtGVW1xSHhp
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 235 Authentication succeeded
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: MAIL FROM:<info@assessmentmadeeasy.com>
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 250 OK
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: RCPT TO:<sakile.camara@csun.edu>
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 250 Accepted
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: RCPT TO:<tns.ankit@gmail.com>
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 250 Accepted
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: DATA
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: Date: Thu, 21 Aug 2025 09:03:34 -0500
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: To: Sakile <sakile.camara@csun.edu>
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: From: AMEE FLOW <info@assessmentmadeeasy.com>
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: Cc: Ankit <tns.ankit@gmail.com>
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: Subject: Yes TLS Amee flowsub
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: Message-ID: <c6d7df2ddffd188e46a34ed31ee7ce54@www.assessmentmadeeasy.com>
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.13 (https://github.com/PHPMailer/PHPMailer)
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: MIME-Version: 1.0
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 	boundary="b1_c6d7df2ddffd188e46a34ed31ee7ce54"
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: --b1_c6d7df2ddffd188e46a34ed31ee7ce54
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: To view the message, please use an HTML compatible email viewer!
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: --b1_c6d7df2ddffd188e46a34ed31ee7ce54
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: <p>Nice AmeeFlow product!</p>
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: --b1_c6d7df2ddffd188e46a34ed31ee7ce54--
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: .
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 250 OK id=1up5t8-00000007tz2-0tR0
+
+[21-Aug-2025 09:03:34 America/Chicago] CLIENT -> SERVER: QUIT
+
+[21-Aug-2025 09:03:34 America/Chicago] SERVER -> CLIENT: 221 cloud-56df01.managed-vps.net closing connection
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 220 cloud-56df01.managed-vps.net ESMTP Exim 4.98.2 Thu, 21 Aug 2025 10:05:18 -0400
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: EHLO www.assessmentmadeeasy.com
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 250-cloud-56df01.managed-vps.net Hello www.assessmentmadeeasy.com [165.140.156.147]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH LOGIN PLAIN
+250-CHUNKING
+250-STARTTLS
+250 HELP
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: STARTTLS
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 220 TLS go ahead
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: EHLO www.assessmentmadeeasy.com
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 250-cloud-56df01.managed-vps.net Hello www.assessmentmadeeasy.com [165.140.156.147]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH LOGIN PLAIN
+250-CHUNKING
+250 HELP
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: AUTH LOGIN
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: aW5mb0Bhc3Nlc3NtZW50bWFkZWVhc3kuY29t
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: JlFyQCtGVW1xSHhp
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 235 Authentication succeeded
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: MAIL FROM:<info@assessmentmadeeasy.com>
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 250 OK
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: RCPT TO:<sakile.camara@csun.edu>
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 250 Accepted
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: RCPT TO:<tns.ankit@gmail.com>
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 250 Accepted
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: DATA
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: Date: Thu, 21 Aug 2025 09:05:18 -0500
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: To: Sakile <sakile.camara@csun.edu>
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: From: AMEE FLOW <info@assessmentmadeeasy.com>
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: Cc: Ankit <tns.ankit@gmail.com>
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: Subject: Yes TLS Amee flowsub
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: Message-ID: <c4ed4d68811b80f998c724768a3a8b84@www.assessmentmadeeasy.com>
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.13 (https://github.com/PHPMailer/PHPMailer)
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: MIME-Version: 1.0
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 	boundary="b1_c4ed4d68811b80f998c724768a3a8b84"
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: --b1_c4ed4d68811b80f998c724768a3a8b84
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: To view the message, please use an HTML compatible email viewer!
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: --b1_c4ed4d68811b80f998c724768a3a8b84
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: <p>Nice AmeeFlow product!</p>
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: --b1_c4ed4d68811b80f998c724768a3a8b84--
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: 
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: .
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 250 OK id=1up5uo-00000007u1q-2kHN
+
+[21-Aug-2025 09:05:18 America/Chicago] CLIENT -> SERVER: QUIT
+
+[21-Aug-2025 09:05:18 America/Chicago] SERVER -> CLIENT: 221 cloud-56df01.managed-vps.net closing connection
+

@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-06-12 04:53:56 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-06-12 16:44:36 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-06-12 16:44:37 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-06-12 16:44:38 --> 404 Page Not Found: Sites/default
+ERROR - 2022-06-12 16:44:39 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-06-12 16:44:40 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-06-12 16:44:41 --> 404 Page Not Found: Images/index
+ERROR - 2022-06-12 16:44:42 --> 404 Page Not Found: Files/index
+ERROR - 2022-06-12 16:46:39 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-06-12 16:46:40 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-06-12 16:46:41 --> 404 Page Not Found: Sites/default
+ERROR - 2022-06-12 16:46:44 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-06-12 16:46:45 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-06-12 16:46:45 --> 404 Page Not Found: Images/index
+ERROR - 2022-06-12 16:46:46 --> 404 Page Not Found: Files/index
+ERROR - 2022-06-12 17:06:01 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-06-12 17:06:04 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-06-12 17:06:07 --> 404 Page Not Found: Sites/default
+ERROR - 2022-06-12 17:06:08 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-06-12 17:06:09 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-06-12 17:06:10 --> 404 Page Not Found: Images/index
+ERROR - 2022-06-12 17:06:11 --> 404 Page Not Found: Files/index
+ERROR - 2022-06-12 17:12:41 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-06-12 17:12:42 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-06-12 17:12:43 --> 404 Page Not Found: Sites/default
+ERROR - 2022-06-12 17:12:44 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-06-12 17:12:45 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-06-12 17:12:48 --> 404 Page Not Found: Images/index
+ERROR - 2022-06-12 17:12:49 --> 404 Page Not Found: Files/index

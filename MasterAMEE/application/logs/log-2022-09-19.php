@@ -1,0 +1,35 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-09-19 02:30:46 --> 404 Page Not Found: Wp-commentinphp/index
+ERROR - 2022-09-19 03:47:28 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-09-19 11:54:40 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2022-09-19 11:54:40 --> 404 Page Not Found: Feed/index
+ERROR - 2022-09-19 11:54:40 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-09-19 11:54:40 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2022-09-19 11:54:40 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2022-09-19 11:54:40 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2022-09-19 11:54:40 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2022-09-19 11:54:40 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2022-09-19 11:54:41 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2022-09-19 11:54:41 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2022-09-19 11:54:41 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2022-09-19 11:54:41 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2022-09-19 11:54:41 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2022-09-19 11:54:41 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2022-09-19 11:54:41 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2022-09-19 13:26:21 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-09-19 13:26:21 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-09-19 14:56:58 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-09-19 14:56:58 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-09-19 18:11:20 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-09-19 18:11:22 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-09-19 18:11:23 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-09-19 18:11:24 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-09-19 20:54:22 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-09-19 20:54:38 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-09-19 20:54:50 --> 404 Page Not Found: Sites/default
+ERROR - 2022-09-19 20:54:55 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-09-19 20:54:56 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-09-19 20:54:57 --> 404 Page Not Found: Images/index
+ERROR - 2022-09-19 20:54:59 --> 404 Page Not Found: Files/index
+ERROR - 2022-09-19 22:02:45 --> 404 Page Not Found: Wp-loginphp/index

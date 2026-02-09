@@ -1,0 +1,34 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-07-19 00:08:05 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-07-19 00:08:06 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-07-19 00:08:06 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2022-07-19 00:08:06 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2022-07-19 00:08:06 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2022-07-19 00:08:07 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2022-07-19 00:08:07 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2022-07-19 00:08:07 --> 404 Page Not Found: News/wp-includes
+ERROR - 2022-07-19 00:08:07 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2022-07-19 00:08:07 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2022-07-19 00:08:07 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2022-07-19 00:08:08 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2022-07-19 00:08:08 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2022-07-19 00:08:08 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2022-07-19 00:08:08 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2022-07-19 00:08:08 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2022-07-19 00:08:09 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2022-07-19 12:42:58 --> 404 Page Not Found: Wp-admin/install.php
+ERROR - 2022-07-19 12:43:06 --> 404 Page Not Found: Wp/wp-admin
+ERROR - 2022-07-19 12:43:13 --> 404 Page Not Found: New/wp-admin
+ERROR - 2022-07-19 12:43:20 --> 404 Page Not Found: Old/wp-admin
+ERROR - 2022-07-19 12:43:29 --> 404 Page Not Found: Wordpress/wp-admin
+ERROR - 2022-07-19 12:43:36 --> 404 Page Not Found: Test/wp-admin
+ERROR - 2022-07-19 12:43:43 --> 404 Page Not Found: Blog/wp-admin
+ERROR - 2022-07-19 12:43:51 --> 404 Page Not Found: Cms/wp-admin
+ERROR - 2022-07-19 12:43:58 --> 404 Page Not Found: Web/wp-admin
+ERROR - 2022-07-19 12:44:05 --> 404 Page Not Found: Backup/wp-admin
+ERROR - 2022-07-19 12:44:14 --> 404 Page Not Found: Site/wp-admin
+ERROR - 2022-07-19 12:44:21 --> 404 Page Not Found: Oldsite/wp-admin
+ERROR - 2022-07-19 18:18:12 --> 404 Page Not Found: Env/index
+ERROR - 2022-07-19 18:18:16 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2022-07-19 21:27:18 --> 404 Page Not Found: Wp-loginphp/index

@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-08-13 01:34:58 --> 404 Page Not Found: Simplephp/index
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Feed/index
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2023-08-13 16:26:13 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2023-08-13 21:54:06 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2023-08-13 21:54:06 --> 404 Page Not Found: Feed/index
+ERROR - 2023-08-13 21:54:06 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2023-08-13 21:54:06 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2023-08-13 21:54:06 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2023-08-13 21:54:06 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2023-08-13 21:54:06 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2023-08-13 21:54:06 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2023-08-13 21:54:06 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2023-08-13 21:54:07 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2023-08-13 21:54:07 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2023-08-13 21:54:07 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2023-08-13 21:54:07 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2023-08-13 21:54:07 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2023-08-13 21:54:07 --> 404 Page Not Found: Cms/wp-includes

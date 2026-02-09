@@ -1,0 +1,1 @@
+<h3 style="color:#575A5B;"><?php echo 'Email Template >>'.$email_templates_details->purpose;?></h3><?php echo $email_templates_details->message;?>

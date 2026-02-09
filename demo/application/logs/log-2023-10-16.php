@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-10-16 05:21:01 --> 404 Page Not Found: Alfa-rexphp7/index
+ERROR - 2023-10-16 05:21:07 --> 404 Page Not Found: Alfanewphp/index
+ERROR - 2023-10-16 05:21:14 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-10-16 05:21:22 --> 404 Page Not Found: Wp-admin/js
+ERROR - 2023-10-16 05:21:33 --> 404 Page Not Found: Wp-pphp7/index
+ERROR - 2023-10-16 05:21:36 --> 404 Page Not Found: Wp-admin/repeater.php
+ERROR - 2023-10-16 05:21:40 --> 404 Page Not Found: Wp-includes/repeater.php
+ERROR - 2023-10-16 05:21:43 --> 404 Page Not Found: Wp-content/repeater.php
+ERROR - 2023-10-16 05:21:53 --> 404 Page Not Found: Wsoyanzphp/index
+ERROR - 2023-10-16 05:21:56 --> 404 Page Not Found: Yanzphp/index
+ERROR - 2023-10-16 05:21:59 --> 404 Page Not Found: Wp-admin/js
+ERROR - 2023-10-16 05:22:04 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-10-16 05:22:05 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-10-16 05:22:08 --> 404 Page Not Found: Cache-compatphp/index
+ERROR - 2023-10-16 05:22:13 --> 404 Page Not Found: Ajax-actionsphp/index
+ERROR - 2023-10-16 05:22:21 --> 404 Page Not Found: Wp-admin/ajax-actions.php
+ERROR - 2023-10-16 05:22:27 --> 404 Page Not Found: Wp-consarphp/index
+ERROR - 2023-10-16 05:22:36 --> 404 Page Not Found: Repeaterphp/index
+ERROR - 2023-10-16 05:22:38 --> 404 Page Not Found: Admin-postphp/index
+ERROR - 2023-10-16 05:22:41 --> 404 Page Not Found: Wp-admin/maint
+ERROR - 2023-10-16 05:22:48 --> 404 Page Not Found: Wp-admin/dropdown.php
+ERROR - 2023-10-16 05:22:57 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2023-10-16 05:23:00 --> 404 Page Not Found: Dropdownphp/index
+ERROR - 2023-10-16 05:23:06 --> 404 Page Not Found: Aboutphp/index
+ERROR - 2023-10-16 05:23:13 --> 404 Page Not Found: Adminphp/index
+ERROR - 2023-10-16 05:23:17 --> 404 Page Not Found: Aboutphp7/index
+ERROR - 2023-10-16 09:31:27 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-10-16 09:31:32 --> 404 Page Not Found: Sitemapxmlgz/index
+ERROR - 2023-10-16 10:26:28 --> 404 Page Not Found: Sitemapxmlgz/index
+ERROR - 2023-10-16 19:09:02 --> 404 Page Not Found: Wp-loginphp/index

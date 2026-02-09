@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-11-02 01:21:10 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-02 01:50:23 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-02 05:40:16 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:40:16 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:40:16 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:40:16 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:41:06 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:41:06 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:41:08 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:41:51 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:41:51 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:41:52 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:41:52 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:42:37 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:42:37 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:42:38 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:42:38 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:43:25 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:43:25 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:43:26 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 05:43:27 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-11-02 07:57:55 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2024-11-02 07:57:59 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2024-11-02 07:57:59 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2024-11-02 20:58:05 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-11-02 21:15:40 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-02 21:58:34 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-11-02 22:18:51 --> 404 Page Not Found: Env/index

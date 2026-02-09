@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-02-03 01:42:11 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-02-03 04:12:11 --> 404 Page Not Found: Env/index
+ERROR - 2024-02-03 04:12:11 --> 404 Page Not Found: Public/.env
+ERROR - 2024-02-03 04:12:11 --> 404 Page Not Found: App/.env
+ERROR - 2024-02-03 04:12:12 --> 404 Page Not Found: Core/.env
+ERROR - 2024-02-03 04:12:12 --> 404 Page Not Found: Vendor/.env
+ERROR - 2024-02-03 04:12:12 --> 404 Page Not Found: Lib/.env
+ERROR - 2024-02-03 04:12:13 --> 404 Page Not Found: Lab/.env
+ERROR - 2024-02-03 04:12:13 --> 404 Page Not Found: Cronlab/.env
+ERROR - 2024-02-03 04:12:13 --> 404 Page Not Found: Cron/.env
+ERROR - 2024-02-03 04:12:14 --> 404 Page Not Found: Core/app
+ERROR - 2024-02-03 04:12:14 --> 404 Page Not Found: Core/Database
+ERROR - 2024-02-03 04:12:14 --> 404 Page Not Found: Database/.env
+ERROR - 2024-02-03 04:12:15 --> 404 Page Not Found: Config/.env
+ERROR - 2024-02-03 04:12:15 --> 404 Page Not Found: Assets/.env
+ERROR - 2024-02-03 04:12:15 --> 404 Page Not Found: Apps/.env
+ERROR - 2024-02-03 04:12:16 --> 404 Page Not Found: Uploads/.env
+ERROR - 2024-02-03 04:12:16 --> 404 Page Not Found: Sitemaps/.env
+ERROR - 2024-02-03 04:12:16 --> 404 Page Not Found: Site/.env
+ERROR - 2024-02-03 04:12:17 --> 404 Page Not Found: admin/Env/index
+ERROR - 2024-02-03 04:12:17 --> 404 Page Not Found: Web/.env
+ERROR - 2024-02-03 04:12:17 --> 404 Page Not Found: En/.env
+ERROR - 2024-02-03 04:12:18 --> 404 Page Not Found: Tools/.env
+ERROR - 2024-02-03 04:12:18 --> 404 Page Not Found: V1/.env
+ERROR - 2024-02-03 04:12:18 --> 404 Page Not Found: Administrator/.env
+ERROR - 2024-02-03 04:12:19 --> 404 Page Not Found: Laravel/.env
+ERROR - 2024-02-03 04:12:19 --> 404 Page Not Found: Prod/.env
+ERROR - 2024-02-03 10:17:58 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-02-03 14:02:57 --> 404 Page Not Found: Faviconico/index

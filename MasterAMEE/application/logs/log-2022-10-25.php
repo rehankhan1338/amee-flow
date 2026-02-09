@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-10-25 11:21:52 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-25 13:25:49 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-25 13:25:53 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-25 18:35:27 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-25 18:35:28 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-10-25 18:35:29 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-10-25 18:35:30 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-10-25 22:20:02 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2022-10-25 22:20:04 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2022-10-25 22:20:05 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2022-10-25 22:20:06 --> 404 Page Not Found: Awsyml/index
+ERROR - 2022-10-25 22:20:07 --> 404 Page Not Found: Envbak/index
+ERROR - 2022-10-25 22:20:08 --> 404 Page Not Found: Infophp/index
+ERROR - 2022-10-25 22:20:09 --> 404 Page Not Found: Aws/credentials
+ERROR - 2022-10-25 22:20:10 --> 404 Page Not Found: Config/aws.yml
+ERROR - 2022-10-25 22:20:13 --> 404 Page Not Found: Configjs/index
+ERROR - 2022-10-25 22:30:45 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2022-10-25 22:30:46 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2022-10-25 22:30:47 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2022-10-25 22:30:48 --> 404 Page Not Found: Awsyml/index
+ERROR - 2022-10-25 22:30:49 --> 404 Page Not Found: Envbak/index
+ERROR - 2022-10-25 22:30:51 --> 404 Page Not Found: Infophp/index
+ERROR - 2022-10-25 22:30:52 --> 404 Page Not Found: Aws/credentials
+ERROR - 2022-10-25 22:30:53 --> 404 Page Not Found: Config/aws.yml
+ERROR - 2022-10-25 22:30:55 --> 404 Page Not Found: Configjs/index
+ERROR - 2022-10-25 23:34:14 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2022-10-25 23:34:15 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2022-10-25 23:34:16 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2022-10-25 23:34:17 --> 404 Page Not Found: Awsyml/index
+ERROR - 2022-10-25 23:34:19 --> 404 Page Not Found: Envbak/index
+ERROR - 2022-10-25 23:34:19 --> 404 Page Not Found: Infophp/index
+ERROR - 2022-10-25 23:34:21 --> 404 Page Not Found: Aws/credentials
+ERROR - 2022-10-25 23:34:22 --> 404 Page Not Found: Config/aws.yml
+ERROR - 2022-10-25 23:34:24 --> 404 Page Not Found: Configjs/index

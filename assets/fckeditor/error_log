@@ -1,0 +1,15 @@
+[07-Oct-2022 16:38:34 UTC] PHP Warning:  include(assets/fckeditor/fckeditor.php): failed to open stream: No such file or directory in /home/secondw6/public_html/domains/amee/assets/fckeditor/code_smpl.php on line 2
+[07-Oct-2022 16:38:34 UTC] PHP Warning:  include(): Failed opening 'assets/fckeditor/fckeditor.php' for inclusion (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/secondw6/public_html/domains/amee/assets/fckeditor/code_smpl.php on line 2
+[07-Oct-2022 16:38:34 UTC] PHP Fatal error:  Uncaught Error: Class 'FCKeditor' not found in /home/secondw6/public_html/domains/amee/assets/fckeditor/code_smpl.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/secondw6/public_html/domains/amee/assets/fckeditor/code_smpl.php on line 4
+[07-Oct-2022 16:40:12 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FCKeditor has a deprecated constructor in /home/secondw6/public_html/domains/amee/assets/fckeditor/fckeditor_php4.php on line 74
+[24-Jun-2025 08:33:06 America/Chicago] PHP Warning:  include(assets/fckeditor/fckeditor.php): failed to open stream: No such file or directory in /home/secondw6/public_html/domains/amee/assets/fckeditor/code_smpl.php on line 2
+[24-Jun-2025 08:33:06 America/Chicago] PHP Warning:  include(assets/fckeditor/fckeditor.php): failed to open stream: No such file or directory in /home/secondw6/public_html/domains/amee/assets/fckeditor/code_smpl.php on line 2
+[24-Jun-2025 08:33:06 America/Chicago] PHP Warning:  include(): Failed opening 'assets/fckeditor/fckeditor.php' for inclusion (include_path='.:/opt/remi/php74/root/usr/share/pear:/opt/remi/php74/root/usr/share/php:/usr/share/pear:/usr/share/php') in /home/secondw6/public_html/domains/amee/assets/fckeditor/code_smpl.php on line 2
+[24-Jun-2025 08:33:06 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'FCKeditor' not found in /home/secondw6/public_html/domains/amee/assets/fckeditor/code_smpl.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/secondw6/public_html/domains/amee/assets/fckeditor/code_smpl.php on line 4
+[24-Jun-2025 08:33:07 America/Chicago] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FCKeditor has a deprecated constructor in /home/secondw6/public_html/domains/amee/assets/fckeditor/fckeditor_php4.php on line 74

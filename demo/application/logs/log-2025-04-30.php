@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-04-30 11:47:45 --> 404 Page Not Found: Wpphp/index
+ERROR - 2025-04-30 13:43:31 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2025-04-30 13:43:32 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-04-30 13:43:32 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-04-30 13:43:32 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-04-30 13:43:32 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2025-04-30 13:43:32 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-04-30 13:43:33 --> 404 Page Not Found: News/wp-includes
+ERROR - 2025-04-30 13:43:33 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2025-04-30 13:43:33 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2025-04-30 13:43:33 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2025-04-30 13:43:33 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-04-30 13:43:33 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-04-30 13:43:33 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2025-04-30 13:43:34 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2025-04-30 13:43:34 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-04-30 13:43:34 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-04-30 13:43:34 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2025-04-30 15:54:38 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:54:38 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:54:38 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:54:38 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:54:38 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:54:40 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:55:26 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:55:27 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:55:28 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:55:28 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:56:18 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:56:18 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:56:18 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:56:18 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:56:20 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 15:56:22 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2025-04-30 21:28:17 --> 404 Page Not Found: Siteheadsphp/index

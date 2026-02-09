@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-01-01 21:39:18 --> 404 Page Not Found: Kcfinder/upload.php
+ERROR - 2023-01-01 21:39:22 --> 404 Page Not Found: Asset/kcfinder
+ERROR - 2023-01-01 21:39:26 --> 404 Page Not Found: Assets/kcfinder
+ERROR - 2023-01-01 21:39:29 --> 404 Page Not Found: Js/kcfinder
+ERROR - 2023-01-01 21:39:33 --> 404 Page Not Found: Assets/js
+ERROR - 2023-01-01 21:39:36 --> 404 Page Not Found: Assets/plugins
+ERROR - 2023-01-01 21:39:39 --> 404 Page Not Found: Plugins/kcfinder
+ERROR - 2023-01-01 21:39:42 --> 404 Page Not Found: Filemanager/dialog.php
+ERROR - 2023-01-01 21:39:46 --> 404 Page Not Found: Assets/filemanager
+ERROR - 2023-01-01 21:39:50 --> 404 Page Not Found: Assets/plugins
+ERROR - 2023-01-01 21:39:54 --> 404 Page Not Found: Phpformbuilder/plugins
+ERROR - 2023-01-01 21:39:57 --> 404 Page Not Found: Assets/tinymce
+ERROR - 2023-01-01 21:40:00 --> 404 Page Not Found: Scripts/filemanager
+ERROR - 2023-01-01 21:40:04 --> 404 Page Not Found: admin/Filemanager/dialog.php
+ERROR - 2023-01-01 21:40:07 --> 404 Page Not Found: Assets/plugins
+ERROR - 2023-01-01 21:40:10 --> 404 Page Not Found: Assets/elfinder
+ERROR - 2023-01-01 21:40:13 --> 404 Page Not Found: Assets/scripts
+ERROR - 2023-01-01 21:40:16 --> 404 Page Not Found: Assets/admin
+ERROR - 2023-01-01 21:40:20 --> 404 Page Not Found: Js/tinymce4
+ERROR - 2023-01-01 21:40:22 --> 404 Page Not Found: Tinymce/filemanager
+ERROR - 2023-01-01 21:40:25 --> 404 Page Not Found: Filemanager/filemanager
+ERROR - 2023-01-01 21:40:27 --> 404 Page Not Found: Assets/admin
+ERROR - 2023-01-01 21:40:29 --> 404 Page Not Found: Tinymce/plugins
+ERROR - 2023-01-01 21:40:31 --> 404 Page Not Found: Env/index
+ERROR - 2023-01-01 21:40:33 --> 404 Page Not Found: Wp/index
+ERROR - 2023-01-01 21:40:35 --> 404 Page Not Found: Wordpress/index
+ERROR - 2023-01-01 21:40:38 --> 404 Page Not Found: Blog/index
+ERROR - 2023-01-01 21:40:40 --> 404 Page Not Found: Demo/index
+ERROR - 2023-01-01 21:40:42 --> 404 Page Not Found: New/index
+ERROR - 2023-01-01 21:40:44 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2023-01-01 21:40:49 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2023-01-01 21:40:52 --> 404 Page Not Found: Timthumbphp/index
+ERROR - 2023-01-01 21:40:54 --> 404 Page Not Found: Thumbphp/index
+ERROR - 2023-01-01 21:40:56 --> 404 Page Not Found: ALFA_DATA/alfacgiapi
+ERROR - 2023-01-01 21:40:57 --> 404 Page Not Found: Alfacgiapi/perl.alfa

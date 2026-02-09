@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-02-22 06:56:32 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-02-22 17:47:19 --> 404 Page Not Found: Env/index
+ERROR - 2025-02-22 17:47:20 --> 404 Page Not Found: Api/.env
+ERROR - 2025-02-22 17:47:21 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2025-02-22 17:47:21 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2025-02-22 17:47:22 --> 404 Page Not Found: Envsave/index
+ERROR - 2025-02-22 17:47:23 --> 404 Page Not Found: Envprod/index
+ERROR - 2025-02-22 17:47:24 --> 404 Page Not Found: Login/.env
+ERROR - 2025-02-22 17:47:24 --> 404 Page Not Found: Local/.env
+ERROR - 2025-02-22 17:47:25 --> 404 Page Not Found: admin/Env/index
+ERROR - 2025-02-22 17:47:25 --> 404 Page Not Found: Dev/.env
+ERROR - 2025-02-22 17:47:26 --> 404 Page Not Found: Application/.env
+ERROR - 2025-02-22 17:47:27 --> 404 Page Not Found: Php_infophp/index
+ERROR - 2025-02-22 17:47:28 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2025-02-22 17:47:28 --> 404 Page Not Found: Config/.env
+ERROR - 2025-02-22 17:47:29 --> 404 Page Not Found: Backend/.env
+ERROR - 2025-02-22 17:47:29 --> 404 Page Not Found: Docker/.env
+ERROR - 2025-02-22 21:45:11 --> 404 Page Not Found: Wp/index
+ERROR - 2025-02-22 21:45:15 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-02-22 21:45:19 --> 404 Page Not Found: Csun/index
+ERROR - 2025-02-22 21:45:22 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-02-22 21:45:24 --> 404 Page Not Found: Old/index
+ERROR - 2025-02-22 21:45:26 --> 404 Page Not Found: Backup/index
+ERROR - 2025-02-22 21:45:29 --> 404 Page Not Found: New/index
+ERROR - 2025-02-22 21:45:31 --> 404 Page Not Found: Test/index
+ERROR - 2025-02-22 21:45:32 --> 404 Page Not Found: Wp/index
+ERROR - 2025-02-22 21:45:34 --> 404 Page Not Found: Temp/index
+ERROR - 2025-02-22 21:45:37 --> 404 Page Not Found: Blog/index
+ERROR - 2025-02-22 22:43:15 --> 404 Page Not Found: Wp-configphpbackup/index
+ERROR - 2025-02-22 22:43:15 --> 404 Page Not Found: Wp-configphpold/index
+ERROR - 2025-02-22 22:43:15 --> 404 Page Not Found: Wp-configphpswp/index
+ERROR - 2025-02-22 22:43:15 --> 404 Page Not Found: Wp-configphpbak/index
+ERROR - 2025-02-22 22:43:15 --> 404 Page Not Found: Wp-configphp~/index
+ERROR - 2025-02-22 22:43:15 --> 404 Page Not Found: Wp-configphpsave/index

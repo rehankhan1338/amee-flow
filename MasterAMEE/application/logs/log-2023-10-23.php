@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-10-23 09:51:01 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:01 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:03 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:03 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:13 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:14 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:14 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:15 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:26 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:26 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:26 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:26 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:38 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:38 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:40 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:40 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:50 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:50 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:50 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 09:51:50 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-23 13:43:30 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-10-23 16:37:44 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-10-23 19:52:17 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-10-23 20:39:07 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-10-23 20:39:07 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-10-23 20:39:07 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-10-23 20:39:09 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-10-23 21:48:40 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-10-23 21:48:40 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-10-23 21:48:41 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-10-23 21:48:43 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-10-23 23:56:03 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-10-23 23:56:03 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-10-23 23:56:03 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets

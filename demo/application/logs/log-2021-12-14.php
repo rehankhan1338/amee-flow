@@ -1,0 +1,46 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-12-14 02:28:40 --> Query error: Unknown column 'last_modification_date' in 'field list' - Invalid query: INSERT INTO `demo_tickets_conversations` (`ticket_id`, `msg_by`, `department_id`, `problem_msg`, `msg_date`, `msg_time`, `last_modification_date`) VALUES ('1', '0', '4', '<p>test&nbsp;</p>\r\n', 1639465200, 1639474120, 1639474120)
+ERROR - 2021-12-14 14:43:39 --> 404 Page Not Found: Assignment_raters/preview
+ERROR - 2021-12-14 18:10:08 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:08 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:09 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:09 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:10 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:10 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:11 --> 404 Page Not Found: Ccaefphp/index
+ERROR - 2021-12-14 18:10:12 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:12 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:13 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:13 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:14 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:15 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:15 --> 404 Page Not Found: Ccaefphp/index
+ERROR - 2021-12-14 18:10:16 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:16 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:17 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:17 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:18 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:18 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:19 --> 404 Page Not Found: Ccaefphp/index
+ERROR - 2021-12-14 18:10:19 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:20 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:20 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:21 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:21 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:22 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:22 --> 404 Page Not Found: Ccaefphp/index
+ERROR - 2021-12-14 18:10:23 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:23 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:24 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:24 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:25 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:25 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:26 --> 404 Page Not Found: Ccaeftxt/index
+ERROR - 2021-12-14 18:10:26 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:27 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:27 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:28 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:28 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:29 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2021-12-14 18:10:29 --> 404 Page Not Found: Ccaeftxt/index

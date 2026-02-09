@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-05-04 02:33:22 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-05-04 02:33:23 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-05-04 03:23:14 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-04 03:27:16 --> 404 Page Not Found: Wp-content/wp-cron.php
+ERROR - 2024-05-04 03:27:47 --> 404 Page Not Found: Wp-cronphp/index
+ERROR - 2024-05-04 03:28:34 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-05-04 03:28:57 --> 404 Page Not Found: Wp-content/uploads
+ERROR - 2024-05-04 03:29:34 --> 404 Page Not Found: Wp-includes/wp-cron.php
+ERROR - 2024-05-04 03:30:44 --> 404 Page Not Found: Well-known/wp-cron.php
+ERROR - 2024-05-04 03:31:14 --> 404 Page Not Found: Wp-admin/wp-cron.php
+ERROR - 2024-05-04 03:31:37 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-05-04 05:22:03 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-05-04 06:48:33 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-05-04 08:11:21 --> 404 Page Not Found: Wordpress/index
+ERROR - 2024-05-04 08:11:22 --> 404 Page Not Found: Wp/index
+ERROR - 2024-05-04 08:11:22 --> 404 Page Not Found: Bc/index
+ERROR - 2024-05-04 08:11:23 --> 404 Page Not Found: Bk/index
+ERROR - 2024-05-04 08:11:23 --> 404 Page Not Found: Backup/index
+ERROR - 2024-05-04 08:11:24 --> 404 Page Not Found: Old/index
+ERROR - 2024-05-04 08:11:24 --> 404 Page Not Found: New/index
+ERROR - 2024-05-04 08:11:25 --> 404 Page Not Found: Main/index
+ERROR - 2024-05-04 09:35:34 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-05-04 09:53:13 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-05-04 13:37:56 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-05-04 15:10:52 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-04 18:09:54 --> 404 Page Not Found: Env/index
+ERROR - 2024-05-04 18:09:56 --> 404 Page Not Found: Env/index
+ERROR - 2024-05-04 18:10:01 --> 404 Page Not Found: Env/index
+ERROR - 2024-05-04 20:01:48 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-04 22:54:06 --> 404 Page Not Found: Faviconico/index

@@ -1,0 +1,103 @@
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:"Poppins", sans-serif;font-weight:400;overflow-x:hidden;overflow-y:auto; font-size:15px;height:100%;}
+b, strong{ font-weight: 600;}
+a{cursor: pointer;}
+label.error{color:#ff0000;}
+.pro_stk_tbl a{ margin-bottom:2px;}
+.fmc{font-weight: 500;font-size: 24px;letter-spacing: 0.5px;}
+.plpr{padding-left:5px; padding-right:5px;}
+.hr{margin-top: 15px;margin-bottom: 10px;border: 0;border-top: 1px dashed #ddd;}
+.fw600{font-weight:500;} 
+.login_err_msg .alert-danger{margin: 0; padding:8px 10px;}
+.fs15{font-size: 15px;}
+.fs16{font-size: 16px;}
+.fs17{font-size: 17px;}
+.fs18{font-size: 18px;}
+.lh25{ line-height: 25px;}
+.potpn{padding: 8px 20px; margin:5px 3px;background: #f5f5f5;border: 1px solid #555;border-radius: 35px;font-weight: 500; cursor: pointer;}
+.modal-header, .lgtBlue-mh{ background-color: #71c7ec;}
+.btn{ font-weight: 400; cursor: pointer; font-size: 14px;}
+.btn-primary{color:#fff;background-color:#40516C;border-color:#40516C}
+.btn-primary.focus,.btn-primary:focus{color:#fff;background-color:#485b79;border-color:#485b79;box-shadow:0 0 0 .25rem rgba(64, 81, 108,.5);}
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {    box-shadow: 0 0 0 .25rem rgba(64, 81, 108, .5);}
+.btn-primary:hover{color:#fff;background-color:#485b79;border-color:#485b79}
+.btn-primary.active,.btn-primary:active,.open>.dropdown-toggle.btn-primary{color:#fff;background-color:#485b79;border-color:#485b79}
+.btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.dropdown-toggle.btn-primary.focus,.open>.dropdown-toggle.btn-primary:focus,.open>.dropdown-toggle.btn-primary:hover{color:#fff;background-color:#485b79;border-color:#485b79}
+.btn-primary.active,.btn-primary:active,.open>.dropdown-toggle.btn-primary{background-image:none}
+.btn-primary.disabled.focus,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{background-color:#485b79;border-color:#485b79}
+
+.modal-content .btn-primary{color:#212529;background-color:#71c7ec;border-color:#71c7ec; font-weight: 500;}
+.modal-content .btn-primary.focus,.modal-content .btn-primary:focus{color:#212529;background-color:#71c7ec;border-color:#71c7ec;box-shadow:0 0 0 .25rem rgba(113, 199, 236,.5);}
+.modal-content .btn-check:active+.btn-primary:focus, .modal-content .btn-check:checked+.btn-primary:focus, .modal-content .btn-primary.active:focus, .modal-content .btn-primary:active:focus, .modal-content .show>.btn-primary.dropdown-toggle:focus {    box-shadow: 0 0 0 .25rem rgba(113, 199, 236, .5);}
+.modal-content .btn-primary:hover{color:#212529;background-color:#71c7ec;border-color:#71c7ec}
+.modal-content .btn-primary.active,.modal-content .btn-primary:active,.modal-content .open>.dropdown-toggle.btn-primary{color:#212529;background-color:#71c7ec;border-color:#71c7ec}
+.modal-content .btn-primary.active.focus,.modal-content .btn-primary.active:focus,.modal-content .btn-primary.active:hover,.modal-content .btn-primary:active.focus,.modal-content .btn-primary:active:focus,.modal-content .btn-primary:active:hover,.modal-content .open>.dropdown-toggle.btn-primary.focus,.modal-content .open>.dropdown-toggle.btn-primary:focus,.modal-content .open>.dropdown-toggle.btn-primary:hover{color:#212529;background-color:#71c7ec;border-color:#71c7ec}
+.modal-content .btn-primary.active,.modal-content .btn-primary:active,.modal-content .open>.dropdown-toggle.btn-primary{background-image:none}
+.modal-content .btn-primary.disabled.focus,.modal-content .btn-primary.disabled:focus,.modal-content .btn-primary.disabled:hover,.modal-content .btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{background-color:#71c7ec;border-color:#71c7ec}
+
+
+.hero {background: linear-gradient(45deg, #485b79 25%, #e18125 100%);padding: 100px 20px;text-align: center; color:#fff;}
+.hero h1 {font-size: 3rem;font-weight: 600;}
+.lead{    font-size: 1.55rem;font-weight: 500;}
+.bg-light{background-color: rgba(var(--bs-gray-300), var(--bs-gray-300)) !important;}
+.cta-btn {margin-top: 20px;}
+.footer {background-color: #40516C;color: white;padding: 25px 0;}
+.navbar-light .navbar-nav .nav-link { color:rgba(0,0,0,0.65);   font-weight: 500;font-size: 16px;}
+.list-group-flush>.list-group-item{ border-width:0}
+.list-group-item {
+    position: relative;
+    display: list-item;
+    padding: .5rem 1rem;
+    color: #212529;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .125);
+    font-size: 16px;
+    font-weight: 400;
+    list-style-type: disclosure-closed;
+    list-style-position: inside;
+}
+.btn {font-weight: 500;cursor: pointer;font-size: 15px;padding: 6px 40px;}  
+.img{border: 6px solid #40516C;padding: 5px;border-radius: 10px;}
+
+.priceCalSec {
+      background: #f4f4f4;
+      padding: 20px;
+      max-width: 45%;
+      margin: auto;
+    }    
+    .priceCalSec .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .priceCalSec .form-group {
+      margin-bottom: 15px;
+    }
+    .priceCalSec .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+      font-size:17px;
+    }
+    .priceCalSec input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size:18px;
+    }
+    .priceCalSec .total {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      font-weight: 500;
+      background:linear-gradient(40deg, #e18125 2%, #485b79 100%);
+      color:#fff;padding: 10px 25px;
+        border-radius: 10px;
+    }
+    .priceCalSec .total label{
+        font-weight: 600;
+        font-size: 2.0rem;
+        text-align:right;
+        letter-spacing:0.5px;
+    }

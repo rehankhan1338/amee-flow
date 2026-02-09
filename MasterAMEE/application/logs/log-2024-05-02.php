@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-05-02 04:37:41 --> 404 Page Not Found: Env/index
+ERROR - 2024-05-02 04:37:43 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2024-05-02 09:48:37 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-05-02 09:48:37 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-05-02 10:53:17 --> 404 Page Not Found: Wp-content/wp-cron.php
+ERROR - 2024-05-02 10:53:31 --> 404 Page Not Found: Wp-cronphp/index
+ERROR - 2024-05-02 10:54:06 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-05-02 10:54:22 --> 404 Page Not Found: Wp-content/uploads
+ERROR - 2024-05-02 10:54:41 --> 404 Page Not Found: Wp-includes/wp-cron.php
+ERROR - 2024-05-02 10:55:17 --> 404 Page Not Found: Well-known/wp-cron.php
+ERROR - 2024-05-02 10:55:35 --> 404 Page Not Found: Wp-admin/wp-cron.php
+ERROR - 2024-05-02 10:55:52 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-05-02 17:36:00 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-05-02 19:48:53 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-05-02 19:48:53 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-05-02 19:48:53 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-05-02 19:48:53 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-05-02 19:49:05 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-05-02 19:49:05 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-05-02 19:49:06 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-05-02 19:49:07 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-05-02 22:02:53 --> 404 Page Not Found: Wp-content/wp-cron.php
+ERROR - 2024-05-02 22:03:20 --> 404 Page Not Found: Wp-cronphp/index
+ERROR - 2024-05-02 22:04:05 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-05-02 22:04:20 --> 404 Page Not Found: Wp-content/uploads
+ERROR - 2024-05-02 22:04:35 --> 404 Page Not Found: Wp-includes/wp-cron.php
+ERROR - 2024-05-02 22:05:10 --> 404 Page Not Found: Well-known/wp-cron.php

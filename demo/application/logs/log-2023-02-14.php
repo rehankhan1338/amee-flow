@@ -1,0 +1,34 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-02-14 06:53:46 --> 404 Page Not Found: Wordpress/index
+ERROR - 2023-02-14 06:53:46 --> 404 Page Not Found: Wp/index
+ERROR - 2023-02-14 06:53:46 --> 404 Page Not Found: Bc/index
+ERROR - 2023-02-14 06:53:46 --> 404 Page Not Found: Bk/index
+ERROR - 2023-02-14 06:53:46 --> 404 Page Not Found: Backup/index
+ERROR - 2023-02-14 06:53:46 --> 404 Page Not Found: Old/index
+ERROR - 2023-02-14 06:53:46 --> 404 Page Not Found: New/index
+ERROR - 2023-02-14 06:53:46 --> 404 Page Not Found: Main/index
+ERROR - 2023-02-14 07:21:18 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-02-14 07:21:19 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-02-14 07:21:21 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-02-14 07:21:21 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-02-14 07:21:22 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2023-02-14 07:21:23 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2023-02-14 07:21:24 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-02-14 07:21:25 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-02-14 07:21:29 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2023-02-14 07:21:30 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2023-02-14 07:21:31 --> 404 Page Not Found: Wp-includes/embed-wp.php
+ERROR - 2023-02-14 07:21:32 --> 404 Page Not Found: Wp-includes/embed-wp.php
+ERROR - 2023-02-14 07:21:34 --> 404 Page Not Found: Wp-admin/includes
+ERROR - 2023-02-14 07:21:34 --> 404 Page Not Found: Wp-admin/includes
+ERROR - 2023-02-14 07:21:36 --> 404 Page Not Found: Wp-includes/pomo
+ERROR - 2023-02-14 07:21:37 --> 404 Page Not Found: Wp-includes/pomo
+ERROR - 2023-02-14 07:21:38 --> 404 Page Not Found: Wp-includes/pomo
+ERROR - 2023-02-14 07:21:39 --> 404 Page Not Found: Wp-includes/pomo
+ERROR - 2023-02-14 07:21:40 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2023-02-14 07:21:41 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2023-02-14 07:21:42 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2023-02-14 07:21:43 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2023-02-14 07:21:44 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-02-14 07:21:45 --> 404 Page Not Found: Wp-content/plugins

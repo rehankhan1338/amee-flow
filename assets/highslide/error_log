@@ -1,0 +1,8 @@
+[07-Oct-2022 16:43:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/secondw6/public_html/domains/amee/assets/highslide/diary.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/secondw6/public_html/domains/amee/assets/highslide/diary.php on line 2
+[24-Jun-2025 08:32:48 America/Chicago] PHP Deprecated:  mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/secondw6/public_html/domains/amee/assets/highslide/diary.php on line 2
+[24-Jun-2025 08:32:48 America/Chicago] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/secondw6/public_html/domains/amee/assets/highslide/diary.php on line 2
+[24-Jun-2025 08:32:48 America/Chicago] PHP Warning:  mysql_query(): A link to the server could not be established in /home/secondw6/public_html/domains/amee/assets/highslide/diary.php on line 2
+[24-Jun-2025 08:32:48 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, bool given in /home/secondw6/public_html/domains/amee/assets/highslide/diary.php on line 3

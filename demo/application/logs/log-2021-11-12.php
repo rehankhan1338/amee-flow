@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-11-12 01:42:10 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 01:42:10 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 01:42:14 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 01:42:14 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 01:48:57 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 01:48:57 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 01:49:36 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 01:49:36 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 02:05:24 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 02:05:27 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 02:05:51 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 02:06:48 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 02:07:33 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 02:14:48 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 04:13:27 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 04:13:28 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 04:13:32 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 04:13:32 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 04:36:52 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 04:36:52 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 07:34:57 --> 404 Page Not Found: Hadersphp/index
+ERROR - 2021-11-12 07:34:59 --> 404 Page Not Found: Wp-content/mu-plugins
+ERROR - 2021-11-12 07:35:03 --> 404 Page Not Found: Wp-content/langar.php
+ERROR - 2021-11-12 07:35:04 --> 404 Page Not Found: Testphp/index
+ERROR - 2021-11-12 07:35:05 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2021-11-12 07:35:06 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2021-11-12 11:43:21 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 11:43:24 --> 404 Page Not Found: Assets/upload
+ERROR - 2021-11-12 22:25:00 --> 404 Page Not Found: Assets/frontend

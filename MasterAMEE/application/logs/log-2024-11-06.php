@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-11-06 00:08:10 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-06 01:58:42 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-06 03:40:33 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2024-11-06 03:40:34 --> 404 Page Not Found: Feed/index
+ERROR - 2024-11-06 03:40:34 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2024-11-06 03:40:34 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2024-11-06 03:40:34 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2024-11-06 03:40:35 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2024-11-06 03:40:35 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2024-11-06 03:40:35 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2024-11-06 03:40:35 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2024-11-06 03:40:36 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2024-11-06 03:40:36 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2024-11-06 03:40:36 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2024-11-06 03:40:36 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2024-11-06 03:40:37 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2024-11-06 03:40:37 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2024-11-06 04:22:06 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-06 07:27:27 --> 404 Page Not Found: Rest/V1
+ERROR - 2024-11-06 13:21:00 --> 404 Page Not Found: Wp-admin/setup-config.php
+ERROR - 2024-11-06 13:21:01 --> 404 Page Not Found: Wordpress/wp-admin
+ERROR - 2024-11-06 15:17:03 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-06 15:48:23 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-11-06 17:02:31 --> 404 Page Not Found: Git/config
+ERROR - 2024-11-06 18:44:57 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-06 20:16:19 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-06 21:25:51 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-06 23:46:02 --> 404 Page Not Found: Env/index

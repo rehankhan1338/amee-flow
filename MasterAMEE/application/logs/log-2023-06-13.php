@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-06-13 10:11:48 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:11:51 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:11:53 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2023-06-13 10:11:57 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2023-06-13 10:12:00 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:02 --> 404 Page Not Found: Wp-content/index.php
+ERROR - 2023-06-13 10:12:05 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:07 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:12 --> 404 Page Not Found: Wp-admin/x.php
+ERROR - 2023-06-13 10:12:15 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:17 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:19 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2023-06-13 10:12:21 --> 404 Page Not Found: 1975php/index
+ERROR - 2023-06-13 10:12:24 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:26 --> 404 Page Not Found: Wp-includes/wp-class.php
+ERROR - 2023-06-13 10:12:28 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:31 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:34 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:37 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:38 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-06-13 10:12:41 --> 404 Page Not Found: Wp-content/updates.php
+ERROR - 2023-06-13 11:21:16 --> 404 Page Not Found: Wordpress/index
+ERROR - 2023-06-13 11:21:19 --> 404 Page Not Found: Wp/index
+ERROR - 2023-06-13 11:21:21 --> 404 Page Not Found: Bc/index
+ERROR - 2023-06-13 11:21:23 --> 404 Page Not Found: Bk/index
+ERROR - 2023-06-13 11:21:24 --> 404 Page Not Found: Backup/index
+ERROR - 2023-06-13 11:21:25 --> 404 Page Not Found: Old/index
+ERROR - 2023-06-13 11:21:26 --> 404 Page Not Found: New/index
+ERROR - 2023-06-13 11:21:28 --> 404 Page Not Found: Main/index
+ERROR - 2023-06-13 17:46:41 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-06-13 18:10:02 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-06-13 19:59:42 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-06-13 21:30:18 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-06-13 23:22:00 --> 404 Page Not Found: Wp-loginphp/index

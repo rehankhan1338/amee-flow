@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-01-19 12:20:49 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-01-19 12:20:49 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-01-19 14:31:19 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-01-19 14:31:21 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2022-01-19 14:31:21 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2022-01-19 14:31:22 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2022-01-19 14:31:22 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2022-01-19 14:31:22 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2022-01-19 14:31:23 --> 404 Page Not Found: News/wp-includes
+ERROR - 2022-01-19 14:31:23 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2022-01-19 14:31:24 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2022-01-19 14:31:24 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2022-01-19 14:31:25 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2022-01-19 14:31:25 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2022-01-19 14:31:25 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2022-01-19 14:31:26 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2022-01-19 14:31:26 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2022-01-19 14:31:27 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2022-01-19 14:31:27 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2022-01-19 17:53:17 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-01-19 17:53:28 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-01-19 17:53:41 --> 404 Page Not Found: Sites/default
+ERROR - 2022-01-19 17:53:52 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-01-19 17:54:06 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-01-19 17:54:17 --> 404 Page Not Found: Images/index
+ERROR - 2022-01-19 17:54:28 --> 404 Page Not Found: Files/index
+ERROR - 2022-01-19 20:34:42 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-01-19 20:34:43 --> 404 Page Not Found: Robotstxt/index

@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-12-18 00:52:17 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2025-12-18 00:52:17 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-12-18 00:52:17 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: News/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-12-18 00:52:18 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2025-12-18 15:47:19 --> 404 Page Not Found: Apps/index
+ERROR - 2025-12-18 15:47:19 --> 404 Page Not Found: Api/action
+ERROR - 2025-12-18 15:47:19 --> 404 Page Not Found: Api/actions
+ERROR - 2025-12-18 15:47:19 --> 404 Page Not Found: _next/data
+ERROR - 2025-12-18 19:11:41 --> 404 Page Not Found: Env/index
+ERROR - 2025-12-18 19:11:41 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2025-12-18 19:11:41 --> 404 Page Not Found: Vendor/laravel-filemanager
+ERROR - 2025-12-18 19:11:42 --> 404 Page Not Found: Public/vendor
+ERROR - 2025-12-18 19:11:42 --> 404 Page Not Found: _ignition/execute-solution
+ERROR - 2025-12-18 19:11:42 --> 404 Page Not Found: Public/_ignition
+ERROR - 2025-12-18 19:11:42 --> 404 Page Not Found: Git/config
+ERROR - 2025-12-18 21:35:25 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-12-18 21:35:25 --> 404 Page Not Found: Enhancecp/index
+ERROR - 2025-12-18 23:49:48 --> 404 Page Not Found: Env/index

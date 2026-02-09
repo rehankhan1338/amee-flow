@@ -1,0 +1,23 @@
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index\.php/ [NC]
+RewriteRule ^index\.php/(.*)$ /ameeflow/$1 [R=301,L]
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect non-www to www
+  RewriteCond %{HTTP_HOST} !^www\.
+  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # Redirect HTTP to HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # Hide index.php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php/$1 [L]
+
+  # Security
+  Options -Indexes
+  DirectoryIndex index.php
+</IfModule>

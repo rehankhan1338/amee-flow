@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-01-15 00:37:58 --> 404 Page Not Found: Git/config
+ERROR - 2024-01-15 07:21:18 --> 404 Page Not Found: Env/index
+ERROR - 2024-01-15 07:21:20 --> 404 Page Not Found: Env/index
+ERROR - 2024-01-15 07:21:26 --> 404 Page Not Found: Env/index
+ERROR - 2024-01-15 10:31:26 --> 404 Page Not Found: Wordpress/index
+ERROR - 2024-01-15 10:31:26 --> 404 Page Not Found: Wp/index
+ERROR - 2024-01-15 10:31:27 --> 404 Page Not Found: Bc/index
+ERROR - 2024-01-15 10:31:27 --> 404 Page Not Found: Bk/index
+ERROR - 2024-01-15 10:31:27 --> 404 Page Not Found: Backup/index
+ERROR - 2024-01-15 10:31:27 --> 404 Page Not Found: Old/index
+ERROR - 2024-01-15 10:31:28 --> 404 Page Not Found: New/index
+ERROR - 2024-01-15 10:31:28 --> 404 Page Not Found: Main/index
+ERROR - 2024-01-15 14:03:20 --> 404 Page Not Found: Well-known/index
+ERROR - 2024-01-15 14:03:38 --> 404 Page Not Found: Wp-content/uploads
+ERROR - 2024-01-15 14:03:54 --> 404 Page Not Found: Wp-includes/index
+ERROR - 2024-01-15 14:04:10 --> 404 Page Not Found: Wp-admin/index
+ERROR - 2024-01-15 14:04:24 --> 404 Page Not Found: Wp-content/index
+ERROR - 2024-01-15 14:04:42 --> 404 Page Not Found: Wp-content/upgrade
+ERROR - 2024-01-15 14:04:58 --> 404 Page Not Found: Well-knownold/index
+ERROR - 2024-01-15 15:01:11 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-01-15 17:23:01 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-01-15 21:09:04 --> 404 Page Not Found: Well-known/index
+ERROR - 2024-01-15 21:09:20 --> 404 Page Not Found: Wp-content/uploads
+ERROR - 2024-01-15 21:09:34 --> 404 Page Not Found: Env/index
+ERROR - 2024-01-15 21:09:36 --> 404 Page Not Found: Wp-includes/index
+ERROR - 2024-01-15 21:09:51 --> 404 Page Not Found: Wp-admin/index
+ERROR - 2024-01-15 21:10:06 --> 404 Page Not Found: Wp-content/index
+ERROR - 2024-01-15 21:10:21 --> 404 Page Not Found: Wp-content/upgrade
+ERROR - 2024-01-15 21:10:34 --> 404 Page Not Found: Well-knownold/index
+ERROR - 2024-01-15 22:04:33 --> 404 Page Not Found: Wp-loginphp/index

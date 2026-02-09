@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-02-02 01:12:13 --> 404 Page Not Found: Api/appsettings.json
+ERROR - 2025-02-02 02:11:12 --> 404 Page Not Found: Api/appsettings.json
+ERROR - 2025-02-02 04:44:44 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-02-02 07:17:44 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-02-02 10:07:11 --> 404 Page Not Found: Env/index
+ERROR - 2025-02-02 10:07:12 --> 404 Page Not Found: Api/.env
+ERROR - 2025-02-02 10:07:12 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2025-02-02 10:07:13 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2025-02-02 10:07:14 --> 404 Page Not Found: Envsave/index
+ERROR - 2025-02-02 10:07:14 --> 404 Page Not Found: Envprod/index
+ERROR - 2025-02-02 10:07:15 --> 404 Page Not Found: Login/.env
+ERROR - 2025-02-02 10:07:16 --> 404 Page Not Found: Local/.env
+ERROR - 2025-02-02 10:07:16 --> 404 Page Not Found: admin/Env/index
+ERROR - 2025-02-02 10:07:17 --> 404 Page Not Found: Dev/.env
+ERROR - 2025-02-02 10:07:18 --> 404 Page Not Found: Application/.env
+ERROR - 2025-02-02 10:07:18 --> 404 Page Not Found: Php_infophp/index
+ERROR - 2025-02-02 10:07:20 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2025-02-02 19:56:58 --> 404 Page Not Found: Env/index
+ERROR - 2025-02-02 19:56:58 --> 404 Page Not Found: Api/.env
+ERROR - 2025-02-02 19:56:59 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2025-02-02 19:57:00 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2025-02-02 19:57:01 --> 404 Page Not Found: Envsave/index
+ERROR - 2025-02-02 19:57:02 --> 404 Page Not Found: Envprod/index
+ERROR - 2025-02-02 19:57:02 --> 404 Page Not Found: Login/.env
+ERROR - 2025-02-02 19:57:03 --> 404 Page Not Found: Local/.env
+ERROR - 2025-02-02 19:57:04 --> 404 Page Not Found: admin/Env/index
+ERROR - 2025-02-02 19:57:05 --> 404 Page Not Found: Dev/.env
+ERROR - 2025-02-02 19:57:05 --> 404 Page Not Found: Application/.env
+ERROR - 2025-02-02 19:57:06 --> 404 Page Not Found: Php_infophp/index
+ERROR - 2025-02-02 19:57:07 --> 404 Page Not Found: _profiler/phpinfo

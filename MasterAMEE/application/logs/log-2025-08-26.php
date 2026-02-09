@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-08-26 05:49:37 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2025-08-26 05:49:39 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2025-08-26 05:49:40 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2025-08-26 05:49:41 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2025-08-26 10:08:55 --> 404 Page Not Found: Circleci/configs
+ERROR - 2025-08-26 10:08:55 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-08-26 10:09:48 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-08-26 10:27:23 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-08-26 10:27:23 --> 404 Page Not Found: Git/index
+ERROR - 2025-08-26 10:27:23 --> 404 Page Not Found: Git/config
+ERROR - 2025-08-26 10:27:24 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-08-26 10:29:57 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-08-26 11:05:40 --> 404 Page Not Found: Git/index
+ERROR - 2025-08-26 11:05:40 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-08-26 11:05:41 --> 404 Page Not Found: Git/config
+ERROR - 2025-08-26 11:05:42 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-08-26 11:05:43 --> 404 Page Not Found: Git/index
+ERROR - 2025-08-26 11:26:22 --> 404 Page Not Found: Git/HEAD
+ERROR - 2025-08-26 15:19:33 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2025-08-26 15:19:33 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2025-08-26 15:19:33 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2025-08-26 15:19:33 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2025-08-26 15:19:37 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2025-08-26 16:11:42 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-08-26 17:51:08 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-08-26 17:51:08 --> 404 Page Not Found: Old/index
+ERROR - 2025-08-26 20:16:23 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-08-26 20:16:23 --> 404 Page Not Found: Enhancecp/index
+ERROR - 2025-08-26 21:49:26 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-08-26 21:49:26 --> 404 Page Not Found: Enhancecp/index

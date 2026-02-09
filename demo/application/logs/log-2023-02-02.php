@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-02-02 10:15:06 --> 404 Page Not Found: Wp-admin/install.php
+ERROR - 2023-02-02 10:15:13 --> 404 Page Not Found: Wp/wp-admin
+ERROR - 2023-02-02 10:15:20 --> 404 Page Not Found: New/wp-admin
+ERROR - 2023-02-02 10:15:27 --> 404 Page Not Found: Old/wp-admin
+ERROR - 2023-02-02 10:15:34 --> 404 Page Not Found: Wordpress/wp-admin
+ERROR - 2023-02-02 10:15:40 --> 404 Page Not Found: Test/wp-admin
+ERROR - 2023-02-02 10:15:47 --> 404 Page Not Found: Blog/wp-admin
+ERROR - 2023-02-02 10:15:53 --> 404 Page Not Found: Cms/wp-admin
+ERROR - 2023-02-02 10:16:00 --> 404 Page Not Found: Web/wp-admin
+ERROR - 2023-02-02 10:16:09 --> 404 Page Not Found: Backup/wp-admin
+ERROR - 2023-02-02 10:16:16 --> 404 Page Not Found: Site/wp-admin
+ERROR - 2023-02-02 10:16:22 --> 404 Page Not Found: Oldsite/wp-admin
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Feed/index
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2023-02-02 22:30:47 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2023-02-02 22:30:48 --> 404 Page Not Found: Cms/wp-includes

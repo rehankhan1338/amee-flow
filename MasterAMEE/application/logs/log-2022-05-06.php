@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-05-06 00:33:05 --> 404 Page Not Found: Wordpress/index
+ERROR - 2022-05-06 00:33:05 --> 404 Page Not Found: Wp/index
+ERROR - 2022-05-06 00:33:06 --> 404 Page Not Found: Bc/index
+ERROR - 2022-05-06 00:33:06 --> 404 Page Not Found: Bk/index
+ERROR - 2022-05-06 00:33:06 --> 404 Page Not Found: Backup/index
+ERROR - 2022-05-06 00:33:07 --> 404 Page Not Found: Old/index
+ERROR - 2022-05-06 00:33:07 --> 404 Page Not Found: New/index
+ERROR - 2022-05-06 00:33:07 --> 404 Page Not Found: Main/index
+ERROR - 2022-05-06 00:33:11 --> 404 Page Not Found: Wordpress/index
+ERROR - 2022-05-06 00:33:12 --> 404 Page Not Found: Wp/index
+ERROR - 2022-05-06 00:33:12 --> 404 Page Not Found: Bc/index
+ERROR - 2022-05-06 00:33:12 --> 404 Page Not Found: Bk/index
+ERROR - 2022-05-06 00:33:13 --> 404 Page Not Found: Backup/index
+ERROR - 2022-05-06 00:33:13 --> 404 Page Not Found: Old/index
+ERROR - 2022-05-06 00:33:13 --> 404 Page Not Found: New/index
+ERROR - 2022-05-06 00:33:13 --> 404 Page Not Found: Main/index
+ERROR - 2022-05-06 00:33:28 --> 404 Page Not Found: Wordpress/index
+ERROR - 2022-05-06 00:33:29 --> 404 Page Not Found: Wp/index
+ERROR - 2022-05-06 00:33:29 --> 404 Page Not Found: Bc/index
+ERROR - 2022-05-06 00:33:29 --> 404 Page Not Found: Bk/index
+ERROR - 2022-05-06 00:33:30 --> 404 Page Not Found: Backup/index
+ERROR - 2022-05-06 00:33:30 --> 404 Page Not Found: Old/index
+ERROR - 2022-05-06 00:33:30 --> 404 Page Not Found: New/index
+ERROR - 2022-05-06 00:33:30 --> 404 Page Not Found: Main/index
+ERROR - 2022-05-06 18:38:33 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-05-06 20:07:27 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-05-06 20:07:28 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-05-06 20:07:28 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-05-06 20:07:29 --> 404 Page Not Found: Wp/wp-login.php

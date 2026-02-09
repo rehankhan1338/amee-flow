@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-09-18 00:11:05 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-09-18 00:11:05 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-09-18 00:11:05 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-09-18 00:11:07 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-09-18 00:30:50 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-09-18 01:47:47 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: Feed/index
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2023-09-18 01:47:48 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2023-09-18 01:47:49 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2023-09-18 01:47:49 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2023-09-18 01:47:49 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2023-09-18 09:25:16 --> 404 Page Not Found: Wordpress/index
+ERROR - 2023-09-18 09:25:17 --> 404 Page Not Found: Wp/index
+ERROR - 2023-09-18 09:25:18 --> 404 Page Not Found: Bc/index
+ERROR - 2023-09-18 09:25:18 --> 404 Page Not Found: Bk/index
+ERROR - 2023-09-18 09:25:18 --> 404 Page Not Found: Backup/index
+ERROR - 2023-09-18 09:25:19 --> 404 Page Not Found: Old/index
+ERROR - 2023-09-18 09:25:19 --> 404 Page Not Found: New/index
+ERROR - 2023-09-18 09:25:19 --> 404 Page Not Found: Main/index
+ERROR - 2023-09-18 16:30:20 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2023-09-18 20:06:56 --> 404 Page Not Found: Vendor/phpunit

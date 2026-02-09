@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-11-07 10:08:31 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-11-07 11:29:35 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-11-07 13:28:53 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-11-07 16:27:36 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-11-07 17:52:52 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-11-07 19:57:43 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-07 19:57:43 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-07 19:57:45 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-07 19:57:45 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-07 23:24:01 --> 404 Page Not Found: Stylephp/index
+ERROR - 2023-11-07 23:37:02 --> 404 Page Not Found: Env/index
+ERROR - 2023-11-07 23:37:03 --> 404 Page Not Found: Core/.env
+ERROR - 2023-11-07 23:37:03 --> 404 Page Not Found: Web/.env
+ERROR - 2023-11-07 23:37:04 --> 404 Page Not Found: App/.env
+ERROR - 2023-11-07 23:37:05 --> 404 Page Not Found: Laravel/.env
+ERROR - 2023-11-07 23:37:05 --> 404 Page Not Found: Crm/.env
+ERROR - 2023-11-07 23:37:06 --> 404 Page Not Found: Backend/.env
+ERROR - 2023-11-07 23:37:06 --> 404 Page Not Found: Local/.env
+ERROR - 2023-11-07 23:37:08 --> 404 Page Not Found: Application/.env
+ERROR - 2023-11-07 23:37:08 --> 404 Page Not Found: admin/Env/index
+ERROR - 2023-11-07 23:37:09 --> 404 Page Not Found: Prod/.env
+ERROR - 2023-11-07 23:37:10 --> 404 Page Not Found: Api/.env
+ERROR - 2023-11-07 23:37:10 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2023-11-07 23:37:11 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2023-11-07 23:37:11 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2023-11-07 23:37:12 --> 404 Page Not Found: Infophp/index
+ERROR - 2023-11-07 23:59:19 --> 404 Page Not Found: Stylephp/index

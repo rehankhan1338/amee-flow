@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-09-28 00:35:36 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-09-28 01:02:47 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-09-28 01:18:49 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-09-28 02:01:30 --> 404 Page Not Found: Env/index
+ERROR - 2024-09-28 06:39:28 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:39:28 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:39:28 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:39:29 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:39:44 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:39:44 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:39:45 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:39:45 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:01 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:01 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:02 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:02 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:18 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:18 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:18 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:18 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:34 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:34 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:34 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:34 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:51 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:51 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:51 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 06:40:51 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2024-09-28 14:24:26 --> 404 Page Not Found: Robotstxt/index

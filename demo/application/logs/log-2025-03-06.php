@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-03-06 04:58:52 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2025-03-06 04:58:52 --> 404 Page Not Found: Feed/index
+ERROR - 2025-03-06 04:58:52 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-03-06 04:58:52 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: Feed/index
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2025-03-06 04:58:53 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2025-03-06 04:58:54 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-03-06 04:58:55 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-03-06 04:58:55 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-03-06 04:58:55 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-03-06 16:41:31 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-03-06 16:41:47 --> 404 Page Not Found: Assets/frontend
+ERROR - 2025-03-06 16:41:49 --> 404 Page Not Found: Assets/images
+ERROR - 2025-03-06 16:41:50 --> 404 Page Not Found: Assets/frontend
+ERROR - 2025-03-06 16:41:52 --> 404 Page Not Found: Assets/frontend
+ERROR - 2025-03-06 16:42:12 --> 404 Page Not Found: Assets/frontend

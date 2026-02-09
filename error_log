@@ -1,0 +1,4 @@
+[04-Aug-2024 00:47:50 America/Chicago] PHP Warning:  session_start(): The session id is too long or contains illegal characters, valid characters are a-z, A-Z, 0-9 and '-,' in /home/secondw6/public_html/domains/amee/index.php on line 56
+[04-Aug-2024 00:47:50 America/Chicago] PHP Warning:  session_start(): Failed to read session data: files (path: /tmp) in /home/secondw6/public_html/domains/amee/index.php on line 56
+[06-Aug-2024 05:02:36 America/Chicago] PHP Warning:  session_start(): The session id is too long or contains illegal characters, valid characters are a-z, A-Z, 0-9 and '-,' in /home/secondw6/public_html/domains/amee/index.php on line 56
+[06-Aug-2024 05:02:36 America/Chicago] PHP Warning:  session_start(): Failed to read session data: files (path: /tmp) in /home/secondw6/public_html/domains/amee/index.php on line 56

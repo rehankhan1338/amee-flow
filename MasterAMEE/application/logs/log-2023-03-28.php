@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-03-28 00:37:32 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-03-28 05:21:39 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-03-28 07:08:18 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-03-28 14:37:26 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-03-28 14:37:26 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-03-28 14:37:26 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-03-28 14:37:26 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-03-28 14:37:26 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-03-28 14:37:27 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-03-28 14:37:29 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-03-28 14:37:29 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-03-28 14:37:29 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-03-28 14:37:29 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-03-28 14:37:30 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-03-28 14:37:31 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-03-28 14:37:31 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-03-28 14:37:32 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-03-28 14:37:32 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-03-28 15:19:51 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-03-28 17:10:10 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-03-28 20:33:10 --> 404 Page Not Found: Env/index
+ERROR - 2023-03-28 20:33:11 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2023-03-28 20:33:17 --> 404 Page Not Found: Env/index
+ERROR - 2023-03-28 20:33:20 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2023-03-28 20:33:29 --> 404 Page Not Found: Env/index
+ERROR - 2023-03-28 20:33:30 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2023-03-28 20:33:41 --> 404 Page Not Found: Env/index
+ERROR - 2023-03-28 20:33:43 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2023-03-28 20:34:35 --> 404 Page Not Found: Env/index
+ERROR - 2023-03-28 20:34:37 --> 404 Page Not Found: Vendor/phpunit

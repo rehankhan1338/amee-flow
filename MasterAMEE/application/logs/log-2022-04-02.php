@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-04-02 15:09:39 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-04-02 15:09:58 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-04-02 15:10:14 --> 404 Page Not Found: Sites/default
+ERROR - 2022-04-02 15:10:28 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-04-02 15:10:45 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-04-02 15:11:00 --> 404 Page Not Found: Images/index
+ERROR - 2022-04-02 15:11:15 --> 404 Page Not Found: Files/index
+ERROR - 2022-04-02 18:07:09 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-04-02 18:07:32 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-04-02 18:07:51 --> 404 Page Not Found: Sites/default
+ERROR - 2022-04-02 18:08:08 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-04-02 18:08:28 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-04-02 18:08:45 --> 404 Page Not Found: Images/index
+ERROR - 2022-04-02 18:09:02 --> 404 Page Not Found: Files/index
+ERROR - 2022-04-02 21:41:03 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-04-02 21:41:18 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-04-02 21:41:36 --> 404 Page Not Found: Sites/default
+ERROR - 2022-04-02 21:41:52 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-04-02 21:42:09 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-04-02 21:42:25 --> 404 Page Not Found: Images/index
+ERROR - 2022-04-02 21:42:38 --> 404 Page Not Found: Files/index
+ERROR - 2022-04-02 22:22:53 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-04-02 22:23:09 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-04-02 22:23:30 --> 404 Page Not Found: Sites/default
+ERROR - 2022-04-02 22:23:45 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-04-02 22:24:04 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-04-02 22:24:24 --> 404 Page Not Found: Images/index
+ERROR - 2022-04-02 22:24:37 --> 404 Page Not Found: Files/index

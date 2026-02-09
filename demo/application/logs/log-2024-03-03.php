@@ -1,0 +1,34 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Wp/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Wordpress/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Old2/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Staging/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: BKP/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Blog/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Dev/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Old/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Backup/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: BAK/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Test/index
+ERROR - 2024-03-03 05:26:30 --> 404 Page Not Found: Old_files/index
+ERROR - 2024-03-03 23:38:19 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:19 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:19 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:19 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:38 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:38 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:38 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:38 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:58 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:58 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:58 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:38:58 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:39:17 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:39:17 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:39:17 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:39:20 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:39:37 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:39:37 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:39:37 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-03-03 23:39:37 --> 404 Page Not Found: Devassessmentmadeeasycom/assets

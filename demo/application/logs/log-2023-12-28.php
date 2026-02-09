@@ -1,0 +1,35 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-12-28 00:13:07 --> 404 Page Not Found: Passwordtxt/index
+ERROR - 2023-12-28 00:13:07 --> 404 Page Not Found: Passwordstxt/index
+ERROR - 2023-12-28 01:30:50 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-12-28 01:30:50 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-12-28 06:46:06 --> 404 Page Not Found: Vscode/sftp.json
+ERROR - 2023-12-28 06:46:06 --> 404 Page Not Found: About/index
+ERROR - 2023-12-28 06:46:07 --> 404 Page Not Found: Debug/default
+ERROR - 2023-12-28 06:46:07 --> 404 Page Not Found: V2/_catalog
+ERROR - 2023-12-28 06:46:07 --> 404 Page Not Found: Ecp/Current
+ERROR - 2023-12-28 06:46:08 --> 404 Page Not Found: Server-status/index
+ERROR - 2023-12-28 06:46:08 --> 404 Page Not Found: Loginaction/index
+ERROR - 2023-12-28 06:46:08 --> 404 Page Not Found: _all_dbs/index
+ERROR - 2023-12-28 06:46:08 --> 404 Page Not Found: DS_Store/index
+ERROR - 2023-12-28 06:46:09 --> 404 Page Not Found: Env/index
+ERROR - 2023-12-28 06:46:09 --> 404 Page Not Found: Git/config
+ERROR - 2023-12-28 06:46:10 --> 404 Page Not Found: Configjson/index
+ERROR - 2023-12-28 06:46:10 --> 404 Page Not Found: Telescope/requests
+ERROR - 2023-12-28 06:59:25 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-12-28 07:02:48 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-12-28 17:40:58 --> 404 Page Not Found: Adminerphp/index
+ERROR - 2023-12-28 18:47:43 --> 404 Page Not Found: Public/home
+ERROR - 2023-12-28 18:47:44 --> 404 Page Not Found: Static/admin
+ERROR - 2023-12-28 19:08:43 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-12-28 20:02:43 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-12-28 21:19:56 --> 404 Page Not Found: Zm/index.php
+ERROR - 2023-12-28 22:58:15 --> 404 Page Not Found: Wordpress/index
+ERROR - 2023-12-28 22:58:16 --> 404 Page Not Found: Wp/index
+ERROR - 2023-12-28 22:58:16 --> 404 Page Not Found: Bc/index
+ERROR - 2023-12-28 22:58:16 --> 404 Page Not Found: Bk/index
+ERROR - 2023-12-28 22:58:16 --> 404 Page Not Found: Backup/index
+ERROR - 2023-12-28 22:58:17 --> 404 Page Not Found: Old/index
+ERROR - 2023-12-28 22:58:17 --> 404 Page Not Found: New/index
+ERROR - 2023-12-28 22:58:17 --> 404 Page Not Found: Main/index

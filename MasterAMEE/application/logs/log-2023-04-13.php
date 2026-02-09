@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-04-13 01:49:14 --> 404 Page Not Found: Wordpress/index
+ERROR - 2023-04-13 01:49:15 --> 404 Page Not Found: Wp/index
+ERROR - 2023-04-13 01:49:15 --> 404 Page Not Found: Bc/index
+ERROR - 2023-04-13 01:49:15 --> 404 Page Not Found: Bk/index
+ERROR - 2023-04-13 01:49:16 --> 404 Page Not Found: Backup/index
+ERROR - 2023-04-13 01:49:16 --> 404 Page Not Found: Old/index
+ERROR - 2023-04-13 01:49:16 --> 404 Page Not Found: New/index
+ERROR - 2023-04-13 01:49:16 --> 404 Page Not Found: Main/index
+ERROR - 2023-04-13 03:09:23 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-04-13 03:35:52 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-04-13 03:48:42 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-04-13 10:01:58 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-04-13 15:24:18 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-04-13 15:24:18 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-04-13 15:24:18 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-04-13 15:24:19 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-04-13 15:24:19 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-04-13 15:24:19 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-04-13 15:24:21 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-04-13 15:24:21 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2023-04-13 15:24:21 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-04-13 15:24:22 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-04-13 15:24:22 --> 404 Page Not Found: Public/_ignition
+ERROR - 2023-04-13 15:24:24 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-04-13 15:24:24 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-04-13 15:24:24 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-04-13 15:24:25 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml

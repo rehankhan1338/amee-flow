@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-07-06 01:36:15 --> 404 Page Not Found: Logitechphp/index
+ERROR - 2024-07-06 02:07:03 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-07-06 03:41:05 --> 404 Page Not Found: PrtScphp/index
+ERROR - 2024-07-06 05:47:10 --> 404 Page Not Found: Ifconfigphp/index
+ERROR - 2024-07-06 07:55:20 --> 404 Page Not Found: Pausephp/index
+ERROR - 2024-07-06 08:22:28 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-07-06 08:22:36 --> 404 Page Not Found: Sitemap_indexxml/index
+ERROR - 2024-07-06 09:17:01 --> 404 Page Not Found: Sitemap_indexxml/index
+ERROR - 2024-07-06 10:03:20 --> 404 Page Not Found: Lzzphp/index
+ERROR - 2024-07-06 12:11:03 --> 404 Page Not Found: Configsclassphp/index
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Git/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Login/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Back/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Wiki/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Wp-content/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Dev/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Index/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: App/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Var/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Assets/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Htdocs/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Backend/.git
+ERROR - 2024-07-06 19:28:58 --> 404 Page Not Found: Css/.git
+ERROR - 2024-07-06 19:28:59 --> 404 Page Not Found: Home/.git
+ERROR - 2024-07-06 19:28:59 --> 404 Page Not Found: Www/.git
+ERROR - 2024-07-06 19:28:59 --> 404 Page Not Found: Site/.git
+ERROR - 2024-07-06 19:28:59 --> 404 Page Not Found: admin/Git/config
+ERROR - 2024-07-06 19:28:59 --> 404 Page Not Found: Web/.git
+ERROR - 2024-07-06 19:28:59 --> 404 Page Not Found: Http/.git
+ERROR - 2024-07-06 19:28:59 --> 404 Page Not Found: S3/.git
+ERROR - 2024-07-06 19:28:59 --> 404 Page Not Found: Api/.git
+ERROR - 2024-07-06 19:28:59 --> 404 Page Not Found: Vendor/.git

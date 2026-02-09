@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-06-10 17:13:58 --> 404 Page Not Found: Envsave/index
+ERROR - 2025-06-10 17:13:59 --> 404 Page Not Found: Envprod/index
+ERROR - 2025-06-10 17:14:04 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2025-06-10 17:14:06 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2025-06-10 17:14:08 --> 404 Page Not Found: Php_infophp/index
+ERROR - 2025-06-10 17:14:09 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2025-06-10 17:14:13 --> 404 Page Not Found: Envexample/index
+ERROR - 2025-06-10 17:14:14 --> 404 Page Not Found: admin/Env/index
+ERROR - 2025-06-10 17:14:15 --> 404 Page Not Found: Info/index
+ERROR - 2025-06-10 17:14:17 --> 404 Page Not Found: Sendgridenv/index
+ERROR - 2025-06-10 17:14:19 --> 404 Page Not Found: Envjs/index
+ERROR - 2025-06-10 17:14:20 --> 404 Page Not Found: Runtime-envjs/index
+ERROR - 2025-06-10 17:14:22 --> 404 Page Not Found: Configjs/index
+ERROR - 2025-06-10 17:14:23 --> 404 Page Not Found: Aws-exportsjs/index
+ERROR - 2025-06-10 17:14:25 --> 404 Page Not Found: Firebase-configjs/index
+ERROR - 2025-06-10 17:14:27 --> 404 Page Not Found: Firebasejs/index
+ERROR - 2025-06-10 17:14:29 --> 404 Page Not Found: Settingsjs/index
+ERROR - 2025-06-10 17:14:30 --> 404 Page Not Found: App-settingsjs/index
+ERROR - 2025-06-10 17:14:31 --> 404 Page Not Found: Configjson/index
+ERROR - 2025-06-10 17:14:33 --> 404 Page Not Found: Credentialsjson/index
+ERROR - 2025-06-10 17:14:34 --> 404 Page Not Found: Secretsjson/index
+ERROR - 2025-06-10 17:14:37 --> 404 Page Not Found: Manifestjson/index
+ERROR - 2025-06-10 17:14:39 --> 404 Page Not Found: Js/env.js
+ERROR - 2025-06-10 17:14:40 --> 404 Page Not Found: Js/config.js
+ERROR - 2025-06-10 17:14:41 --> 404 Page Not Found: Js/settings.js
+ERROR - 2025-06-10 17:14:42 --> 404 Page Not Found: Js/app.js
+ERROR - 2025-06-10 17:14:43 --> 404 Page Not Found: Assets/env.js
+ERROR - 2025-06-10 17:14:45 --> 404 Page Not Found: Assets/config.js
+ERROR - 2025-06-10 17:14:46 --> 404 Page Not Found: Assets/settings.js
+ERROR - 2025-06-10 22:42:38 --> 404 Page Not Found: Robotstxt/index

@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-11-30 04:50:04 --> 404 Page Not Found: Env/index
+ERROR - 2022-11-30 04:50:11 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-11-30 04:50:15 --> 404 Page Not Found: Git/config
+ERROR - 2022-11-30 05:18:54 --> 404 Page Not Found: Env/index
+ERROR - 2022-11-30 05:18:59 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-11-30 05:19:03 --> 404 Page Not Found: Git/config
+ERROR - 2022-11-30 05:19:40 --> 404 Page Not Found: Env/index
+ERROR - 2022-11-30 05:19:43 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-11-30 05:19:47 --> 404 Page Not Found: Git/config
+ERROR - 2022-11-30 05:26:08 --> 404 Page Not Found: Env/index
+ERROR - 2022-11-30 05:26:14 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-11-30 05:26:18 --> 404 Page Not Found: Git/config
+ERROR - 2022-11-30 06:10:09 --> 404 Page Not Found: Wordpress/index
+ERROR - 2022-11-30 06:10:10 --> 404 Page Not Found: Wp/index
+ERROR - 2022-11-30 06:10:11 --> 404 Page Not Found: Bc/index
+ERROR - 2022-11-30 06:10:11 --> 404 Page Not Found: Bk/index
+ERROR - 2022-11-30 06:10:11 --> 404 Page Not Found: Backup/index
+ERROR - 2022-11-30 06:10:12 --> 404 Page Not Found: Old/index
+ERROR - 2022-11-30 06:10:12 --> 404 Page Not Found: New/index
+ERROR - 2022-11-30 06:10:12 --> 404 Page Not Found: Main/index
+ERROR - 2022-11-30 10:34:22 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-11-30 10:34:23 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-11-30 10:34:24 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-11-30 10:34:25 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-11-30 14:35:37 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-11-30 14:35:37 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-11-30 14:35:38 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-11-30 14:35:38 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-11-30 17:43:12 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-11-30 17:58:51 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-11-30 18:23:41 --> 404 Page Not Found: Wp-loginphp/index

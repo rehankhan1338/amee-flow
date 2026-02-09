@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-01-10 08:37:22 --> 404 Page Not Found: Git/config
+ERROR - 2024-01-10 09:37:50 --> 404 Page Not Found: Stylephp/index
+ERROR - 2024-01-10 11:01:11 --> 404 Page Not Found: Stylephp/index
+ERROR - 2024-01-10 11:29:17 --> 404 Page Not Found: _profiler/empty
+ERROR - 2024-01-10 11:32:58 --> 404 Page Not Found: _profiler/empty
+ERROR - 2024-01-10 11:33:25 --> 404 Page Not Found: _profiler/empty
+ERROR - 2024-01-10 14:25:53 --> 404 Page Not Found: Aws/credentials
+ERROR - 2024-01-10 14:41:33 --> 404 Page Not Found: Aws/credentials
+ERROR - 2024-01-10 15:40:21 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-01-10 15:47:07 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-01-10 16:40:22 --> 404 Page Not Found: Aws/credentials
+ERROR - 2024-01-10 16:53:27 --> 404 Page Not Found: Git/config
+ERROR - 2024-01-10 18:10:46 --> 404 Page Not Found: Aws/credentials
+ERROR - 2024-01-10 20:30:18 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-01-10 20:37:56 --> 404 Page Not Found: Wp-includes/css
+ERROR - 2024-01-10 20:38:40 --> 404 Page Not Found: Wp-includes/css
+ERROR - 2024-01-10 20:39:44 --> 404 Page Not Found: Wp-includes/css
+ERROR - 2024-01-10 20:39:51 --> 404 Page Not Found: Wp-includes/css
+ERROR - 2024-01-10 20:49:43 --> 404 Page Not Found: Wp-includes/css
+ERROR - 2024-01-10 20:50:43 --> 404 Page Not Found: Wp-includes/css
+ERROR - 2024-01-10 20:50:54 --> 404 Page Not Found: Wp-includes/css
+ERROR - 2024-01-10 21:07:12 --> 404 Page Not Found: Wordpress/index
+ERROR - 2024-01-10 21:07:13 --> 404 Page Not Found: Wp/index
+ERROR - 2024-01-10 21:07:13 --> 404 Page Not Found: Bc/index
+ERROR - 2024-01-10 21:07:13 --> 404 Page Not Found: Bk/index
+ERROR - 2024-01-10 21:07:13 --> 404 Page Not Found: Backup/index
+ERROR - 2024-01-10 21:07:13 --> 404 Page Not Found: Old/index
+ERROR - 2024-01-10 21:07:13 --> 404 Page Not Found: New/index
+ERROR - 2024-01-10 21:07:13 --> 404 Page Not Found: Main/index
+ERROR - 2024-01-10 21:38:59 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-01-10 23:38:11 --> 404 Page Not Found: Wp-content/themes

@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-10-13 00:44:48 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-13 07:25:02 --> 404 Page Not Found: Wp-commentinphp/index
+ERROR - 2022-10-13 07:50:44 --> 404 Page Not Found: Wp-commentinphp/index
+ERROR - 2022-10-13 11:29:49 --> 404 Page Not Found: Wp-commentinphp/index
+ERROR - 2022-10-13 13:42:39 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-13 16:12:45 --> 404 Page Not Found: Wp-commentinphp/index
+ERROR - 2022-10-13 19:10:14 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-10-13 23:05:39 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2022-10-13 23:05:39 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2022-10-13 23:05:40 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2022-10-13 23:05:41 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2022-10-13 23:05:43 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2022-10-13 23:05:44 --> 404 Page Not Found: Awsyml/index
+ERROR - 2022-10-13 23:05:46 --> 404 Page Not Found: Envbak/index
+ERROR - 2022-10-13 23:05:48 --> 404 Page Not Found: Wp-includes/shell20211028.php
+ERROR - 2022-10-13 23:05:48 --> 404 Page Not Found: Infophp/index
+ERROR - 2022-10-13 23:05:49 --> 404 Page Not Found: Wp-includes/shell20211028.php
+ERROR - 2022-10-13 23:05:49 --> 404 Page Not Found: Aws/credentials
+ERROR - 2022-10-13 23:05:51 --> 404 Page Not Found: Config/aws.yml
+ERROR - 2022-10-13 23:05:56 --> 404 Page Not Found: Configjs/index
+ERROR - 2022-10-13 23:07:08 --> 404 Page Not Found: 1indexphp/index
+ERROR - 2022-10-13 23:07:09 --> 404 Page Not Found: 1indexphp/index
+ERROR - 2022-10-13 23:07:12 --> 404 Page Not Found: Wp-cronphp/index
+ERROR - 2022-10-13 23:07:13 --> 404 Page Not Found: Wp-cronphp/index
+ERROR - 2022-10-13 23:07:44 --> 404 Page Not Found: Wp-signupphp/index
+ERROR - 2022-10-13 23:07:49 --> 404 Page Not Found: Wp-signupphp/index
+ERROR - 2022-10-13 23:08:02 --> 404 Page Not Found: Wp-activatephp/index
+ERROR - 2022-10-13 23:08:03 --> 404 Page Not Found: Wp-activatephp/index

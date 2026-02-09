@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700');
+.breadcrumb_success { background: #15a261 none repeat scroll 0 0; border-radius: 5px; color: #fff; font-size: 15px; font-weight: 600; margin-bottom: 0; margin-top: 5px; padding: 7px 10px 7px 10px; }
+.breadcrumb_error { background: #ffd1d1 none repeat scroll 0 0; border-radius: 5px; color: #555555; font-size: 15px; font-weight: 600; margin-bottom: 0; margin-top: 5px; padding: 7px 10px 7px 10px; }
+.error1 { color: #dd4b39; display: inline-block; font-weight: 600; margin-bottom: 5px; max-width: 100%; }
+.dropdown-submenu { position: relative; }
+.dropdown-submenu>.dropdown-menu { top: 0; left: 100%; margin-top: -6px; margin-left: -1px; -webkit-border-radius: 0 6px 6px 6px; -moz-border-radius: 0 6px 6px; border-radius: 0 6px 6px 6px; }
+.dropdown-submenu:hover>.dropdown-menu { display: block; }
+.dropdown-submenu>a:after { display: block; content: " "; float: right; width: 0; height: 0; border-color: transparent; border-style: solid; border-width: 5px 0 5px 5px; border-left-color: #ccc; margin-top: 5px; margin-right: -10px; }
+.dropdown-submenu:hover>a:after { border-left-color: #fff; }
+.dropdown-submenu.pull-left { float: none; }
+.dropdown-submenu.pull-left>.dropdown-menu { left: -100%; margin-left: 10px; -webkit-border-radius: 6px 0 6px 6px; -moz-border-radius: 6px 0 6px 6px; border-radius: 6px 0 6px 6px; }
+.main_menu li a i { display:block; text-align:center; font-size:20px; line-height:35px; }
+/*new*/
+.skin-red .main-header li.user-header { background-color:#303f59; font-family: 'Roboto Condensed', sans-serif; }
+.skin-red .main-header .navbar { background-color:#303f59; background-image:url(../images/topheaderbg.png); background-repeat:repeat; font-family: 'Roboto Condensed', sans-serif; }
+.main_menu { border-top: 1px solid #4A5D78; background-image:url(../images/tex_bg.png); background-repeat:repeat; border-bottom: 3px solid #fb9337; }
+.main_menu .nav li a:hover, .main_menu .nav li.active a { background-image: url(../images/active_menu.png) !important; background-repeat: no-repeat !important; background-position: bottom center !important; }
+.main_menu .nav li.active .dropdown-menu li a{background-image:unset !important;font-size: 15px;}
+/*.skin-red .main-header .navbar .nav > li > a {  }*/
+.main_menu .navbar-nav > li { display: inline-block; border-left: 1px solid #576a85; border-right: 1px solid #394962; }
+.main_menu .navbar-nav { border-right: 1px solid #576a85; }
+.navbar-brand div.logo-lg { font-family:'Roboto Condensed', sans-serif;  text-transform: uppercase; color: #fff; font-style: normal; padding:0px 15px 0 0; float: left; font-size: 20px; font-weight:bold; border-left: none;letter-spacing:1px; }
+.navbar-brand div.logo-lg span { font-weight:bold; color: #fb9337; letter-spacing:0; }
+label { font-weight:normal; }
+.navbar-brand span.tag { float: left; padding: 0px 10px; border-left: 1px solid #fff; color: #fff; font-style: italic; letter-spacing:0; }
+.user-menu .dropdown-toggle { padding: 10px 15px 10px 10px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-box-shadow: inset 1px 1px 2px #2b384e; float: none; border-bottom: 1px solid #445775; -webkit-box-shadow: inset 1px 1px 2px #2b384e; box-shadow: inset 1px 1px 2px #2b384e; cursor: pointer; margin-top:5px; }
+.content-header h1 { margin:0; color: #485b79; font-weight: 600; font-size: 28px; font-family: 'Roboto Condensed', sans-serif; }
+.content-header h1 small { font-size: 15px; font-family: 'Roboto Condensed', sans-serif; margin-left:10px; }
+
+.snapshot_page{margin:15px 0;}
+.snapshot_page_title { background: #485b79 url(../images/tex_bg.png);padding: 5px 15px; letter-spacing:0.2px; font-size: 16px;  color: #f6e4a5; border-radius: 5px;    font-weight: 600;}
+.timeline > li > .timeline-item {
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px #f5f5f5;
+    border-radius: 3px;
+    margin-top: 10px;
+    background: #f5f5f5;
+    color: #333;
+    margin-left: 60px;
+    margin-right: 15px;
+    padding: 0;
+    position: relative;
+}
+.timeline-header p{margin:0;line-height:26px;}
+
+.headermenu i {
+    display: block;
+    font-size: 30px;
+    line-height: 40px;
+}
+.instructions {
+    background-color: #eaf4f6;
+    border: 1px solid #dedede;
+    margin: 10px 0;
+    border-radius: 3px;
+    padding: 10px;
+    color: #333;
+}
+.trbg{background: #34445e url(../images/tex_bg.png);color: #fff;}
+.snapshot_page .table_mar20{margin:20px 0;}
+.snapshot_page .table-bordered > thead > tr > th, .snapshot_page .table-bordered > tbody > tr > th, .snapshot_page .table-bordered > tfoot > tr > th, .snapshot_page .table-bordered > thead > tr > td, .snapshot_page .table-bordered > tbody > tr > td, .snapshot_page .table-bordered > tfoot > tr > td {border: 1px solid #dddddd; font-size:16px;}
+.snapshot_page .table-bordered{border: 1px solid #dddddd;}
+.snapshot_page .table-striped > tbody > tr:nth-of-type(2n+1) {background-color: #f5f5f5;}
+.snapshot_page .contenttitle2 {border-bottom: 2px dotted #FB9337;padding-bottom: 5px;padding-right: 5px;display: inline-block;}
+.snapshot_page .contenttitle2  h3{margin-top: 0px;margin-bottom: 0px;font-size: 18px;font-weight: 600;}
+.snapshot_page .table_mar20 h5{margin-top: 0px;margin-bottom: 0px; font-size:16px;}
+.snapshot_page .table_mar20 h5 span{cursor:pointer;}
+.same_background{background: url('../../frontend/images/default/noise.white.png') !important; box-shadow:none !important;}
+.align_matrix_red{ background:#f46060;}
+.align_matrix_yellow{ background:#f8ed86;}
+.align_matrix_blue{ background:#8DB3E2;}
+.align_matrix_orange{ background:#fb9337;}
+.align_matrix_purple{ background:#9966FF;}
+.align_matrix_green{ background:#8bc34a;}
+.align_matrix_brown{ background:#7d5e3f;}
+textarea{resize:none;}
+.snapshot_page blockquote { border-left: 3px solid #485b79;}
+option{padding:5px;}
+.main_menu .nav li ul.dropdown-menu > li > a:hover{background-image: none !important;}
+
+.censusFrm{font-size:16px; }
+.censusFrm #submitBtn{padding:5px 30px; font-size:15px; font-weight:600;}
+.censusFrm .form-control{ width:100%;}
+.censusFrm .alert-danger{ margin:10px 0 10px; font-weight:600;}
+.censusFrm .hr{border-top: 1px dashed #ccc; margin-top:10px; margin-bottom:10px;}
+.censusFrm .flDiv{ margin:0 20px;}
+.censusFrm .plpr{ padding-left:5px; padding-right:5px;}

@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-10-31 02:03:51 --> 404 Page Not Found: Sftp-configjson/index
+ERROR - 2023-10-31 02:03:52 --> 404 Page Not Found: Vscode/sftp.json
+ERROR - 2023-10-31 02:08:02 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:02 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:02 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:03 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:24 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:24 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:24 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:24 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:46 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:46 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:46 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:08:46 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:10 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:10 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:10 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:10 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:34 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:34 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:34 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:34 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:58 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:58 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:58 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 02:09:58 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-31 04:38:54 --> 404 Page Not Found: Wordpress/wp-admin
+ERROR - 2023-10-31 19:07:00 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-10-31 19:07:00 --> 404 Page Not Found: Robotstxt/index

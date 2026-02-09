@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+Generate code to embed Video
+Developed by Green Media - 27/09/2008
+-->
+<html>
+	<head>
+	    <title>YouTube Video Embeder</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta content="noindex, nofollow" name="robots">
+		<script type="text/javascript">
+
+var oEditor = window.parent.InnerDialogLoaded() ;
+var vWidth = "500";
+var vHeight = "240";
+    
+function OnLoad() {
+
+	// First of all, translate the dialog box texts.
+	oEditor.FCKLanguageManager.TranslatePage( document ) ;
+	window.parent.SetAutoSize( true ) ;
+
+}
+
+function btnStat(frm) {
+
+	if (
+		// document.getElementById('txtVideoURL').value.length == 0 ||
+		document.getElementById('txtVideoType').value.length == 0
+	) {
+		window.parent.SetOkButton( false ) ;
+	}
+	else {
+		window.parent.SetOkButton( true ) ;
+	}
+	
+}
+
+function Ok() {
+
+    if ( document.getElementById('txtVideoType').value == 1  ) { // youtube ##
+    
+    // target code ##
+    // <object width="173" height="152"><param name="movie" value="http://www.youtube.com/v/aSsX7U_LDHw&hl=en&fs=1&rel=0&color1=0x234900&color2=0x4e9e00"></param><param name="allowFullScreen" value="true"></param><embed src="http://www.youtube.com/v/aSsX7U_LDHw&hl=en&fs=1&rel=0&color1=0x234900&color2=0x4e9e00" type="application/x-shockwave-flash" allowfullscreen="true" width="173" height="152"></embed></object>
+    
+    // var strVideoForm = '<object width="500" height="230"><param name="movie" value="txtVideoURL&hl=en&fs=1&rel=0&color1=0x234900&color2=0x4e9e00"></param><param name="allowFullScreen" value="true"></param><embed src="txtVideoURL&hl=en&fs=1&rel=0&color1=0x234900&color2=0x4e9e00" type="application/x-shockwave-flash" allowfullscreen="true" width="500" height="230"></embed></object>';    
+    
+    var strVideoForm = '<embed src="txtVideoURL&hl=en&fs=1&rel=0&color1=0x234900&color2=0x4e9e00" type="application/x-shockwave-flash" allowfullscreen="true" width="500" height="230"></embed>';    
+    
+    } else { // blip.tv ##
+    
+    // target format ##
+    // <embed src="http://blip.tv/play/AZrCIQA" type="application/x-shockwave-flash" width="160" height="142" allowscriptaccess="always" allowfullscreen="true"></embed>
+    
+    var strVideoForm = '<embed src="txtVideoURL" type="application/x-shockwave-flash" width="500" height="230" allowscriptaccess="always" allowfullscreen="true"></embed>';    
+    
+    }
+
+	// bail out if any of the fields are empty		
+	if (
+		// document.getElementById('txtVideoURL').value.length == 0 ||
+		document.getElementById('txtVideoType').value.length == 0
+	) {
+		return false;
+	}
+	
+	// replace form fields
+	strVideoForm = strVideoForm.replace( 'txtVideoURL', document.getElementById('txtVideoURL').value );
+	strVideoForm = strVideoForm.replace( '/watch?v=', '/v/' );
+	strVideoForm = strVideoForm.replace( 'txtVideoType', document.getElementById('txtVideoType').value );
+	
+	// add the form to the content
+    oEditor.FCK.InsertHtml(strVideoForm);
+//	oEditor.FCKUndo.SaveUndoStep();
+	return true ;
+	
+}
+		</script>
+	</head>
+	<body onload="OnLoad()" scroll="no" style="OVERFLOW: hidden">
+	
+<table id="otable" cellspacing="3" cellpadding="0" width="100%" border="0" style="height: 100%">
+  
+  <tr>
+    <td><label for="txtVideoType" fckLang="DlgVideoTypeLbl">Video Source:</label></td>
+  </tr>
+  <tr>
+    <td>
+        <select id="txtVideoType" onkeyup="btnStat(this.form)" style="width: 320px" length="54" tabIndex="1">
+            <option value="1">YouTube</option>
+            <option value="2">Blip.tv</option>
+        </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td nowrap="nowrap">
+    	<label for="txtVideoURL" fckLang="DlgVideoURLLbl">Video URL:</label>
+   	</td>
+  </tr>
+  <tr>
+    <td>
+		<input id="txtVideoURL" onkeyup="btnStat(this.form)" style="width: 320px" length="54" maxlength="320" tabIndex="2" type="text" />
+    </td>
+  </tr>
+</table>
+	
+	</body>
+</html>
+

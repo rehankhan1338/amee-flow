@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-12-03 09:03:29 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-12-03 09:03:40 --> 404 Page Not Found: Sitemapxml/index
+ERROR - 2023-12-03 18:05:48 --> 404 Page Not Found: Well-known/acme-challenge
+ERROR - 2023-12-03 18:05:53 --> 404 Page Not Found: Wp-admin/network
+ERROR - 2023-12-03 18:05:56 --> 404 Page Not Found: Cloudphp/index
+ERROR - 2023-12-03 18:06:00 --> 404 Page Not Found: Cgi-bin/cloud.php
+ERROR - 2023-12-03 18:06:03 --> 404 Page Not Found: Css/cloud.php
+ERROR - 2023-12-03 18:06:09 --> 404 Page Not Found: Wp-admin/user
+ERROR - 2023-12-03 18:06:14 --> 404 Page Not Found: Img/cloud.php
+ERROR - 2023-12-03 18:06:16 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2023-12-03 18:06:18 --> 404 Page Not Found: Wp-admin/images
+ERROR - 2023-12-03 18:06:22 --> 404 Page Not Found: Images/cloud.php
+ERROR - 2023-12-03 18:06:26 --> 404 Page Not Found: Wp-admin/js
+ERROR - 2023-12-03 18:06:30 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2023-12-03 18:06:33 --> 404 Page Not Found: Wp-admin/includes
+ERROR - 2023-12-03 18:06:36 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2023-12-03 18:06:40 --> 404 Page Not Found: Wp-admin/cloud.php
+ERROR - 2023-12-03 18:31:36 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-12-03 21:03:39 --> 404 Page Not Found: Inputsphp/index
+ERROR - 2023-12-03 22:06:54 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2023-12-03 22:06:54 --> 404 Page Not Found: Feed/index
+ERROR - 2023-12-03 22:06:54 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2023-12-03 22:06:54 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2023-12-03 22:06:55 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2023-12-03 22:06:55 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2023-12-03 22:06:55 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2023-12-03 22:06:55 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2023-12-03 22:06:55 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2023-12-03 22:06:55 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2023-12-03 22:06:56 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2023-12-03 22:06:56 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2023-12-03 22:06:56 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2023-12-03 22:06:56 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2023-12-03 22:06:56 --> 404 Page Not Found: Cms/wp-includes

@@ -1,0 +1,1 @@
+<?php echo $notifications_details->messageBody;?>

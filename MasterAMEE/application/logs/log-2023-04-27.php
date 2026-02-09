@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-04-27 00:43:00 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-04-27 05:47:02 --> 404 Page Not Found: Vscode/sftp.json
+ERROR - 2023-04-27 05:47:02 --> 404 Page Not Found: Ecp/Current
+ERROR - 2023-04-27 05:47:02 --> 404 Page Not Found: Infophp/index
+ERROR - 2023-04-27 05:47:02 --> 404 Page Not Found: Server-status/index
+ERROR - 2023-04-27 05:47:02 --> 404 Page Not Found: Telescope/requests
+ERROR - 2023-04-27 05:47:02 --> 404 Page Not Found: Debug/default
+ERROR - 2023-04-27 05:47:02 --> 404 Page Not Found: Git/config
+ERROR - 2023-04-27 05:47:02 --> 404 Page Not Found: Env/index
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: DS_Store/index
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: DS_Store/index
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: Vscode/sftp.json
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: Env/index
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: Configjson/index
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: V2/_catalog
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: Loginaction/index
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: About/index
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: Api/search
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: Infophp/index
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: Telescope/requests
+ERROR - 2023-04-27 05:47:03 --> 404 Page Not Found: Ecp/Current
+ERROR - 2023-04-27 05:47:04 --> 404 Page Not Found: Debug/default
+ERROR - 2023-04-27 05:47:04 --> 404 Page Not Found: Git/config
+ERROR - 2023-04-27 05:47:04 --> 404 Page Not Found: Server-status/index
+ERROR - 2023-04-27 05:47:04 --> 404 Page Not Found: Api/search
+ERROR - 2023-04-27 05:47:04 --> 404 Page Not Found: About/index
+ERROR - 2023-04-27 05:47:04 --> 404 Page Not Found: Loginaction/index
+ERROR - 2023-04-27 05:47:05 --> 404 Page Not Found: V2/_catalog
+ERROR - 2023-04-27 05:47:05 --> 404 Page Not Found: Configjson/index
+ERROR - 2023-04-27 16:00:38 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-04-27 16:05:18 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-04-27 17:48:25 --> 404 Page Not Found: Public/home
+ERROR - 2023-04-27 17:48:26 --> 404 Page Not Found: Public/home
+ERROR - 2023-04-27 17:48:27 --> 404 Page Not Found: Static/admin
+ERROR - 2023-04-27 17:48:55 --> 404 Page Not Found: Static/admin

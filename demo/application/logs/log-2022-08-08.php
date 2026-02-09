@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-08-08 13:02:52 --> 404 Page Not Found: Wp-classphp/index
+ERROR - 2022-08-08 13:03:02 --> 404 Page Not Found: Wp-includes/wp-class.php
+ERROR - 2022-08-08 13:03:12 --> 404 Page Not Found: Xleetphp/index
+ERROR - 2022-08-08 13:03:21 --> 404 Page Not Found: Curvyphp/index
+ERROR - 2022-08-08 13:03:30 --> 404 Page Not Found: Wp-jsphp/index
+ERROR - 2022-08-08 13:03:40 --> 404 Page Not Found: Oluxphp/index
+ERROR - 2022-08-08 13:03:50 --> 404 Page Not Found: Wp-2019php/index
+ERROR - 2022-08-08 13:03:59 --> 404 Page Not Found: Docphp/index
+ERROR - 2022-08-08 13:04:09 --> 404 Page Not Found: Wp-includes/css
+ERROR - 2022-08-08 13:04:20 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-08-08 13:04:30 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-08-08 13:04:40 --> 404 Page Not Found: Wp-content/haccess.php
+ERROR - 2022-08-08 13:04:51 --> 404 Page Not Found: Haccessphp/index
+ERROR - 2022-08-08 13:05:01 --> 404 Page Not Found: Alwsophp/index
+ERROR - 2022-08-08 13:05:11 --> 404 Page Not Found: Typhp/index
+ERROR - 2022-08-08 13:05:21 --> 404 Page Not Found: Fwphp/index
+ERROR - 2022-08-08 13:05:31 --> 404 Page Not Found: Haxophp/index
+ERROR - 2022-08-08 13:05:40 --> 404 Page Not Found: Votesphp/index
+ERROR - 2022-08-08 13:05:49 --> 404 Page Not Found: Wpconfigbakphp/index
+ERROR - 2022-08-08 13:05:59 --> 404 Page Not Found: Wp-content/wpconfig.bak.php
+ERROR - 2022-08-08 13:06:09 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-08-08 13:06:19 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2022-08-08 13:06:29 --> 404 Page Not Found: Wp-infophp/index
+ERROR - 2022-08-08 13:06:40 --> 404 Page Not Found: Shellphp/index
+ERROR - 2022-08-08 13:06:51 --> 404 Page Not Found: Foxphp/index
+ERROR - 2022-08-08 13:07:00 --> 404 Page Not Found: Testphp/index
+ERROR - 2022-08-08 13:07:12 --> 404 Page Not Found: Wsophp/index
+ERROR - 2022-08-08 13:35:24 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-08-08 18:36:22 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-08 22:15:57 --> 404 Page Not Found: Git/config

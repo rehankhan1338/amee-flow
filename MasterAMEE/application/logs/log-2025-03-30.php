@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-03-30 09:03:07 --> 404 Page Not Found: Git/config
+ERROR - 2025-03-30 14:16:49 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2025-03-30 14:16:49 --> 404 Page Not Found: Feed/index
+ERROR - 2025-03-30 14:16:50 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-03-30 14:16:50 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-03-30 14:16:50 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-03-30 14:16:50 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-03-30 14:16:50 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2025-03-30 14:16:50 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2025-03-30 14:16:51 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2025-03-30 14:16:51 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2025-03-30 14:16:51 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-03-30 14:16:51 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-03-30 14:16:51 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-03-30 14:16:51 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-03-30 14:16:52 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2025-03-30 14:16:53 --> 404 Page Not Found: Feed/index
+ERROR - 2025-03-30 14:16:53 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-03-30 14:16:53 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-03-30 14:16:53 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-03-30 14:16:53 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-03-30 14:16:53 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2025-03-30 14:16:54 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2025-03-30 14:16:54 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2025-03-30 14:16:54 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2025-03-30 14:16:54 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-03-30 14:16:54 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-03-30 14:16:54 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-03-30 14:16:55 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-03-30 19:08:41 --> 404 Page Not Found: Git/config
+ERROR - 2025-03-30 20:18:54 --> 404 Page Not Found: Sitemapxml/index

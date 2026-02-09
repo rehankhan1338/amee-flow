@@ -1,0 +1,35 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-03-05 02:18:39 --> 404 Page Not Found: Wp-admin/install.php
+ERROR - 2022-03-05 02:18:40 --> 404 Page Not Found: Wp/wp-admin
+ERROR - 2022-03-05 02:18:41 --> 404 Page Not Found: New/wp-admin
+ERROR - 2022-03-05 02:18:42 --> 404 Page Not Found: Old/wp-admin
+ERROR - 2022-03-05 02:18:43 --> 404 Page Not Found: Wordpress/wp-admin
+ERROR - 2022-03-05 02:18:44 --> 404 Page Not Found: Test/wp-admin
+ERROR - 2022-03-05 02:18:45 --> 404 Page Not Found: Blog/wp-admin
+ERROR - 2022-03-05 02:18:46 --> 404 Page Not Found: Cms/wp-admin
+ERROR - 2022-03-05 02:18:48 --> 404 Page Not Found: Web/wp-admin
+ERROR - 2022-03-05 02:18:49 --> 404 Page Not Found: Backup/wp-admin
+ERROR - 2022-03-05 02:18:50 --> 404 Page Not Found: Site/wp-admin
+ERROR - 2022-03-05 02:18:51 --> 404 Page Not Found: Oldsite/wp-admin
+ERROR - 2022-03-05 08:03:58 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2022-03-05 09:08:25 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-03-05 09:08:40 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-03-05 09:08:57 --> 404 Page Not Found: Sites/default
+ERROR - 2022-03-05 09:09:14 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-03-05 09:09:28 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-03-05 09:09:41 --> 404 Page Not Found: Images/index
+ERROR - 2022-03-05 09:09:59 --> 404 Page Not Found: Files/index
+ERROR - 2022-03-05 10:39:44 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2022-03-05 10:39:50 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2022-03-05 10:41:44 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2022-03-05 10:57:50 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2022-03-05 11:07:12 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2022-03-05 12:43:42 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-03-05 19:28:56 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-03-05 19:29:15 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-03-05 19:29:24 --> 404 Page Not Found: Sites/default
+ERROR - 2022-03-05 19:29:35 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-03-05 19:29:45 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-03-05 19:29:59 --> 404 Page Not Found: Images/index
+ERROR - 2022-03-05 19:30:09 --> 404 Page Not Found: Files/index

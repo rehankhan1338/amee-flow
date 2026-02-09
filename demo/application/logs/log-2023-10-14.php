@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-10-14 13:51:48 --> 404 Page Not Found: Env/index
+ERROR - 2023-10-14 13:52:33 --> 404 Page Not Found: Env/index
+ERROR - 2023-10-14 16:05:21 --> 404 Page Not Found: Wordpress/index
+ERROR - 2023-10-14 16:05:21 --> 404 Page Not Found: Wp/index
+ERROR - 2023-10-14 16:05:21 --> 404 Page Not Found: Blog/index
+ERROR - 2023-10-14 16:05:21 --> 404 Page Not Found: New/index
+ERROR - 2023-10-14 16:05:21 --> 404 Page Not Found: Old/index
+ERROR - 2023-10-14 16:05:21 --> 404 Page Not Found: Test/index
+ERROR - 2023-10-14 16:05:22 --> 404 Page Not Found: Main/index
+ERROR - 2023-10-14 16:05:22 --> 404 Page Not Found: Testing/index
+ERROR - 2023-10-14 16:10:56 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:10:56 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:10:56 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:10:58 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:11:57 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:11:57 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:11:57 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:11:57 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:12:33 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:12:33 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:12:33 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:12:35 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:13:10 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:13:11 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:13:12 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:13:12 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:13:35 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:13:35 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:13:35 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:13:37 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-10-14 16:27:30 --> 404 Page Not Found: Robotstxt/index

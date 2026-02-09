@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-05-05 02:33:35 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-05-05 03:04:50 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-05-05 05:36:39 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-05-05 05:36:40 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-05-05 05:36:57 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-05-05 05:37:09 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-05-05 05:37:11 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-05-05 05:37:24 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-05-05 05:37:24 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2024-05-05 06:24:33 --> 404 Page Not Found: Env/index
+ERROR - 2024-05-05 13:29:20 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2024-05-05 13:29:20 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2024-05-05 13:29:20 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2024-05-05 13:29:20 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2024-05-05 13:29:21 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2024-05-05 13:29:21 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2024-05-05 13:29:21 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2024-05-05 13:29:21 --> 404 Page Not Found: News/wp-includes
+ERROR - 2024-05-05 13:29:21 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2024-05-05 13:29:22 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2024-05-05 13:29:22 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2024-05-05 13:29:22 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2024-05-05 13:29:22 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2024-05-05 13:29:22 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2024-05-05 13:29:23 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2024-05-05 13:29:23 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2024-05-05 13:29:23 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2024-05-05 13:29:23 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2024-05-05 15:16:55 --> 404 Page Not Found: Wp-loginphp/index

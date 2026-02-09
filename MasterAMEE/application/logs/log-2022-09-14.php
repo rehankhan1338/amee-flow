@@ -1,0 +1,35 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-09-14 07:22:50 --> 404 Page Not Found: Env/index
+ERROR - 2022-09-14 08:01:59 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-09-14 08:02:06 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-09-14 08:02:13 --> 404 Page Not Found: Sites/default
+ERROR - 2022-09-14 08:02:20 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-09-14 08:02:27 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-09-14 08:02:36 --> 404 Page Not Found: Images/index
+ERROR - 2022-09-14 08:02:43 --> 404 Page Not Found: Files/index
+ERROR - 2022-09-14 09:35:29 --> 404 Page Not Found: Env/index
+ERROR - 2022-09-14 13:17:08 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-09-14 13:17:16 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-09-14 13:17:23 --> 404 Page Not Found: Sites/default
+ERROR - 2022-09-14 13:17:31 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-09-14 13:17:41 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-09-14 13:17:47 --> 404 Page Not Found: Images/index
+ERROR - 2022-09-14 13:17:54 --> 404 Page Not Found: Files/index
+ERROR - 2022-09-14 16:19:30 --> 404 Page Not Found: Env/index
+ERROR - 2022-09-14 18:37:07 --> 404 Page Not Found: Git/config
+ERROR - 2022-09-14 18:37:10 --> 404 Page Not Found: Git/config
+ERROR - 2022-09-14 18:38:18 --> 404 Page Not Found: Git/config
+ERROR - 2022-09-14 18:38:25 --> 404 Page Not Found: Git/config
+ERROR - 2022-09-14 18:38:26 --> 404 Page Not Found: Git/config
+ERROR - 2022-09-14 20:44:30 --> 404 Page Not Found: Wordpress/index
+ERROR - 2022-09-14 20:44:31 --> 404 Page Not Found: Wp/index
+ERROR - 2022-09-14 20:44:31 --> 404 Page Not Found: Bc/index
+ERROR - 2022-09-14 20:44:31 --> 404 Page Not Found: Bk/index
+ERROR - 2022-09-14 20:44:32 --> 404 Page Not Found: Backup/index
+ERROR - 2022-09-14 20:44:32 --> 404 Page Not Found: Old/index
+ERROR - 2022-09-14 20:44:32 --> 404 Page Not Found: New/index
+ERROR - 2022-09-14 20:44:33 --> 404 Page Not Found: Main/index
+ERROR - 2022-09-14 21:55:00 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-09-14 23:51:22 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-09-14 23:57:08 --> 404 Page Not Found: Wp-loginphp/index

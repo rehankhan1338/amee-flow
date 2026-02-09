@@ -1,0 +1,35 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-08-04 02:25:08 --> 404 Page Not Found: Wp-admin/setup-config.php
+ERROR - 2023-08-04 02:57:17 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-08-04 03:51:17 --> 404 Page Not Found: Wp-admin/setup-config.php
+ERROR - 2023-08-04 04:50:36 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-08-04 04:50:38 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2023-08-04 04:50:39 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2023-08-04 04:50:40 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2023-08-04 06:33:01 --> 404 Page Not Found: Aws/credentials
+ERROR - 2023-08-04 07:06:43 --> 404 Page Not Found: Aws/credentials
+ERROR - 2023-08-04 09:35:02 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2023-08-04 10:17:26 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-08-04 11:16:57 --> 404 Page Not Found: Aws/credentials
+ERROR - 2023-08-04 11:20:40 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-08-04 12:42:48 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:42:48 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:42:48 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:42:50 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:08 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:08 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:08 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:28 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:28 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:29 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:29 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:45 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:45 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 12:43:45 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-08-04 14:45:33 --> 404 Page Not Found: Aws/credentials
+ERROR - 2023-08-04 16:47:03 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-08-04 19:00:31 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-08-04 19:23:28 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-08-04 20:01:16 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-08-04 23:42:46 --> 404 Page Not Found: Xmlrpcphp/index

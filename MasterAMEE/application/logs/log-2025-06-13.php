@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-06-13 02:44:03 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2025-06-13 02:44:04 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-06-13 02:44:04 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-06-13 02:44:04 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-06-13 02:44:04 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2025-06-13 02:44:05 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-06-13 02:44:05 --> 404 Page Not Found: News/wp-includes
+ERROR - 2025-06-13 02:44:05 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-06-13 02:44:05 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-06-13 02:44:05 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2025-06-13 02:44:05 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-06-13 02:44:06 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-06-13 02:44:06 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2025-06-13 03:18:14 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-06-13 03:18:23 --> 404 Page Not Found: Sitemapxml/index
+ERROR - 2025-06-13 03:23:29 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-06-13 03:23:34 --> 404 Page Not Found: Sitemapxml/index
+ERROR - 2025-06-13 03:23:54 --> 404 Page Not Found: Configjson/index
+ERROR - 2025-06-13 12:13:42 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2025-06-13 12:13:42 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-06-13 12:13:43 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-06-13 12:13:43 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-06-13 12:13:43 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2025-06-13 12:13:43 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-06-13 12:13:43 --> 404 Page Not Found: News/wp-includes
+ERROR - 2025-06-13 12:13:44 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2025-06-13 12:13:44 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2025-06-13 12:13:44 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2025-06-13 12:13:44 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-06-13 12:13:44 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-06-13 12:13:44 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2025-06-13 12:13:45 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2025-06-13 12:13:45 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-06-13 12:13:45 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-06-13 12:13:45 --> 404 Page Not Found: Sito/wp-includes

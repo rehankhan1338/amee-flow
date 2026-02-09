@@ -1,0 +1,34 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-11-17 02:24:38 --> 404 Page Not Found: Wordpress/index
+ERROR - 2023-11-17 02:24:39 --> 404 Page Not Found: Wp/index
+ERROR - 2023-11-17 02:24:39 --> 404 Page Not Found: Bc/index
+ERROR - 2023-11-17 02:24:39 --> 404 Page Not Found: Bk/index
+ERROR - 2023-11-17 02:24:39 --> 404 Page Not Found: Backup/index
+ERROR - 2023-11-17 02:24:39 --> 404 Page Not Found: Old/index
+ERROR - 2023-11-17 02:24:40 --> 404 Page Not Found: New/index
+ERROR - 2023-11-17 02:24:40 --> 404 Page Not Found: Main/index
+ERROR - 2023-11-17 13:01:02 --> 404 Page Not Found: Chosenphp/index
+ERROR - 2023-11-17 17:17:03 --> 404 Page Not Found: Env/index
+ERROR - 2023-11-17 17:17:17 --> 404 Page Not Found: Vendor/phpunit
+ERROR - 2023-11-17 22:42:33 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2023-11-17 22:42:40 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2023-11-17 22:42:47 --> 404 Page Not Found: _profiler/phpinfo.bak
+ERROR - 2023-11-17 22:42:58 --> 404 Page Not Found: Infophp/index
+ERROR - 2023-11-17 22:43:42 --> 404 Page Not Found: Etc/apache2
+ERROR - 2023-11-17 22:43:46 --> 404 Page Not Found: Etc/apache2
+ERROR - 2023-11-17 22:43:49 --> 404 Page Not Found: Etc/apache2
+ERROR - 2023-11-17 22:43:53 --> 404 Page Not Found: Etc/apache2
+ERROR - 2023-11-17 22:43:56 --> 404 Page Not Found: Etc/apache2
+ERROR - 2023-11-17 22:44:20 --> 404 Page Not Found: Etc/apache2
+ERROR - 2023-11-17 22:44:23 --> 404 Page Not Found: Var/log
+ERROR - 2023-11-17 22:44:29 --> 404 Page Not Found: Var/www
+ERROR - 2023-11-17 22:44:43 --> 404 Page Not Found: Etc/php
+ERROR - 2023-11-17 22:44:53 --> 404 Page Not Found: Etc/phpmyadmin
+ERROR - 2023-11-17 22:44:56 --> 404 Page Not Found: Etc/mysql
+ERROR - 2023-11-17 22:44:59 --> 404 Page Not Found: Etc/mysql
+ERROR - 2023-11-17 22:45:05 --> 404 Page Not Found: Var/lib
+ERROR - 2023-11-17 23:06:07 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-11-17 23:06:07 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-11-17 23:06:07 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-11-17 23:06:09 --> 404 Page Not Found: Devassessmentmadeeasycom/assets

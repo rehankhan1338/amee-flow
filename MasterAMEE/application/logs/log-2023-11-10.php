@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-11-10 00:43:41 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-11-10 03:16:53 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-11-10 11:58:53 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:53 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:53 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:53 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:54 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:54 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:54 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:54 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:54 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:54 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:54 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:58:56 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:21 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:21 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:22 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:22 --> 404 Page Not Found: Csunassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:22 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:22 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:22 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:22 --> 404 Page Not Found: Demoassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:23 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:23 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:23 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-11-10 11:59:23 --> 404 Page Not Found: Inroadsassessmentmadeeasycom/assets
+ERROR - 2023-11-10 12:00:11 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-10 12:00:12 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-10 12:00:12 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-10 12:00:13 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-10 12:00:33 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-10 12:00:33 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-10 12:00:33 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2023-11-10 12:00:33 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets

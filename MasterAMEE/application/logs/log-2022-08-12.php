@@ -1,0 +1,74 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-08-12 01:25:35 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-08-12 01:25:35 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-08-12 01:25:35 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2022-08-12 01:25:35 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2022-08-12 01:25:35 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2022-08-12 01:25:35 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2022-08-12 01:25:35 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2022-08-12 01:25:35 --> 404 Page Not Found: News/wp-includes
+ERROR - 2022-08-12 01:25:35 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2022-08-12 01:25:36 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2022-08-12 01:25:36 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2022-08-12 01:25:36 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2022-08-12 01:25:36 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2022-08-12 01:25:36 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2022-08-12 01:25:36 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2022-08-12 01:25:36 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2022-08-12 01:25:36 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2022-08-12 01:25:36 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2022-08-12 02:42:37 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 03:03:19 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 03:39:06 --> 404 Page Not Found: Class-wp-widget-archivesphp/index
+ERROR - 2022-08-12 03:39:06 --> 404 Page Not Found: Adminphp/index
+ERROR - 2022-08-12 03:39:06 --> 404 Page Not Found: Wp-content/mu-plugins-old
+ERROR - 2022-08-12 03:39:06 --> 404 Page Not Found: Wikindexphp/index
+ERROR - 2022-08-12 03:39:06 --> 404 Page Not Found: 3indexphp/index
+ERROR - 2022-08-12 05:52:05 --> 404 Page Not Found: Env/index
+ERROR - 2022-08-12 05:52:06 --> 404 Page Not Found: Core/.env
+ERROR - 2022-08-12 05:52:06 --> 404 Page Not Found: App/.env
+ERROR - 2022-08-12 05:52:07 --> 404 Page Not Found: Public/.env
+ERROR - 2022-08-12 05:52:07 --> 404 Page Not Found: Vendor/.env
+ERROR - 2022-08-12 05:52:08 --> 404 Page Not Found: Laravel/.env
+ERROR - 2022-08-12 05:52:08 --> 404 Page Not Found: Database/.env
+ERROR - 2022-08-12 05:52:09 --> 404 Page Not Found: Data/.env
+ERROR - 2022-08-12 05:52:09 --> 404 Page Not Found: Prod/.env
+ERROR - 2022-08-12 07:41:48 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-08-12 07:41:48 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-08-12 07:41:48 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2022-08-12 07:41:48 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2022-08-12 07:41:48 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2022-08-12 07:41:48 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2022-08-12 07:41:48 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: News/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2022-08-12 07:41:49 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2022-08-12 10:39:54 --> Severity: Notice --> Undefined index: h_question_id /home/secondw6/public_html/domains/amee/MasterAMEE/application/models/Survey_form_mdl.php 167
+ERROR - 2022-08-12 10:40:04 --> Severity: Notice --> Undefined index: h_question_id /home/secondw6/public_html/domains/amee/MasterAMEE/application/models/Survey_form_mdl.php 167
+ERROR - 2022-08-12 10:40:06 --> Severity: Notice --> Undefined index: h_question_id /home/secondw6/public_html/domains/amee/MasterAMEE/application/models/Survey_form_mdl.php 167
+ERROR - 2022-08-12 11:11:01 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 12:48:16 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 12:50:05 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 12:58:23 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 13:49:44 --> 404 Page Not Found: Installerphp/index
+ERROR - 2022-08-12 16:18:17 --> Severity: Notice --> Undefined index: h_question_id /home/secondw6/public_html/domains/amee/MasterAMEE/application/models/Survey_form_mdl.php 167
+ERROR - 2022-08-12 16:27:34 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 17:31:21 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-12 20:06:32 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-12 20:36:42 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 21:07:19 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-12 21:47:32 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-12 22:00:57 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 22:12:36 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 22:16:03 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-08-12 23:03:59 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-12 23:31:30 --> 404 Page Not Found: Installerphp/index

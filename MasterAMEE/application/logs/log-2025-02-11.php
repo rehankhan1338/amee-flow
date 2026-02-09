@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-02-11 07:04:30 --> 404 Page Not Found: Env/index
+ERROR - 2025-02-11 07:04:31 --> 404 Page Not Found: Api/.env
+ERROR - 2025-02-11 07:04:31 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2025-02-11 07:04:32 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2025-02-11 07:04:33 --> 404 Page Not Found: Envsave/index
+ERROR - 2025-02-11 07:04:34 --> 404 Page Not Found: Envprod/index
+ERROR - 2025-02-11 07:04:34 --> 404 Page Not Found: Login/.env
+ERROR - 2025-02-11 07:04:35 --> 404 Page Not Found: Local/.env
+ERROR - 2025-02-11 07:04:36 --> 404 Page Not Found: admin/Env/index
+ERROR - 2025-02-11 07:04:36 --> 404 Page Not Found: Dev/.env
+ERROR - 2025-02-11 07:04:37 --> 404 Page Not Found: Application/.env
+ERROR - 2025-02-11 07:04:38 --> 404 Page Not Found: Php_infophp/index
+ERROR - 2025-02-11 07:04:38 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2025-02-11 08:06:53 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-02-11 11:03:04 --> 404 Page Not Found: Wp/index
+ERROR - 2025-02-11 11:03:10 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-02-11 11:03:23 --> 404 Page Not Found: Demo/index
+ERROR - 2025-02-11 11:03:29 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-02-11 11:03:37 --> 404 Page Not Found: Old/index
+ERROR - 2025-02-11 11:03:48 --> 404 Page Not Found: Backup/index
+ERROR - 2025-02-11 11:03:59 --> 404 Page Not Found: New/index
+ERROR - 2025-02-11 11:04:12 --> 404 Page Not Found: Test/index
+ERROR - 2025-02-11 11:04:20 --> 404 Page Not Found: Wp/index
+ERROR - 2025-02-11 11:04:24 --> 404 Page Not Found: Temp/index
+ERROR - 2025-02-11 11:04:49 --> 404 Page Not Found: Blog/index
+ERROR - 2025-02-11 11:24:10 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-02-11 11:24:11 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-02-11 18:45:45 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-02-11 19:36:37 --> 404 Page Not Found: Robotstxt/index

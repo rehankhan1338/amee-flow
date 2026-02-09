@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-12-11 12:33:14 --> 404 Page Not Found: Magento_version/index
+ERROR - 2023-12-11 12:33:14 --> 404 Page Not Found: Wp-includes/js
+ERROR - 2023-12-11 12:33:14 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-12-11 12:33:14 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-12-11 20:39:56 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-12-11 20:39:56 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-12-11 21:35:19 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:19 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:21 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:21 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:32 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:32 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:32 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:32 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:45 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:45 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:45 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:47 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:57 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:57 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:57 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 21:35:57 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 22:18:42 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 22:18:42 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 22:18:42 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 22:19:17 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 22:19:17 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 22:19:17 --> 404 Page Not Found: Devassessmentmadeeasycom/assets
+ERROR - 2023-12-11 22:19:19 --> 404 Page Not Found: Devassessmentmadeeasycom/assets

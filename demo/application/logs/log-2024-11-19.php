@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-11-19 00:09:36 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-11-19 00:09:37 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-11-19 02:09:56 --> 404 Page Not Found: Wordpress/index
+ERROR - 2024-11-19 02:09:57 --> 404 Page Not Found: Wp/index
+ERROR - 2024-11-19 02:09:57 --> 404 Page Not Found: Bc/index
+ERROR - 2024-11-19 02:09:57 --> 404 Page Not Found: Bk/index
+ERROR - 2024-11-19 02:09:57 --> 404 Page Not Found: Backup/index
+ERROR - 2024-11-19 02:09:58 --> 404 Page Not Found: Old/index
+ERROR - 2024-11-19 02:09:58 --> 404 Page Not Found: New/index
+ERROR - 2024-11-19 02:09:58 --> 404 Page Not Found: Main/index
+ERROR - 2024-11-19 13:45:37 --> 404 Page Not Found: Wordpress/index
+ERROR - 2024-11-19 13:45:37 --> 404 Page Not Found: Wp/index
+ERROR - 2024-11-19 13:45:38 --> 404 Page Not Found: Bc/index
+ERROR - 2024-11-19 13:45:38 --> 404 Page Not Found: Bk/index
+ERROR - 2024-11-19 13:45:39 --> 404 Page Not Found: Backup/index
+ERROR - 2024-11-19 13:45:39 --> 404 Page Not Found: Old/index
+ERROR - 2024-11-19 13:45:39 --> 404 Page Not Found: New/index
+ERROR - 2024-11-19 13:45:40 --> 404 Page Not Found: Main/index
+ERROR - 2024-11-19 19:35:24 --> 404 Page Not Found: Wordpress/index
+ERROR - 2024-11-19 19:35:25 --> 404 Page Not Found: Wp/index
+ERROR - 2024-11-19 19:35:26 --> 404 Page Not Found: Bc/index
+ERROR - 2024-11-19 19:35:26 --> 404 Page Not Found: Bk/index
+ERROR - 2024-11-19 19:35:26 --> 404 Page Not Found: Backup/index
+ERROR - 2024-11-19 19:35:26 --> 404 Page Not Found: Old/index
+ERROR - 2024-11-19 19:35:27 --> 404 Page Not Found: New/index
+ERROR - 2024-11-19 19:35:27 --> 404 Page Not Found: Main/index
+ERROR - 2024-11-19 20:31:55 --> 404 Page Not Found: Env/index
+ERROR - 2024-11-19 20:31:55 --> 404 Page Not Found: Api/.env
+ERROR - 2024-11-19 20:31:55 --> 404 Page Not Found: Production/.env
+ERROR - 2024-11-19 20:31:55 --> 404 Page Not Found: Development/.env
+ERROR - 2024-11-19 20:31:56 --> 404 Page Not Found: Staging/.env

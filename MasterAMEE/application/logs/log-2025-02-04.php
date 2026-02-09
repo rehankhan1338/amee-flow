@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-02-04 12:31:42 --> 404 Page Not Found: Appsettingsjson/index
+ERROR - 2025-02-04 12:31:45 --> 404 Page Not Found: AppsettingsProductionjson/index
+ERROR - 2025-02-04 12:31:47 --> 404 Page Not Found: Api/appsettings.json
+ERROR - 2025-02-04 12:31:48 --> 404 Page Not Found: Api/appsettings.Production.json
+ERROR - 2025-02-04 13:40:02 --> 404 Page Not Found: Appsettingsjson/index
+ERROR - 2025-02-04 13:40:05 --> 404 Page Not Found: AppsettingsProductionjson/index
+ERROR - 2025-02-04 13:40:07 --> 404 Page Not Found: Api/appsettings.json
+ERROR - 2025-02-04 13:40:10 --> 404 Page Not Found: Api/appsettings.Production.json
+ERROR - 2025-02-04 18:21:51 --> 404 Page Not Found: Wp/index
+ERROR - 2025-02-04 18:22:00 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-02-04 18:22:07 --> 404 Page Not Found: Demo/index
+ERROR - 2025-02-04 18:22:16 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-02-04 18:22:22 --> 404 Page Not Found: Old/index
+ERROR - 2025-02-04 18:22:30 --> 404 Page Not Found: Backup/index
+ERROR - 2025-02-04 18:22:45 --> 404 Page Not Found: New/index
+ERROR - 2025-02-04 18:22:53 --> 404 Page Not Found: Test/index
+ERROR - 2025-02-04 18:22:57 --> 404 Page Not Found: Wp/index
+ERROR - 2025-02-04 18:23:15 --> 404 Page Not Found: Temp/index
+ERROR - 2025-02-04 18:23:23 --> 404 Page Not Found: Blog/index
+ERROR - 2025-02-04 20:39:06 --> 404 Page Not Found: Env/index
+ERROR - 2025-02-04 20:39:09 --> 404 Page Not Found: Actuator/env
+ERROR - 2025-02-04 20:39:12 --> 404 Page Not Found: Api/actuator
+ERROR - 2025-02-04 20:39:15 --> 404 Page Not Found: Api/env
+ERROR - 2025-02-04 20:39:19 --> 404 Page Not Found: admin/Actuator/env
+ERROR - 2025-02-04 20:39:23 --> 404 Page Not Found: admin/Env/index
+ERROR - 2025-02-04 20:39:25 --> 404 Page Not Found: Gateway/actuator
+ERROR - 2025-02-04 20:39:29 --> 404 Page Not Found: Gateway/env
+ERROR - 2025-02-04 20:39:39 --> 404 Page Not Found: Message-api/actuator

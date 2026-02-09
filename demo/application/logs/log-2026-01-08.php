@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2026-01-08 00:11:47 --> 404 Page Not Found: Shell/index
+ERROR - 2026-01-08 00:11:59 --> 404 Page Not Found: Webshell/index
+ERROR - 2026-01-08 00:13:49 --> 404 Page Not Found: Shellphp/index
+ERROR - 2026-01-08 00:28:51 --> 404 Page Not Found: Webshellphp/index
+ERROR - 2026-01-08 03:43:51 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2026-01-08 03:43:51 --> 404 Page Not Found: Wp-admin/index
+ERROR - 2026-01-08 03:43:52 --> 404 Page Not Found: Administrator/index
+ERROR - 2026-01-08 03:43:52 --> 404 Page Not Found: User/login
+ERROR - 2026-01-08 03:43:53 --> 404 Page Not Found: Login/index
+ERROR - 2026-01-08 03:43:53 --> 404 Page Not Found: Register/index
+ERROR - 2026-01-08 03:43:54 --> 404 Page Not Found: Login/index
+ERROR - 2026-01-08 14:22:50 --> 404 Page Not Found: Envbak/index
+ERROR - 2026-01-08 14:22:57 --> 404 Page Not Found: Envprod/index
+ERROR - 2026-01-08 14:22:58 --> 404 Page Not Found: Envdev/index
+ERROR - 2026-01-08 14:23:02 --> 404 Page Not Found: Credentials/index
+ERROR - 2026-01-08 14:23:03 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2026-01-08 14:23:11 --> 404 Page Not Found: Iphp/index
+ERROR - 2026-01-08 14:23:14 --> 404 Page Not Found: Info/index
+ERROR - 2026-01-08 14:23:15 --> 404 Page Not Found: Aws/credentials
+ERROR - 2026-01-08 14:23:17 --> 404 Page Not Found: Secretsjson/index
+ERROR - 2026-01-08 14:23:18 --> 404 Page Not Found: Credentialsjson/index
+ERROR - 2026-01-08 14:23:24 --> 404 Page Not Found: Wp-configphpbak/index
+ERROR - 2026-01-08 14:23:25 --> 404 Page Not Found: Configphpbak/index
+ERROR - 2026-01-08 14:23:28 --> 404 Page Not Found: Settingsjson/index
+ERROR - 2026-01-08 14:23:30 --> 404 Page Not Found: Git/HEAD
+ERROR - 2026-01-08 14:23:31 --> 404 Page Not Found: Gitignore/index
+ERROR - 2026-01-08 14:23:31 --> 404 Page Not Found: Git-credentials/index
+ERROR - 2026-01-08 14:23:32 --> 404 Page Not Found: Gitconfig/index
+ERROR - 2026-01-08 14:23:32 --> 404 Page Not Found: Swaggerjson/index
+ERROR - 2026-01-08 14:23:35 --> 404 Page Not Found: Swagger/v2

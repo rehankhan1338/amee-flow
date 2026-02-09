@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-10-06 00:17:33 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-10-06 00:51:00 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-10-06 01:08:53 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-10-06 01:25:00 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-10-06 01:39:48 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-10-06 02:11:43 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-10-06 02:22:41 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-10-06 02:22:54 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-10-06 02:23:04 --> 404 Page Not Found: Sites/default
+ERROR - 2022-10-06 02:23:20 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-10-06 02:23:40 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-10-06 02:23:53 --> 404 Page Not Found: Images/index
+ERROR - 2022-10-06 02:24:03 --> 404 Page Not Found: Files/index
+ERROR - 2022-10-06 05:05:13 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-06 05:05:14 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-10-06 05:05:15 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-10-06 05:05:17 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-10-06 13:20:28 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-06 13:20:28 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-06 13:20:46 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-06 13:20:46 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-06 15:44:25 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-06 15:44:25 --> 404 Page Not Found: Faviconico/index
+ERROR - 2022-10-06 18:05:13 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-10-06 18:05:23 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-10-06 18:05:43 --> 404 Page Not Found: Sites/default
+ERROR - 2022-10-06 18:05:53 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-10-06 18:06:05 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-10-06 18:06:23 --> 404 Page Not Found: Images/index
+ERROR - 2022-10-06 18:06:31 --> 404 Page Not Found: Files/index

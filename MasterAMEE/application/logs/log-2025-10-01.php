@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-10-01 03:45:50 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-10-01 03:46:31 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-10-01 07:28:50 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-10-01 07:29:12 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-10-01 14:36:29 --> 404 Page Not Found: Git/config
+ERROR - 2025-10-01 14:37:04 --> 404 Page Not Found: Git/config
+ERROR - 2025-10-01 14:43:30 --> 404 Page Not Found: Git/config
+ERROR - 2025-10-01 14:45:30 --> 404 Page Not Found: Git/config
+ERROR - 2025-10-01 18:18:21 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-10-01 18:18:24 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-10-01 23:02:58 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:03:00 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:03:00 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:03:00 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:03:00 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:03:48 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:03:48 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:03:48 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:03:49 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:04:23 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:04:23 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:04:24 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:04:26 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:05:21 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:05:21 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:05:25 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:05:25 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:06:01 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:06:01 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:06:01 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets
+ERROR - 2025-10-01 23:06:07 --> 404 Page Not Found: Mpcataassessmentmadeeasycom/assets

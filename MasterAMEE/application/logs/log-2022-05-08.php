@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-05-08 00:37:52 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-05-08 01:37:27 --> 404 Page Not Found: Env/index
+ERROR - 2022-05-08 01:37:27 --> 404 Page Not Found: Core/.env
+ERROR - 2022-05-08 01:37:28 --> 404 Page Not Found: App/.env
+ERROR - 2022-05-08 01:37:29 --> 404 Page Not Found: Public/.env
+ERROR - 2022-05-08 01:37:30 --> 404 Page Not Found: Wp-content/.env
+ERROR - 2022-05-08 01:37:31 --> 404 Page Not Found: Laravel/.env
+ERROR - 2022-05-08 01:37:31 --> 404 Page Not Found: Opt/env
+ERROR - 2022-05-08 02:16:09 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-05-08 04:38:04 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-05-08 11:31:29 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-05-08 11:31:29 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-05-08 11:31:30 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-05-08 11:31:30 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-05-08 20:51:54 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-05-08 20:52:13 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-05-08 20:52:41 --> 404 Page Not Found: Sites/default
+ERROR - 2022-05-08 20:53:01 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-05-08 20:53:28 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-05-08 20:53:48 --> 404 Page Not Found: Images/index
+ERROR - 2022-05-08 20:54:13 --> 404 Page Not Found: Files/index
+ERROR - 2022-05-08 20:54:43 --> 404 Page Not Found: Wp-admin/css
+ERROR - 2022-05-08 20:55:08 --> 404 Page Not Found: Well-known/index
+ERROR - 2022-05-08 20:55:27 --> 404 Page Not Found: Sites/default
+ERROR - 2022-05-08 20:55:46 --> 404 Page Not Found: admin/Controller/extension
+ERROR - 2022-05-08 20:56:03 --> 404 Page Not Found: Uploads/index
+ERROR - 2022-05-08 20:56:39 --> 404 Page Not Found: Images/index
+ERROR - 2022-05-08 20:57:07 --> 404 Page Not Found: Files/index

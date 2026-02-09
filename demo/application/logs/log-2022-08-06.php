@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-08-06 08:54:39 --> 404 Page Not Found: Feed/index
+ERROR - 2022-08-06 08:54:39 --> 404 Page Not Found: Wp-links-opmlphp/index
+ERROR - 2022-08-06 08:54:43 --> 404 Page Not Found: Administrator/manifests
+ERROR - 2022-08-06 08:54:46 --> 404 Page Not Found: Language/en-GB
+ERROR - 2022-08-06 08:54:48 --> 404 Page Not Found: Administrator/components
+ERROR - 2022-08-06 08:54:52 --> 404 Page Not Found: Administrator/components
+ERROR - 2022-08-06 08:54:55 --> 404 Page Not Found: Administrator/components
+ERROR - 2022-08-06 08:54:58 --> 404 Page Not Found: Mambots/content
+ERROR - 2022-08-06 08:55:01 --> 404 Page Not Found: Wp/index
+ERROR - 2022-08-06 08:55:04 --> 404 Page Not Found: Wordpress/index
+ERROR - 2022-08-06 08:55:07 --> 404 Page Not Found: News/index
+ERROR - 2022-08-06 08:55:11 --> 404 Page Not Found: Joomla/index
+ERROR - 2022-08-06 08:55:14 --> 404 Page Not Found: Site/index
+ERROR - 2022-08-06 08:55:17 --> 404 Page Not Found: Opencart/index
+ERROR - 2022-08-06 08:55:19 --> 404 Page Not Found: Cms/index
+ERROR - 2022-08-06 08:55:23 --> 404 Page Not Found: 2020/index
+ERROR - 2022-08-06 08:55:25 --> 404 Page Not Found: 2021/index
+ERROR - 2022-08-06 08:55:29 --> 404 Page Not Found: 2022/index
+ERROR - 2022-08-06 08:55:33 --> 404 Page Not Found: 2019/index
+ERROR - 2022-08-06 08:55:35 --> 404 Page Not Found: 2018/index
+ERROR - 2022-08-06 08:55:39 --> 404 Page Not Found: 2017/index
+ERROR - 2022-08-06 08:55:42 --> 404 Page Not Found: Blog/index
+ERROR - 2022-08-06 08:55:45 --> 404 Page Not Found: Backup/index
+ERROR - 2022-08-06 08:55:47 --> 404 Page Not Found: Old/index
+ERROR - 2022-08-06 08:55:51 --> 404 Page Not Found: Test/index
+ERROR - 2022-08-06 08:55:54 --> 404 Page Not Found: Web/index
+ERROR - 2022-08-06 08:55:57 --> 404 Page Not Found: Demo/index
+ERROR - 2022-08-06 08:56:00 --> 404 Page Not Found: New/index
+ERROR - 2022-08-06 12:13:41 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-06 12:13:43 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-08-06 12:13:44 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-08-06 12:13:45 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-08-06 17:56:21 --> 404 Page Not Found: Wp-commentinphp/index
+ERROR - 2022-08-06 19:09:47 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-08-06 20:55:44 --> 404 Page Not Found: Vendor/phpunit

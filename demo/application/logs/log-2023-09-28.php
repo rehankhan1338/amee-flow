@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-09-28 09:44:35 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-09-28 09:44:42 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2023-09-28 09:44:43 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2023-09-28 09:44:44 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2023-09-28 17:17:09 --> 404 Page Not Found: Wp-atomphp/index
+ERROR - 2023-09-28 17:17:09 --> 404 Page Not Found: Atomlibphp/index
+ERROR - 2023-09-28 17:17:10 --> 404 Page Not Found: Ninjaphp/index
+ERROR - 2023-09-28 17:17:10 --> 404 Page Not Found: Shellphp/index
+ERROR - 2023-09-28 17:17:10 --> 404 Page Not Found: Simplephp/index
+ERROR - 2023-09-28 17:17:10 --> 404 Page Not Found: Nf_trackingphp/index
+ERROR - 2023-09-28 21:46:48 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2023-09-28 22:26:47 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2023-09-28 22:26:47 --> 404 Page Not Found: Feed/index
+ERROR - 2023-09-28 22:26:47 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2023-09-28 22:26:48 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2023-09-28 22:26:48 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2023-09-28 22:26:48 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2023-09-28 22:26:48 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2023-09-28 22:26:48 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2023-09-28 22:26:48 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2023-09-28 22:26:49 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2023-09-28 22:26:49 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2023-09-28 22:26:49 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2023-09-28 22:26:49 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2023-09-28 22:26:49 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2023-09-28 22:26:49 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2023-09-28 23:36:26 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-09-28 23:36:26 --> 404 Page Not Found: Faviconico/index

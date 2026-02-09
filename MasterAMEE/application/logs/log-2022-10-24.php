@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-10-24 00:08:40 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-10-24 01:31:00 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-10-24 01:53:37 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2022-10-24 01:55:47 --> 404 Page Not Found: Env/index
+ERROR - 2022-10-24 16:13:50 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-24 17:34:34 --> 404 Page Not Found: Class-wp-widget-archivesphp/index
+ERROR - 2022-10-24 17:34:35 --> 404 Page Not Found: Adminphp/index
+ERROR - 2022-10-24 17:34:35 --> 404 Page Not Found: 3indexphp/index
+ERROR - 2022-10-24 17:34:35 --> 404 Page Not Found: Wp-content/mu-plugins-old
+ERROR - 2022-10-24 17:34:35 --> 404 Page Not Found: Wikindexphp/index
+ERROR - 2022-10-24 18:58:45 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-24 19:29:21 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-24 19:32:27 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-10-24 19:32:27 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-10-24 19:32:27 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-10-24 19:32:27 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-10-24 19:32:27 --> 404 Page Not Found: _ignition/health-check
+ERROR - 2022-10-24 19:32:29 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-10-24 19:32:29 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-10-24 19:32:30 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-10-24 19:32:30 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-10-24 19:32:30 --> 404 Page Not Found: Public/_ignition
+ERROR - 2022-10-24 19:32:32 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-10-24 19:32:32 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-10-24 19:32:32 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-10-24 19:32:33 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-10-24 19:32:33 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2022-10-24 19:33:45 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-10-24 20:28:07 --> 404 Page Not Found: Wp-loginphp/index

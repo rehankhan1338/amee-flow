@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-05-26 06:49:20 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-05-26 08:25:04 --> 404 Page Not Found: ALFA_DATA/alfacgiapi
+ERROR - 2022-05-26 08:25:04 --> 404 Page Not Found: Alfacgiapi/perl.alfa
+ERROR - 2022-05-26 08:25:04 --> 404 Page Not Found: ALFA_DATA/alfacgiapi
+ERROR - 2022-05-26 08:25:05 --> 404 Page Not Found: Alfacgiapi/perl.alfa
+ERROR - 2022-05-26 08:25:05 --> 404 Page Not Found: ALFA_DATA/alfacgiapi
+ERROR - 2022-05-26 08:25:05 --> 404 Page Not Found: Alfacgiapi/perl.alfa
+ERROR - 2022-05-26 08:25:22 --> 404 Page Not Found: ALFA_DATA/alfacgiapi
+ERROR - 2022-05-26 08:25:22 --> 404 Page Not Found: Alfacgiapi/perl.alfa
+ERROR - 2022-05-26 08:25:41 --> 404 Page Not Found: ALFA_DATA/alfacgiapi
+ERROR - 2022-05-26 08:25:41 --> 404 Page Not Found: Alfacgiapi/perl.alfa
+ERROR - 2022-05-26 08:25:42 --> 404 Page Not Found: ALFA_DATA/alfacgiapi
+ERROR - 2022-05-26 08:25:42 --> 404 Page Not Found: Alfacgiapi/perl.alfa
+ERROR - 2022-05-26 15:10:39 --> 404 Page Not Found: Dup-installer/main.installer.php
+ERROR - 2022-05-26 15:12:03 --> 404 Page Not Found: Dup-installer/main.installer.php
+ERROR - 2022-05-26 15:18:54 --> 404 Page Not Found: Dup-installer/main.installer.php
+ERROR - 2022-05-26 15:22:10 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-05-26 17:03:16 --> 404 Page Not Found: Dup-installer/main.installer.php
+ERROR - 2022-05-26 19:54:52 --> 404 Page Not Found: Dup-installer/main.installer.php
+ERROR - 2022-05-26 21:40:09 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-05-26 21:40:10 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-05-26 21:40:11 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-05-26 21:40:13 --> 404 Page Not Found: Wp/wp-login.php
+ERROR - 2022-05-26 23:40:00 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-05-26 23:40:02 --> 404 Page Not Found: Wordpress/wp-login.php
+ERROR - 2022-05-26 23:40:03 --> 404 Page Not Found: Blog/wp-login.php
+ERROR - 2022-05-26 23:40:05 --> 404 Page Not Found: Wp/wp-login.php

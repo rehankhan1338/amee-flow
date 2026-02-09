@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-09-12 04:53:15 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-09-12 11:00:30 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-09-12 14:00:45 --> 404 Page Not Found: Var/resource_config.json
+ERROR - 2023-09-12 14:00:45 --> 404 Page Not Found: Magmi/web
+ERROR - 2023-09-12 14:00:45 --> 404 Page Not Found: Catalogsearch/advanced
+ERROR - 2023-09-12 14:00:45 --> 404 Page Not Found: Magmi/web
+ERROR - 2023-09-12 14:00:45 --> 404 Page Not Found: Downloader/index
+ERROR - 2023-09-12 14:00:45 --> 404 Page Not Found: Magmi/web
+ERROR - 2023-09-12 14:00:46 --> 404 Page Not Found: Install/index
+ERROR - 2023-09-12 14:03:06 --> 404 Page Not Found: Magento_version/index
+ERROR - 2023-09-12 14:03:08 --> 404 Page Not Found: Dev/tests
+ERROR - 2023-09-12 14:03:08 --> 404 Page Not Found: Skin/frontend
+ERROR - 2023-09-12 14:03:09 --> 404 Page Not Found: Graphql/index
+ERROR - 2023-09-12 14:03:10 --> 404 Page Not Found: Dev/tests
+ERROR - 2023-09-12 14:05:05 --> 404 Page Not Found: App/etc
+ERROR - 2023-09-12 14:05:06 --> 404 Page Not Found: App/etc
+ERROR - 2023-09-12 14:05:07 --> 404 Page Not Found: Magmi/web
+ERROR - 2023-09-12 14:05:07 --> 404 Page Not Found: Rest/V1
+ERROR - 2023-09-12 14:05:07 --> 404 Page Not Found: Store/app
+ERROR - 2023-09-12 14:05:08 --> 404 Page Not Found: Rest/V1
+ERROR - 2023-09-12 14:05:08 --> 404 Page Not Found: Magmi/web
+ERROR - 2023-09-12 14:05:09 --> 404 Page Not Found: Rest/V1
+ERROR - 2023-09-12 14:05:09 --> 404 Page Not Found: Magmi/web
+ERROR - 2023-09-12 15:37:22 --> 404 Page Not Found: Wordpress/index
+ERROR - 2023-09-12 15:37:24 --> 404 Page Not Found: Wp/index
+ERROR - 2023-09-12 15:37:24 --> 404 Page Not Found: Bc/index
+ERROR - 2023-09-12 15:37:25 --> 404 Page Not Found: Bk/index
+ERROR - 2023-09-12 15:37:25 --> 404 Page Not Found: Backup/index
+ERROR - 2023-09-12 15:37:26 --> 404 Page Not Found: Old/index
+ERROR - 2023-09-12 15:37:26 --> 404 Page Not Found: New/index
+ERROR - 2023-09-12 15:37:27 --> 404 Page Not Found: Main/index
+ERROR - 2023-09-12 17:29:47 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-09-12 17:44:34 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-09-12 19:13:39 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2023-09-12 21:22:20 --> 404 Page Not Found: Wp-loginphp/index

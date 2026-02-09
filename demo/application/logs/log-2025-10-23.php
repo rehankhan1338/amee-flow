@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-10-23 03:24:16 --> 404 Page Not Found: App/index
+ERROR - 2025-10-23 03:24:16 --> 404 Page Not Found: Login/index
+ERROR - 2025-10-23 05:24:35 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-10-23 06:43:57 --> 404 Page Not Found: Adminerphp/index
+ERROR - 2025-10-23 10:48:09 --> 404 Page Not Found: App/index
+ERROR - 2025-10-23 10:48:09 --> 404 Page Not Found: Login/index
+ERROR - 2025-10-23 12:53:10 --> 404 Page Not Found: App/index
+ERROR - 2025-10-23 12:53:10 --> 404 Page Not Found: Login/index
+ERROR - 2025-10-23 16:38:31 --> 404 Page Not Found: App/index
+ERROR - 2025-10-23 16:38:32 --> 404 Page Not Found: Login/index
+ERROR - 2025-10-23 18:33:46 --> 404 Page Not Found: Manager/media
+ERROR - 2025-10-23 18:34:53 --> 404 Page Not Found: Manager/assets
+ERROR - 2025-10-23 19:38:11 --> 404 Page Not Found: App/index
+ERROR - 2025-10-23 19:38:11 --> 404 Page Not Found: Login/index
+ERROR - 2025-10-23 19:38:43 --> 404 Page Not Found: App/index
+ERROR - 2025-10-23 19:38:43 --> 404 Page Not Found: Login/index
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: News/wp-includes
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2025-10-23 20:20:27 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-10-23 20:20:28 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-10-23 20:20:28 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2025-10-23 20:20:28 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2025-10-23 20:20:28 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-10-23 20:20:28 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-10-23 20:20:28 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2025-10-23 21:45:12 --> 404 Page Not Found: App/index
+ERROR - 2025-10-23 21:45:12 --> 404 Page Not Found: Login/index

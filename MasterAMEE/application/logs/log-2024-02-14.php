@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-02-14 00:50:32 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-02-14 01:36:01 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-02-14 01:38:51 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-02-14 01:40:13 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-02-14 01:40:17 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-02-14 01:56:07 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-02-14 16:32:49 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-02-14 16:49:12 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-02-14 16:58:01 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2024-02-14 17:53:02 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-02-14 17:53:06 --> 404 Page Not Found: Wp-stadphp/index
+ERROR - 2024-02-14 17:53:09 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-02-14 17:53:13 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-02-14 17:53:19 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-02-14 17:53:23 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-02-14 17:53:55 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-02-14 17:53:58 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-02-14 17:53:58 --> 404 Page Not Found: Wp-stadphp/index
+ERROR - 2024-02-14 17:54:03 --> 404 Page Not Found: Wp-stadphp/index
+ERROR - 2024-02-14 17:54:03 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-02-14 17:54:07 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2024-02-14 17:54:07 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-02-14 17:54:11 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-02-14 17:54:11 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-02-14 17:54:14 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-02-14 17:54:14 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-02-14 17:54:17 --> 404 Page Not Found: Wp-content/plugins

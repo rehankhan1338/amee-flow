@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-04-27 02:00:45 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-04-27 02:00:48 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2024-04-27 11:22:43 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2024-04-27 11:22:43 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2024-04-27 11:22:45 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2024-04-27 11:22:46 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2024-04-27 11:22:46 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2024-04-27 11:22:47 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2024-04-27 11:22:47 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2024-04-27 11:22:47 --> 404 Page Not Found: News/wp-includes
+ERROR - 2024-04-27 11:22:48 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2024-04-27 11:22:49 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2024-04-27 11:22:49 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2024-04-27 11:22:49 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2024-04-27 11:22:50 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2024-04-27 11:22:51 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2024-04-27 11:22:51 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2024-04-27 11:22:51 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2024-04-27 11:22:51 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2024-04-27 11:22:52 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2024-04-27 20:43:48 --> 404 Page Not Found: Wordpress/index
+ERROR - 2024-04-27 20:43:49 --> 404 Page Not Found: Wp/index
+ERROR - 2024-04-27 20:43:49 --> 404 Page Not Found: Wp-admin/setup-config.php
+ERROR - 2024-04-27 20:43:49 --> 404 Page Not Found: Wp-admin/install.php
+ERROR - 2024-04-27 20:43:50 --> 404 Page Not Found: Blog/index
+ERROR - 2024-04-27 20:43:50 --> 404 Page Not Found: New/index
+ERROR - 2024-04-27 20:43:50 --> 404 Page Not Found: Old/index
+ERROR - 2024-04-27 20:43:51 --> 404 Page Not Found: Newsite/index
+ERROR - 2024-04-27 20:43:51 --> 404 Page Not Found: Test/index
+ERROR - 2024-04-27 20:43:51 --> 404 Page Not Found: Core/index
+ERROR - 2024-04-27 20:43:52 --> 404 Page Not Found: Testing/index
+ERROR - 2024-04-27 21:57:29 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-04-27 21:57:30 --> 404 Page Not Found: Faviconico/index
+ERROR - 2024-04-27 21:57:43 --> 404 Page Not Found: Faviconico/index

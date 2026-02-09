@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2022-11-13 01:26:07 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-11-13 03:45:02 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-11-13 05:12:50 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-11-13 06:11:17 --> 404 Page Not Found: Wp-loginphp/index
+ERROR - 2022-11-13 08:25:43 --> 404 Page Not Found: Env/index
+ERROR - 2022-11-13 08:25:44 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-11-13 08:25:45 --> 404 Page Not Found: Git/config
+ERROR - 2022-11-13 08:25:46 --> 404 Page Not Found: Env/index
+ERROR - 2022-11-13 08:25:46 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-11-13 08:25:47 --> 404 Page Not Found: Git/config
+ERROR - 2022-11-13 08:25:57 --> 404 Page Not Found: Env/index
+ERROR - 2022-11-13 08:25:58 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-11-13 08:25:59 --> 404 Page Not Found: Git/config
+ERROR - 2022-11-13 08:27:39 --> 404 Page Not Found: Env/index
+ERROR - 2022-11-13 08:27:39 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-11-13 08:27:40 --> 404 Page Not Found: Git/config
+ERROR - 2022-11-13 08:33:52 --> 404 Page Not Found: Env/index
+ERROR - 2022-11-13 08:33:53 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2022-11-13 08:33:54 --> 404 Page Not Found: Git/config
+ERROR - 2022-11-13 14:06:43 --> 404 Page Not Found: Stylephp/index
+ERROR - 2022-11-13 14:33:08 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2022-11-13 14:54:37 --> 404 Page Not Found: Stylephp/index
+ERROR - 2022-11-13 21:25:38 --> 404 Page Not Found: Wordpress/index
+ERROR - 2022-11-13 21:25:39 --> 404 Page Not Found: Wp/index
+ERROR - 2022-11-13 21:25:40 --> 404 Page Not Found: Bc/index
+ERROR - 2022-11-13 21:25:40 --> 404 Page Not Found: Bk/index
+ERROR - 2022-11-13 21:25:41 --> 404 Page Not Found: Backup/index
+ERROR - 2022-11-13 21:25:42 --> 404 Page Not Found: Old/index
+ERROR - 2022-11-13 21:25:42 --> 404 Page Not Found: New/index
+ERROR - 2022-11-13 21:25:43 --> 404 Page Not Found: Main/index
+ERROR - 2022-11-13 22:33:48 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2022-11-13 22:33:49 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2022-11-13 22:33:49 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2022-11-13 22:33:57 --> 404 Page Not Found: Wp-content/themes
+ERROR - 2022-11-13 22:34:01 --> 404 Page Not Found: Wp-content/themes

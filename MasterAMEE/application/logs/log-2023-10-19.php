@@ -1,0 +1,34 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-10-19 01:38:38 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:38:38 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:38:38 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:38:38 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:39:14 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:39:14 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:39:15 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:39:15 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:39:40 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:39:40 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:39:41 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:39:41 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:40:06 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:40:06 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:40:06 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:40:06 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:40:27 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:40:27 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:40:27 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 01:40:27 --> 404 Page Not Found: Eurekaassessmentmadeeasycom/assets
+ERROR - 2023-10-19 02:34:15 --> 404 Page Not Found: Stylephp/index
+ERROR - 2023-10-19 04:09:16 --> 404 Page Not Found: Stylephp/index
+ERROR - 2023-10-19 10:03:44 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-10-19 18:45:57 --> 404 Page Not Found: Apple-touch-iconpng/index
+ERROR - 2023-10-19 18:45:57 --> 404 Page Not Found: Manifestjson/index
+ERROR - 2023-10-19 18:45:57 --> 404 Page Not Found: Apple-touch-iconpng/index
+ERROR - 2023-10-19 18:45:57 --> 404 Page Not Found: Manifestjson/index
+ERROR - 2023-10-19 18:45:58 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-10-19 18:45:58 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-10-19 19:51:27 --> 404 Page Not Found: Env/index
+ERROR - 2023-10-19 19:51:29 --> 404 Page Not Found: Env/index
+ERROR - 2023-10-19 19:51:40 --> 404 Page Not Found: Env/index

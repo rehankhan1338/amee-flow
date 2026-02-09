@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2023-12-10 13:20:59 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2023-12-10 13:20:59 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2023-12-10 13:21:00 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2023-12-10 13:21:00 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2023-12-10 13:21:00 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2023-12-10 13:21:00 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2023-12-10 13:21:01 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2023-12-10 13:21:01 --> 404 Page Not Found: News/wp-includes
+ERROR - 2023-12-10 13:21:01 --> 404 Page Not Found: 2018/wp-includes
+ERROR - 2023-12-10 13:21:01 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2023-12-10 13:21:02 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2023-12-10 13:21:02 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2023-12-10 13:21:02 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2023-12-10 13:21:02 --> 404 Page Not Found: Media/wp-includes
+ERROR - 2023-12-10 13:21:03 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2023-12-10 13:21:03 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2023-12-10 13:21:03 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2023-12-10 13:21:03 --> 404 Page Not Found: Sito/wp-includes
+ERROR - 2023-12-10 19:23:21 --> 404 Page Not Found: Wp-content/plugins
+ERROR - 2023-12-10 23:07:41 --> 404 Page Not Found: Apple-touch-iconpng/index
+ERROR - 2023-12-10 23:07:42 --> 404 Page Not Found: Manifestjson/index
+ERROR - 2023-12-10 23:07:42 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-12-10 23:07:44 --> 404 Page Not Found: Apple-touch-iconpng/index
+ERROR - 2023-12-10 23:07:44 --> 404 Page Not Found: Manifestjson/index
+ERROR - 2023-12-10 23:07:44 --> 404 Page Not Found: Apple-touch-iconpng/index
+ERROR - 2023-12-10 23:07:44 --> 404 Page Not Found: Manifestjson/index
+ERROR - 2023-12-10 23:07:44 --> 404 Page Not Found: Faviconico/index
+ERROR - 2023-12-10 23:07:45 --> 404 Page Not Found: Faviconico/index

@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-03-15 03:38:25 --> 404 Page Not Found: Faviconico/index
+ERROR - 2025-03-15 15:52:35 --> 404 Page Not Found: Wp/index
+ERROR - 2025-03-15 15:52:45 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-03-15 15:52:52 --> 404 Page Not Found: Demo/index
+ERROR - 2025-03-15 15:53:03 --> 404 Page Not Found: Wordpress/index
+ERROR - 2025-03-15 15:53:13 --> 404 Page Not Found: Old/index
+ERROR - 2025-03-15 15:53:18 --> 404 Page Not Found: Backup/index
+ERROR - 2025-03-15 15:53:29 --> 404 Page Not Found: New/index
+ERROR - 2025-03-15 15:53:35 --> 404 Page Not Found: Test/index
+ERROR - 2025-03-15 15:53:46 --> 404 Page Not Found: Wp/index
+ERROR - 2025-03-15 15:53:52 --> 404 Page Not Found: Temp/index
+ERROR - 2025-03-15 15:53:58 --> 404 Page Not Found: Blog/index
+ERROR - 2025-03-15 18:11:50 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-03-15 18:11:50 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2025-03-15 18:12:08 --> 404 Page Not Found: Assets/frontend
+ERROR - 2025-03-15 18:12:11 --> 404 Page Not Found: Assets/frontend
+ERROR - 2025-03-15 18:12:13 --> 404 Page Not Found: Assets/images
+ERROR - 2025-03-15 18:12:14 --> 404 Page Not Found: Assets/frontend
+ERROR - 2025-03-15 18:13:30 --> 404 Page Not Found: Assets/frontend
+ERROR - 2025-03-15 23:08:29 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2025-03-15 23:08:30 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2025-03-15 23:08:31 --> 404 Page Not Found: Envsave/index
+ERROR - 2025-03-15 23:08:31 --> 404 Page Not Found: Envprod/index
+ERROR - 2025-03-15 23:08:33 --> 404 Page Not Found: admin/Env/index
+ERROR - 2025-03-15 23:08:35 --> 404 Page Not Found: Php_infophp/index
+ERROR - 2025-03-15 23:08:35 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2025-03-15 23:43:40 --> 404 Page Not Found: Faviconico/index

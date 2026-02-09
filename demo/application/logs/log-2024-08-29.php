@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-08-29 01:19:40 --> 404 Page Not Found: _profiler/phpinfo
+ERROR - 2024-08-29 01:19:42 --> 404 Page Not Found: Blog/phpinfo.php
+ERROR - 2024-08-29 01:19:44 --> 404 Page Not Found: Php_infophp/index
+ERROR - 2024-08-29 01:19:45 --> 404 Page Not Found: Phpinfophp/index
+ERROR - 2024-08-29 01:19:48 --> 404 Page Not Found: Phpinfo/index
+ERROR - 2024-08-29 01:19:51 --> 404 Page Not Found: Config/info.php
+ERROR - 2024-08-29 01:19:53 --> 404 Page Not Found: Envbak/index
+ERROR - 2024-08-29 01:19:56 --> 404 Page Not Found: Envsave/index
+ERROR - 2024-08-29 01:19:57 --> 404 Page Not Found: Envdevelopment/index
+ERROR - 2024-08-29 01:20:01 --> 404 Page Not Found: Api/.env
+ERROR - 2024-08-29 01:20:03 --> 404 Page Not Found: Core/.env
+ERROR - 2024-08-29 01:20:05 --> 404 Page Not Found: Envprod/index
+ERROR - 2024-08-29 01:20:11 --> 404 Page Not Found: Envstage/index
+ERROR - 2024-08-29 01:20:13 --> 404 Page Not Found: Envproduction/index
+ERROR - 2024-08-29 01:20:14 --> 404 Page Not Found: Laravel/.env
+ERROR - 2024-08-29 01:20:17 --> 404 Page Not Found: Application/.env
+ERROR - 2024-08-29 01:20:19 --> 404 Page Not Found: Backend/.env
+ERROR - 2024-08-29 01:20:20 --> 404 Page Not Found: Script/.env
+ERROR - 2024-08-29 01:20:22 --> 404 Page Not Found: Src/.env
+ERROR - 2024-08-29 01:20:24 --> 404 Page Not Found: App/.env
+ERROR - 2024-08-29 01:20:26 --> 404 Page Not Found: admin/Env/index
+ERROR - 2024-08-29 01:20:28 --> 404 Page Not Found: Staging/.env
+ERROR - 2024-08-29 01:20:30 --> 404 Page Not Found: Infophp/index
+ERROR - 2024-08-29 01:20:33 --> 404 Page Not Found: Testphp/index
+ERROR - 2024-08-29 01:20:34 --> 404 Page Not Found: Aws/credentials
+ERROR - 2024-08-29 01:20:36 --> 404 Page Not Found: Config/aws.yml
+ERROR - 2024-08-29 01:20:38 --> 404 Page Not Found: Config/application.yml
+ERROR - 2024-08-29 01:20:41 --> 404 Page Not Found: Config/config.json
+ERROR - 2024-08-29 01:20:43 --> 404 Page Not Found: Application/configs
+ERROR - 2024-08-29 01:20:45 --> 404 Page Not Found: Infophp/index
+ERROR - 2024-08-29 02:06:35 --> 404 Page Not Found: Env/index

@@ -1,0 +1,28 @@
+.vernav2 ul li a{background: url(../images/default/topheaderbg.png);}
+.vernav2 ul li:hover{background:none;}
+.vernav2 ul li a:hover{background:none;}
+.vernav2 ul .current a:hover{background:none;}
+.vernav2 ul li{background:none;}
+.vernav2 ul li a{padding-left: 15px; font-size:12px;font-family: "Open Sans", Helvetica, Arial, sans-serif; font-weight:600; text-transform:capitalize;}
+.vernav2 ul ul{display:block;}
+.header{min-height:0;}
+.vernav2{ top:65px;border-right: 1px solid #ccc;}
+.userinfo{ background:#32415a;padding: 8px; box-shadow:none;}
+.userinfo:hover{background:#fb9337;color:#fff;}
+.userinfo span{ color:#fff;}
+.userinfo span:hover{ color:#fff;}
+#tutorial_page .centercontent { padding-bottom:60px;}
+#tutorial_page .current .a_current{  background:#fb9337;  color:#fff; font-size:14px;font-family: "Open Sans", Helvetica, Arial, sans-serif; font-weight:600;}
+#tutorial_page .pageheader{padding: 20px 15px; background:#f5f5f5;}
+#tutorial_page .pagetitle{ margin:0; font-size:18px;}
+.tut_header{ display:table; background: url(../images/default/topheaderbg.png); width:100%; border-bottom:1px solid #fff;}
+.tut_header a.back_btn{ display:table-cell; border-right:1px solid #dedede; width:40px; text-align:center; vertical-align:middle;}
+.tut_header a.back_btn i{ color:#fff; font-size:18px;}
+.tut_header h1.logo {display: table-cell;color: #fb9337;font-size: 22px;text-transform: uppercase;vertical-align: middle;padding-left: 15px;height: 60px;}
+.tut_header a.back_btn:hover {background: #fb9337; color: #fff;}
+#tutorial_page .vernav2 {top: 0px;border-right: 1px solid #ccc; height: 100%;display: table-cell;position: fixed;left: 0;}
+#tutorial_page .tut_header .logo span{color:#fff;}
+#tutorial_page .pagedesc{line-height:28px; color:#333;}
+#tutorial_page li .a_current{background:#f5f5f5;}
+#tutorial_page li{ cursor:pointer;}
+#tutorial_page li .a_current:hover{color:#f6e4a5;background: url(../images/default/topheaderbg.png);}
