@@ -476,14 +476,10 @@ body.af-system-admin .content-wrapper {
 /* Alert icon */
 .af-alert-icon { margin-top: -3px; }
 
-/* ---------- Sticky Table Header ---------- */
-body.af-system-admin .table-responsive {
-	max-height: calc(100vh - 200px);
-	overflow-y: auto;
-}
+/* ---------- Sticky Table Header (sticks below fixed navbar) ---------- */
 body.af-system-admin .table thead th {
 	position: sticky;
-	top: 0;
+	top: 60px; /* height of fixed navbar */
 	z-index: 10;
 	background: #485b79;
 	color: #fff;
@@ -494,12 +490,9 @@ body.af-system-admin .table thead th {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 body.af-system-admin .table thead th a { color: #fff; }
-body.af-system-admin .dataTables_scrollHead thead th {
-	position: sticky;
-	top: 0;
-	z-index: 10;
-	background: #485b79;
-	color: #fff;
+body.af-system-admin .table-responsive {
+	overflow-x: auto;
+	overflow-y: visible;
 }
 
 /* ---------- Content area ---------- */
@@ -595,8 +588,8 @@ body.af-system-admin .alert { border-radius: 10px; border: none; }
 	.af-profile-header {
 		border-radius: 10px 10px 0 0;
 	}
-	body.af-system-admin .table-responsive {
-		max-height: none;
+	body.af-system-admin .table thead th {
+		top: 60px;
 	}
 }
 
