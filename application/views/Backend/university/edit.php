@@ -22,7 +22,7 @@
 			<label class="col-md-4 control-label" for="inputEmail3">Sub-domain Name *</label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control required" value="<?php if(!empty($university_details->subdomain_name)){echo $university_details->subdomain_name;}else{echo '';} ?>" id="subdomain_name" name="subdomain_name" placeholder="Subdomain Name" style="width:30%;display:inline-block; margin:0; " >
-					<input type="text" disabled="disabled" class="form-control" id="subdomain_namec" name="subdomain_namec" placeholder="" value=".<?php echo $this->config->item('site_domain'); ?>" readonly="" style="width:70%; display:inline-block;margin:-5px;padding:0 0 0 5px;" >
+					<input type="text" disabled="disabled" class="form-control" id="subdomain_namec" name="subdomain_namec" placeholder="" value=".assessmentmadeeasy.com" readonly="" style="width:70%; display:inline-block;margin:-5px;padding:0 0 0 5px;" >
 				<span style="color:red;"><?php echo form_error('subdomain_name'); ?></span>
 			</div>
 		</div>

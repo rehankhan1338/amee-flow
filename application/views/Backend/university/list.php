@@ -44,7 +44,7 @@ function send_mail(val){
 			</thead>			 
 			<tbody>
 				<?php $i=1; foreach ($university_details as $row){
-					$sbURL = 'https://'.strtolower($row->subdomain_name).'.'.$this->config->item('site_domain');
+					$sbURL = 'https://'.strtolower($row->subdomain_name).'.assessmentmadeeasy.com';
 				 ?>
 				<tr>
 					<td><?php echo  $i;?></td>				

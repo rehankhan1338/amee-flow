@@ -77,7 +77,7 @@ class Accounts_mdl extends CI_Model {
 		 	$logo = base_url().'assets/backend/logo/thumbnails/'.$configuration_details->logo;	 		
 		 	$id = 'id';
 			$password = 'Password';			
-			$link = $subdomain_name.'.'.$this->config->item('site_domain');	
+			$link = $subdomain_name.'.assessmentmadeeasy.com';	
 						
 			$to = $email;	
 			$this->db->select('*');
@@ -185,7 +185,7 @@ class Accounts_mdl extends CI_Model {
 
 		$email = $university_row->email;
 		$university_name = $university_row->university_name;
-		$link = $university_row->subdomain_name.'.'.$this->config->item('site_domain');	
+		$link = $university_row->subdomain_name.'.assessmentmadeeasy.com';	
 		$product_id= 'product_id';	
 		$product_name= 'product_name';	
 		$today_date= date('M-d-Y');	

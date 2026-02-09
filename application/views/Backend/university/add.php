@@ -16,10 +16,10 @@
 				<div class="form-group">
 					<label class="control-label" for="inputEmail3">Sub-domain Name *</label><br />
 					 <input type="text" class="form-control required" value="<?php if(isset($_SESSION['sess_subdomain_name']) && $_SESSION['sess_subdomain_name']!=''){ echo $_SESSION['sess_subdomain_name']; }?>" id="subdomain_name" name="subdomain_name" placeholder="Subdomain Name" style="width:30%;display:inline-block; margin:0; " >
-					 <input type="text" disabled="disabled" class="form-control" id="subdomain_namec" name="subdomain_namec" placeholder="" value=".<?php echo $this->config->item('site_domain'); ?>" readonly="" style="width:70%; display:inline-block;margin:-5px;padding:0 0 0 5px;" >
+					 <input type="text" disabled="disabled" class="form-control" id="subdomain_namec" name="subdomain_namec" placeholder="" value=".assessmentmadeeasy.com" readonly="" style="width:70%; display:inline-block;margin:-5px;padding:0 0 0 5px;" >
 				 	<!--<div class="input-group">
 						<input type="text" class="form-control required" id="subdomain_name" name="subdomain_name" placeholder="Subdomain Name" >
-						<span class="input-group-addon">.<?php echo $this->config->item('site_domain'); ?></span>
+						<span class="input-group-addon">.assessmentmadeeasy.com</span>
 					</div>-->	
 				<span style="color:red;"><?php echo form_error('subdomain_name'); ?></span>
 				</div>

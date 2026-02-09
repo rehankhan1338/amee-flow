@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
          
-$config['base_url'] = 'https://assessmentmadeeasy.com/'; 
+$config['base_url'] = 'https://dev-work.assessmentmadeeasy.com/'; 
 $config['project_name_page_first'] = 'AMEE';
 $config['project_name_page_second'] = 'Accounts';
 
