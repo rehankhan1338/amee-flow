@@ -72,7 +72,8 @@
                                 <span id="spinner_isActive_<?php echo $pro['projectId'];?>"></span>                                                
                             </td>
                             <td nowrap>
-                                <a class="btn btn-primary btn-sm" id="epro<?php echo $pro['projectId'];?>" onclick="return manageProject('<?php echo $pro['projectId'];?>');">Edit</a>                                
+                                <a class="btn btn-primary btn-sm" id="epro<?php echo $pro['projectId'];?>" onclick="return manageProject('<?php echo $pro['projectId'];?>');">Edit</a>
+                                <a class="btn btn-danger btn-sm" id="delpro<?php echo $pro['projectId'];?>" onclick="return deleteSingleProject('<?php echo $pro['projectId'];?>');" style="margin-left:3px;"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         <?php $i++; }?>
