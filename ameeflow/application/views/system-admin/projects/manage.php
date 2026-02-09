@@ -6,6 +6,22 @@
         <div class="box-header no-border">
             <h3 class="box-title">Project Listing</h3>
             <div class="box-tools pull-right">                
+                <select id="termYearFilter" class="form-control form-control-sm" style="display:inline-block; width:180px; height:34px; margin-right:10px; vertical-align:middle;">
+                    <option value="">All Terms</option>
+                    <?php 
+                        $termYearOptions = array();
+                        foreach($projectDataArr as $pro){
+                            $termYearLabel = $this->config->item('terms_assessment_array_config')[$pro['termId']]['name'].' - '.$pro['year'];
+                            if(!in_array($termYearLabel, $termYearOptions)){
+                                $termYearOptions[] = $termYearLabel;
+                            }
+                        }
+                        sort($termYearOptions);
+                        foreach($termYearOptions as $opt){
+                    ?>
+                    <option value="<?php echo $opt;?>"><?php echo $opt;?></option>
+                    <?php } ?>
+                </select>
                 <div class="input-group input-group-sm" style="display:inline-flex; width:250px; margin-right:10px; vertical-align:middle;">
                     <input type="text" id="projectSearchInput" class="form-control" placeholder="Search projects..." style="height:34px;">
                     <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearProjectSearch"><i class="fa fa-times"></i></span>
@@ -34,7 +50,7 @@
                             foreach($projectDataArr as $pro){                            
                                 $taskList = proTaskListDataArrCh($pro['projectId']);
                         ?>
-                        <tr>
+                        <tr data-term-year="<?php echo $this->config->item('terms_assessment_array_config')[$pro['termId']]['name'].' - '.$pro['year'];?>">
                             <td> <input type="checkbox" class="case" id="proIds[]" name="proIds[]" value="<?php echo $pro['projectId'];?>" /> </td>
                             <td style="font-weight:600;"> <a id="proTitle<?php echo $pro['projectId'];?>" class="pro_name" href="<?php echo base_url().$this->config->item('system_directory_name').'projects/tasks/'.$pro['proencryptId'];?>"> <?php echo $pro['projectName']; ?></a> </td>
                             <td id="proTerm<?php echo $pro['projectId'];?>"><?php echo $this->config->item('terms_assessment_array_config')[$pro['termId']]['name'].' - '.$pro['year'];?></td>
@@ -74,16 +90,31 @@ include(APPPATH.'views/system-admin/projects/copy-pro.php');
 
 <script type="text/javascript">
 $(function(){
-    $('#projectSearchInput').on('keyup', function(){
-        var searchText = $(this).val().toLowerCase();
+    function filterProjectTable(){
+        var searchText = $('#projectSearchInput').val().toLowerCase();
+        var selectedTerm = $('#termYearFilter').val();
+
         $('#table_recordtbl1 tbody tr').each(function(){
             var rowText = $(this).text().toLowerCase();
-            $(this).toggle(rowText.indexOf(searchText) > -1);
+            var rowTermYear = $(this).data('term-year');
+            var matchesSearch = (searchText === '' || rowText.indexOf(searchText) > -1);
+            var matchesTerm = (selectedTerm === '' || rowTermYear === selectedTerm);
+            $(this).toggle(matchesSearch && matchesTerm);
         });
+    }
+
+    $('#projectSearchInput').on('keyup', function(){
+        filterProjectTable();
+    });
+
+    $('#termYearFilter').on('change', function(){
+        filterProjectTable();
     });
 
     $('#clearProjectSearch').on('click', function(){
-        $('#projectSearchInput').val('').trigger('keyup').focus();
+        $('#projectSearchInput').val('');
+        filterProjectTable();
+        $('#projectSearchInput').focus();
     });
 });
 </script>
