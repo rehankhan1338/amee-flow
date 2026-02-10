@@ -907,6 +907,243 @@ body.af-system-admin .alert { border-radius: 10px; border: none; }
 	}
 }
 
+/* ============================================================
+   Input Fields – Modern Redesign
+   ============================================================ */
+body.af-system-admin .form-control,
+body.af-system-admin .form-select,
+body.af-system-admin select.form-control,
+body.af-system-admin textarea.form-control,
+body.af-system-admin input[type="text"],
+body.af-system-admin input[type="email"],
+body.af-system-admin input[type="password"],
+body.af-system-admin input[type="number"],
+body.af-system-admin input[type="tel"],
+body.af-system-admin input[type="url"],
+body.af-system-admin input[type="search"],
+body.af-system-admin input[type="date"],
+body.af-system-admin input[type="datetime-local"],
+body.af-system-admin input[type="time"] {
+	border: 1px solid #dce0e6;
+	border-radius: 22px !important;
+	padding: 9px 16px !important;
+	font-size: .88rem;
+	color: #333;
+	background: #f8f9fb;
+	transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
+	outline: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+body.af-system-admin .form-control:focus,
+body.af-system-admin .form-select:focus,
+body.af-system-admin select.form-control:focus,
+body.af-system-admin textarea.form-control:focus,
+body.af-system-admin input[type="text"]:focus,
+body.af-system-admin input[type="email"]:focus,
+body.af-system-admin input[type="password"]:focus,
+body.af-system-admin input[type="number"]:focus,
+body.af-system-admin input[type="tel"]:focus,
+body.af-system-admin input[type="url"]:focus,
+body.af-system-admin input[type="search"]:focus,
+body.af-system-admin input[type="date"]:focus,
+body.af-system-admin input[type="datetime-local"]:focus,
+body.af-system-admin input[type="time"]:focus {
+	border-color: #485b79 !important;
+	box-shadow: 0 0 0 3px rgba(72,91,121,0.13) !important;
+	background: #fff !important;
+}
+body.af-system-admin .form-control::placeholder,
+body.af-system-admin input::placeholder {
+	color: #adb3bd;
+	font-weight: 400;
+}
+body.af-system-admin textarea.form-control {
+	border-radius: 14px !important;
+	min-height: 90px;
+	resize: vertical;
+}
+body.af-system-admin select.form-control,
+body.af-system-admin .form-select {
+	padding-right: 36px !important;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23485b79' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: right 12px center;
+	background-size: 14px 10px;
+}
+/* Input groups (rounded pill ends) */
+body.af-system-admin .input-group .form-control {
+	border-radius: 22px 0 0 22px !important;
+}
+body.af-system-admin .input-group .input-group-text,
+body.af-system-admin .input-group .input-group-append .btn,
+body.af-system-admin .input-group .input-group-btn .btn {
+	border-radius: 0 22px 22px 0 !important;
+	border: 1px solid #dce0e6;
+	background: #f0f2f5;
+	color: #666;
+	font-size: .84rem;
+	transition: background .2s, border-color .2s;
+}
+body.af-system-admin .input-group .input-group-text:hover,
+body.af-system-admin .input-group .input-group-append .btn:hover {
+	background: #e2e6ec;
+}
+/* Labels */
+body.af-system-admin label.control-label,
+body.af-system-admin .form-label,
+body.af-system-admin .col-form-label {
+	font-weight: 500;
+	color: #485b79;
+	font-size: .88rem;
+	margin-bottom: 5px;
+}
+/* Checkbox & Radio */
+body.af-system-admin .form-check-input {
+	border-radius: 4px;
+	border: 1.5px solid #c0c6d0;
+	width: 18px;
+	height: 18px;
+	transition: all .2s ease;
+}
+body.af-system-admin .form-check-input:checked {
+	background-color: #485b79;
+	border-color: #485b79;
+}
+body.af-system-admin .form-check-input:focus {
+	box-shadow: 0 0 0 3px rgba(72,91,121,0.15);
+	border-color: #485b79;
+}
+/* Disabled / readonly */
+body.af-system-admin .form-control[disabled],
+body.af-system-admin .form-control[readonly],
+body.af-system-admin .form-control:disabled {
+	background: #eef0f3 !important;
+	color: #999;
+	cursor: not-allowed;
+	opacity: .7;
+}
+
+/* ============================================================
+   Modal – Modern Redesign + High z-index
+   ============================================================ */
+body.af-system-admin .modal {
+	z-index: 99999 !important;
+}
+body.af-system-admin .modal-backdrop {
+	z-index: 99998 !important;
+	background: rgba(30,40,55,0.55);
+}
+body.af-system-admin .modal-backdrop.show {
+	opacity: 1;
+}
+body.af-system-admin .modal-content {
+	border: none !important;
+	border-radius: 18px !important;
+	box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 4px 16px rgba(0,0,0,0.08) !important;
+	overflow: hidden;
+}
+body.af-system-admin .modal-header {
+	background: linear-gradient(45deg, #485b79 25%, #e18125 100%) !important;
+	color: #fff !important;
+	border-bottom: none !important;
+	padding: 16px 24px !important;
+	border-radius: 18px 18px 0 0 !important;
+	position: relative;
+}
+body.af-system-admin .modal-header .modal-title,
+body.af-system-admin .modal-header h4,
+body.af-system-admin .modal-header h5 {
+	color: #fff !important;
+	font-weight: 600;
+	font-size: 1.05rem;
+	letter-spacing: .2px;
+}
+body.af-system-admin .modal-header .close,
+body.af-system-admin .modal-header .btn-close,
+body.af-system-admin .modal-header [data-dismiss="modal"] {
+	color: #fff !important;
+	opacity: .8;
+	text-shadow: none;
+	font-size: 1.3rem;
+	transition: opacity .2s, transform .2s;
+	filter: brightness(0) invert(1);
+}
+body.af-system-admin .modal-header .close:hover,
+body.af-system-admin .modal-header .btn-close:hover,
+body.af-system-admin .modal-header [data-dismiss="modal"]:hover {
+	opacity: 1;
+	transform: scale(1.15);
+}
+body.af-system-admin .modal-body {
+	padding: 24px 24px 18px !important;
+	background: #fff;
+	font-size: .9rem;
+	color: #444;
+}
+body.af-system-admin .modal-footer {
+	border-top: 1px solid #eef0f3 !important;
+	padding: 14px 24px !important;
+	background: #fafbfc;
+	border-radius: 0 0 18px 18px !important;
+	gap: 8px;
+}
+body.af-system-admin .modal-footer .btn {
+	border-radius: 22px !important;
+	padding: 8px 22px !important;
+	font-size: .86rem !important;
+	font-weight: 500;
+	letter-spacing: .2px;
+	transition: all .2s ease;
+}
+body.af-system-admin .modal-footer .btn-primary {
+	background: linear-gradient(45deg, #485b79, #e18125) !important;
+	border: none !important;
+	color: #fff !important;
+	box-shadow: 0 2px 8px rgba(72,91,121,0.25);
+}
+body.af-system-admin .modal-footer .btn-primary:hover {
+	box-shadow: 0 4px 14px rgba(72,91,121,0.35);
+	transform: translateY(-1px);
+}
+body.af-system-admin .modal-footer .btn-default,
+body.af-system-admin .modal-footer .btn-secondary {
+	background: #f0f2f5 !important;
+	border: 1px solid #dce0e6 !important;
+	color: #555 !important;
+	border-radius: 22px !important;
+}
+body.af-system-admin .modal-footer .btn-default:hover,
+body.af-system-admin .modal-footer .btn-secondary:hover {
+	background: #e4e7ec !important;
+	transform: translateY(-1px);
+}
+/* Modal animation */
+body.af-system-admin .modal.fade .modal-dialog {
+	transform: translateY(-30px) scale(0.97);
+	transition: transform .3s ease, opacity .3s ease;
+}
+body.af-system-admin .modal.show .modal-dialog {
+	transform: translateY(0) scale(1);
+}
+/* Modal dialog centering & sizing */
+body.af-system-admin .modal-dialog {
+	margin-top: 4vh;
+}
+body.af-system-admin .modal-dialog-scrollable .modal-body {
+	border-radius: 0;
+}
+/* Modal form inputs inherit the rounded style */
+body.af-system-admin .modal-body .form-control,
+body.af-system-admin .modal-body select,
+body.af-system-admin .modal-body textarea {
+	border-radius: 22px !important;
+}
+body.af-system-admin .modal-body textarea {
+	border-radius: 14px !important;
+}
+
 /* ---------- Scrollbar (system-admin only) ---------- */
 body.af-system-admin ::-webkit-scrollbar { width: 6px; }
 body.af-system-admin ::-webkit-scrollbar-track { background: #f1f1f1; }
