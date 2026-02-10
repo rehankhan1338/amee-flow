@@ -25,7 +25,32 @@ $proName = $projectDetails['projectName'].' - '.$this->config->item('terms_asses
 ?>
     <div class="box-header">
         <h5>Project: <?php echo $proName;?></h5>
-        <div class="box-tools pull-right">        
+        <div class="box-tools pull-right">
+            <div class="input-group input-group-sm" style="display:inline-flex; width:250px; margin-right:10px; vertical-align:middle;">
+                <input type="text" id="taskSearchInput" class="form-control" placeholder="Search tasks..." style="height:34px;">
+                <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearTaskSearch"><i class="fa fa-times"></i></span>
+            </div>
+            <select id="priorityFilter" class="form-control form-control-sm" style="display:inline-block; width:180px; height:34px; margin-right:10px; vertical-align:middle;">
+                <option value="">All Priorities</option>
+                <?php 
+                    $task_priority = $this->config->item('task_priority_options_array_config');
+                    foreach($task_priority as $key=>$value){ 
+                        if($value['status']==0){
+                ?>
+                <option value="<?php echo $key;?>"><?php echo $value['name'];?></option>
+                <?php 
+                        }
+                    } 
+                ?>
+            </select>
+            <select id="dueDateFilter" class="form-control form-control-sm" style="display:inline-block; width:180px; height:34px; margin-right:10px; vertical-align:middle;">
+                <option value="">All Dates</option>
+                <option value="overdue">Overdue</option>
+                <option value="today">Today</option>
+                <option value="this_week">This Week</option>
+                <option value="this_month">This Month</option>
+                <option value="future">Future</option>
+            </select>
             <a href="<?php echo base_url().$this->config->item('system_directory_name').'analytics/download/'.$projectDetails['proencryptId'];?>" style="padding: 3px 15px; font-size:15px; margin-right:5px;" class="btn btn-warning"> <i class="fa fa-download"></i> Download </a>                
             <a href="<?php echo base_url().$this->config->item('system_directory_name').'analytics';?>" style="padding: 3px 15px; font-size:15px;" class="btn btn-primary"> <i class="fa fa-long-arrow-left"></i> Back </a>                
         </div>
@@ -124,7 +149,7 @@ $proName = $projectDetails['projectName'].' - '.$this->config->item('terms_asses
                               //data-bs-toggle="tooltip" data-bs-placement="top" title="Yes"
                               //echo '<br>';
                             ?>
-                        <tr id="taskRow<?php echo $task['taskId'];?>">
+                        <tr id="taskRow<?php echo $task['taskId'];?>" data-priority-id="<?php echo isset($task['priorityId']) && $task['priorityId']!='' ? $task['priorityId'] : '0';?>" data-due-date="<?php echo isset($task['dueDateStr']) && $task['dueDateStr']!='' && $task['dueDateStr']>0 ? $task['dueDateStr'] : '0';?>">
                            
                             <td class="fw600"> <a class="cp" id="coltName<?php echo $task['taskId'];?>" onclick="return viewTaskDetails('<?php echo $task['taskId'];?>','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <?php echo $task['taskName'];?>  <i id="inIcon<?php echo $task['taskId'];?>" class="fa fa-info-circle"></i> </a> </td>
                             <td nowrap class="<?php echo $priClsname;?>"> <span class="fw600" ><?php 
@@ -174,7 +199,119 @@ $emptyCount = $totalSquares - $fullCount - $halfCount;
                     </tbody>
                 </table>							
             </div>
-<script type="text/javascript">    
+<script type="text/javascript">
+$(function(){
+    // Helper function to normalize timestamp to start of day
+    function getStartOfDay(timestamp){
+        var date = new Date(timestamp * 1000);
+        date.setHours(0, 0, 0, 0);
+        return Math.floor(date.getTime() / 1000);
+    }
+    
+    // Helper function to normalize timestamp to end of day
+    function getEndOfDay(timestamp){
+        var date = new Date(timestamp * 1000);
+        date.setHours(23, 59, 59, 999);
+        return Math.floor(date.getTime() / 1000);
+    }
+
+    // Filter function
+    function filterTasksTable(){
+        var searchText = $('#taskSearchInput').val().toLowerCase();
+        var selectedPriority = $('#priorityFilter').val();
+        var selectedDueDate = $('#dueDateFilter').val();
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        var todayStart = Math.floor(today.getTime() / 1000);
+        var todayEnd = todayStart + 86399; // End of today (23:59:59)
+        
+        // Calculate date ranges
+        var weekStart = new Date(today);
+        weekStart.setDate(today.getDate() - today.getDay()); // Start of week (Sunday)
+        weekStart.setHours(0, 0, 0, 0);
+        var weekStartTimestamp = Math.floor(weekStart.getTime() / 1000);
+        
+        var weekEnd = new Date(weekStart);
+        weekEnd.setDate(weekStart.getDate() + 6);
+        weekEnd.setHours(23, 59, 59, 999);
+        var weekEndTimestamp = Math.floor(weekEnd.getTime() / 1000);
+        
+        var monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+        monthStart.setHours(0, 0, 0, 0);
+        var monthStartTimestamp = Math.floor(monthStart.getTime() / 1000);
+        
+        var monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+        monthEnd.setHours(23, 59, 59, 999);
+        var monthEndTimestamp = Math.floor(monthEnd.getTime() / 1000);
+
+        $('#table_recordtbl1 tbody tr').each(function(){
+            var rowText = $(this).text().toLowerCase();
+            var rowPriorityId = String($(this).data('priority-id') || '0');
+            var rowDueDate = parseInt($(this).data('due-date') || 0);
+            
+            // Search filter
+            var matchesSearch = (searchText === '' || rowText.indexOf(searchText) > -1);
+            
+            // Priority filter
+            var matchesPriority = true;
+            if(selectedPriority !== ''){
+                matchesPriority = (rowPriorityId === selectedPriority);
+            }
+            
+            // Due Date filter
+            var matchesDueDate = true;
+            if(selectedDueDate !== '' && rowDueDate > 0){
+                var taskDueDateStart = getStartOfDay(rowDueDate);
+                var taskDueDateEnd = getEndOfDay(rowDueDate);
+                
+                switch(selectedDueDate){
+                    case 'overdue':
+                        matchesDueDate = (taskDueDateEnd < todayStart);
+                        break;
+                    case 'today':
+                        matchesDueDate = (taskDueDateStart >= todayStart && taskDueDateStart <= todayEnd);
+                        break;
+                    case 'this_week':
+                        matchesDueDate = (taskDueDateStart >= weekStartTimestamp && taskDueDateStart <= weekEndTimestamp);
+                        break;
+                    case 'this_month':
+                        matchesDueDate = (taskDueDateStart >= monthStartTimestamp && taskDueDateStart <= monthEndTimestamp);
+                        break;
+                    case 'future':
+                        matchesDueDate = (taskDueDateStart > todayEnd);
+                        break;
+                }
+            } else if(selectedDueDate !== '' && rowDueDate === 0){
+                // If filter is selected but task has no due date, hide it
+                matchesDueDate = false;
+            }
+            
+            $(this).toggle(matchesSearch && matchesPriority && matchesDueDate);
+        });
+    }
+
+    // Search input event
+    $('#taskSearchInput').on('keyup', function(){
+        filterTasksTable();
+    });
+
+    // Clear search button
+    $('#clearTaskSearch').on('click', function(){
+        $('#taskSearchInput').val('');
+        filterTasksTable();
+    });
+
+    // Priority filter change event
+    $('#priorityFilter').on('change', function(){
+        filterTasksTable();
+    });
+
+    // Due Date filter change event
+    $('#dueDateFilter').on('change', function(){
+        filterTasksTable();
+    });
+});
+
 function viewTaskDetails(taskId, projectId, proencryptId){
     var taskName = $('#coltName'+taskId).html();
     $.ajax({
