@@ -1199,8 +1199,8 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	justify-content: center;
 }
 
-/* Universal sticky cloned thead for all system-admin DataTables */
-.af-sticky-header {
+/* Sticky cloned thead for MAM table */
+#mam-sticky-header {
 	display: none;
 	position: fixed;
 	top: 60px;
@@ -1211,21 +1211,19 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 	overflow: hidden;
 }
-.af-sticky-header .dataTables_scrollHeadInner {
+#mam-sticky-header .dataTables_scrollHeadInner {
 	box-sizing: content-box;
 }
-.af-sticky-header table {
+#mam-sticky-header table {
 	margin-bottom: 0 !important;
-	background: #fff;
 }
-.af-sticky-header table thead th {
+#mam-sticky-header table thead th {
 	border-bottom: 2px solid #dee2e6;
 	vertical-align: middle;
 	white-space: nowrap;
-	background: #f8f9fa;
 }
 @media (max-width: 767px) {
-	.af-sticky-header {
+	#mam-sticky-header {
 		top: 56px;
 	}
 }
