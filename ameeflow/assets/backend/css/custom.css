@@ -1199,3 +1199,24 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	align-items: center;
 	justify-content: center;
 }
+
+/* Sticky thead for MAM table under fixed navbar */
+#table_recordtbl_mam_wrapper .dataTables_scrollHead {
+	position: sticky !important;
+	top: 60px;
+	z-index: 101;
+	background: #fff;
+}
+#table_recordtbl_mam_wrapper .dataTables_scrollHead .table {
+	margin-bottom: 0;
+}
+/* Prevent parent overflow from breaking position:sticky */
+#table_recordtbl_mam_wrapper .dataTables_scroll {
+	overflow: visible !important;
+}
+#table_recordtbl_mam_wrapper {
+	overflow: visible !important;
+}
+#mam-table-wrap {
+	overflow: visible !important;
+}

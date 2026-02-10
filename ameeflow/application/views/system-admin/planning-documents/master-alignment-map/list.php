@@ -57,7 +57,7 @@ $(function(){
         </div>
        
         <div class="box-body row">					 
-            <div class="col-xs-12 table-responsive">
+            <div class="col-xs-12 table-responsive" id="mam-table-wrap">
                 <table class="table table-striped" id="table_recordtbl_mam">
                     <thead>
                         <tr>
