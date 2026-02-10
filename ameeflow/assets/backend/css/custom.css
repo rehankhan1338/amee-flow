@@ -940,6 +940,7 @@ body.af-system-admin .box-header .box-tools .input-group .input-group-text {
 	border-left: none;
 	font-size: .82rem;
 	color: #888;
+	height: 36px !important;
 }
 body.af-system-admin .box-header .box-tools .btn {
 	border-radius: 8px !important;
