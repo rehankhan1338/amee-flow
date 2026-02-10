@@ -7,6 +7,9 @@
 <script>
 $(function(){ 
     $('#table_recordtbl_mam').DataTable({
+        dom: "<'row'<'col-sm-12 col-md-6'><'col-sm-12 col-md-6'f>>" +
+             "<'row'<'col-sm-12'tr>>" +
+             "<'row'<'col-sm-12 col-md-4'i><'col-sm-12 col-md-4 text-center'l><'col-sm-12 col-md-4'p>>",
         paging: true,
         pageLength: 100,
         lengthChange: true,
@@ -33,7 +36,7 @@ $(function(){
  
     <div class="box"> 
         <div class="row">		
-            <div class="fs17 mx-2 my-2 col-12"><strong>Note -</strong> If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>. Missing or incomplete data may prevent the system from processing your submission correctly.</div>
+            <div class="fs14 mx-2 my-2 col-12"><strong>Note -</strong> If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>. Missing or incomplete data may prevent the system from processing your submission correctly.</div>
         </div>
         <div class="box-header no-border">
         

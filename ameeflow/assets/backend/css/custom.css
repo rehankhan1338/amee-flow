@@ -60,7 +60,7 @@ span.notiarCls {
     font-size: 13px;
     background-color: #71c7ec;
 }
-.potpn{padding: 8px 20px; margin:5px 3px;background: #f5f5f5;border: 1px solid #555;border-radius: 35px;font-weight: 500; cursor: pointer;}
+.potpn{padding: 8px 20px; margin:5px 3px;background: #f5f5f5;border: 1px solid #dce0e6;border-radius: 35px;font-weight: 500; cursor: pointer;color: #485b79;}
 .modal-header, .lgtBlue-mh{ background-color: #71c7ec;}
 .sendNotiBtn{padding: 0px 10px; font-size: 13px; font-weight: 500;}
 .smallRecp{display: block;padding-left: 16px;font-size: 95%;}
@@ -1188,4 +1188,14 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 
 .box-header>.box-tools{
 	position:initial !important;
+}
+
+/* Move dataTables length to bottom - align with pagination */
+#table_recordtbl_mam_wrapper .row:last-child {
+	align-items: center;
+}
+#table_recordtbl_mam_wrapper .row:last-child .dataTables_length {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
