@@ -1034,24 +1034,42 @@ body.af-system-admin .form-control:disabled {
 }
 
 /* ============================================================
-   Modal – Modern Redesign + High z-index
+   Modal – Modern Redesign
+   After JS moves modals to <body>, they share the root stacking
+   context with .modal-backdrop. Use Bootstrap 5 defaults:
+   backdrop 1050 · modal 1055 · navbar 1040 → correct layering.
    ============================================================ */
-body.af-system-admin .modal {
-	z-index: 1060 !important;   /* above navbar (1040) and backdrop (1050) */
-}
+
+/* --- z-index (matches Bootstrap 5 defaults, above navbar 1040) --- */
 body.af-system-admin .modal-backdrop {
-	z-index: 1050 !important;   /* above navbar (1040) but below modal (1060) */
-	background: rgba(30,40,55,0.55);
+	z-index: 1050 !important;
 }
-body.af-system-admin .modal-backdrop.show {
-	opacity: 1;
+body.af-system-admin .modal {
+	z-index: 1055 !important;
+}
+
+/* --- Vertical + Horizontal Centering --- */
+body.af-system-admin .modal-dialog {
+	display: flex;
+	align-items: center;
+	min-height: calc(100% - 1rem);
+	margin: .5rem auto;
 }
 body.af-system-admin .modal-content {
+	width: 100%;
 	border: none !important;
 	border-radius: 18px !important;
 	box-shadow: 0 20px 60px rgba(0,0,0,0.2), 0 4px 16px rgba(0,0,0,0.08) !important;
 	overflow: hidden;
 }
+
+/* --- Backdrop appearance --- */
+body.af-system-admin .modal-backdrop.show {
+	opacity: 1;
+	background: rgba(30,40,55,0.45);
+}
+
+/* --- Header --- */
 body.af-system-admin .modal-header {
 	background: linear-gradient(45deg, #485b79 25%, #e18125 100%) !important;
 	color: #fff !important;
@@ -1068,28 +1086,38 @@ body.af-system-admin .modal-header h5 {
 	font-size: 1.05rem;
 	letter-spacing: .2px;
 }
+/* Close button (works with .close, .btn-close, [data-bs-dismiss]) */
 body.af-system-admin .modal-header .close,
 body.af-system-admin .modal-header .btn-close,
+body.af-system-admin .modal-header [data-bs-dismiss="modal"],
 body.af-system-admin .modal-header [data-dismiss="modal"] {
 	color: #fff !important;
-	opacity: .8;
+	opacity: .85;
 	text-shadow: none;
 	font-size: 1.3rem;
 	transition: opacity .2s, transform .2s;
 	filter: brightness(0) invert(1);
+	cursor: pointer;
+	z-index: 2;
+	position: relative;
 }
 body.af-system-admin .modal-header .close:hover,
 body.af-system-admin .modal-header .btn-close:hover,
+body.af-system-admin .modal-header [data-bs-dismiss="modal"]:hover,
 body.af-system-admin .modal-header [data-dismiss="modal"]:hover {
 	opacity: 1;
 	transform: scale(1.15);
 }
+
+/* --- Body --- */
 body.af-system-admin .modal-body {
 	padding: 24px 24px 18px !important;
 	background: #fff;
 	font-size: .9rem;
 	color: #444;
 }
+
+/* --- Footer --- */
 body.af-system-admin .modal-footer {
 	border-top: 1px solid #eef0f3 !important;
 	padding: 14px 24px !important;
@@ -1127,7 +1155,8 @@ body.af-system-admin .modal-footer .btn-secondary:hover {
 	background: #e4e7ec !important;
 	transform: translateY(-1px);
 }
-/* Modal animation */
+
+/* --- Animation --- */
 body.af-system-admin .modal.fade .modal-dialog {
 	transform: translateY(-30px) scale(0.97);
 	transition: transform .3s ease, opacity .3s ease;
@@ -1135,14 +1164,13 @@ body.af-system-admin .modal.fade .modal-dialog {
 body.af-system-admin .modal.show .modal-dialog {
 	transform: translateY(0) scale(1);
 }
-/* Modal dialog centering & sizing */
-body.af-system-admin .modal-dialog {
-	margin-top: 4vh;
-}
+
+/* --- Scrollable modals --- */
 body.af-system-admin .modal-dialog-scrollable .modal-body {
 	border-radius: 0;
 }
-/* Modal form inputs inherit the rounded style */
+
+/* --- Modal form inputs inherit the rounded style --- */
 body.af-system-admin .modal-body .form-control,
 body.af-system-admin .modal-body select,
 body.af-system-admin .modal-body textarea {

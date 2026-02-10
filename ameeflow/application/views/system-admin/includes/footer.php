@@ -80,6 +80,42 @@ $(function(){
 	$('[data-bs-toggle="tooltip"]').tooltip({ html: true });
 	feather.replace();
 
+	/* ============================================================
+	   Modal Fix – move to <body>, center, close on backdrop/cross
+	   ============================================================ */
+	/* Move every .modal out of .wrapper to <body> so they share the
+	   root stacking context with .modal-backdrop (appended to body
+	   by Bootstrap). This permanently fixes the "backdrop on top"
+	   problem caused by AdminLTE's wrapper creating a stacking context. */
+	$('.wrapper .modal').appendTo('body');
+
+	/* Allow closing on backdrop click & Escape key.
+	   Bootstrap 5 reads data-bs-* when the Modal is first constructed,
+	   so we patch the attributes BEFORE any modal is ever shown. */
+	$('.modal').each(function(){
+		this.setAttribute('data-bs-backdrop', 'true');
+		this.removeAttribute('data-bs-keyboard');   // default = true (Escape closes)
+	});
+
+	/* Ensure close buttons (cross) always work, even if Bootstrap
+	   missed binding them after the DOM move. */
+	$(document).on('click', '.modal [data-bs-dismiss="modal"], .modal .btn-close, .modal .close', function(e){
+		e.preventDefault();
+		var modalEl = $(this).closest('.modal')[0];
+		if(modalEl){
+			var inst = bootstrap.Modal.getInstance(modalEl);
+			if(inst){ inst.hide(); }
+		}
+	});
+
+	/* Close when clicking directly on the modal overlay (outside modal-dialog) */
+	$(document).on('click', '.modal', function(e){
+		if(e.target === this){                       // clicked the overlay itself, not a child
+			var inst = bootstrap.Modal.getInstance(this);
+			if(inst){ inst.hide(); }
+		}
+	});
+
 	/* ---- Nested sub-dropdown (desktop hover) ---- */
 	if (window.innerWidth >= 992) {
 		document.querySelectorAll('.dropdown-submenu').forEach(function(el){
