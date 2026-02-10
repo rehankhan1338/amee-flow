@@ -206,6 +206,7 @@ $(function(){
                             <td nowrap> 
                                 <a class="deBtn" id="editBtn<?php echo $row['mamCourseId'];?>" onclick="return manageCourseMAM('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');"> <i class="icon-sm" data-feather="edit"></i> </a> 
                                 &nbsp;&nbsp;<a class="deBtn" id="noteBtn<?php echo $row['mamCourseId'];?>" onclick="return viewNote('<?php echo $row['mamCourseId'];?>');"> <i class="icon-sm" data-feather="eye"></i> </a>
+                                &nbsp;&nbsp;<a class="btn btn-danger btn-sm" id="delcourse<?php echo $row['mamCourseId'];?>" onclick="return deleteSingleCourse('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');" style="margin-left:3px;"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         <?php $i++; }?>
@@ -269,6 +270,22 @@ function deleteCourse(selceId){
 	}else{
 		alert("Please select at least one course!");
 		return false;
+	}
+}
+function deleteSingleCourse(mamCourseId, seloversigntId){
+	var r = confirm("Are you sure you want to delete this course?");
+	if (r == true) {
+		$.ajax({
+			type: "POST",
+			url: '<?php echo base_url().$this->config->item('system_directory_name').'master_alignment_map/deleteCourse?courseIds=';?>'+mamCourseId,
+			beforeSend: function(){
+				$('#delcourse'+mamCourseId).prop("disabled", true);
+				$('#delcourse'+mamCourseId).html('<i class="fa fa-spinner fa-spin"></i>');
+			},
+			success: function(result, status, xhr){
+				window.location = '<?php echo base_url().$this->config->item('system_directory_name').'master-alignment-map?osd=';?>'+seloversigntId;
+			}
+		});
 	}
 }
 function manageCourseMAM(mamCourseId,seloversigntId){
