@@ -702,8 +702,8 @@ body.af-system-admin .af-footer {
 	border: none;
 	border-radius: 12px;
 	box-shadow: 0 10px 35px rgba(0,0,0,0.12);
-	padding-bottom: 20px !important;
-	padding-top: 0px !important;
+	padding-bottom: 10px !important;
+	padding-top: 10px !important;
 	margin-top: .35rem;
 	min-width: 220px;
 	animation: afFadeIn .2s ease;
@@ -774,6 +774,7 @@ body.af-system-admin .af-footer {
 .af-profile-dropdown { min-width: 260px !important; border-radius: 14px !important; overflow: hidden; }
 
 .af-profile-header {
+	margin-top: -10px !important;
 	margin-bottom: 10px !important;
 	text-align: center;
 	padding: 1.3rem 1rem 1rem;
