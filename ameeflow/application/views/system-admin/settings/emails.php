@@ -2,6 +2,12 @@
 	<div class="box">
 		<div class="box-header no-border">
             <h3 class="box-title">These email templates are automatically sent when users are added to your team.</h3>
+            <div class="box-tools pull-right">
+                <div class="input-group input-group-sm" style="display:inline-flex; width:250px; margin-right:10px; vertical-align:middle;">
+                    <input type="text" id="emailSearchInput" class="form-control" placeholder="Search email templates..." style="height:34px;">
+                    <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearEmailSearch"><i class="fa fa-times"></i></span>
+                </div>
+            </div>
         </div>
 		<div class="box-body row"> 
 			<div class="col-xs-12 table-responsive">
@@ -77,6 +83,28 @@ function email(eId){
     });	    
 }
 $(document).ready(function () {
+	// Search functionality
+	function filterEmailsTable(){
+		var searchText = $('#emailSearchInput').val().toLowerCase();
+		
+		$('#table_recordtbl12 tbody tr').each(function(){
+			var rowText = $(this).text().toLowerCase();
+			var matchesSearch = (searchText === '' || rowText.indexOf(searchText) > -1);
+			$(this).toggle(matchesSearch);
+		});
+	}
+
+	// Search input event
+	$('#emailSearchInput').on('keyup', function(){
+		filterEmailsTable();
+	});
+
+	// Clear search button
+	$('#clearEmailSearch').on('click', function(){
+		$('#emailSearchInput').val('');
+		filterEmailsTable();
+	});
+
 	$('#emailFrm').validate({
 		ignore: [], 
 		highlight: function(element) {

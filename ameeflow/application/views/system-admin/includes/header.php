@@ -49,7 +49,7 @@
 		<div class="container-fluid">
 
 			<!-- Brand / Logo -->
-			<a class="navbar-brand" href="<?php echo base_url();?>">
+			<a class="navbar-brand" href="<?php echo base_url();?>/system-admin/profile">
 				<?php echo $this->config->item('product_name');?>
 			</a>
 
