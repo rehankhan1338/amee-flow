@@ -7,7 +7,7 @@
 <script>
 $(function(){ 
     var mamTable = $('#table_recordtbl_mam').DataTable({
-        dom: "<'row'<'col-sm-12 col-md-6'><'col-sm-12 col-md-6'f>>" +
+        dom: "<'row'<'col-sm-12 col-md-12 mb-3 mt-3'f>>" +
              "<'row'<'col-sm-12'tr>>" +
              "<'row'<'col-sm-12 col-md-4'i><'col-sm-12 col-md-4 text-center'l><'col-sm-12 col-md-4'p>>",
         paging: true,
