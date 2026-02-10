@@ -25,25 +25,44 @@
 function deleteAccess(){
 	var n = $(".case:checked").length;
 	if(n>=1){
-		var new_array=[];
-		$(".case:checked").each(function() {
-			var n_total=parseInt($(this).val());
-			new_array.push(n_total);
-		});
-        $.ajax({
-            type: "POST",
-            url: '<?php echo base_url().$this->config->item('system_directory_name').'access/deleteAccess?uniAdminIds=';?>'+new_array,
-            beforeSend: function(){
-                $('#delBtn').prop("disabled", true);
-                $('#delBtn').html('Please Wait <i class="fa fa-spinner fa-spin"></i>');
-            },
-            success: function(result, status, xhr){
-                window.location = '<?php echo base_url().$this->config->item('system_directory_name').'access';?>';      
-            }
-        });
+		var r = confirm("Are you sure want to delete it!");
+		if (r == true) {
+			var new_array=[];
+			$(".case:checked").each(function() {
+				var n_total=parseInt($(this).val());
+				new_array.push(n_total);
+			});
+			$.ajax({
+				type: "POST",
+				url: '<?php echo base_url().$this->config->item('system_directory_name').'access/deleteAccess?uniAdminIds=';?>'+new_array,
+				beforeSend: function(){
+					$('#delBtn').prop("disabled", true);
+					$('#delBtn').html('Please Wait <i class="fa fa-spinner fa-spin"></i>');
+				},
+				success: function(result, status, xhr){
+					window.location = '<?php echo base_url().$this->config->item('system_directory_name').'access';?>';      
+				}
+			});
+		}
 	}else{
 		alert("Please select at least one user!");
 		return false;
+	}
+}
+function deleteSingleAccess(uniAdminId){
+	var r = confirm("Are you sure you want to delete this guest access?");
+	if (r == true) {
+		$.ajax({
+			type: "POST",
+			url: '<?php echo base_url().$this->config->item('system_directory_name').'access/deleteAccess?uniAdminIds=';?>'+uniAdminId,
+			beforeSend: function(){
+				$('#delrole'+uniAdminId).prop("disabled", true);
+				$('#delrole'+uniAdminId).html('<i class="fa fa-spinner fa-spin"></i>');
+			},
+			success: function(result, status, xhr){
+				window.location = '<?php echo base_url().$this->config->item('system_directory_name').'access';?>';
+			}
+		});
 	}
 }
 function update_toggle_swtich_values(uniAdminId,column_name){

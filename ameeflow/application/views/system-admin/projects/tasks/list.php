@@ -28,6 +28,7 @@ $tdAddSign = '<i class="fa fa-plus-square-o"></i>';
                             <th width="15%">Priority</th>
                             <th>Due Date</th>
                             <th>Notification Required?</th>
+                            <th width="10%">Action</th>
                         </tr>
                     </thead>
                     <tbody id="append_company_products">
@@ -76,11 +77,14 @@ $tdAddSign = '<i class="fa fa-plus-square-o"></i>';
                                     <?php } ?>
                                 </label>
                             </td>
+                            <td nowrap>
+                                <a class="btn btn-danger btn-sm" id="deltask<?php echo $task['taskId'];?>" onclick="return deleteSingleTask('<?php echo $task['taskId'];?>','<?php echo $projectDetails['proencryptId'];?>','<?php echo $projectDetails['projectId'];?>');"><i class="fa fa-trash"></i></a>
+                            </td>
                         </tr>
                         <?php $i++; }?>
                         <tr>
                             <td></td>
-                            <td colspan="5"> <span id="anTaskBtn" class="cp fw600" onclick="return manageTask('0','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <i class="fa fa-plus"></i> Add task</span> </td>
+                            <td colspan="6"> <span id="anTaskBtn" class="cp fw600" onclick="return manageTask('0','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <i class="fa fa-plus"></i> Add task</span> </td>
                         </tr>
                     </tbody>
                 </table>							
@@ -117,25 +121,44 @@ function update_toggle_swtich_values(taskId,column_name){
 function deleteTask(proencryptId,projectId){
 	var n = $(".case:checked").length;
 	if(n>=1){
-		var new_array=[];
-		$(".case:checked").each(function() {
-			var n_total=parseInt($(this).val());
-			new_array.push(n_total);
-		});
-        $.ajax({
-            type: "POST",
-            url: '<?php echo base_url().$this->config->item('system_directory_name').'projects/deleteTask?tIds=';?>'+new_array+'&epId='+proencryptId+'&projectId='+projectId,
-            beforeSend: function(){
-                $('#delTaskBtn').prop("disabled", true);
-                $('#delTaskBtn').html('Please Wait <i class="fa fa-spinner fa-spin"></i>');
-            },
-            success: function(result, status, xhr){
-                window.location = '<?php echo base_url().$this->config->item('system_directory_name').'projects/tasks/'.$projectDetails['proencryptId'];?>';      
-            }
-        });
+		var r = confirm("Are you sure want to delete it!");
+		if (r == true) {
+			var new_array=[];
+			$(".case:checked").each(function() {
+				var n_total=parseInt($(this).val());
+				new_array.push(n_total);
+			});
+			$.ajax({
+				type: "POST",
+				url: '<?php echo base_url().$this->config->item('system_directory_name').'projects/deleteTask?tIds=';?>'+new_array+'&epId='+proencryptId+'&projectId='+projectId,
+				beforeSend: function(){
+					$('#delTaskBtn').prop("disabled", true);
+					$('#delTaskBtn').html('Please Wait <i class="fa fa-spinner fa-spin"></i>');
+				},
+				success: function(result, status, xhr){
+					window.location = '<?php echo base_url().$this->config->item('system_directory_name').'projects/tasks/'.$projectDetails['proencryptId'];?>';      
+				}
+			});
+		}
 	}else{
 		alert("Please select at least one task!");
 		return false;
+	}
+}
+function deleteSingleTask(taskId, proencryptId, projectId){
+	var r = confirm("Are you sure you want to delete this task?");
+	if (r == true) {
+		$.ajax({
+			type: "POST",
+			url: '<?php echo base_url().$this->config->item('system_directory_name').'projects/deleteTask?tIds=';?>'+taskId+'&epId='+proencryptId+'&projectId='+projectId,
+			beforeSend: function(){
+				$('#deltask'+taskId).prop("disabled", true);
+				$('#deltask'+taskId).html('<i class="fa fa-spinner fa-spin"></i>');
+			},
+			success: function(result, status, xhr){
+				window.location = '<?php echo base_url().$this->config->item('system_directory_name').'projects/tasks/'.$projectDetails['proencryptId'];?>';
+			}
+		});
 	}
 }
 function dueDateEdit(taskId){

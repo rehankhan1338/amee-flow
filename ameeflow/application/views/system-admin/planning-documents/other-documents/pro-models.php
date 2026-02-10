@@ -50,6 +50,22 @@ function deleteDoc(){
 		return false;
 	}
 }
+function deleteSingleDoc(docId){
+	var r = confirm("Are you sure you want to delete this document?");
+	if (r == true) {
+		$.ajax({
+			type: "POST",
+			url: '<?php echo base_url().$this->config->item('system_directory_name').'other_documents/deleteDoc?docIds=';?>'+docId,
+			beforeSend: function(){
+				$('#deldoc'+docId).prop("disabled", true);
+				$('#deldoc'+docId).html('<i class="fa fa-spinner fa-spin"></i>');
+			},
+			success: function(result, status, xhr){
+				window.location = '<?php echo base_url().$this->config->item('system_directory_name').'other_documents';?>';
+			}
+		});
+	}
+}
 function update_toggle_swtich_values(docId,column_name){
 	if(docId>0){
 		var checkstatus=$('#toggle-event-'+column_name+docId).prop('checked');

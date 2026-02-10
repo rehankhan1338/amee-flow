@@ -46,7 +46,8 @@
                             }
                             ?></td>                           
                             <td nowrap>
-                                <a class="btn btn-primary btn-sm" id="epro<?php echo $row['docId'];?>" onclick="return manageDoc('<?php echo $row['docId'];?>');">Edit</a>                                
+                                <a class="btn btn-primary btn-sm" id="epro<?php echo $row['docId'];?>" onclick="return manageDoc('<?php echo $row['docId'];?>');">Edit</a>
+                                <a class="btn btn-danger btn-sm" id="deldoc<?php echo $row['docId'];?>" onclick="return deleteSingleDoc('<?php echo $row['docId'];?>');" style="margin-left:3px;"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         <?php $i++; }?>

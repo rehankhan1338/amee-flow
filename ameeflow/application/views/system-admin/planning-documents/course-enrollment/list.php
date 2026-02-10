@@ -54,8 +54,9 @@
                             <td> <?php echo $row['courseModality'];?></td>
                             <td> <?php echo $row['courseLevel'];?></td>
                             <td> <?php echo $row['courseType'];?></td>
-                            <td> 
-                                <a class="btn btn-primary btn-sm" id="editCCEBtn<?php echo $row['ceClassId'];?>" onclick="return manageCCE('<?php echo $row['ceClassId'];?>','<?php echo $selceId;?>');"> Edit </a> 
+                            <td nowrap> 
+                                <a class="btn btn-primary btn-sm" id="editCCEBtn<?php echo $row['ceClassId'];?>" onclick="return manageCCE('<?php echo $row['ceClassId'];?>','<?php echo $selceId;?>');"> Edit </a>
+                                <a class="btn btn-danger btn-sm" id="delclass<?php echo $row['ceClassId'];?>" onclick="return deleteSingleClass('<?php echo $row['ceClassId'];?>','<?php echo $selceId;?>');" style="margin-left:3px;"><i class="fa fa-trash"></i></a>
                                 <?php if(isset($row['comment']) && $row['comment']!=''){?> <span data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $row['comment'];?>" > <i class="icon-sm mx-2" data-feather="info"></i> </span> <?php } ?>
                             </td>
                         </tr>
@@ -158,6 +159,22 @@ function deleteClass(selceId){
 	}else{
 		alert("Please select at least one course!");
 		return false;
+	}
+}
+function deleteSingleClass(ceClassId, selceId){
+	var r = confirm("Are you sure you want to delete this course?");
+	if (r == true) {
+		$.ajax({
+			type: "POST",
+			url: '<?php echo base_url().$this->config->item('system_directory_name').'course_enrollment/deleteClass?classIds=';?>'+ceClassId,
+			beforeSend: function(){
+				$('#delclass'+ceClassId).prop("disabled", true);
+				$('#delclass'+ceClassId).html('<i class="fa fa-spinner fa-spin"></i>');
+			},
+			success: function(result, status, xhr){
+				window.location = '<?php echo base_url().$this->config->item('system_directory_name').'course-enrollment?ced=';?>'+selceId;
+			}
+		});
 	}
 }
 function manageCCE(ceClassId,selceId){

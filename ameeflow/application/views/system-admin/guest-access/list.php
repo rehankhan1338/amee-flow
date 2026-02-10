@@ -37,8 +37,9 @@
                                 <input <?php if(isset($row['isActive']) && $row['isActive']==0){?> checked="checked" <?php } ?> id="toggle-event-isActive<?php echo $row['uniAdminId'];?>" onchange="return update_toggle_swtich_values('<?php echo $row['uniAdminId'];?>','isActive');" data-toggle="toggle" data-size="mini" data-onstyle="success" data-offstyle="danger" data-on="Active" data-off="Inactive" type="checkbox">
                                 <span id="spinner_isActive_<?php echo $row['uniAdminId'];?>"></span>                                                
                             </td>
-                            <td>                                
-                                <a class="btn btn-primary btn-sm" id="edrole<?php echo $row['uniAdminId'];?>" onclick="return manageAccess('<?php echo $row['uniAdminId'];?>');">Edit</a>                                
+                            <td nowrap>                                
+                                <a class="btn btn-primary btn-sm" id="edrole<?php echo $row['uniAdminId'];?>" onclick="return manageAccess('<?php echo $row['uniAdminId'];?>');">Edit</a>
+                                <a class="btn btn-danger btn-sm" id="delrole<?php echo $row['uniAdminId'];?>" onclick="return deleteSingleAccess('<?php echo $row['uniAdminId'];?>');" style="margin-left:3px;"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         <?php $i++; }?>
