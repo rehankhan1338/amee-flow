@@ -1217,10 +1217,8 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 }
 #mam-sticky-header table {
 	margin-bottom: 0 !important;
-	background: #fff;
 }
 #mam-sticky-header table thead th {
-	background: #f8f9fa;
 	border-bottom: 2px solid #dee2e6;
 	vertical-align: middle;
 	white-space: nowrap;
