@@ -1709,3 +1709,7 @@ span[style*="cursor: not-allowed"] {
 .table-striped tbody tr.no-data-row:nth-of-type(odd) {
 	background-color: #fafafa !important;
 }
+
+.input-group{
+	flex-wrap: initial !important;
+}
