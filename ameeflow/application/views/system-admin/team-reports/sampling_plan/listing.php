@@ -2,7 +2,7 @@
     <div class="box">         
        
         <div class="box-header no-border">	
-            <div class="row align-items-end">	
+            <div class="row align-items-end w-100">	
                 <div class="col-md-3">
                     <label class="form-label fw600 mb-2">Year</label>
                     <select class="form-control modern-select" id="yr" name="yr" onchange="return getSPTerms(this.value,'<?php if(isset($_GET['termId']) && $_GET['termId']!=''){echo $_GET['termId'];}else{echo '0';}?>');">
@@ -19,6 +19,15 @@
                         <?php if(count($termsOptions)>0){ foreach($termsOptions as $term){?>
                         <option <?php if(isset($_GET['termId']) && $_GET['termId']==$term['termId']){?> selected <?php }?> value="<?php echo $term['termId'];?>"><?php echo $this->config->item('terms_assessment_array_config')[$term['termId']]['name'];?></option>
                         <?php } } ?>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw600 mb-2">Approval Status</label>
+                    <select class="form-control modern-select" id="approvalStatus" name="approvalStatus">
+                        <option value="all" <?php if(!isset($_GET['approvalStatus']) || $_GET['approvalStatus']=='all'){?> selected <?php }?>>All Status</option>
+                        <option value="pending" <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='pending'){?> selected <?php }?>>Pending</option>
+                        <option value="approved" <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='approved'){?> selected <?php }?>>Approved</option>
+                        <option value="fully_approved" <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='fully_approved'){?> selected <?php }?>>Fully Approved</option>
                     </select>
                 </div>
                 <div class="col-md-3">
@@ -44,6 +53,42 @@
                     <tbody id="append_company_products">
                         <?php $i = 1; foreach($samplingPlanDataArr as $row){ 
                             $hasFeedback = isset($row['feedbackCnt']) && $row['feedbackCnt'] > 0;
+                            $spApprovalDataArr = getApprovalDataArrCh($row['spId'],$shareReportFor);
+                            
+                            // Determine approval status for filtering
+                            $hasPending = false;
+                            $hasApproved = false;
+                            $allApproved = false;
+                            $approvalCount = count($spApprovalDataArr);
+                            
+                            if($approvalCount > 0){
+                                $pendingCount = 0;
+                                $approvedCount = 0;
+                                foreach($spApprovalDataArr as $spApp){
+                                    if($spApp['actionTakenSts'] == 0){
+                                        $hasPending = true;
+                                        $pendingCount++;
+                                    } else if($spApp['actionTakenSts'] == 1 || $spApp['actionTakenSts'] == 2){
+                                        $hasApproved = true;
+                                        $approvedCount++;
+                                    }
+                                }
+                                $allApproved = ($pendingCount == 0 && $approvedCount == $approvalCount);
+                            }
+                            
+                            // Filter logic
+                            $showRow = true;
+                            if(isset($_GET['approvalStatus']) && $_GET['approvalStatus'] != 'all'){
+                                if($_GET['approvalStatus'] == 'pending' && !$hasPending){
+                                    $showRow = false;
+                                } else if($_GET['approvalStatus'] == 'approved' && !$hasApproved){
+                                    $showRow = false;
+                                } else if($_GET['approvalStatus'] == 'fully_approved' && !$allApproved){
+                                    $showRow = false;
+                                }
+                            }
+                            
+                            if(!$showRow) continue;
                         ?>
                         <tr>
                             <td> <?php echo $i;?>  </td>
@@ -72,7 +117,7 @@
                                 <?php } ?>
                             </td>
                             <td>
-                                <?php $spApprovalDataArr = getApprovalDataArrCh($row['spId'],$shareReportFor);
+                                <?php
                                 if(count($spApprovalDataArr)>0){
                                     echo '<table class="">';
                                     foreach($spApprovalDataArr as $spApp){
@@ -99,7 +144,8 @@
 function applySpFilter(){
     var yr = $('#yr').val();
     var termId = $('#termId').val();
-    window.location = '<?php echo base_url().$this->config->item('system_directory_name');?>reports/sampling_plan?yr='+yr+'&termId='+termId;
+    var approvalStatus = $('#approvalStatus').val();
+    window.location = '<?php echo base_url().$this->config->item('system_directory_name');?>reports/sampling_plan?yr='+yr+'&termId='+termId+'&approvalStatus='+approvalStatus;
 }
 function getSPTerms(year,selTerm){
 	var yearChk = parseInt(year);
