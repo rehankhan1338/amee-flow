@@ -32,8 +32,10 @@ $tdAddSign = '<i class="fa fa-plus-square-o"></i>';
                         </tr>
                     </thead>
                     <tbody id="append_company_products">
-                    <?php $i = 1;
+                    <?php 
                     $svgImgIcon = base_url().'assets/system-administrator/images/plus-circle-28.svg';
+                    if(count($proTaskListDataArr) > 0){
+                        $i = 1;
                         foreach($proTaskListDataArr as $task){
                             $priClsname = '';
                             if(isset($task['priorityId']) && $task['priorityId']!='' && $task['priorityId']>0){
@@ -86,6 +88,20 @@ $tdAddSign = '<i class="fa fa-plus-square-o"></i>';
                             <td></td>
                             <td colspan="6"> <span id="anTaskBtn" class="cp fw600" onclick="return manageTask('0','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <i class="fa fa-plus"></i> Add task</span> </td>
                         </tr>
+                    <?php } else { ?>
+                        <tr class="no-data-row">
+                            <td colspan="7" class="text-center py-5">
+                                <div class="no-data-message">
+                                    <i class="fa fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                                    <p style="font-size: 1.1rem; color: #999; margin: 0; font-weight: 500;">No data found</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="6"> <span id="anTaskBtn" class="cp fw600" onclick="return manageTask('0','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <i class="fa fa-plus"></i> Add task</span> </td>
+                        </tr>
+                    <?php } ?>
                     </tbody>
                 </table>							
             </div>

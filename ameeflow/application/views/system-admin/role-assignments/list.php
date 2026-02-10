@@ -64,7 +64,9 @@
                         </tr>
                     </thead>
                     <tbody id="append_company_products">
-                        <?php $i = 1;
+                        <?php 
+                        if(count($uniUsersDataArr) > 0){
+                            $i = 1;
                             foreach($uniUsersDataArr as $row){                        
                         ?>
                         <?php 
@@ -105,7 +107,17 @@
                                 <?php } ?>
                             </td>
                         </tr>
-                        <?php $i++; }?>
+                        <?php $i++; }
+                        } else { ?>
+                        <tr class="no-data-row">
+                            <td colspan="8" class="text-center py-5">
+                                <div class="no-data-message">
+                                    <i class="fa fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                                    <p style="font-size: 1.1rem; color: #999; margin: 0; font-weight: 500;">No data found</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>					
             </div>	 

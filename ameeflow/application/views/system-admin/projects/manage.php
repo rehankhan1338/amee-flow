@@ -46,7 +46,9 @@
                         </tr>
                     </thead>
                     <tbody id="append_company_products">
-                        <?php $i = 1;
+                        <?php 
+                        if(count($projectDataArr) > 0){
+                            $i = 1;
                             foreach($projectDataArr as $pro){                            
                                 $taskList = proTaskListDataArrCh($pro['projectId']);
                         ?>
@@ -76,7 +78,17 @@
                                 <a class="btn btn-danger btn-sm" id="delpro<?php echo $pro['projectId'];?>" onclick="return deleteSingleProject('<?php echo $pro['projectId'];?>');" style="margin-left:3px;"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
-                        <?php $i++; }?>
+                        <?php $i++; }
+                        } else { ?>
+                        <tr class="no-data-row">
+                            <td colspan="5" class="text-center py-5">
+                                <div class="no-data-message">
+                                    <i class="fa fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                                    <p style="font-size: 1.1rem; color: #999; margin: 0; font-weight: 500;">No data found</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>							
             </div>	 

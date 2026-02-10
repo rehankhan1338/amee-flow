@@ -40,7 +40,9 @@
                         </tr>
                     </thead>
                     <tbody id="append_company_products">
-                        <?php $i = 1;
+                        <?php 
+                        if(count($classesDataArr) > 0){
+                            $i = 1;
                             foreach($classesDataArr as $row){
                         ?>
                         <tr>
@@ -60,7 +62,17 @@
                                 <?php if(isset($row['comment']) && $row['comment']!=''){?> <span data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $row['comment'];?>" > <i class="icon-sm mx-2" data-feather="info"></i> </span> <?php } ?>
                             </td>
                         </tr>
-                        <?php $i++; }?>
+                        <?php $i++; }
+                        } else { ?>
+                        <tr class="no-data-row">
+                            <td colspan="10" class="text-center py-5">
+                                <div class="no-data-message">
+                                    <i class="fa fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                                    <p style="font-size: 1.1rem; color: #999; margin: 0; font-weight: 500;">No data found</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>							
             </div>	 

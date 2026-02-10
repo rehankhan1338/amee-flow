@@ -51,7 +51,10 @@
                         </tr>
                     </thead>
                     <tbody id="append_company_products">
-                        <?php $i = 1; foreach($samplingPlanDataArr as $row){ 
+                        <?php 
+                        $i = 1; 
+                        $hasVisibleRows = false;
+                        foreach($samplingPlanDataArr as $row){ 
                             $hasFeedback = isset($row['feedbackCnt']) && $row['feedbackCnt'] > 0;
                             $spApprovalDataArr = getApprovalDataArrCh($row['spId'],$shareReportFor);
                             
@@ -89,6 +92,7 @@
                             }
                             
                             if(!$showRow) continue;
+                            $hasVisibleRows = true;
                         ?>
                         <tr>
                             <td> <?php echo $i;?>  </td>
@@ -136,6 +140,16 @@
                              
                         </tr>
                         <?php $i++; }?>
+                        <?php if(!$hasVisibleRows){ ?>
+                        <tr class="no-data-row">
+                            <td colspan="6" class="text-center py-5">
+                                <div class="no-data-message">
+                                    <i class="fa fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                                    <p style="font-size: 1.1rem; color: #999; margin: 0; font-weight: 500;">No data found</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>							
             </div>	 

@@ -163,7 +163,10 @@ $(function(){
                         </tr>
                     </thead>
                     <tbody id="append_company_products">
-                        <?php $i = 1;
+                        <?php 
+                        $totalCols = 3 + $mamDetailsArr['ISLOCnt'] + $mamDetailsArr['GISLOCnt'] + $mamDetailsArr['PSLOCnt'] + $mamDetailsArr['GPSLOCnt'];
+                        if(count($cousesDataArr) > 0){
+                            $i = 1;
                             foreach($cousesDataArr as $row){ 
                                 
                                 if(isset($row['courseISLO']) && $row['courseISLO']!=''){
@@ -209,7 +212,17 @@ $(function(){
                                 &nbsp;&nbsp;<a class="btn btn-danger btn-sm" id="delcourse<?php echo $row['mamCourseId'];?>" onclick="return deleteSingleCourse('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');" style="margin-left:3px;"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
-                        <?php $i++; }?>
+                        <?php $i++; }
+                        } else { ?>
+                        <tr class="no-data-row">
+                            <td colspan="<?php echo $totalCols; ?>" class="text-center py-5">
+                                <div class="no-data-message">
+                                    <i class="fa fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                                    <p style="font-size: 1.1rem; color: #999; margin: 0; font-weight: 500;">No data found</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>							
             </div>	 

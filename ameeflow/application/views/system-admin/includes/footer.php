@@ -81,6 +81,54 @@ $(function(){
 	feather.replace();
 
 	/* ============================================================
+	   Universal "No Data Found" Message for Empty Tables
+	   ============================================================ */
+	(function checkEmptyTables(){
+		function addNoDataMessage($tbody, colCount){
+			// Check if already has no-data row
+			if($tbody.find('.no-data-row').length > 0) return;
+			
+			// Check if tbody is empty or only has whitespace/comment nodes
+			var hasContent = false;
+			$tbody.find('tr').each(function(){
+				if($(this).is(':visible') && $(this).text().trim() !== ''){
+					hasContent = true;
+					return false;
+				}
+			});
+			
+			if(!hasContent && $tbody.find('tr').length === 0){
+				var $noDataRow = $('<tr class="no-data-row"><td colspan="' + colCount + '" class="text-center py-5"><div class="no-data-message"><i class="fa fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i><p style="font-size: 1.1rem; color: #999; margin: 0; font-weight: 500;">No data found</p></div></td></tr>');
+				$tbody.append($noDataRow);
+			}
+		}
+
+		// Check all tables on page load
+		setTimeout(function(){
+			$('table tbody').each(function(){
+				var $tbody = $(this);
+				var $table = $tbody.closest('table');
+				var colCount = $table.find('thead th').length || $table.find('thead tr:first td').length || $table.find('tbody tr:first td').length || 1;
+				addNoDataMessage($tbody, colCount);
+			});
+		}, 100);
+
+		// Also check after DataTable initialization
+		if($.fn.dataTable){
+			$(document).on('init.dt', function(e, settings){
+				var api = new $.fn.dataTable.Api(settings);
+				var $tbody = $(settings.nTBody);
+				var colCount = $(settings.nTable).find('thead th').length;
+				setTimeout(function(){
+					if(api.rows().count() === 0){
+						addNoDataMessage($tbody, colCount);
+					}
+				}, 50);
+			});
+		}
+	})();
+
+	/* ============================================================
 	   Universal Sticky Header for all DataTables
 	   ============================================================ */
 	(function initStickyHeaders(){

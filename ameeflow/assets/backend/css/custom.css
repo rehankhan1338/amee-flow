@@ -691,7 +691,6 @@ body.af-system-admin .af-footer {
 .af-navbar .nav-item.af-active > .nav-link {
 	color: #fff !important;
 	background: rgba(255,255,255,0.22);
-	box-shadow: inset 0 -2px 0 rgba(255,255,255,0.5);
 }
 
 /* Nav icon helpers */
@@ -1659,4 +1658,49 @@ span[style*="cursor: not-allowed"] {
 .badge.bg-warning.text-dark:hover {
 	transform: scale(1.05);
 	box-shadow: 0 2px 8px rgba(255,193,7,0.3);
+}
+
+/* ============================================================
+   No Data Found Message for Empty Tables
+   ============================================================ */
+.no-data-row {
+	background-color: #fafafa !important;
+}
+
+.no-data-row td {
+	border: none !important;
+	padding: 3rem 1rem !important;
+}
+
+.no-data-message {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.no-data-message i {
+	opacity: 0.5;
+	animation: fadeIn 0.5s ease;
+}
+
+.no-data-message p {
+	animation: fadeIn 0.5s ease 0.1s both;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Ensure no-data row doesn't get striped */
+.table-striped tbody tr.no-data-row:nth-of-type(odd) {
+	background-color: #fafafa !important;
 }

@@ -50,7 +50,6 @@
 
 			<!-- Brand / Logo -->
 			<a class="navbar-brand" href="<?php echo base_url();?>">
-				<span class="af-brand-icon"><i class="fa fa-cube"></i></span>
 				<?php echo $this->config->item('product_name');?>
 			</a>
 
