@@ -1200,7 +1200,6 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 }
 
 /* Sticky cloned thead for DataTables - Universal */
-/* Modern Professional Sticky Header Design */
 .af-sticky-header {
 	display: none;
 	position: fixed;
@@ -1208,67 +1207,24 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	left: 0;
 	right: 0;
 	z-index: 1030;
-	background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-	border-bottom: 2px solid #e9ecef;
+	background: #fff;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 	overflow: hidden;
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .af-sticky-header .dataTables_scrollHeadInner {
 	box-sizing: content-box;
 }
 .af-sticky-header table {
 	margin-bottom: 0 !important;
-	border-collapse: separate;
-	border-spacing: 0;
-}
-.af-sticky-header table thead {
-	background: transparent;
 }
 .af-sticky-header table thead th {
-	background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
-	border-bottom: 2px solid #485b79;
-	border-right: 1px solid #e9ecef;
+	border-bottom: 2px solid #dee2e6;
 	vertical-align: middle;
 	white-space: nowrap;
-	padding: 12px 15px;
-	font-weight: 600;
-	font-size: 0.875rem;
-	letter-spacing: 0.3px;
-	color: #2c3e50;
-	text-transform: uppercase;
-	position: relative;
-	transition: background-color 0.2s ease;
-}
-.af-sticky-header table thead th:first-child {
-	border-left: none;
-}
-.af-sticky-header table thead th:last-child {
-	border-right: none;
-}
-.af-sticky-header table thead th:hover {
-	background: linear-gradient(to bottom, #e9ecef 0%, #f8f9fa 100%);
-}
-.af-sticky-header table thead th::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 2px;
-	background: linear-gradient(90deg, transparent 0%, #485b79 50%, transparent 100%);
-	opacity: 0.3;
 }
 @media (max-width: 767px) {
 	.af-sticky-header {
 		top: 56px;
-		box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-	}
-	.af-sticky-header table thead th {
-		padding: 10px 12px;
-		font-size: 0.8rem;
 	}
 }
 
@@ -1280,67 +1236,24 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	left: 0;
 	right: 0;
 	z-index: 1030;
-	background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-	border-bottom: 2px solid #e9ecef;
+	background: #fff;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 	overflow: hidden;
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	transition: opacity 0.2s ease, transform 0.2s ease;
 }
 #mam-sticky-header .dataTables_scrollHeadInner {
 	box-sizing: content-box;
 }
 #mam-sticky-header table {
 	margin-bottom: 0 !important;
-	border-collapse: separate;
-	border-spacing: 0;
-}
-#mam-sticky-header table thead {
-	background: transparent;
 }
 #mam-sticky-header table thead th {
-	background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
-	border-bottom: 2px solid #485b79;
-	border-right: 1px solid #e9ecef;
+	border-bottom: 2px solid #dee2e6;
 	vertical-align: middle;
 	white-space: nowrap;
-	padding: 12px 15px;
-	font-weight: 600;
-	font-size: 0.875rem;
-	letter-spacing: 0.3px;
-	color: #2c3e50;
-	text-transform: uppercase;
-	position: relative;
-	transition: background-color 0.2s ease;
-}
-#mam-sticky-header table thead th:first-child {
-	border-left: none;
-}
-#mam-sticky-header table thead th:last-child {
-	border-right: none;
-}
-#mam-sticky-header table thead th:hover {
-	background: linear-gradient(to bottom, #e9ecef 0%, #f8f9fa 100%);
-}
-#mam-sticky-header table thead th::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 2px;
-	background: linear-gradient(90deg, transparent 0%, #485b79 50%, transparent 100%);
-	opacity: 0.3;
 }
 @media (max-width: 767px) {
 	#mam-sticky-header {
 		top: 56px;
-		box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-	}
-	#mam-sticky-header table thead th {
-		padding: 10px 12px;
-		font-size: 0.8rem;
 	}
 }
 .table.dataTable thead tr>.dtfc-fixed-left{
