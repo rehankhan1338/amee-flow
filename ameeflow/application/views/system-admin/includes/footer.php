@@ -336,6 +336,70 @@ $(function(){
 				}
 			});
 
+			// Also handle regular HTML tables (not DataTables) with thead
+			$('table[id^="table_recordtbl"]').each(function(){
+				var $table = $(this);
+				var tableId = this.id;
+				if(!tableId) return;
+				
+				// Skip if already processed or is master-alignment-map
+				if(tableId === 'table_recordtbl_mam' || stickyInstances[tableId]) return;
+				
+				// Skip if it's a DataTable (already processed above)
+				if($table.hasClass('dataTable')) return;
+				
+				// Only process tables with thead
+				var $thead = $table.find('thead');
+				if(!$thead.length) return;
+				
+				// Find the table container
+				var $tableContainer = $table.closest('.table-responsive, .box-body, .col-xs-12, .col-12, .box').first();
+				if(!$tableContainer.length) $tableContainer = $table.parent();
+				
+				// Create unique sticky header container
+				var stickyId = 'af-sticky-' + tableId.replace(/[^a-zA-Z0-9]/g, '-');
+				var $sticky = $('<div class="af-sticky-header" data-table-id="' + tableId + '"></div>');
+				$sticky.attr('id', stickyId);
+				$('body').append($sticky);
+				
+				var inst = {
+					$wrapper: $table.parent(),
+					$table: $table,
+					$sticky: $sticky,
+					$container: $tableContainer,
+					tableId: tableId,
+					hasScrollX: false,
+					$scrollHead: null,
+					$scrollBody: null,
+					dt: null
+				};
+				
+				stickyInstances[tableId] = inst;
+
+				function onScroll(){
+					var $header = inst.$table.find('thead');
+					if(!$header.length) return;
+					
+					var headRect = $header[0].getBoundingClientRect();
+					var containerRect = inst.$container[0].getBoundingClientRect();
+					if(!containerRect) return;
+					var wrapBottom = containerRect.bottom;
+
+					if(headRect.top < navH && wrapBottom > navH + 50){
+						if(!inst.$sticky.is(':visible')){
+							buildCloneRegular(inst);
+						}
+						positionSticky(inst);
+						inst.$sticky.show();
+					} else {
+						inst.$sticky.hide();
+					}
+				}
+
+				// Bind scroll handler
+				$(window).on('scroll.afSticky' + tableId, onScroll);
+			});
+
 			// Update on window resize
 			$(window).on('resize.afSticky', function(){
 				navH = $('.af-navbar').outerHeight() || 60;
