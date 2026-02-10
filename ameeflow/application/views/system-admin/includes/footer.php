@@ -81,6 +81,138 @@ $(function(){
 	feather.replace();
 
 	/* ============================================================
+	   Universal Sticky Header for all DataTables with scrollX
+	   ============================================================ */
+	(function initStickyHeaders(){
+		// Helper functions
+		function buildClone(inst){
+			inst.$sticky.empty();
+			var $clone = inst.$scrollHead.children().clone(false);
+			inst.$sticky.append($clone);
+
+			// Copy computed widths for every <th>
+			var $origThs = inst.$scrollHead.find('th');
+			var $cloneThs = inst.$sticky.find('th');
+			$origThs.each(function(i){
+				var w = $(this).outerWidth();
+				$cloneThs.eq(i).css({ 'min-width': w, 'max-width': w, 'width': w, 'box-sizing': 'border-box' });
+			});
+
+			// Match inner wrapper + table widths
+			var $origInner = inst.$scrollHead.find('.dataTables_scrollHeadInner');
+			var $cloneInner = inst.$sticky.find('.dataTables_scrollHeadInner');
+			if($origInner.length){
+				$cloneInner.css('width', $origInner[0].style.width || $origInner.outerWidth());
+			}
+			var $origTable = inst.$scrollHead.find('table').first();
+			var $cloneTable = inst.$sticky.find('table').first();
+			if($origTable.length){
+				$cloneTable.css('width', $origTable[0].style.width || $origTable.outerWidth());
+			}
+		}
+
+		function syncScroll(inst){
+			inst.$sticky.scrollLeft(inst.$scrollBody.scrollLeft());
+		}
+
+		function positionSticky(inst){
+			var el = inst.$container[0];
+			if(!el) return;
+			var r = el.getBoundingClientRect();
+			inst.$sticky.css({ left: r.left, width: r.width });
+		}
+
+		// Wait a bit for all DataTables to initialize
+		setTimeout(function(){
+			var navH = $('.af-navbar').outerHeight() || 60;
+			var stickyInstances = {};
+
+			// Find all DataTable wrappers with scrollX enabled
+			$('[id$="_wrapper"]').each(function(){
+				var $wrapper = $(this);
+				var wrapperId = this.id;
+				var tableId = wrapperId.replace('_wrapper', '');
+				
+				// Skip master-alignment-map table (has its own implementation)
+				if(tableId === 'table_recordtbl_mam') return;
+				
+				var $scrollHead = $wrapper.find('.dataTables_scrollHead');
+				var $scrollBody = $wrapper.find('.dataTables_scrollBody');
+				
+				// Only process tables with scrollX enabled (have scrollHead)
+				if(!$scrollHead.length || !$scrollBody.length) return;
+				
+				// Get the DataTable instance
+				var dt = $.fn.dataTable.Api ? new $.fn.dataTable.Api('#' + tableId) : null;
+				if(!dt || !dt.settings || !dt.settings().length) return;
+				
+				// Find the table container (look for closest .table-responsive or .box-body or parent)
+				var $tableContainer = $wrapper.closest('.table-responsive, .box-body, .col-xs-12, .col-12').first();
+				if(!$tableContainer.length) $tableContainer = $wrapper.parent();
+				
+				// Create unique sticky header container
+				var stickyId = 'af-sticky-' + tableId.replace(/[^a-zA-Z0-9]/g, '-');
+				var $sticky = $('<div class="af-sticky-header" data-table-id="' + tableId + '"></div>');
+				$sticky.attr('id', stickyId);
+				$('body').append($sticky);
+				
+				var inst = {
+					$wrapper: $wrapper,
+					$scrollHead: $scrollHead,
+					$scrollBody: $scrollBody,
+					$sticky: $sticky,
+					$container: $tableContainer,
+					tableId: tableId
+				};
+				
+				stickyInstances[tableId] = inst;
+
+				function onScroll(){
+					var headRect = inst.$scrollHead[0].getBoundingClientRect();
+					var containerRect = inst.$container[0].getBoundingClientRect();
+					if(!containerRect) return;
+					var wrapBottom = containerRect.bottom;
+
+					if(headRect.top < navH && wrapBottom > navH + 50){
+						if(!inst.$sticky.is(':visible')){
+							buildClone(inst);
+						}
+						positionSticky(inst);
+						syncScroll(inst);
+						inst.$sticky.show();
+					} else {
+						inst.$sticky.hide();
+					}
+				}
+
+				// Sync horizontal scroll both ways
+				inst.$scrollBody.on('scroll', function(){ 
+					if(inst.$sticky.is(':visible')) syncScroll(inst); 
+				});
+				inst.$sticky.on('scroll', function(){ 
+					inst.$scrollBody.scrollLeft(inst.$sticky.scrollLeft()); 
+				});
+
+				// Bind scroll handler
+				$(window).on('scroll.afSticky' + tableId, onScroll);
+				
+				// Rebuild on DataTable draw
+				dt.on('draw', function(){
+					inst.$sticky.hide();
+				});
+			});
+
+			// Update on window resize
+			$(window).on('resize.afSticky', function(){
+				navH = $('.af-navbar').outerHeight() || 60;
+				$.each(stickyInstances, function(id, inst){
+					inst.$sticky.hide();
+				});
+			});
+		}, 500);
+	})();
+
+	/* ============================================================
 	   Modal Fix – move to <body>, center, close on backdrop/cross
 	   ============================================================ */
 	/* Move every .modal out of .wrapper to <body> so they share the
