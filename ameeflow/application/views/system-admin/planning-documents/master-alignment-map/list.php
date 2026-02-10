@@ -31,55 +31,64 @@ $(function(){
 
     /* ── Sticky thead under fixed navbar ── */
     (function(){
-        var $scrollHead = $('#table_recordtbl_mam_wrapper .dataTables_scrollHead');
-        var $scrollBody = $('#table_recordtbl_mam_wrapper .dataTables_scrollBody');
+        var $wrapper   = $('#table_recordtbl_mam_wrapper');
+        var $scrollHead = $wrapper.find('.dataTables_scrollHead');
+        var $scrollBody = $wrapper.find('.dataTables_scrollBody');
         if(!$scrollHead.length) return;
 
         // Create the fixed clone container
         var $sticky = $('<div id="mam-sticky-header"></div>');
         $('body').append($sticky);
 
-        var navH = 60; // navbar height
+        var navH = $('.af-navbar').outerHeight() || 60; // actual navbar height
 
         function buildClone(){
             $sticky.empty();
-            var $clone = $scrollHead.find('.dataTable').clone(true);
-            $clone.css({ width: $scrollHead.find('.dataTable').css('width') });
+            // Clone the entire scrollHead contents (inner wrapper + table)
+            var $clone = $scrollHead.children().clone(false);
             $sticky.append($clone);
-        }
 
-        function syncWidths(){
-            // Match each th width from original to clone
+            // Copy computed widths for every <th>
             var $origThs = $scrollHead.find('th');
             var $cloneThs = $sticky.find('th');
             $origThs.each(function(i){
                 var w = $(this).outerWidth();
-                $cloneThs.eq(i).css({ 'min-width': w, 'max-width': w, 'width': w });
+                $cloneThs.eq(i).css({ 'min-width': w, 'max-width': w, 'width': w, 'box-sizing': 'border-box' });
             });
-            // Match table width
-            $sticky.find('.dataTable').css('width', $scrollHead.find('.dataTable').outerWidth());
+
+            // Match inner wrapper + table widths
+            var $origInner = $scrollHead.find('.dataTables_scrollHeadInner');
+            var $cloneInner = $sticky.find('.dataTables_scrollHeadInner');
+            if($origInner.length){
+                $cloneInner.css('width', $origInner[0].style.width || $origInner.outerWidth());
+            }
+            var $origTable = $scrollHead.find('table').first();
+            var $cloneTable = $sticky.find('table').first();
+            if($origTable.length){
+                $cloneTable.css('width', $origTable[0].style.width || $origTable.outerWidth());
+            }
         }
 
         function syncScroll(){
-            // Match horizontal scroll of the clone to the body
-            var sl = $scrollBody.scrollLeft();
-            $sticky.scrollLeft(sl);
+            $sticky.scrollLeft($scrollBody.scrollLeft());
         }
 
         function positionSticky(){
-            var wrapRect = $('#mam-table-wrap')[0].getBoundingClientRect();
-            $sticky.css({ left: wrapRect.left, width: wrapRect.width });
+            var el = document.getElementById('mam-table-wrap');
+            if(!el) return;
+            var r = el.getBoundingClientRect();
+            $sticky.css({ left: r.left, width: r.width });
         }
 
         function onScroll(){
-            var headRect = $scrollHead[0].getBoundingClientRect();
-            var wrapBottom = $('#mam-table-wrap')[0].getBoundingClientRect().bottom;
+            var headRect   = $scrollHead[0].getBoundingClientRect();
+            var wrapEl     = document.getElementById('mam-table-wrap');
+            if(!wrapEl) return;
+            var wrapBottom = wrapEl.getBoundingClientRect().bottom;
 
-            // Show sticky only when original header is above navbar AND table body is still visible
-            if(headRect.top < navH && wrapBottom > navH + 40){
-                if($sticky.css('display') === 'none'){
+            if(headRect.top < navH && wrapBottom > navH + 50){
+                if(!$sticky.is(':visible')){
                     buildClone();
-                    syncWidths();
                 }
                 positionSticky();
                 syncScroll();
@@ -89,32 +98,18 @@ $(function(){
             }
         }
 
-        // Sync horizontal scroll from body to sticky clone
-        $scrollBody.on('scroll', function(){ syncScroll(); });
-
-        // Also sync from sticky clone back to body (if user scrolls on clone)
-        $sticky.on('scroll', function(){
-            $scrollBody.scrollLeft($sticky.scrollLeft());
-        });
+        // Sync horizontal scroll both ways
+        $scrollBody.on('scroll', function(){ if($sticky.is(':visible')) syncScroll(); });
+        $sticky.on('scroll', function(){ $scrollBody.scrollLeft($sticky.scrollLeft()); });
 
         $(window).on('scroll', onScroll);
         $(window).on('resize', function(){
-            if($sticky.is(':visible')){
-                buildClone();
-                syncWidths();
-                positionSticky();
-                syncScroll();
-            }
+            navH = $('.af-navbar').outerHeight() || 60;
+            $sticky.hide();          // will rebuild on next scroll tick
         });
 
-        // Rebuild on DataTable draw (e.g. page change, sort)
         mamTable.on('draw', function(){
-            if($sticky.is(':visible')){
-                buildClone();
-                syncWidths();
-                positionSticky();
-                syncScroll();
-            }
+            $sticky.hide();          // rebuild on next scroll tick
         });
     })();
     

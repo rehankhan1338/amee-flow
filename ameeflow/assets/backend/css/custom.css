@@ -1209,11 +1209,21 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	right: 0;
 	z-index: 1030;
 	background: #fff;
-	box-shadow: 0 3px 8px rgba(0,0,0,0.10);
+	box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 	overflow: hidden;
 }
-#mam-sticky-header .table {
-	margin-bottom: 0;
+#mam-sticky-header .dataTables_scrollHeadInner {
+	box-sizing: content-box;
+}
+#mam-sticky-header table {
+	margin-bottom: 0 !important;
+	background: #fff;
+}
+#mam-sticky-header table thead th {
+	background: #f8f9fa;
+	border-bottom: 2px solid #dee2e6;
+	vertical-align: middle;
+	white-space: nowrap;
 }
 @media (max-width: 767px) {
 	#mam-sticky-header {
