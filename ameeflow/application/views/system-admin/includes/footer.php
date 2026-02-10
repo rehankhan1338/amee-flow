@@ -81,16 +81,18 @@ $(function(){
 	feather.replace();
 
 	/* ============================================================
-	   Universal Sticky Header for all DataTables with scrollX
+	   Universal Sticky Header for all DataTables
 	   ============================================================ */
 	(function initStickyHeaders(){
-		// Helper functions
-		function buildClone(inst){
+		var navH = $('.af-navbar').outerHeight() || 60;
+		var stickyInstances = {};
+
+		// Helper: Build clone for scrollX tables
+		function buildCloneScrollX(inst){
 			inst.$sticky.empty();
 			var $clone = inst.$scrollHead.children().clone(false);
 			inst.$sticky.append($clone);
 
-			// Copy computed widths for every <th>
 			var $origThs = inst.$scrollHead.find('th');
 			var $cloneThs = inst.$sticky.find('th');
 			$origThs.each(function(i){
@@ -98,7 +100,6 @@ $(function(){
 				$cloneThs.eq(i).css({ 'min-width': w, 'max-width': w, 'width': w, 'box-sizing': 'border-box' });
 			});
 
-			// Match inner wrapper + table widths
 			var $origInner = inst.$scrollHead.find('.dataTables_scrollHeadInner');
 			var $cloneInner = inst.$sticky.find('.dataTables_scrollHeadInner');
 			if($origInner.length){
@@ -111,8 +112,29 @@ $(function(){
 			}
 		}
 
-		function syncScroll(inst){
-			inst.$sticky.scrollLeft(inst.$scrollBody.scrollLeft());
+		// Helper: Build clone for regular tables (no scrollX)
+		function buildCloneRegular(inst){
+			inst.$sticky.empty();
+			var $origTable = inst.$table;
+			var $origThead = $origTable.find('thead');
+			if(!$origThead.length) return;
+
+			// Create a wrapper table with cloned thead
+			var $cloneTable = $('<table class="' + $origTable.attr('class') + '"></table>');
+			var $cloneThead = $origThead.clone(false);
+			$cloneTable.append($cloneThead);
+			inst.$sticky.append($cloneTable);
+
+			// Match table width
+			$cloneTable.css('width', $origTable.outerWidth());
+
+			// Match each th width
+			var $origThs = $origThead.find('th');
+			var $cloneThs = $cloneThead.find('th');
+			$origThs.each(function(i){
+				var w = $(this).outerWidth();
+				$cloneThs.eq(i).css({ 'min-width': w, 'max-width': w, 'width': w, 'box-sizing': 'border-box' });
+			});
 		}
 
 		function positionSticky(inst){
@@ -122,32 +144,35 @@ $(function(){
 			inst.$sticky.css({ left: r.left, width: r.width });
 		}
 
-		// Wait a bit for all DataTables to initialize
-		setTimeout(function(){
-			var navH = $('.af-navbar').outerHeight() || 60;
-			var stickyInstances = {};
+		function syncScroll(inst){
+			if(inst.hasScrollX){
+				inst.$sticky.scrollLeft(inst.$scrollBody.scrollLeft());
+			}
+		}
 
-			// Find all DataTable wrappers with scrollX enabled
-			$('[id$="_wrapper"]').each(function(){
-				var $wrapper = $(this);
-				var wrapperId = this.id;
-				var tableId = wrapperId.replace('_wrapper', '');
+		// Wait for DataTables to initialize
+		setTimeout(function(){
+			// Find all DataTables by looking for tables with dataTable class or in wrappers
+			$('table.dataTable').each(function(){
+				var $table = $(this);
+				var tableId = this.id;
+				if(!tableId) return;
 				
 				// Skip master-alignment-map table (has its own implementation)
 				if(tableId === 'table_recordtbl_mam') return;
 				
+				// Skip if already processed
+				if(stickyInstances[tableId]) return;
+				
+				var $wrapper = $table.closest('[id$="_wrapper"]');
+				if(!$wrapper.length) $wrapper = $table.parent();
+				
 				var $scrollHead = $wrapper.find('.dataTables_scrollHead');
 				var $scrollBody = $wrapper.find('.dataTables_scrollBody');
+				var hasScrollX = $scrollHead.length > 0 && $scrollBody.length > 0;
 				
-				// Only process tables with scrollX enabled (have scrollHead)
-				if(!$scrollHead.length || !$scrollBody.length) return;
-				
-				// Get the DataTable instance
-				var dt = $.fn.dataTable.Api ? new $.fn.dataTable.Api('#' + tableId) : null;
-				if(!dt || !dt.settings || !dt.settings().length) return;
-				
-				// Find the table container (look for closest .table-responsive or .box-body or parent)
-				var $tableContainer = $wrapper.closest('.table-responsive, .box-body, .col-xs-12, .col-12').first();
+				// Find the table container
+				var $tableContainer = $wrapper.closest('.table-responsive, .box-body, .col-xs-12, .col-12, .box').first();
 				if(!$tableContainer.length) $tableContainer = $wrapper.parent();
 				
 				// Create unique sticky header container
@@ -156,26 +181,44 @@ $(function(){
 				$sticky.attr('id', stickyId);
 				$('body').append($sticky);
 				
+				// Get DataTable API instance
+				var dt = null;
+				try {
+					dt = new $.fn.dataTable.Api('#' + tableId);
+				} catch(e) {
+					// Table might not be fully initialized yet
+				}
+				
 				var inst = {
 					$wrapper: $wrapper,
-					$scrollHead: $scrollHead,
-					$scrollBody: $scrollBody,
+					$table: $table,
 					$sticky: $sticky,
 					$container: $tableContainer,
-					tableId: tableId
+					tableId: tableId,
+					hasScrollX: hasScrollX,
+					$scrollHead: hasScrollX ? $scrollHead : null,
+					$scrollBody: hasScrollX ? $scrollBody : null,
+					dt: dt
 				};
 				
 				stickyInstances[tableId] = inst;
 
 				function onScroll(){
-					var headRect = inst.$scrollHead[0].getBoundingClientRect();
+					var $header = hasScrollX ? inst.$scrollHead : inst.$table.find('thead');
+					if(!$header.length) return;
+					
+					var headRect = $header[0].getBoundingClientRect();
 					var containerRect = inst.$container[0].getBoundingClientRect();
 					if(!containerRect) return;
 					var wrapBottom = containerRect.bottom;
 
 					if(headRect.top < navH && wrapBottom > navH + 50){
 						if(!inst.$sticky.is(':visible')){
-							buildClone(inst);
+							if(hasScrollX){
+								buildCloneScrollX(inst);
+							} else {
+								buildCloneRegular(inst);
+							}
 						}
 						positionSticky(inst);
 						syncScroll(inst);
@@ -185,21 +228,112 @@ $(function(){
 					}
 				}
 
-				// Sync horizontal scroll both ways
-				inst.$scrollBody.on('scroll', function(){ 
-					if(inst.$sticky.is(':visible')) syncScroll(inst); 
-				});
-				inst.$sticky.on('scroll', function(){ 
-					inst.$scrollBody.scrollLeft(inst.$sticky.scrollLeft()); 
-				});
+				// Sync horizontal scroll for scrollX tables
+				if(hasScrollX){
+					inst.$scrollBody.on('scroll', function(){ 
+						if(inst.$sticky.is(':visible')) syncScroll(inst); 
+					});
+					inst.$sticky.on('scroll', function(){ 
+						inst.$scrollBody.scrollLeft(inst.$sticky.scrollLeft()); 
+					});
+				}
 
 				// Bind scroll handler
 				$(window).on('scroll.afSticky' + tableId, onScroll);
 				
 				// Rebuild on DataTable draw
-				dt.on('draw', function(){
-					inst.$sticky.hide();
-				});
+				if(inst.dt){
+					inst.dt.on('draw', function(){
+						inst.$sticky.hide();
+					});
+				}
+			});
+
+			// Also check for tables by wrapper ID (fallback for tables without dataTable class)
+			$('[id$="_wrapper"]').each(function(){
+				var $wrapper = $(this);
+				var wrapperId = this.id;
+				var tableId = wrapperId.replace('_wrapper', '');
+				
+				if(tableId === 'table_recordtbl_mam' || stickyInstances[tableId]) return;
+				
+				var $table = $('#' + tableId);
+				if(!$table.length) return;
+				
+				var $scrollHead = $wrapper.find('.dataTables_scrollHead');
+				var $scrollBody = $wrapper.find('.dataTables_scrollBody');
+				var hasScrollX = $scrollHead.length > 0 && $scrollBody.length > 0;
+				
+				var $tableContainer = $wrapper.closest('.table-responsive, .box-body, .col-xs-12, .col-12, .box').first();
+				if(!$tableContainer.length) $tableContainer = $wrapper.parent();
+				
+				var stickyId = 'af-sticky-' + tableId.replace(/[^a-zA-Z0-9]/g, '-');
+				var $sticky = $('<div class="af-sticky-header" data-table-id="' + tableId + '"></div>');
+				$sticky.attr('id', stickyId);
+				$('body').append($sticky);
+				
+				// Get DataTable API instance
+				var dt = null;
+				try {
+					dt = new $.fn.dataTable.Api('#' + tableId);
+				} catch(e) {
+					// Table might not be fully initialized yet
+				}
+				
+				var inst = {
+					$wrapper: $wrapper,
+					$table: $table,
+					$sticky: $sticky,
+					$container: $tableContainer,
+					tableId: tableId,
+					hasScrollX: hasScrollX,
+					$scrollHead: hasScrollX ? $scrollHead : null,
+					$scrollBody: hasScrollX ? $scrollBody : null,
+					dt: dt
+				};
+				
+				stickyInstances[tableId] = inst;
+
+				function onScroll(){
+					var $header = hasScrollX ? inst.$scrollHead : inst.$table.find('thead');
+					if(!$header.length) return;
+					
+					var headRect = $header[0].getBoundingClientRect();
+					var containerRect = inst.$container[0].getBoundingClientRect();
+					if(!containerRect) return;
+					var wrapBottom = containerRect.bottom;
+
+					if(headRect.top < navH && wrapBottom > navH + 50){
+						if(!inst.$sticky.is(':visible')){
+							if(hasScrollX){
+								buildCloneScrollX(inst);
+							} else {
+								buildCloneRegular(inst);
+							}
+						}
+						positionSticky(inst);
+						syncScroll(inst);
+						inst.$sticky.show();
+					} else {
+						inst.$sticky.hide();
+					}
+				}
+
+				if(hasScrollX){
+					inst.$scrollBody.on('scroll', function(){ 
+						if(inst.$sticky.is(':visible')) syncScroll(inst); 
+					});
+					inst.$sticky.on('scroll', function(){ 
+						inst.$scrollBody.scrollLeft(inst.$sticky.scrollLeft()); 
+					});
+				}
+
+				$(window).on('scroll.afSticky' + tableId, onScroll);
+				if(inst.dt){
+					inst.dt.on('draw', function(){
+						inst.$sticky.hide();
+					});
+				}
 			});
 
 			// Update on window resize
@@ -209,7 +343,7 @@ $(function(){
 					inst.$sticky.hide();
 				});
 			});
-		}, 500);
+		}, 800);
 	})();
 
 	/* ============================================================
