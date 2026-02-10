@@ -499,7 +499,6 @@ body.af-system-admin .table-responsive {
 }
 body.af-system-admin .table thead th {
 	position: sticky;
-	top: 60px;
 	z-index: 20;
 	background: #485b79;
 	color: #fff;
@@ -1227,4 +1226,7 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	#mam-sticky-header {
 		top: 56px;
 	}
+}
+.table.dataTable thead tr>.dtfc-fixed-left{
+	background-color: #485b79 !important;
 }
