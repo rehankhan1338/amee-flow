@@ -272,11 +272,19 @@ body.af-system-admin .wrapper {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	/* Prevent stacking-context so modals inside can escape above the backdrop */
+	transform: none !important;
+	-webkit-transform: none !important;
+	filter: none !important;
+	perspective: none !important;
 }
 body.af-system-admin .content-wrapper {
 	flex: 1 0 auto;
 	background: #f4f6f9 !important;
 	padding-top: 68px; /* offset for fixed navbar */
+	/* Prevent stacking-context trap */
+	transform: none !important;
+	-webkit-transform: none !important;
 }
 body.af-system-admin .af-footer {
 	flex-shrink: 0;
@@ -293,7 +301,7 @@ body.af-system-admin .af-footer {
 	left: 0;
 	right: 0;
 	width: 100%;
-	z-index: 1050;
+	z-index: 1040;
 	border: none;
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
@@ -1029,10 +1037,10 @@ body.af-system-admin .form-control:disabled {
    Modal – Modern Redesign + High z-index
    ============================================================ */
 body.af-system-admin .modal {
-	z-index: 99999 !important;
+	z-index: 1060 !important;   /* above navbar (1040) and backdrop (1050) */
 }
 body.af-system-admin .modal-backdrop {
-	z-index: 99998 !important;
+	z-index: 1050 !important;   /* above navbar (1040) but below modal (1060) */
 	background: rgba(30,40,55,0.55);
 }
 body.af-system-admin .modal-backdrop.show {
