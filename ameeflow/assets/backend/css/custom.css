@@ -1200,23 +1200,23 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	justify-content: center;
 }
 
-/* Sticky thead for MAM table under fixed navbar */
-#table_recordtbl_mam_wrapper .dataTables_scrollHead {
-	position: sticky !important;
+/* Sticky cloned thead for MAM table */
+#mam-sticky-header {
+	display: none;
+	position: fixed;
 	top: 60px;
-	z-index: 101;
+	left: 0;
+	right: 0;
+	z-index: 1030;
 	background: #fff;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.10);
+	overflow: hidden;
 }
-#table_recordtbl_mam_wrapper .dataTables_scrollHead .table {
+#mam-sticky-header .table {
 	margin-bottom: 0;
 }
-/* Prevent parent overflow from breaking position:sticky */
-#table_recordtbl_mam_wrapper .dataTables_scroll {
-	overflow: visible !important;
-}
-#table_recordtbl_mam_wrapper {
-	overflow: visible !important;
-}
-#mam-table-wrap {
-	overflow: visible !important;
+@media (max-width: 767px) {
+	#mam-sticky-header {
+		top: 56px;
+	}
 }

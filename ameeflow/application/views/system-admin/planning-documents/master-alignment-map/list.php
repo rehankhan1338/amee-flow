@@ -6,7 +6,7 @@
 <script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
 <script>
 $(function(){ 
-    $('#table_recordtbl_mam').DataTable({
+    var mamTable = $('#table_recordtbl_mam').DataTable({
         dom: "<'row'<'col-sm-12 col-md-6'><'col-sm-12 col-md-6'f>>" +
              "<'row'<'col-sm-12'tr>>" +
              "<'row'<'col-sm-12 col-md-4'i><'col-sm-12 col-md-4 text-center'l><'col-sm-12 col-md-4'p>>",
@@ -28,6 +28,95 @@ $(function(){
             feather.replace();
         }
     });
+
+    /* ── Sticky thead under fixed navbar ── */
+    (function(){
+        var $scrollHead = $('#table_recordtbl_mam_wrapper .dataTables_scrollHead');
+        var $scrollBody = $('#table_recordtbl_mam_wrapper .dataTables_scrollBody');
+        if(!$scrollHead.length) return;
+
+        // Create the fixed clone container
+        var $sticky = $('<div id="mam-sticky-header"></div>');
+        $('body').append($sticky);
+
+        var navH = 60; // navbar height
+
+        function buildClone(){
+            $sticky.empty();
+            var $clone = $scrollHead.find('.dataTable').clone(true);
+            $clone.css({ width: $scrollHead.find('.dataTable').css('width') });
+            $sticky.append($clone);
+        }
+
+        function syncWidths(){
+            // Match each th width from original to clone
+            var $origThs = $scrollHead.find('th');
+            var $cloneThs = $sticky.find('th');
+            $origThs.each(function(i){
+                var w = $(this).outerWidth();
+                $cloneThs.eq(i).css({ 'min-width': w, 'max-width': w, 'width': w });
+            });
+            // Match table width
+            $sticky.find('.dataTable').css('width', $scrollHead.find('.dataTable').outerWidth());
+        }
+
+        function syncScroll(){
+            // Match horizontal scroll of the clone to the body
+            var sl = $scrollBody.scrollLeft();
+            $sticky.scrollLeft(sl);
+        }
+
+        function positionSticky(){
+            var wrapRect = $('#mam-table-wrap')[0].getBoundingClientRect();
+            $sticky.css({ left: wrapRect.left, width: wrapRect.width });
+        }
+
+        function onScroll(){
+            var headRect = $scrollHead[0].getBoundingClientRect();
+            var wrapBottom = $('#mam-table-wrap')[0].getBoundingClientRect().bottom;
+
+            // Show sticky only when original header is above navbar AND table body is still visible
+            if(headRect.top < navH && wrapBottom > navH + 40){
+                if($sticky.css('display') === 'none'){
+                    buildClone();
+                    syncWidths();
+                }
+                positionSticky();
+                syncScroll();
+                $sticky.show();
+            } else {
+                $sticky.hide();
+            }
+        }
+
+        // Sync horizontal scroll from body to sticky clone
+        $scrollBody.on('scroll', function(){ syncScroll(); });
+
+        // Also sync from sticky clone back to body (if user scrolls on clone)
+        $sticky.on('scroll', function(){
+            $scrollBody.scrollLeft($sticky.scrollLeft());
+        });
+
+        $(window).on('scroll', onScroll);
+        $(window).on('resize', function(){
+            if($sticky.is(':visible')){
+                buildClone();
+                syncWidths();
+                positionSticky();
+                syncScroll();
+            }
+        });
+
+        // Rebuild on DataTable draw (e.g. page change, sort)
+        mamTable.on('draw', function(){
+            if($sticky.is(':visible')){
+                buildClone();
+                syncWidths();
+                positionSticky();
+                syncScroll();
+            }
+        });
+    })();
     
 });
 </script>
