@@ -28,7 +28,6 @@ $(function(){
             feather.replace();
         }
     });
-
     
 });
 </script>
