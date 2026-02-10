@@ -43,14 +43,10 @@ $proName = $projectDetails['projectName'].' - '.$this->config->item('terms_asses
                     } 
                 ?>
             </select>
-            <select id="dueDateFilter" class="form-control form-control-sm" style="display:inline-block; width:180px; height:34px; margin-right:10px; vertical-align:middle;">
-                <option value="">All Dates</option>
-                <option value="overdue">Overdue</option>
-                <option value="today">Today</option>
-                <option value="this_week">This Week</option>
-                <option value="this_month">This Month</option>
-                <option value="future">Future</option>
-            </select>
+            <div class="input-group input-group-sm" style="display:inline-flex; width:200px; margin-right:10px; vertical-align:middle;">
+                <input type="text" id="dueDateFilter" class="form-control datepicker" placeholder="Select due date..." style="height:34px;" autocomplete="off">
+                <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearDueDateFilter"><i class="fa fa-times"></i></span>
+            </div>
             <a href="<?php echo base_url().$this->config->item('system_directory_name').'analytics/download/'.$projectDetails['proencryptId'];?>" style="padding: 3px 15px; font-size:15px; margin-right:5px;" class="btn btn-warning"> <i class="fa fa-download"></i> Download </a>                
             <a href="<?php echo base_url().$this->config->item('system_directory_name').'analytics';?>" style="padding: 3px 15px; font-size:15px;" class="btn btn-primary"> <i class="fa fa-long-arrow-left"></i> Back </a>                
         </div>
@@ -215,34 +211,21 @@ $(function(){
         return Math.floor(date.getTime() / 1000);
     }
 
+    // Initialize datepicker
+    $('#dueDateFilter').datepicker({
+        format: "mm/dd/yyyy",
+        autoclose: true,
+        todayHighlight: true,
+        clearBtn: false
+    }).on('changeDate', function(e){
+        filterTasksTable();
+    });
+
     // Filter function
     function filterTasksTable(){
         var searchText = $('#taskSearchInput').val().toLowerCase();
         var selectedPriority = $('#priorityFilter').val();
         var selectedDueDate = $('#dueDateFilter').val();
-        var today = new Date();
-        today.setHours(0, 0, 0, 0);
-        var todayStart = Math.floor(today.getTime() / 1000);
-        var todayEnd = todayStart + 86399; // End of today (23:59:59)
-        
-        // Calculate date ranges
-        var weekStart = new Date(today);
-        weekStart.setDate(today.getDate() - today.getDay()); // Start of week (Sunday)
-        weekStart.setHours(0, 0, 0, 0);
-        var weekStartTimestamp = Math.floor(weekStart.getTime() / 1000);
-        
-        var weekEnd = new Date(weekStart);
-        weekEnd.setDate(weekStart.getDate() + 6);
-        weekEnd.setHours(23, 59, 59, 999);
-        var weekEndTimestamp = Math.floor(weekEnd.getTime() / 1000);
-        
-        var monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
-        monthStart.setHours(0, 0, 0, 0);
-        var monthStartTimestamp = Math.floor(monthStart.getTime() / 1000);
-        
-        var monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-        monthEnd.setHours(23, 59, 59, 999);
-        var monthEndTimestamp = Math.floor(monthEnd.getTime() / 1000);
 
         $('#table_recordtbl1 tbody tr').each(function(){
             var rowText = $(this).text().toLowerCase();
@@ -261,25 +244,21 @@ $(function(){
             // Due Date filter
             var matchesDueDate = true;
             if(selectedDueDate !== '' && rowDueDate > 0){
-                var taskDueDateStart = getStartOfDay(rowDueDate);
-                var taskDueDateEnd = getEndOfDay(rowDueDate);
-                
-                switch(selectedDueDate){
-                    case 'overdue':
-                        matchesDueDate = (taskDueDateEnd < todayStart);
-                        break;
-                    case 'today':
-                        matchesDueDate = (taskDueDateStart >= todayStart && taskDueDateStart <= todayEnd);
-                        break;
-                    case 'this_week':
-                        matchesDueDate = (taskDueDateStart >= weekStartTimestamp && taskDueDateStart <= weekEndTimestamp);
-                        break;
-                    case 'this_month':
-                        matchesDueDate = (taskDueDateStart >= monthStartTimestamp && taskDueDateStart <= monthEndTimestamp);
-                        break;
-                    case 'future':
-                        matchesDueDate = (taskDueDateStart > todayEnd);
-                        break;
+                // Parse selected date (format: mm/dd/yyyy)
+                var dateParts = selectedDueDate.split('/');
+                if(dateParts.length === 3){
+                    var selectedDate = new Date(parseInt(dateParts[2]), parseInt(dateParts[0]) - 1, parseInt(dateParts[1]));
+                    selectedDate.setHours(0, 0, 0, 0);
+                    var selectedDateStart = Math.floor(selectedDate.getTime() / 1000);
+                    var selectedDateEnd = selectedDateStart + 86399; // End of selected day
+                    
+                    var taskDueDateStart = getStartOfDay(rowDueDate);
+                    var taskDueDateEnd = getEndOfDay(rowDueDate);
+                    
+                    // Match if task due date falls on the selected date
+                    matchesDueDate = (taskDueDateStart >= selectedDateStart && taskDueDateStart <= selectedDateEnd);
+                } else {
+                    matchesDueDate = false;
                 }
             } else if(selectedDueDate !== '' && rowDueDate === 0){
                 // If filter is selected but task has no due date, hide it
@@ -306,8 +285,10 @@ $(function(){
         filterTasksTable();
     });
 
-    // Due Date filter change event
-    $('#dueDateFilter').on('change', function(){
+    // Clear due date filter button
+    $('#clearDueDateFilter').on('click', function(){
+        $('#dueDateFilter').val('');
+        $('#dueDateFilter').datepicker('update', '');
         filterTasksTable();
     });
 });
