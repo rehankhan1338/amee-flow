@@ -499,6 +499,7 @@ body.af-system-admin .table-responsive {
 }
 body.af-system-admin .table thead th {
 	position: sticky;
+	top: 60px;
 	z-index: 20;
 	background: #485b79;
 	color: #fff;
@@ -514,12 +515,19 @@ body.af-system-admin .table thead th {
 body.af-system-admin .table thead th a { color: #fff; }
 body.af-system-admin .table thead th:first-child { border-radius: 8px 0 0 0; }
 body.af-system-admin .table thead th:last-child  { border-radius: 0 8px 0 0; }
-body.af-system-admin .dataTables_wrapper .table thead th {
-	position: sticky;
+
+/* For DataTables with scrollX: make the scroll header itself sticky */
+body.af-system-admin .dataTables_scroll {
+	overflow: visible !important;
+}
+body.af-system-admin .dataTables_scrollHead {
+	position: sticky !important;
 	top: 60px;
-	z-index: 20;
-	background: #485b79;
-	color: #fff;
+	z-index: 21;
+	background: #fff;
+}
+body.af-system-admin .dataTables_scrollHead .table thead th {
+	top: auto;
 }
 
 /* ---------- Content area ---------- */
@@ -869,6 +877,15 @@ body.af-system-admin .alert { border-radius: 10px; border: none; }
 	}
 }
 
+@media (max-width: 991.98px) {
+	body.af-system-admin .table thead th {
+		top: 56px;
+	}
+	body.af-system-admin .dataTables_scrollHead {
+		top: 56px;
+	}
+}
+
 @media (max-width: 768px) {
 	body.af-system-admin .box-header .box-tools {
 		gap: 6px;
@@ -1199,34 +1216,6 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	justify-content: center;
 }
 
-/* Sticky cloned thead for MAM table */
-#mam-sticky-header {
-	display: none;
-	position: fixed;
-	top: 60px;
-	left: 0;
-	right: 0;
-	z-index: 1030;
-	background: #fff;
-	box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-	overflow: hidden;
-}
-#mam-sticky-header .dataTables_scrollHeadInner {
-	box-sizing: content-box;
-}
-#mam-sticky-header table {
-	margin-bottom: 0 !important;
-}
-#mam-sticky-header table thead th {
-	border-bottom: 2px solid #dee2e6;
-	vertical-align: middle;
-	white-space: nowrap;
-}
-@media (max-width: 767px) {
-	#mam-sticky-header {
-		top: 56px;
-	}
-}
 .table.dataTable thead tr>.dtfc-fixed-left{
 	background-color: #485b79 !important;
 }
