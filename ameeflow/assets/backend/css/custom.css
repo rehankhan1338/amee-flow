@@ -721,6 +721,10 @@ body.af-system-admin .af-footer {
 .af-navbar .dropdown-menu .dropdown-item:focus {
 	background: linear-gradient(45deg, #485b79 25%, #e18125 100%);
 	color: #fff;
+	border-radius: 4px;
+    width: 96%;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .af-navbar .dropdown-menu .dropdown-item i {
 	width: 20px;
