@@ -443,3 +443,8 @@ small { font-size: 80% !important; color: #000 !important; font-style: italic; }
 table.table.odTbl .faInfo { font-size: 40px; }
 table.table.odTbl td { font-size: 16px; font-weight: 500; }
 .dueDateBrdr { border: 2px solid #e1304c; padding: 5px; }
+
+
+.input[type="text"]{
+	padding: 9px 38px !important;
+}
