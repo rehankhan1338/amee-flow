@@ -687,10 +687,12 @@ body.af-system-admin .af-footer {
 .af-navbar .nav-link:focus {
 	color: #fff !important;
 	background: rgba(255,255,255,0.16);
+	border-radius: 38px;
 }
 .af-navbar .nav-item.af-active > .nav-link {
 	color: #fff !important;
 	background: rgba(255,255,255,0.22);
+	border-radius: 38px;
 }
 
 /* Nav icon helpers */
