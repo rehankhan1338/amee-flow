@@ -1011,6 +1011,45 @@ input[type="text"]{
 	color: #2c3e50;
 }
 
+/* --- Report Table --- */
+.af-report-table-wrap {
+	overflow-x: auto;
+	margin-top: 4px;
+}
+.af-report-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: .9rem;
+}
+.af-report-table thead th {
+	padding: 12px 14px;
+	background: #f4f6f8;
+	font-weight: 600;
+	color: #2c3e50;
+	font-size: .82rem;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+	border-bottom: 2px solid #e0e4ea;
+	white-space: nowrap;
+}
+.af-report-table tbody td {
+	padding: 11px 14px;
+	border-bottom: 1px solid #f0f2f5;
+	color: #444;
+	vertical-align: middle;
+}
+.af-report-table tbody tr:hover {
+	background: #f8f9fb;
+}
+.af-report-table tfoot th {
+	padding: 12px 14px;
+	background: #eef3ff;
+	font-weight: 700;
+	color: #3b6dd6;
+	border-top: 2px solid #d4e0f7;
+	font-size: .9rem;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
 	.af-report-card { padding: 24px 20px 28px; }
@@ -1032,8 +1071,7 @@ input[type="text"]{
    Wizard Pages (Sampling Plan Build / Outcomes)
    ============================================================ */
 .af-wizard-page {
-	max-width: 820px;
-	margin: 0 auto;
+	width: 100%;
 	padding: 28px 16px 48px;
 }
 
@@ -1356,4 +1394,7 @@ input[type="text"]{
 	.af-wizard-card-footer { flex-direction: column; }
 	.af-wizard-btn-primary,
 	.af-wizard-btn-secondary { width: 100%; justify-content: center; }
+}
+.af-wizard-step{
+	background-color: none !important;
 }
