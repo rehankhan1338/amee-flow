@@ -4,6 +4,43 @@
    Loaded via Frontend/includes/header.php
    ============================================================ */
 
+/* ============================================================
+   Global – Rounded Form Controls (38px radius everywhere)
+   ============================================================ */
+body.af-system-admin .form-control,
+body.af-system-admin select.form-control,
+body.af-system-admin textarea.form-control,
+body.af-system-admin .form-select,
+body.af-system-admin input[type="text"],
+body.af-system-admin input[type="number"],
+body.af-system-admin input[type="email"],
+body.af-system-admin input[type="password"],
+body.af-system-admin input[type="search"],
+body.af-system-admin input[type="url"],
+body.af-system-admin input[type="tel"],
+body.af-system-admin input[type="date"],
+body.af-system-admin select {
+	border-radius: 38px !important;
+}
+body.af-system-admin textarea.form-control,
+body.af-system-admin textarea {
+	border-radius: 18px !important;
+}
+body.af-system-admin .input-group > .form-control:first-child,
+body.af-system-admin .input-group > select:first-child {
+	border-top-left-radius: 38px !important;
+	border-bottom-left-radius: 38px !important;
+}
+body.af-system-admin .input-group > .form-control:last-child,
+body.af-system-admin .input-group > .input-group-text:last-child,
+body.af-system-admin .input-group > .btn:last-child {
+	border-top-right-radius: 38px !important;
+	border-bottom-right-radius: 38px !important;
+}
+body.af-system-admin .input-group > .input-group-text:first-child {
+	border-top-left-radius: 38px !important;
+	border-bottom-left-radius: 38px !important;
+}
 
 /* ============================================================
    Projects – Card Grid  (projects/listing)
@@ -1219,7 +1256,7 @@ input[type="text"]{
 	width: 100%;
 	padding: 10px 14px;
 	border: 1.5px solid #dfe3ea;
-	border-radius: 8px;
+	border-radius: 38px;
 	font-size: .9rem;
 	font-weight: 500;
 	color: #333;
