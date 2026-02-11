@@ -64,6 +64,63 @@ $todayDate = strtotime(date('Y-m-d'));
         </div>
     </div>
 </div>
+<!-- ========== TASK FILTERS TOOLBAR ========== -->
+<div class="af-roles-toolbar" style="border-radius: 12px; margin-bottom: 0;">
+    <div class="af-roles-toolbar-left">
+        <!-- Search bar -->
+        <div class="af-roles-search-wrap">
+            <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+            <input type="text" class="af-roles-search-input" id="afTaskSearch" placeholder="Search tasks..." autocomplete="off" />
+            <button class="af-roles-search-clear" id="afTaskSearchClear" type="button"><i class="fa fa-times"></i></button>
+        </div>
+    </div>
+    <div class="af-roles-toolbar-right">
+        <!-- Priority filter -->
+        <div class="af-select-filter-wrap" id="afPriorityFilterWrap">
+            <span class="af-select-filter-btn" id="afPriorityFilterBtn" role="button">
+                <i class="fa fa-flag"></i>
+                <span class="af-select-filter-label">Priority</span>
+                <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                <button class="af-select-filter-clear" id="afPriorityClear" type="button"><i class="fa fa-times"></i></button>
+            </span>
+            <div class="af-select-filter-dropdown" id="afPriorityDropdown">
+                <a href="#" class="af-select-filter-option" data-value="">All Priorities</a>
+                <?php foreach($this->config->item('task_priority_options_array_config') as $pKey => $pVal){ ?>
+                <a href="#" class="af-select-filter-option" data-value="<?php echo strtolower($pVal['name']); ?>"><?php echo $pVal['name']; ?></a>
+                <?php } ?>
+            </div>
+        </div>
+
+        <!-- Due Date filter -->
+        <div class="af-date-filter-wrap" id="afDueDateFilterWrap">
+            <span class="af-date-filter-btn" id="afDueDateFilterBtn" role="button">
+                <i class="fa fa-calendar"></i>
+                <span class="af-date-filter-label">Due Date</span>
+                <button class="af-date-filter-clear" id="afDueDateClear" type="button"><i class="fa fa-times"></i></button>
+            </span>
+            <div class="af-date-filter-dropdown" id="afDueDateDropdown">
+                <div id="afDueDatePicker"></div>
+            </div>
+        </div>
+
+        <!-- Status filter -->
+        <div class="af-select-filter-wrap" id="afStatusFilterWrap">
+            <span class="af-select-filter-btn" id="afStatusFilterBtn" role="button">
+                <i class="fa fa-check-circle"></i>
+                <span class="af-select-filter-label">Status</span>
+                <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                <button class="af-select-filter-clear" id="afStatusClear" type="button"><i class="fa fa-times"></i></button>
+            </span>
+            <div class="af-select-filter-dropdown" id="afStatusDropdown">
+                <a href="#" class="af-select-filter-option" data-value="">All Statuses</a>
+                <a href="#" class="af-select-filter-option" data-value="done">Done</a>
+                <a href="#" class="af-select-filter-option" data-value="in progress">In Progress</a>
+                <a href="#" class="af-select-filter-option" data-value="not started">Not Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row my-4">
     <div class="col-xs-12 table-responsive">
                 <table class="table table-striped12" id="table_recordtbl1">
@@ -82,37 +139,50 @@ $todayDate = strtotime(date('Y-m-d'));
                     $i = 1;
                         foreach($proTaskListDataArr as $task){
                             $priClsname = '';
+                            $priName = '';
                             if(isset($task['priorityId']) && $task['priorityId']!='' && $task['priorityId']>0){
                                 $priClsname = $this->config->item('task_priority_options_array_config')[$task['priorityId']]['clsName'];
+                                $priName = $this->config->item('task_priority_options_array_config')[$task['priorityId']]['name'];
                             }
                             $subTskCnt = $task['subTskCnt'];
                             $tRes = filter_array($proWiseCompletedTaskListDataArr,$task['taskId'],'taskId');
                             $taskResCount = count($tRes);
 
                             $chkTaskSts = 1; // 1=completed
+                            $statusText = '';
                             if($subTskCnt>0){                                 
                                 if($taskResCount==0){
                                     $tskSts = '<label class="tskSts notStarted"></label> Not Started';
+                                    $statusText = 'not started';
                                     $chkTaskSts = 0;
                                 }else{
                                     if($taskResCount==$subTskCnt){
                                         $tskSts = '<label class="tskSts completed"></label> Done';
+                                        $statusText = 'done';
                                     }else{
                                         $tskSts = '<label class="tskSts inProgress"></label> In Progress';
+                                        $statusText = 'in progress';
                                         $chkTaskSts = 0;
                                     }
                                 }
                             }else{
                                 if($taskResCount>0){
                                     $tskSts = '<label class="tskSts completed"></label> Done';
+                                    $statusText = 'done';
                                 }else{
                                     $tskSts = '<label class="tskSts notStarted"></label> Not Started';
+                                    $statusText = 'not started';
                                     $chkTaskSts = 0;
                                 }
                             }
+
+                            $dueDateFormatted = '';
+                            if(isset($task['dueDateStr']) && $task['dueDateStr']!='' && $task['dueDateStr']>0){
+                                $dueDateFormatted = date('m/d/Y', $task['dueDateStr']);
+                            }
                             
                             ?>
-                        <tr id="taskRow<?php echo $task['taskId']; //data-bs-toggle="tooltip" data-bs-placement="top" title="Yes"?>">
+                        <tr id="taskRow<?php echo $task['taskId'];?>" data-priority="<?php echo strtolower($priName);?>" data-date="<?php echo $dueDateFormatted;?>" data-status="<?php echo $statusText;?>">
                            
                             <td class="fw600"> 
                                  
@@ -127,9 +197,7 @@ $todayDate = strtotime(date('Y-m-d'));
                                 }
                             }
                             ?> </span> </td> 
-                            <td> <span><?php if(isset($task['dueDateStr']) && $task['dueDateStr']!='' && $task['dueDateStr']>0){
-                                echo date('m/d/Y',$task['dueDateStr']);
-                                }?> </span> </td>
+                            <td> <span><?php if($dueDateFormatted != ''){ echo $dueDateFormatted; }?> </span> </td>
                             <td class="cp fw600"> <?php 
                             
                             echo $tskSts;
@@ -170,7 +238,14 @@ $emptyCount = $totalSquares - $fullCount - $halfCount;
                         </td>
                         </tr>
                         <?php $i++; $ic++; }?>
-                       
+                        <tr class="af-roles-no-results" style="display:none;">
+                            <td colspan="5">
+                                <div style="padding:20px 0; text-align:center;">
+                                    <i class="fa fa-search" style="font-size:2rem; color:#ccc; margin-bottom:8px; display:block;"></i>
+                                    <span>No matching tasks found</span>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>							
             </div>
@@ -222,12 +297,10 @@ function viewTaskDetails(taskId, projectId, proencryptId){
         beforeSend: function(){
             $('#inIcon'+taskId).addClass('fa-spinner fa-spin');
             $('#inIcon'+taskId).removeClass('fa-info-circle');
-            // $('#sendNotiModalTitle').html('Main Task');
         },
-        success: function(result, status, xhr){//alert(result);
+        success: function(result, status, xhr){
             $('#sendNotiFieldSec').html(result);
             $('#sendNotiModal').modal('show');
-            // $('#coltName'+taskId).html(taskName);
             $('#inIcon'+taskId).removeClass('fa-spinner fa-spin');
             $('#inIcon'+taskId).addClass('fa-info-circle');
         }
@@ -244,7 +317,188 @@ function closeTaskModal(){
 
 function allTaskCompletedShow(){
     $('#taskCompletedModel').modal('show');
-}  
+}
+
+/* ==========================================
+   Task Filtering Logic
+   ========================================== */
+$(document).ready(function(){
+    var selectedPriority = '';
+    var selectedStatus = '';
+    var selectedDate = '';
+
+    /* --- Filter execution --- */
+    function filterTasks(){
+        var searchVal = $('#afTaskSearch').val().toLowerCase().trim();
+        var visibleCount = 0;
+
+        $('#table_recordtbl1 tbody tr').not('.af-roles-no-results').each(function(){
+            var $row = $(this);
+            var rowText = $row.text().toLowerCase();
+            var rowPriority = ($row.data('priority') || '').toString().toLowerCase();
+            var rowStatus = ($row.data('status') || '').toString().toLowerCase();
+            var rowDate = ($row.data('date') || '').toString();
+
+            var matchSearch = (searchVal === '' || rowText.indexOf(searchVal) > -1);
+            var matchPriority = (selectedPriority === '' || rowPriority === selectedPriority);
+            var matchStatus = (selectedStatus === '' || rowStatus === selectedStatus);
+            var matchDate = true;
+            if(selectedDate !== ''){
+                matchDate = (rowDate === selectedDate);
+            }
+
+            if(matchSearch && matchPriority && matchStatus && matchDate){
+                $row.show();
+                visibleCount++;
+            } else {
+                $row.hide();
+            }
+        });
+
+        if(visibleCount === 0){
+            $('.af-roles-no-results').show();
+        } else {
+            $('.af-roles-no-results').hide();
+        }
+    }
+
+    /* --- Search bar --- */
+    $('#afTaskSearch').on('input', function(){
+        var v = $(this).val();
+        if(v.length > 0){
+            $('#afTaskSearchClear').css('display','flex');
+        } else {
+            $('#afTaskSearchClear').hide();
+        }
+        filterTasks();
+    });
+    $('#afTaskSearchClear').on('click', function(){
+        $('#afTaskSearch').val('');
+        $(this).hide();
+        filterTasks();
+    });
+
+    /* --- Priority filter --- */
+    $('#afPriorityFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        // Close other dropdowns
+        $('#afDueDateDropdown, #afStatusDropdown').removeClass('show');
+        $('#afPriorityDropdown').toggleClass('show');
+    });
+    $('#afPriorityDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var val = $(this).data('value');
+        selectedPriority = val ? val.toString().toLowerCase() : '';
+        
+        $('#afPriorityDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+
+        if(selectedPriority !== ''){
+            $('#afPriorityFilterBtn .af-select-filter-label').text($(this).text());
+            $('#afPriorityFilterBtn').addClass('active');
+            $('#afPriorityClear').css('display','inline-block');
+        } else {
+            $('#afPriorityFilterBtn .af-select-filter-label').text('Priority');
+            $('#afPriorityFilterBtn').removeClass('active');
+            $('#afPriorityClear').hide();
+        }
+        $('#afPriorityDropdown').removeClass('show');
+        filterTasks();
+    });
+    $('#afPriorityClear').on('click', function(e){
+        e.stopPropagation();
+        selectedPriority = '';
+        $('#afPriorityFilterBtn .af-select-filter-label').text('Priority');
+        $('#afPriorityFilterBtn').removeClass('active');
+        $(this).hide();
+        $('#afPriorityDropdown .af-select-filter-option').removeClass('selected');
+        filterTasks();
+    });
+
+    /* --- Status filter --- */
+    $('#afStatusFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afDueDateDropdown, #afPriorityDropdown').removeClass('show');
+        $('#afStatusDropdown').toggleClass('show');
+    });
+    $('#afStatusDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var val = $(this).data('value');
+        selectedStatus = val ? val.toString().toLowerCase() : '';
+        
+        $('#afStatusDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+
+        if(selectedStatus !== ''){
+            $('#afStatusFilterBtn .af-select-filter-label').text($(this).text());
+            $('#afStatusFilterBtn').addClass('active');
+            $('#afStatusClear').css('display','inline-block');
+        } else {
+            $('#afStatusFilterBtn .af-select-filter-label').text('Status');
+            $('#afStatusFilterBtn').removeClass('active');
+            $('#afStatusClear').hide();
+        }
+        $('#afStatusDropdown').removeClass('show');
+        filterTasks();
+    });
+    $('#afStatusClear').on('click', function(e){
+        e.stopPropagation();
+        selectedStatus = '';
+        $('#afStatusFilterBtn .af-select-filter-label').text('Status');
+        $('#afStatusFilterBtn').removeClass('active');
+        $(this).hide();
+        $('#afStatusDropdown .af-select-filter-option').removeClass('selected');
+        filterTasks();
+    });
+
+    /* --- Due Date filter (datepicker) --- */
+    $('#afDueDatePicker').datepicker({
+        format: 'mm/dd/yyyy',
+        todayHighlight: true,
+        autoclose: false
+    }).on('changeDate', function(e){
+        var pickedDate = e.format('mm/dd/yyyy');
+        selectedDate = pickedDate;
+        $('#afDueDateFilterBtn .af-date-filter-label').text(pickedDate);
+        $('#afDueDateFilterBtn').addClass('active');
+        $('#afDueDateClear').css('display','inline-block');
+        filterTasks();
+    });
+
+    $('#afDueDateFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afPriorityDropdown, #afStatusDropdown').removeClass('show');
+        $('#afDueDateDropdown').toggleClass('show');
+    });
+    $('#afDueDateClear').on('click', function(e){
+        e.stopPropagation();
+        selectedDate = '';
+        $('#afDueDatePicker').datepicker('clearDates');
+        $('#afDueDateFilterBtn .af-date-filter-label').text('Due Date');
+        $('#afDueDateFilterBtn').removeClass('active');
+        $(this).hide();
+        filterTasks();
+    });
+
+    /* --- Close dropdowns on outside click --- */
+    $(document).on('click', function(e){
+        var $target = $(e.target);
+        // Priority
+        if(!$target.closest('#afPriorityFilterWrap').length){
+            $('#afPriorityDropdown').removeClass('show');
+        }
+        // Status
+        if(!$target.closest('#afStatusFilterWrap').length){
+            $('#afStatusDropdown').removeClass('show');
+        }
+        // Due Date – ignore clicks within datepicker widget
+        if(!$target.closest('#afDueDateFilterWrap').length && !$target.closest('.datepicker').length){
+            $('#afDueDateDropdown').removeClass('show');
+        }
+    });
+});
 </script>
 </div>   
 </div>
