@@ -975,6 +975,7 @@ body.af-system-admin .table {
 	margin-bottom: 0;
 	border-collapse: separate;
 	border-spacing: 0;
+	width: 100% !important;
 }
 body.af-system-admin .table tbody tr {
 	transition: background .15s ease;
@@ -1531,6 +1532,8 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	background: #fff;
 	box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 	overflow: hidden;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 .af-sticky-header .dataTables_scrollHeadInner {
 	box-sizing: content-box;
