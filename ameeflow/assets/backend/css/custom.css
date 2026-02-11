@@ -937,17 +937,17 @@ body.af-system-admin .box-header .box-tools select:focus {
 body.af-system-admin .box-header .box-tools .input-group {
 	border-radius: 8px;
 }
-body.af-system-admin .box-header .box-tools .input-group .form-control {
-	border-radius: 8px 0 0 8px !important;
-}
 body.af-system-admin .box-header .box-tools .input-group .input-group-text {
-	border-radius: 0 8px 8px 0;
-	background: #f8f9fb;
-	border: 1px solid #dce0e6;
-	border-left: none;
-	font-size: .82rem;
-	color: #888;
-	height: 36px !important;
+    border-radius: 0 8px 8px 0;
+    background: #f8f9fb;
+    border: 1px solid #e8e8e8;
+    border-left: none;
+    font-size: .82rem;
+    color: #888;
+    height: 45px !important;
+    margin-left: -29px !important;
+    z-index: 100;
+    margin-top: 1px;
 }
 body.af-system-admin .box-header .box-tools .btn {
 	border-radius: 8px;
