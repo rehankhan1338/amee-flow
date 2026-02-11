@@ -24,6 +24,19 @@
 </div>
 
 <script>
+/* Single-row delete */
+function deleteSingleReport(rId){
+    if(!confirm('Are you sure you want to delete this report?')) return false;
+    $.ajax({
+        type: "POST",
+        url: '<?php echo base_url().'general_reports/deleteReport?rIds=';?>'+rId,
+        success: function(){
+            window.location = '<?php echo base_url().'general_reports';?>';
+        }
+    });
+}
+
+/* Bulk delete */
 function deleteReport(){
 	var n = $(".case:checked").length;
 	if(n>=1){
@@ -140,5 +153,90 @@ $(document).ready(function () {
 			return false;
 		}
 	});
+});
+
+/* ============================================================
+   Search + Date Filter
+   ============================================================ */
+$(function(){
+    feather.replace();
+
+    var $searchInput = $('#afGrSearchInput'),
+        $searchClear = $('#afGrSearchClear'),
+        $rows        = $('#table_recordtbl1 tbody tr:not(.af-roles-no-results)'),
+        $noResults   = $('#table_recordtbl1 .af-roles-no-results');
+
+    function filterTable(){
+        var query      = $.trim($searchInput.val()).toLowerCase();
+        var dateFilter = $('#afGrDateFilterWrap').data('selectedDate') || '';
+
+        $searchClear.css('display', query.length ? 'flex' : 'none');
+
+        var visible = 0;
+        $rows.each(function(){
+            var $tr = $(this);
+            var text   = $tr.text().toLowerCase();
+            var trDate = $tr.attr('data-date') || '';
+
+            var matchSearch = !query || text.indexOf(query) !== -1;
+            var matchDate   = !dateFilter || trDate === dateFilter;
+
+            if(matchSearch && matchDate){
+                $tr.show();
+                visible++;
+            } else {
+                $tr.hide();
+            }
+        });
+
+        $noResults.toggle(visible === 0);
+    }
+
+    // Search
+    $searchInput.on('input', filterTable);
+    $searchClear.on('click', function(){ $searchInput.val('').trigger('input').focus(); });
+    $searchInput.on('keydown', function(e){ if(e.key==='Escape') $(this).val('').trigger('input'); });
+
+    // --- Date filter ---
+    var $dateBtn   = $('#afGrDateFilterBtn'),
+        $dateDrop  = $('#afGrDateFilterDropdown'),
+        $dateClear = $('#afGrDateFilterClear'),
+        $dateLabel = $dateBtn.find('.af-date-filter-label'),
+        $dateWrap  = $('#afGrDateFilterWrap');
+
+    $('#afGrDatePicker').datepicker({
+        format: 'mm/dd/yyyy',
+        autoclose: false,
+        todayHighlight: true
+    }).on('changeDate', function(e){
+        var dateStr = e.format('mm/dd/yyyy');
+        $dateWrap.data('selectedDate', dateStr);
+        $dateLabel.text(dateStr);
+        $dateBtn.addClass('active');
+        $dateClear.css('display', 'inline-flex');
+        filterTable();
+    });
+
+    $dateBtn.on('click', function(e){
+        if($(e.target).closest('.af-date-filter-clear').length) return;
+        $dateDrop.toggleClass('show');
+    });
+
+    $dateClear.on('click', function(e){
+        e.stopPropagation();
+        $dateWrap.data('selectedDate', '');
+        $dateLabel.text('Last Updated');
+        $dateBtn.removeClass('active');
+        $dateClear.css('display', 'none');
+        $('#afGrDatePicker').datepicker('clearDates');
+        filterTable();
+    });
+
+    // Close dropdown on outside click
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afGrDateFilterWrap').length && !$(e.target).closest('.datepicker').length){
+            $dateDrop.removeClass('show');
+        }
+    });
 });
 </script>
