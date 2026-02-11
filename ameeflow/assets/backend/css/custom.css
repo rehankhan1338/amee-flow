@@ -1716,3 +1716,18 @@ span[style*="cursor: not-allowed"] {
 .input-group{
 	flex-wrap: initial !important;
 }
+.btn-danger{
+	background-color: #ff5454d1;
+	border: none;
+    border-radius: 38px !important;
+    color: black;
+}
+.btn-warning{
+	border-radius: 39px !important;
+}
+.btn-primary{
+    border-radius: 38px !important;
+}
+.btn-success{
+	border-radius: 38px !important;
+}
