@@ -8,6 +8,30 @@
                 <button id="addBtn" type="button" style="padding: 3px 15px; font-size:15px;" onclick="return manageReport('0');" class='btn btn-primary'> <i class="fa fa-plus"></i> Add New</button>               
             </div>
         </div>
+
+        <!-- Toolbar: Search + Date Filter -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i data-feather="search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="afLrSearchInput" placeholder="Search reports..." autocomplete="off">
+                    <button type="button" class="af-roles-search-clear" id="afLrSearchClear"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="af-roles-toolbar-right">
+                <!-- Date Filter -->
+                <div class="af-date-filter-wrap" id="afLrDateFilterWrap">
+                    <span class="af-date-filter-btn" id="afLrDateFilterBtn" role="button">
+                        <i data-feather="calendar"></i>
+                        <span class="af-date-filter-label">Last Updated</span>
+                        <span class="af-date-filter-clear" id="afLrDateFilterClear" role="button"><i class="fa fa-times"></i></span>
+                    </span>
+                    <div class="af-date-filter-dropdown" id="afLrDateFilterDropdown">
+                        <div id="afLrDatePicker"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
        
         <div class="box-body row">					 
             <div class="col-xs-12 table-responsive">
@@ -18,12 +42,6 @@
                             <th>Term/Year</th>
                             <th>Feedback</th>
                             <th>Approval(s)</th>
-                            <!-- <th>Courses / Programs</th>
-                            <th>Strengths</th>
-                            <th>Improvement</th>
-                            <th>Next Steps</th>
-                            <th>Recommendations</th>
-                            <th>Planned Follow-Up</th> -->
                             <th>Last Updated</th>
                             <th>Action</th>
                         </tr>
@@ -32,7 +50,7 @@
                         <?php $i = 1;
                             foreach($userLoadsReportDataArr as $row){                        
                         ?>
-                        <tr>
+                        <tr data-date="<?php echo date('m/d/Y',$row['createOn']);?>">
                             <td> <input type="checkbox" class="case" id="rIds[]" name="rIds[]" value="<?php echo $row['rId'];?>" /> </td>
                             <td style="font-weight:500;"> <a href="<?php echo base_url().'loads_report/view/'.$row['erId'];?>" class="pro_name"> <?php echo $this->config->item('terms_assessment_array_config')[$row['termId']]['name'].' - '.$row['year']; ?> </a> </td>
                             <td class="fw600"> <a id="vfbkLnk<?php echo $row['rId'];?>" class="pro_name" onclick="return viewFeedback('<?php echo $row['rId'];?>','<?php echo $shareReportFor;?>');">View</a> &nbsp;<?php echo '('.$row['feedbackCnt'].')';?> </td>
@@ -53,18 +71,21 @@
                                     echo '</table>';
                                 }?>
                             </td>
-                            <!-- <td><?php //echo $row['courseProgram'];?></td>
-                            <td><?php //echo $row['strengths'];?></td>
-                            <td><?php //echo $row['areaImprovement'];?></td>
-                            <td><?php //echo $row['imdtNextStep'];?></td>
-                            <td><?php //echo $row['recdProgram'];?></td>
-                            <td><?php //echo $row['planFollowup'];?></td>-->
                             <td> <?php echo date('m/d/Y, h:i A',$row['createOn']);?></td>  
-                            <td>                                
-                                <a class="btn btn-secondary btn-sm" id="edrole<?php echo $row['rId'];?>" onclick="return manageReport('<?php echo $row['rId'];?>');">Edit</a>                                
+                            <td nowrap>                                
+                                <a class="btn btn-secondary btn-sm" id="edrole<?php echo $row['rId'];?>" onclick="return manageReport('<?php echo $row['rId'];?>');">Edit</a>
+                                <button type="button" class="af-row-delete-btn" title="Delete" onclick="return deleteSingleReport('<?php echo $row['rId'];?>');">
+                                    <i class="fa fa-trash"></i>
+                                </button>
                             </td>
                         </tr>
                         <?php $i++; }?>
+                        <tr class="af-roles-no-results" style="display:none;">
+                            <td colspan="6">
+                                <div style="padding:20px 0;"><i class="fa fa-search" style="font-size:1.5rem;color:#ccc;display:block;margin-bottom:8px;"></i>
+                                No matching records found</div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>					
             </div>	 

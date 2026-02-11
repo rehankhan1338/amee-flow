@@ -5,26 +5,55 @@ $(document).ready(function () {
         var element = $('#your-html-section')[0];
         html2pdf(element, {
             margin: 1,
-            filename: '<?php //echo $current_assessments_data->slug;?>sampling-plan-report.pdf',
+            filename: 'loads-report.pdf',
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'in', format: 'tabloid', orientation: 'portrait' }
         });
     });
 });
 </script>
-<div class="col-12 spReport" id="your-html-section">
-    <h3 class="my-4 hclr fw600">Learning Outcomes Assessment Data Report</h3>
-    <div class="topSec">
-        
-        <p>Semester: <label><?php echo $this->config->item('terms_assessment_array_config')[$reportDetails['termId']]['name'].' - '.$reportDetails['year'];?> </label> </p>
-        <p>College: <label><?php echo $sessionDetailsArr['universityName'];?></label> </p>
-        <p>Prepared by: <label><?php echo $sessionDetailsArr['userName'];?></label> </p>
-        <p>Date: <label><?php echo date('M d, Y',$reportDetails['createOn']);?></label> </p>
-    </div>     
+<div id="your-html-section">
+    <!-- Report Title -->
+    <div class="af-report-title-bar">
+        <div class="af-report-title-icon">
+            <i data-feather="file-text"></i>
+        </div>
+        <div>
+            <h3 class="af-report-title">Learning Outcomes Assessment Data Report</h3>
+            <p class="af-report-subtitle"><?php echo $this->config->item('terms_assessment_array_config')[$reportDetails['termId']]['name'].' - '.$reportDetails['year'];?></p>
+        </div>
+    </div>
+
+    <!-- Meta Info Cards -->
+    <div class="af-report-meta-grid">
+        <div class="af-report-meta-item">
+            <span class="af-report-meta-label"><i data-feather="calendar"></i> Semester</span>
+            <span class="af-report-meta-value"><?php echo $this->config->item('terms_assessment_array_config')[$reportDetails['termId']]['name'].' - '.$reportDetails['year'];?></span>
+        </div>
+        <div class="af-report-meta-item">
+            <span class="af-report-meta-label"><i data-feather="briefcase"></i> College</span>
+            <span class="af-report-meta-value"><?php echo $sessionDetailsArr['universityName'];?></span>
+        </div>
+        <div class="af-report-meta-item">
+            <span class="af-report-meta-label"><i data-feather="user"></i> Prepared by</span>
+            <span class="af-report-meta-value"><?php echo $sessionDetailsArr['userName'];?></span>
+        </div>
+        <div class="af-report-meta-item">
+            <span class="af-report-meta-label"><i data-feather="clock"></i> Date</span>
+            <span class="af-report-meta-value"><?php echo date('M d, Y',$reportDetails['createOn']);?></span>
+        </div>
+    </div>
+
+    <!-- AI Summary Section -->
     <?php if(isset($reportDetails['aiReport']) && $reportDetails['aiReport']!=''){ ?>
-    <h4 class="mb-2 mt-4 hclr">Summary</h4>
-    <div class="aiSum">
-        <?php echo $reportDetails['aiReport'];?>
+    <div class="af-report-summary-section">
+        <div class="af-report-summary-heading">
+            <i data-feather="align-left"></i>
+            <h4>Summary</h4>
+        </div>
+        <div class="af-report-summary-body">
+            <?php echo $reportDetails['aiReport'];?>
+        </div>
     </div>
     <?php } ?>
 </div>

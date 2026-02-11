@@ -742,3 +742,289 @@ input[type="text"]{
 	.af-date-filter-dropdown { right: -10px; min-width: 240px; }
 	.af-select-filter-dropdown { right: -10px; min-width: 200px; }
 }
+
+/* ============================================================
+   Report View Page (LOADs / Sampling Plan / General Reports)
+   ============================================================ */
+.af-report-page {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 24px 16px 40px;
+}
+
+/* --- Top Action Bar --- */
+.af-report-topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-bottom: 28px;
+}
+.af-report-topbar-left {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+.af-report-topbar-title {
+	margin: 0;
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: #2c3e50;
+}
+.af-report-back-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 7px 16px;
+	border-radius: 22px;
+	background: #f0f2f5;
+	color: #485b79;
+	font-size: .85rem;
+	font-weight: 600;
+	text-decoration: none;
+	transition: all .2s ease;
+	border: 1.5px solid transparent;
+}
+.af-report-back-btn:hover {
+	background: #e4e7ec;
+	color: #2c3e50;
+	text-decoration: none;
+	border-color: #d0d5dd;
+}
+.af-report-back-btn svg {
+	width: 16px;
+	height: 16px;
+	stroke-width: 2.5;
+}
+.af-report-topbar-right {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+/* --- Action Buttons --- */
+.af-report-action-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 8px 18px;
+	border-radius: 22px;
+	font-size: .84rem;
+	font-weight: 600;
+	border: 1.5px solid;
+	cursor: pointer;
+	transition: all .2s ease;
+	text-decoration: none;
+	line-height: 1.4;
+}
+.af-report-action-btn svg {
+	width: 15px;
+	height: 15px;
+	stroke-width: 2.5;
+}
+.af-report-action-edit {
+	background: #eef3ff;
+	color: #3b6dd6;
+	border-color: #d4e0f7;
+}
+.af-report-action-edit:hover {
+	background: #3b6dd6;
+	color: #fff;
+	border-color: #3b6dd6;
+}
+.af-report-action-download {
+	background: #f0f7f0;
+	color: #38855e;
+	border-color: #cde7d6;
+}
+.af-report-action-download:hover {
+	background: #38855e;
+	color: #fff;
+	border-color: #38855e;
+}
+.af-report-action-share {
+	background: #485b79;
+	color: #fff;
+	border-color: #485b79;
+}
+.af-report-action-share:hover {
+	background: #374a66;
+	color: #fff;
+	border-color: #374a66;
+}
+
+/* --- Report Card --- */
+.af-report-card {
+	background: #fff;
+	border-radius: 14px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
+	padding: 36px 40px 42px;
+	overflow: hidden;
+}
+
+/* --- Report Title Bar --- */
+.af-report-title-bar {
+	display: flex;
+	align-items: flex-start;
+	gap: 18px;
+	margin-bottom: 30px;
+	padding-bottom: 24px;
+	border-bottom: 2px solid #f0f2f5;
+}
+.af-report-title-icon {
+	flex-shrink: 0;
+	width: 50px;
+	height: 50px;
+	border-radius: 12px;
+	background: linear-gradient(135deg, #485b79 0%, #5e7599 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.af-report-title-icon svg {
+	width: 24px;
+	height: 24px;
+	color: #fff;
+	stroke-width: 2;
+}
+.af-report-title {
+	margin: 0 0 4px;
+	font-size: 1.3rem;
+	font-weight: 700;
+	color: #2c3e50;
+	line-height: 1.3;
+}
+.af-report-subtitle {
+	margin: 0;
+	font-size: .92rem;
+	color: #7b8a9e;
+	font-weight: 500;
+}
+
+/* --- Meta Info Grid --- */
+.af-report-meta-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+	gap: 16px;
+	margin-bottom: 32px;
+}
+.af-report-meta-item {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: 16px 18px;
+	background: #f8f9fb;
+	border-radius: 10px;
+	border: 1px solid #eef0f3;
+	transition: box-shadow .2s ease;
+}
+.af-report-meta-item:hover {
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.af-report-meta-label {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	font-size: .78rem;
+	font-weight: 600;
+	color: #8b97a8;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+}
+.af-report-meta-label svg {
+	width: 14px;
+	height: 14px;
+	stroke-width: 2.5;
+	color: #a0aab8;
+}
+.af-report-meta-value {
+	font-size: .95rem;
+	font-weight: 600;
+	color: #2c3e50;
+	line-height: 1.35;
+}
+
+/* --- Summary Section --- */
+.af-report-summary-section {
+	margin-top: 8px;
+}
+.af-report-summary-heading {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 16px;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #f0f2f5;
+}
+.af-report-summary-heading svg {
+	width: 20px;
+	height: 20px;
+	color: #485b79;
+	stroke-width: 2.5;
+}
+.af-report-summary-heading h4 {
+	margin: 0;
+	font-size: 1.08rem;
+	font-weight: 700;
+	color: #2c3e50;
+}
+.af-report-summary-body {
+	font-size: .94rem;
+	line-height: 1.75;
+	color: #444;
+}
+.af-report-summary-body p {
+	margin-bottom: 12px;
+}
+.af-report-summary-body ul,
+.af-report-summary-body ol {
+	padding-left: 22px;
+	margin-bottom: 12px;
+}
+.af-report-summary-body li {
+	margin-bottom: 6px;
+}
+.af-report-summary-body h1,
+.af-report-summary-body h2,
+.af-report-summary-body h3,
+.af-report-summary-body h4,
+.af-report-summary-body h5 {
+	color: #2c3e50;
+	margin-top: 18px;
+	margin-bottom: 10px;
+}
+.af-report-summary-body table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 14px;
+}
+.af-report-summary-body table th,
+.af-report-summary-body table td {
+	padding: 8px 12px;
+	border: 1px solid #e5e8ec;
+	font-size: .88rem;
+}
+.af-report-summary-body table th {
+	background: #f4f6f8;
+	font-weight: 600;
+	color: #2c3e50;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+	.af-report-card { padding: 24px 20px 28px; }
+	.af-report-topbar { gap: 10px; }
+	.af-report-topbar-right { width: 100%; }
+	.af-report-action-btn span { display: none; }
+	.af-report-action-btn { padding: 8px 12px; gap: 0; }
+	.af-report-meta-grid { grid-template-columns: 1fr 1fr; }
+	.af-report-title { font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+	.af-report-page { padding: 14px 8px 28px; }
+	.af-report-meta-grid { grid-template-columns: 1fr; }
+	.af-report-title-bar { flex-direction: column; gap: 12px; }
+	.af-report-card { padding: 18px 14px 22px; border-radius: 10px; }
+}
