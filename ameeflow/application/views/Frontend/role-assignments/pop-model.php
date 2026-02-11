@@ -180,7 +180,6 @@ $(document).ready(function(){
 		$filterLabel.text(dateStr);
 		$filterBtn.addClass('active');
 		$filterClear.css('display', 'inline-flex');
-		$filterDrop.removeClass('show');
 		filterTable();
 	});
 
@@ -201,9 +200,9 @@ $(document).ready(function(){
 		filterTable();
 	});
 
-	// Close date dropdown on outside click
+	// Close dropdowns on outside click
 	$(document).on('click', function(e){
-		if(!$(e.target).closest('#afDateFilterWrap').length){
+		if(!$(e.target).closest('#afDateFilterWrap').length && !$(e.target).closest('.datepicker').length){
 			$filterDrop.removeClass('show');
 		}
 		if(!$(e.target).closest('#afRoleFilterWrap').length){
