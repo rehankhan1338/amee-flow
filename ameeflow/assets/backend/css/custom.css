@@ -950,7 +950,7 @@ body.af-system-admin .box-header .box-tools .input-group .input-group-text {
 	height: 36px !important;
 }
 body.af-system-admin .box-header .box-tools .btn {
-	border-radius: 8px !important;
+	border-radius: 8px;
 	padding: 6px 16px !important;
 	font-size: .84rem !important;
 	font-weight: 500;
