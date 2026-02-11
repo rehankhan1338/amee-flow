@@ -84,34 +84,45 @@ $(function(){
 	   Universal "No Data Found" Message for Empty Tables
 	   ============================================================ */
 	(function checkEmptyTables(){
+		var noDataHTML = '<tr class="no-data-row"><td colspan="COL_COUNT" class="text-center" style="padding:40px 20px !important;">' +
+			'<div style="display:flex;flex-direction:column;align-items:center;gap:8px;">' +
+			'<i class="fa fa-inbox" style="font-size:2.5rem;color:#d0d5dd;"></i>' +
+			'<p style="font-size:1rem;color:#999;margin:0;font-weight:500;">No data found</p>' +
+			'</div></td></tr>';
+
 		function addNoDataMessage($tbody, colCount){
-			// Check if already has no-data row
+			// Skip if already has our no-data row
 			if($tbody.find('.no-data-row').length > 0) return;
-			
-			// Check if tbody is empty or only has whitespace/comment nodes
-			var hasContent = false;
+
+			// Count real content rows (exclude hidden filter no-results rows)
+			var contentRows = 0;
 			$tbody.find('tr').each(function(){
-				if($(this).is(':visible') && $(this).text().trim() !== ''){
-					hasContent = true;
-					return false;
-				}
+				var $tr = $(this);
+				// Skip hidden rows and special "no results" rows used by filters
+				if($tr.hasClass('af-roles-no-results')) return;
+				if($tr.hasClass('no-data-row')) return;
+				// Count rows that are actual data
+				contentRows++;
 			});
-			
-			if(!hasContent && $tbody.find('tr').length === 0){
-				var $noDataRow = $('<tr class="no-data-row"><td colspan="' + colCount + '" class="text-center py-5"><div class="no-data-message"><i class="fa fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i><p style="font-size: 1.1rem; color: #999; margin: 0; font-weight: 500;">No data found</p></div></td></tr>');
-				$tbody.append($noDataRow);
+
+			if(contentRows === 0){
+				$tbody.append(noDataHTML.replace('COL_COUNT', colCount));
 			}
 		}
 
 		// Check all tables on page load
 		setTimeout(function(){
-			$('table tbody').each(function(){
-				var $tbody = $(this);
-				var $table = $tbody.closest('table');
-				var colCount = $table.find('thead th').length || $table.find('thead tr:first td').length || $table.find('tbody tr:first td').length || 1;
+			$('table').each(function(){
+				var $table = $(this);
+				var $tbody = $table.find('tbody');
+				if(!$tbody.length) return;
+				// Skip nested tables (e.g. approval status tables inside cells)
+				if($table.closest('td').length) return;
+				var colCount = $table.find('> thead th, > thead > tr > th').length ||
+				               $table.find('> thead td, > thead > tr > td').length || 1;
 				addNoDataMessage($tbody, colCount);
 			});
-		}, 100);
+		}, 150);
 
 		// Also check after DataTable initialization
 		if($.fn.dataTable){
