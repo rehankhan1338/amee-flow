@@ -1435,3 +1435,8 @@ input[type="text"]{
 .af-wizard-step{
 	background-color: transparent !important;
 }
+
+
+body.af-system-admin .table-responsive{
+	overflow: scroll !important;
+}
