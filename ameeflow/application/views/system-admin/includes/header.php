@@ -191,7 +191,7 @@
 								</a>
 							</li>
 							<li>
-								<a class="dropdown-item" href="<?php echo base_url().$this->config->item('system_directory_name');?>home">
+								<a class="dropdown-item" href="<?php echo base_url().$this->config->item('system_directory_name');?>home/ameelab">
 									<i class="fa fa-flask"></i> AMEE Lab
 								</a>
 							</li>
