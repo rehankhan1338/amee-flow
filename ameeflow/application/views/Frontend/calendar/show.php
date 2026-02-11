@@ -1,14 +1,6 @@
 
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-<style>
-.fc-event-title{ font-weight:500;}
-.fc-event-time{font-weight:600 !important; overflow: unset !important;}
-.fc-event{padding:2px 0px 0px 2px;}
-.fc-event:hover{opacity: .8;}
-.fc .fc-daygrid-day-number{ font-size: 20px;font-weight: 500;}
-</style>
-
 <section class="content">
     
     <div class="box calendarPage">

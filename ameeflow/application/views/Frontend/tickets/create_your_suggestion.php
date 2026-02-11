@@ -1,8 +1,3 @@
-<style>
-.controlLbl{ font-weight:600; font-size:16px;}
-.sMsg strong{ display:block; font-size:18px;}
-.sMsg{ font-weight:600; font-size:16px; text-align:center;}
-</style>
 <div class="home_wrapper">
 	<div class="container">       
         <div class="row">

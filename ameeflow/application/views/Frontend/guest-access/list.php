@@ -1,8 +1,5 @@
 <section class="content">
     <div class="box">  
-<style>
-.potpn{padding: 8px 20px; margin:5px 3px;background: #eee;border: 1px solid #555;border-radius: 35px;font-weight: 500; cursor: pointer;}
-</style>
         <div class="box-header no-border">
             <h3 class="box-title">Guest Access</h3>
             <div class="box-tools pull-right">

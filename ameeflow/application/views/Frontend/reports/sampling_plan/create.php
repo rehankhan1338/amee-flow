@@ -1,15 +1,5 @@
 <section class="content">
     
-<style>
-.alignCoursePage .tab-pane{padding:10px;}
-.alignCoursePage .nav-tabs .nav-item.show .nav-link, .alignCoursePage .nav-tabs .nav-link.active{ background-color: #40516C; color:#fff;}
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{background: #ddd;}
-.alignCoursePage .nav-link{ color:#333; font-size:15px;font-weight:500; padding:0.5rem 2rem}
-.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{ border:none;}
-.btn-group-xs>.btn, .btn-xs{font-size: 13px; line-height: 10px;}  
-.selNo{ background:#198754; color:#fff; width:22px; height:22px; border-radius:50%; text-align:center;}
-.SelTr td{ color:#198754 !important; font-weight:600;}
-</style> 
 <div class="box alignCoursePage">
     <div class="box-header no-border">
         <h3 class="box-title">Term/Year: &nbsp; <?php echo $this->config->item('terms_assessment_array_config')[$spDetails['termId']]['name'].' - '.$spDetails['year'];?></h3>

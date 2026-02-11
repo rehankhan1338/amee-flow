@@ -1,0 +1,445 @@
+/* ============================================================
+   AMEE Flow – Panel Pages Custom Stylesheet
+   All page-level styles consolidated here.
+   Loaded via Frontend/includes/header.php
+   ============================================================ */
+
+
+/* ============================================================
+   Projects – Card Grid  (projects/listing)
+   ============================================================ */
+.af-projects-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding: 20px;
+}
+@media (max-width: 991px) {
+	.af-projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575px) {
+	.af-projects-grid { grid-template-columns: 1fr; padding: 14px; gap: 14px; }
+}
+
+/* --- Project Card --- */
+.af-pro-card {
+	background: #fff;
+	border-radius: 14px;
+	overflow: hidden;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+	transition: transform .25s ease, box-shadow .25s ease;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	border: 1px solid #eef0f3;
+}
+.af-pro-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* Make entire card a clickable link */
+a.af-pro-card-link {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	border-radius: 14px;
+}
+a.af-pro-card-link:hover,
+a.af-pro-card-link:focus {
+	text-decoration: none;
+	color: inherit;
+}
+a.af-pro-card-link .af-pro-card {
+	cursor: pointer;
+}
+
+/* Colour accent strip at top */
+.af-pro-accent {
+	height: 5px;
+	width: 100%;
+	flex-shrink: 0;
+}
+
+/* Card body */
+.af-pro-body {
+	padding: 20px 22px 18px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Icon badge */
+.af-pro-icon {
+	width: 44px;
+	height: 44px;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 14px;
+	flex-shrink: 0;
+}
+.af-pro-icon svg,
+.af-pro-icon i {
+	width: 22px;
+	height: 22px;
+	stroke-width: 2;
+}
+
+/* Title */
+.af-pro-title {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #2c3e50;
+	margin: 0 0 10px;
+	line-height: 1.35;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+/* Meta row */
+.af-pro-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 16px;
+}
+.af-pro-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: .78rem;
+	font-weight: 600;
+	background: #f0f2f5;
+	color: #555;
+}
+.af-pro-badge i,
+.af-pro-badge svg {
+	width: 13px;
+	height: 13px;
+	stroke-width: 2.5;
+	font-size: .72rem;
+	opacity: .7;
+}
+
+/* Spacer pushes footer down */
+.af-pro-spacer { flex: 1; }
+
+/* Card footer / CTA */
+.af-pro-footer {
+	padding: 14px 22px;
+	border-top: 1px solid #f0f1f4;
+	background: #fafbfc;
+}
+.af-pro-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: .86rem;
+	font-weight: 600;
+	color: #485b79;
+	text-decoration: none;
+	padding: 7px 18px;
+	border-radius: 22px;
+	border: 1.5px solid #485b79;
+	transition: all .2s ease;
+	background: transparent;
+}
+.af-pro-cta:hover {
+	background: linear-gradient(45deg, #485b79 25%, #e18125 100%);
+	color: #fff;
+	border-color: transparent;
+	transform: translateX(2px);
+	text-decoration: none;
+}
+.af-pro-cta i {
+	transition: transform .2s ease;
+	font-size: .8rem;
+}
+.af-pro-cta:hover i {
+	transform: translateX(3px);
+}
+
+
+/* ============================================================
+   Projects – Summary Bar
+   ============================================================ */
+.af-pro-summary {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 14px;
+	padding: 16px 22px;
+	background: #f8f9fb;
+	border-bottom: 1px solid #eef0f3;
+}
+.af-pro-summary-left {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+.af-pro-summary-item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: .88rem;
+	color: #666;
+}
+.af-pro-summary-count {
+	font-weight: 700;
+	color: #485b79;
+	font-size: 1.05rem;
+}
+
+
+/* ============================================================
+   Projects – Search Bar
+   ============================================================ */
+.af-pro-search-wrap {
+	position: relative;
+	width: 280px;
+	max-width: 100%;
+}
+.af-pro-search-wrap .af-pro-search-icon {
+	position: absolute;
+	left: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #9aa5b4;
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+}
+.af-pro-search-wrap .af-pro-search-icon svg,
+.af-pro-search-wrap .af-pro-search-icon i {
+	width: 16px;
+	height: 16px;
+	stroke-width: 2.5;
+}
+.af-pro-search-input {
+	width: 100%;
+	padding: 9px 40px 9px 40px;
+	border: 1.5px solid #dfe3ea;
+	border-radius: 24px;
+	font-size: .86rem;
+	font-weight: 500;
+	color: #333;
+	background: #fff;
+	outline: none;
+	transition: border-color .2s ease, box-shadow .2s ease;
+}
+.af-pro-search-input::placeholder {
+	color: #b0b8c5;
+	font-weight: 400;
+}
+.af-pro-search-input:focus {
+	border-color: #485b79;
+	box-shadow: 0 0 0 3px rgba(72,91,121,0.10);
+}
+.af-pro-search-clear {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	padding: 2px;
+	cursor: pointer;
+	color: #b0b8c5;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: color .15s ease, background .15s ease;
+	line-height: 1;
+}
+.af-pro-search-clear:hover {
+	color: #e74c3c;
+	background: rgba(231,76,60,0.08);
+}
+.af-pro-search-clear i {
+	font-size: .75rem;
+}
+
+/* No search results message */
+.af-pro-no-results {
+	display: none;
+	text-align: center;
+	padding: 40px 20px;
+	grid-column: 1 / -1;
+}
+.af-pro-no-results-icon {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: #f0f2f5;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 12px;
+}
+.af-pro-no-results-icon i {
+	font-size: 1.3rem;
+	color: #9aa5b4;
+}
+.af-pro-no-results h5 {
+	font-size: 1rem;
+	font-weight: 600;
+	color: #485b79;
+	margin-bottom: 4px;
+}
+.af-pro-no-results p {
+	font-size: .84rem;
+	color: #999;
+	margin: 0;
+}
+
+@media (max-width: 575px) {
+	.af-pro-search-wrap { width: 100%; }
+}
+
+
+/* ============================================================
+   Projects – Empty State
+   ============================================================ */
+.af-pro-empty {
+	text-align: center;
+	padding: 60px 30px 70px;
+}
+.af-pro-empty-icon {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #eef1f6, #dfe4ec);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+.af-pro-empty-icon i {
+	font-size: 2rem;
+	color: #8d99ae;
+}
+.af-pro-empty h3 {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #485b79;
+	margin-bottom: 8px;
+}
+.af-pro-empty p {
+	font-size: .92rem;
+	color: #888;
+	max-width: 420px;
+	margin: 0 auto;
+	line-height: 1.6;
+}
+
+
+/* ============================================================
+   Tickets – Chat / Conversations  (tickets/conversations)
+   ============================================================ */
+.ticket_chat .com_box { display: inline-block; float: right; margin-top: -20px; width: 100px; }
+.ticket_chat .chat_box { margin-top: 20px; margin-bottom: 10px; }
+.ticket_chat .chat_box .user_comment {
+	border: 1px solid #eee;
+	border-radius: 0 20px 0 20px;
+	padding: 10px 20px;
+	box-shadow: 0 1px 8px #ddd;
+	background-color: #fff;
+	text-align: right;
+	line-height: 25px;
+}
+.ticket_chat .chat_box .admin_comment {
+	border-radius: 20px 20px 0 20px;
+	padding: 10px 20px;
+	box-shadow: 0 1px 8px #ddd;
+	background-color: rgba(3, 63, 123, 0.1);
+	text-align: left;
+	line-height: 25px;
+}
+.chat_box p { margin-bottom: 5px; font-size: 15px; }
+small { font-size: 80% !important; color: #000 !important; font-style: italic; }
+.ticket_chat label { display: block; font-weight: 500; font-size: 14px; }
+
+
+/* ============================================================
+   Tickets – Create Suggestion  (tickets/create_your_suggestion)
+   ============================================================ */
+.controlLbl { font-weight: 600; font-size: 16px; }
+.sMsg strong { display: block; font-size: 18px; }
+.sMsg { font-weight: 600; font-size: 16px; text-align: center; }
+
+
+/* ============================================================
+   Guest Access  (guest-access/list)
+   ============================================================ */
+.potpn {
+	padding: 8px 20px;
+	margin: 5px 3px;
+	background: #eee;
+	border: 1px solid #555;
+	border-radius: 35px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+
+/* ============================================================
+   Calendar  (calendar/show)
+   ============================================================ */
+.fc-event-title { font-weight: 500; }
+.fc-event-time { font-weight: 600 !important; overflow: unset !important; }
+.fc-event { padding: 2px 0px 0px 2px; }
+.fc-event:hover { opacity: .8; }
+.fc .fc-daygrid-day-number { font-size: 20px; font-weight: 500; }
+
+
+/* ============================================================
+   Sampling Plan – Build  (reports/sampling_plan/build)
+   ============================================================ */
+.fm { font-family: "Poppins", sans-serif !important; }
+.mamPage { font-size: 17px; }
+
+
+/* ============================================================
+   Sampling Plan – Create  (reports/sampling_plan/create)
+   ============================================================ */
+.alignCoursePage .tab-pane { padding: 10px; }
+.alignCoursePage .nav-tabs .nav-item.show .nav-link,
+.alignCoursePage .nav-tabs .nav-link.active { background-color: #40516C; color: #fff; }
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover { background: #ddd; }
+.alignCoursePage .nav-link { color: #333; font-size: 15px; font-weight: 500; padding: 0.5rem 2rem; }
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td { border: none; }
+.btn-group-xs > .btn,
+.btn-xs { font-size: 13px; line-height: 10px; }
+.selNo { background: #198754; color: #fff; width: 22px; height: 22px; border-radius: 50%; text-align: center; }
+.SelTr td { color: #198754 !important; font-weight: 600; }
+
+
+/* ============================================================
+   Sampling Plan – Outcomes  (reports/sampling_plan/outcomes)
+   ============================================================ */
+.form-label { float: right; }
+
+
+/* ============================================================
+   Projects – Sub Task Popup  (projects/ajax-sub-task)
+   ============================================================ */
+.odTbl,
+.odTbl td { border: 2px solid #71c7ec !important; }
+table.table.odTbl .faInfo { font-size: 40px; }
+table.table.odTbl td { font-size: 16px; font-weight: 500; }
+.dueDateBrdr { border: 2px solid #e1304c; padding: 5px; }

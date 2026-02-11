@@ -29,9 +29,6 @@ if(isset($spDetails['alignGPSLO']) && $spDetails['alignGPSLO']!=''){
         <h3 class="box-title">Term/Year: &nbsp; <?php echo $this->config->item('terms_assessment_array_config')[$spDetails['termId']]['name'].' - '.$spDetails['year'];?></h3>        
     </div>
         <form id="addProFrm" action="sampling_plan/moveStepThree" method="post">
-        <style>
-.form-label{float:right;}
-            </style>
         <div class="box-body row">
             <input type="hidden" id="spId" name="spId" value="<?php echo $spDetails['spId'];?>" />
             <input type="hidden" id="speId" name="speId" value="<?php echo $spDetails['speId'];?>" />

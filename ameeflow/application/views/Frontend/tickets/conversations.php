@@ -1,14 +1,3 @@
-<style>
-.ticket_chat .com_box {display: inline-block;float: right;margin-top:-20px;width: 100px;}
-.ticket_chat .chat_box {margin-top: 20px;margin-bottom: 10px;}
-.ticket_chat .chat_box .user_comment {border: 1px solid #eee;border-radius: 0 20px 0 20px;padding: 10px 20px;box-shadow: 0 1px 8px #ddd;background-color: #fff;text-align: right;
-line-height:25px;}
-.ticket_chat .chat_box .admin_comment {border-radius: 20px 20px 0 20px;padding: 10px 20px;box-shadow: 0 1px 8px #ddd;background-color:rgba(3, 63, 123, 0.1);text-align: left;
-line-height:25px;}
-.chat_box p {margin-bottom:5px;font-size: 15px;}
-small{ font-size:80% !important; color:#000 !important; font-style:italic;}
-.ticket_chat label{ display:block; font-weight:500; font-size:14px;}
-</style>
 <div class="content">
 	<div class="row">
 		<div class="col-md-12">

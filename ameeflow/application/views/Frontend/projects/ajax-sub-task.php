@@ -5,20 +5,6 @@
     });
 </script> 
 
-<style>
-    .odTbl, .odTbl td{ border:2px solid #71c7ec !important;}
-table.table.odTbl .faInfo {
-    font-size: 40px;
-}
-table.table.odTbl td {
-    font-size: 16px;
-    font-weight:500;
-}
-.dueDateBrdr{
-    border:2px solid #e1304c;
-    padding:5px;
-}
-    </style>
 <?php $todayDate = strtotime(date('Y-m-d'));?>
 <div class="">
      

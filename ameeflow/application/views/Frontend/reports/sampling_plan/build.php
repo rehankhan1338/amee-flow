@@ -1,9 +1,5 @@
 <section class="content"> 
     <div class="box">
-<style>
-.fm{ font-family:"Poppins", sans-serif !important;}
-.mamPage { font-size:17px;}
-</style>
         <div class="box-body row">
             <form id="addProFrm" action="sampling_plan/moveStepTwo" method="post">
             <div class="col-12">
