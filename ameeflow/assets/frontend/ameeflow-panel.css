@@ -747,8 +747,7 @@ input[type="text"]{
    Report View Page (LOADs / Sampling Plan / General Reports)
    ============================================================ */
 .af-report-page {
-	max-width: 960px;
-	margin: 0 auto;
+	width: 100%;
 	padding: 24px 16px 40px;
 }
 
