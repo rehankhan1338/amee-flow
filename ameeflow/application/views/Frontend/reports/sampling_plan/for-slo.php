@@ -7,7 +7,8 @@ $(function(){
       "searching": true,
       "ordering": false,
       "info": false,
-      "autoWidth": true
+      "autoWidth": true,
+      "dom": '<"row"<"col-md-12"f>>rt'
     });
 });
 </script> 

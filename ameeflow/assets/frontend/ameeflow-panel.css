@@ -1396,5 +1396,5 @@ input[type="text"]{
 	.af-wizard-btn-secondary { width: 100%; justify-content: center; }
 }
 .af-wizard-step{
-	background-color: none !important;
+	background-color: transparent !important;
 }
