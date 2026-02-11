@@ -37,7 +37,7 @@ class Signin extends CI_Controller {
 		// echo '<pre>';print_r($this->data['sessionDetailsArr']);die;
 		$this->load->view('Frontend/includes/header',$this->data);		 
 		$this->load->view('Frontend/profile/manage',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('Frontend/includes/footer',$this->data);
 	}
  
 	public function updateUserProfile(){

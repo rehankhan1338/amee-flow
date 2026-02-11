@@ -58,7 +58,7 @@ class General_reports extends CI_Controller {
 
 		$this->load->view('Frontend/reports/general_reports/listing',$this->data);
 
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('Frontend/includes/footer',$this->data);
 
 	}
 
@@ -132,7 +132,7 @@ class General_reports extends CI_Controller {
 
 			$this->load->view('Frontend/reports/general_reports/report',$this->data);
 
-			$this->load->view('Backend/includes/footer',$this->data);
+			$this->load->view('Frontend/includes/footer',$this->data);
 
 		}else{
 

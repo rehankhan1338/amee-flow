@@ -23,7 +23,7 @@ class Sampling_plan extends CI_Controller {
         $this->data['pageSubTitle'] = ''; 
 		$this->load->view('Frontend/includes/header',$this->data);		 
 		$this->load->view('Frontend/reports/sampling_plan/listing',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('Frontend/includes/footer',$this->data);
 	}
 	public function report(){
 		$speId = $this->uri->segment(3);
@@ -46,7 +46,7 @@ class Sampling_plan extends CI_Controller {
 			// echo '<pre>';print_r($this->data['samplingPlanCoursesDataArr']);die;
 			$this->load->view('Frontend/includes/header',$this->data);		 
 			$this->load->view('Frontend/reports/sampling_plan/report',$this->data);
-			$this->load->view('Backend/includes/footer',$this->data);
+			$this->load->view('Frontend/includes/footer',$this->data);
 		}else{
 			redirect(base_url().'sampling_plan');
 		}
@@ -66,7 +66,7 @@ class Sampling_plan extends CI_Controller {
         $this->data['pageSubTitle'] = ''; 
 		$this->load->view('Frontend/includes/header',$this->data);		 
 		$this->load->view('Frontend/reports/sampling_plan/build',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('Frontend/includes/footer',$this->data);
 	}
 	public function moveStepTwo(){
 		$userId = $this->data['sessionDetailsArr']['userId'];
@@ -85,7 +85,7 @@ class Sampling_plan extends CI_Controller {
 			$this->data['spDetails'] = $this->Course_enrollment_mdl->sampling_plans_details($speId);
 			$this->load->view('Frontend/includes/header',$this->data);		 
 			$this->load->view('Frontend/reports/sampling_plan/outcomes',$this->data);
-			$this->load->view('Backend/includes/footer',$this->data);
+			$this->load->view('Frontend/includes/footer',$this->data);
 		}else{
 			redirect(base_url().'sampling_plan/build');
 		}
@@ -129,7 +129,7 @@ class Sampling_plan extends CI_Controller {
 				
 				$this->load->view('Frontend/includes/header',$this->data);		 
 				$this->load->view('Frontend/reports/sampling_plan/create',$this->data);
-				$this->load->view('Backend/includes/footer',$this->data);
+				$this->load->view('Frontend/includes/footer',$this->data);
 			}else{
 				// no course enrollment present
 			}
@@ -207,7 +207,7 @@ class Sampling_plan extends CI_Controller {
 		$this->data['sharePermission'] = 1;
 		$this->load->view('Frontend/includes/header',$this->data);		 
 		$this->load->view('Frontend/reports/alignment_map/view',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('Frontend/includes/footer',$this->data);
 	}
 
 	public function ajaxAMnotesField(){

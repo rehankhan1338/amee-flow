@@ -19,7 +19,7 @@ class Projects extends CI_Controller {
 		// echo '<pre>';print_r($this->data['assignProjectsDataArr']);die;
 		$this->load->view('Frontend/includes/header',$this->data);		 
 		$this->load->view('Frontend/projects/listing',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('Frontend/includes/footer',$this->data);
 	}
 	public function tasks(){
 		$proencryptId = $this->uri->segment(3);
@@ -33,7 +33,7 @@ class Projects extends CI_Controller {
 			$this->data['pageTitle'] = 'Task Completion Dashboard';
 			$this->load->view('Frontend/includes/header',$this->data);		 
 			$this->load->view('Frontend/projects/tasks',$this->data);
-			$this->load->view('Backend/includes/footer',$this->data);
+			$this->load->view('Frontend/includes/footer',$this->data);
 		}else{
 			redirect(base_url().'projects');
 		}

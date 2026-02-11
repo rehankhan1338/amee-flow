@@ -34,7 +34,7 @@ class Recognition_flow extends CI_Controller {
         }else{
 
         }
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('Frontend/includes/footer',$this->data);
     }
 
     public function universityDetails($universityId){

@@ -43,6 +43,6 @@ class Calendar extends CI_Controller {
 		//  echo '<pre>';print_r($this->data['uaDetails']);die;
         $this->load->view('Frontend/includes/header',$this->data);		 
 		$this->load->view('Frontend/calendar/show',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('Frontend/includes/footer',$this->data);
     }
 }

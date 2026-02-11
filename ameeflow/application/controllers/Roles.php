@@ -18,7 +18,7 @@ class Roles extends CI_Controller {
         $this->data['rolesDataArr'] = $this->Roles_mdl->rolesDataArr($userId);
         $this->load->view('Frontend/includes/header',$this->data);
         $this->load->view('Frontend/role-assignments/list',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('Frontend/includes/footer',$this->data);
 	}
     public function ajaxFormFields(){        
         if(isset($_GET['roleId']) && $_GET['roleId']!='' && $_GET['roleId']>0){

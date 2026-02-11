@@ -87,7 +87,7 @@ class Home extends CI_Controller {
 		$this->data['active_class'] = 'ameelab-menu';
 		$this->load->view('Frontend/includes/header',$this->data);
 		$this->load->view('Frontend/amee-lab',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('Frontend/includes/footer',$this->data);
 	}
 
 	public function ajaxFormFields(){  

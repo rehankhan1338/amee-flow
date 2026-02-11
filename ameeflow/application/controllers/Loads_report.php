@@ -50,7 +50,7 @@ class Loads_report extends CI_Controller {
 
 		$this->load->view('Frontend/reports/loads_report/listing',$this->data);
 
-		$this->load->view('Backend/includes/footer',$this->data);
+		$this->load->view('Frontend/includes/footer',$this->data);
 
 	}
 
@@ -124,7 +124,7 @@ class Loads_report extends CI_Controller {
 
 			$this->load->view('Frontend/reports/loads_report/report',$this->data);
 
-			$this->load->view('Backend/includes/footer',$this->data);
+			$this->load->view('Frontend/includes/footer',$this->data);
 
 		}else{
 

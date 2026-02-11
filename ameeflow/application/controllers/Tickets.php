@@ -26,14 +26,14 @@ class Tickets extends CI_Controller {
 		//echo '<pre>'; print_r($this->data['supplier_users_data']);die;
 		$this->load->view('Frontend/includes/header',$this->data);
 		$this->load->view('Frontend/tickets/listing',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data); 			
+		$this->load->view('Frontend/includes/footer',$this->data); 			
 	}	
 	
 	public function generate(){
 		$this->data['pageTitle'] = 'Contact Support <small>- please leave feedback or suggestions.</small>';		
 		$this->load->view('Frontend/includes/header',$this->data);
 		$this->load->view('Frontend/tickets/generate',$this->data);
-		$this->load->view('Backend/includes/footer',$this->data);			
+		$this->load->view('Frontend/includes/footer',$this->data);			
 	}
 	
 	public function conversations(){		
@@ -49,7 +49,7 @@ class Tickets extends CI_Controller {
 				$this->data['active_page_menu']='1'; 
 				$this->load->view('Frontend/includes/header',$this->data);
 				$this->load->view('Frontend/tickets/conversations',$this->data);
-				$this->load->view('Backend/includes/footer',$this->data);
+				$this->load->view('Frontend/includes/footer',$this->data);
 					
 		}else{
 			redirect($this->data['ticketSecBaseUrl'].'tickets');
@@ -61,7 +61,7 @@ class Tickets extends CI_Controller {
 	// 	$this->data['pageTitle'] = 'Welcome to our suggestion box! <br><small>We use your feedback to improve our services for Bravo users like you. </small>';		
 	// 	$this->load->view('Frontend/includes/header',$this->data);
 	// 	$this->load->view('Frontend/tickets/create_your_suggestion',$this->data);
-	// 	$this->load->view('Backend/includes/footer',$this->data);	
+	// 	$this->load->view('Frontend/includes/footer',$this->data);	
 	// }
 	
 	// public function sendSuggestion(){	

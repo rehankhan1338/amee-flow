@@ -19,7 +19,7 @@ class Access extends CI_Controller {
         // echo '<pre>';print_r($this->data['guestAccessDataArr']);die;	
         $this->load->view('Frontend/includes/header',$this->data);	
         $this->load->view('Frontend/guest-access/list',$this->data);
-        $this->load->view('Backend/includes/footer',$this->data);
+        $this->load->view('Frontend/includes/footer',$this->data);
 	}
     public function ajaxFormFields(){        
         if(isset($_GET['gaId']) && $_GET['gaId']!='' && $_GET['gaId']>0){
