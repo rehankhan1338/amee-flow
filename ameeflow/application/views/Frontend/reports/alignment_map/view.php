@@ -1,41 +1,147 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<link href="https://cdn.datatables.net/fixedcolumns/4.3.0/css/fixedColumns.bootstrap5.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
+<script>
+$(function(){
+    var mamTable = $('#table_recordtbl1').DataTable({
+        dom: "<'row'<'col-sm-12 col-md-12 mb-3 mt-3'f>>" +
+             "<'row'<'col-sm-12'tr>>" +
+             "<'row'<'col-sm-12 col-md-4'i><'col-sm-12 col-md-4 text-center'l><'col-sm-12 col-md-4'p>>",
+        paging: true,
+        pageLength: 100,
+        lengthChange: true,
+        searching: true,
+        ordering: true,
+        info: true,
+        autoWidth: true,
+        scrollX: true,
+        fixedColumns: {
+            leftColumns: 2
+        },
+        columnDefs: [
+            { orderable: false, targets: 0 }
+        ],
+        drawCallback: function(settings) {
+            feather.replace();
+        }
+    });
+
+    /* ── Sticky thead under fixed navbar ── */
+    (function(){
+        var $wrapper    = $('#table_recordtbl1_wrapper');
+        var $scrollHead = $wrapper.find('.dataTables_scrollHead');
+        var $scrollBody = $wrapper.find('.dataTables_scrollBody');
+        if(!$scrollHead.length) return;
+
+        var $sticky = $('<div id="mam-sticky-header"></div>');
+        $('body').append($sticky);
+        var navH = $('.af-navbar').outerHeight() || 60;
+
+        function buildClone(){
+            $sticky.empty();
+            var $clone = $scrollHead.children().clone(false);
+            $sticky.append($clone);
+            var $origThs = $scrollHead.find('th');
+            var $cloneThs = $sticky.find('th');
+            $origThs.each(function(i){
+                var w = $(this).outerWidth();
+                $cloneThs.eq(i).css({ 'min-width': w, 'max-width': w, 'width': w, 'box-sizing': 'border-box' });
+            });
+            var $origInner = $scrollHead.find('.dataTables_scrollHeadInner');
+            var $cloneInner = $sticky.find('.dataTables_scrollHeadInner');
+            if($origInner.length) $cloneInner.css('width', $origInner[0].style.width || $origInner.outerWidth());
+            var $origTable = $scrollHead.find('table').first();
+            var $cloneTable = $sticky.find('table').first();
+            if($origTable.length) $cloneTable.css('width', $origTable[0].style.width || $origTable.outerWidth());
+        }
+        function syncScroll(){ $sticky.scrollLeft($scrollBody.scrollLeft()); }
+        function positionSticky(){
+            var el = document.getElementById('mam-table-wrap');
+            if(!el) return;
+            var r = el.getBoundingClientRect();
+            $sticky.css({ left: r.left, width: r.width });
+        }
+        function onScroll(){
+            var headRect = $scrollHead[0].getBoundingClientRect();
+            var wrapEl   = document.getElementById('mam-table-wrap');
+            if(!wrapEl) return;
+            var wrapBottom = wrapEl.getBoundingClientRect().bottom;
+            if(headRect.top < navH && wrapBottom > navH + 50){
+                if(!$sticky.is(':visible')) buildClone();
+                positionSticky(); syncScroll(); $sticky.show();
+            } else { $sticky.hide(); }
+        }
+        $scrollBody.on('scroll', function(){ if($sticky.is(':visible')) syncScroll(); });
+        $sticky.on('scroll', function(){ $scrollBody.scrollLeft($sticky.scrollLeft()); });
+        $(window).on('scroll', onScroll);
+        $(window).on('resize', function(){ navH = $('.af-navbar').outerHeight() || 60; $sticky.hide(); });
+        mamTable.on('draw', function(){ $sticky.hide(); });
+    })();
+});
+</script>
+
 <section class="content"> 
     <div class="box <?php if(isset($sharePermission) && $sharePermission==0){ echo 'mt-4';}?>"> 
         
-        <div class="box-header no-border ">        
-            <h3 class="box-title">Oversight Units
-                <select class="form-control mt-2" onchange="return getOversigntData(this.value);">
-                    <option value="">Select...</option>
+        <div class="box-header no-border">        
+            <h3 class="box-title">Oversight Units</h3>
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-select-filter-wrap" id="afOversightWrap">
+                    <span class="af-select-filter-btn" id="afOversightBtn" role="button">
+                        <i class="fa fa-building"></i>
+                        <span class="af-select-filter-label"><?php 
+                            $mamLabel = 'Select Unit';
+                            foreach($oversightsDataArr as $osd){
+                                if($seloversigntId==$osd['oversigntId']){ $mamLabel = $osd['unitName']; }
+                            }
+                            echo htmlspecialchars($mamLabel);
+                        ?></span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afOversightDropdown">
+                        <a href="#" class="af-select-filter-option" data-value="">Select...</a>
                     <?php foreach($oversightsDataArr as $osd){?>
-                        <option value="<?php echo $osd['oversigntId'];?>" <?php if($seloversigntId==$osd['oversigntId']){?> selected<?php } ?>> <?php echo $osd['unitName'];?> </option>
+                        <a href="#" class="af-select-filter-option <?php if($seloversigntId==$osd['oversigntId']){?> selected <?php }?>" data-value="<?php echo $osd['oversigntId'];?>"><?php echo htmlspecialchars($osd['unitName']);?></a>
                     <?php } ?>
-                </select>
-            </h3> 
-            <?php if(isset($sharePermission) && $sharePermission==1){?>
-            <div class="box-tools pull-right">   
-               <button id="feedbackBtn" type="button" style="padding: 3px 25px; margin-right:5px; font-size:15px;" onclick="return viewFeedback('<?php echo $mamDetailsArr['mamId'];?>','<?php echo $sessionDetailsArr['userId'];?>');" class='btn btn-warning'> Feedback <?php //echo $mamDetailsArr['feedbackCnt']; ?> </button>
-               <button id="shareReportBtn" type="button" style="padding: 3px 25px; font-size:15px;" onclick="return shareReport('<?php //echo $spDetails['spId'];?>');" class='btn btn-primary'> Share </button>               
-            </div>          
-            <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <div class="af-roles-toolbar-right" style="flex-wrap:wrap; gap:6px;">
+                <?php if(isset($sharePermission) && $sharePermission==1){?>
+                <button id="feedbackBtn" type="button" onclick="return viewFeedback('<?php echo $mamDetailsArr['mamId'];?>','<?php echo $sessionDetailsArr['userId'];?>');" class='btn btn-warning btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-comments"></i> Feedback</button>
+                <button id="shareReportBtn" type="button" onclick="return shareReport();" class='btn btn-primary btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-share-alt"></i> Share</button>
+                <?php } ?>
+            </div>
+        </div>
+
+        <div class="mam-note-info">
+            <i class="fa fa-info-circle"></i>
+            If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>.
         </div>
        
         <div class="box-body row">					 
-            <div class="col-xs-12 table-responsive">
-                <table class="table table-striped" id="table_recordtbl1">
+            <div class="col-xs-12" id="mam-table-wrap">
+                <table class="table" id="table_recordtbl1">
                     <thead>
                         <tr>
                             <th width="1%">#</th>
                             <th>Course</th>
                             <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){?>
-                            <th style="text-align:center;">ISLO<br /><small>(<?php echo $is;?>)</small></th>
+                            <th class="mam-th-islo<?php if($is==1){echo ' mam-slo-group-start';}?>">ISLO<br /><small>(<?php echo $is;?>)</small></th>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){?>
-                            <th style="text-align:center;">GISLO<br /><small>(<?php echo $gis;?>)</small></th>
+                            <th class="mam-th-gislo<?php if($gis==1){echo ' mam-slo-group-start';}?>">GISLO<br /><small>(<?php echo $gis;?>)</small></th>
                             <?php } } ?>
                             <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){?>
-                            <th style="text-align:center;">PSLO<br /><small>(<?php echo $ps;?>)</small></th>
+                            <th class="mam-th-pslo<?php if($ps==1){echo ' mam-slo-group-start';}?>">PSLO<br /><small>(<?php echo $ps;?>)</small></th>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){?>
-                            <th style="text-align:center;">GPSLO<br /><small>(<?php echo $gps;?>)</small></th>
+                            <th class="mam-th-gpslo<?php if($gps==1){echo ' mam-slo-group-start';}?>">GPSLO<br /><small>(<?php echo $gps;?>)</small></th>
                             <?php } } ?>
                             <?php if(isset($sharePermission) && $sharePermission==1){?>
                                 <th>Notes</th>
@@ -43,7 +149,11 @@
                         </tr>
                     </thead>
                     <tbody id="append_company_products">
-                        <?php $i = 1;
+                        <?php 
+                        $totalCols = 2 + $mamDetailsArr['ISLOCnt'] + $mamDetailsArr['GISLOCnt'] + $mamDetailsArr['PSLOCnt'] + $mamDetailsArr['GPSLOCnt'];
+                        if(isset($sharePermission) && $sharePermission==1){ $totalCols++; }
+                        if(count($cousesDataArr) > 0){
+                            $i = 1;
                             foreach($cousesDataArr as $row){ 
                                 
                                 if(isset($row['courseISLO']) && $row['courseISLO']!=''){
@@ -70,24 +180,34 @@
                         ?>
                         <tr>
                             <td> <?php echo $i;?> </td>
-                            <td nowrap style="font-weight:500;"> <?php echo $row['courseSubject'].'-'.$row['courseNBR']; ?> </td>
+                            <td nowrap class="mam-course-name"> <?php echo $row['courseSubject'].'-'.$row['courseNBR']; ?> </td>
                             <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){?>
-                            <td style="text-align:center;"><?php if(in_array($is,$courseISLOArr)){echo 'Yes';}?></td>
+                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($is,$courseISLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){?>
-                            <td style="text-align:center;"><?php if(in_array($gis,$courseGISLOArr)){echo 'Yes';}?></td>
+                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($gis,$courseGISLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){?>
-                            <td style="text-align:center;"><?php if(in_array($ps,$coursePSLOArr)){echo 'Yes';}?></td>
+                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($ps,$coursePSLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){?>
-                            <td style="text-align:center;"><?php if(in_array($gps,$courseGPSLOArr)){echo 'Yes';}?></td>
+                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($gps,$courseGPSLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
                             <?php if(isset($sharePermission) && $sharePermission==1){?>
-                                <td> <a class="deBtn" id="editBtn<?php echo $row['mamCourseId'];?>" onclick="return manageNotesAM('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');"> <i class="icon-sm" data-feather="edit"></i> </a> </td>
+                                <td> <a class="mam-action-btn mam-btn-edit" id="editBtn<?php echo $row['mamCourseId'];?>" onclick="return manageNotesAM('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');"> <i class="icon-sm" data-feather="edit"></i> </a> </td>
                             <?php } ?>
                         </tr>
-                        <?php $i++; }?>
+                        <?php $i++; }
+                        } else { ?>
+                        <tr class="no-data-row">
+                            <td colspan="<?php echo $totalCols; ?>" class="text-center py-5">
+                                <div class="no-data-message">
+                                    <i class="fa fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                                    <p style="font-size: 1.1rem; color: #999; margin: 0; font-weight: 500;">No data found</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>							
             </div>	 
@@ -191,6 +311,24 @@ function getOversigntData(val){
         <?php } ?>
 	}
 }
+$(function(){
+    /* Oversight dropdown */
+    $('#afOversightBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afOversightDropdown').toggleClass('show');
+    });
+    $('#afOversightDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        if(val && val !== ''){
+            getOversigntData(val);
+        }
+        $('#afOversightDropdown').removeClass('show');
+    });
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afOversightWrap').length){ $('#afOversightDropdown').removeClass('show'); }
+    });
+});
 </script>
 
 <?php if(isset($sharePermission) && $sharePermission==1){

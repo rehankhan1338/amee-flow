@@ -119,9 +119,7 @@ $(function(){
 <section class="content">
  
     <div class="box"> 
-        <div class="row">		
-            <div class="fs14 mx-2 my-2 col-12"><strong>Note -</strong> If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>. Missing or incomplete data may prevent the system from processing your submission correctly.</div>
-        </div>
+        <!-- Note moved to styled .mam-note-info below -->
         <div class="box-header no-border">
             <h3 class="box-title">Oversight Units</h3>
         </div>
@@ -156,24 +154,28 @@ $(function(){
             </div>
         </div>
        
+        <div class="mam-note-info">
+            <i class="fa fa-info-circle"></i>
+            If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>.
+        </div>
         <div class="box-body row">					 
-            <div class="col-xs-12 table-responsive" id="mam-table-wrap">
-                <table class="table table-striped" id="table_recordtbl_mam">
+            <div class="col-xs-12" id="mam-table-wrap">
+                <table class="table" id="table_recordtbl_mam">
                     <thead>
                         <tr>
                             <th width="1%"><input type="checkbox" id="selectall"></th>
                             <th>Course</th>
                             <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){?>
-                            <th style="text-align:center;">ISLO<br /><small>(<?php echo $is;?>)</small></th>
+                            <th class="mam-th-islo<?php if($is==1){echo ' mam-slo-group-start';}?>">ISLO<br /><small>(<?php echo $is;?>)</small></th>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){?>
-                            <th style="text-align:center;">GISLO<br /><small>(<?php echo $gis;?>)</small></th>
+                            <th class="mam-th-gislo<?php if($gis==1){echo ' mam-slo-group-start';}?>">GISLO<br /><small>(<?php echo $gis;?>)</small></th>
                             <?php } } ?>
                             <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){?>
-                            <th style="text-align:center;">PSLO<br /><small>(<?php echo $ps;?>)</small></th>
+                            <th class="mam-th-pslo<?php if($ps==1){echo ' mam-slo-group-start';}?>">PSLO<br /><small>(<?php echo $ps;?>)</small></th>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){?>
-                            <th style="text-align:center;">GPSLO<br /><small>(<?php echo $gps;?>)</small></th>
+                            <th class="mam-th-gpslo<?php if($gps==1){echo ' mam-slo-group-start';}?>">GPSLO<br /><small>(<?php echo $gps;?>)</small></th>
                             <?php } } ?>
                             <th>Action</th>
                         </tr>
@@ -209,23 +211,23 @@ $(function(){
                         ?>
                         <tr>
                             <td> <input type="checkbox" class="case" id="courseIds[]" name="courseIds[]" value="<?php echo $row['mamCourseId'];?>" /> </td>
-                            <td nowrap style="font-weight:500;"> <?php echo $row['courseSubject'].'-'.$row['courseNBR']; ?> </td>
+                            <td nowrap class="mam-course-name"> <?php echo $row['courseSubject'].'-'.$row['courseNBR']; ?> </td>
                             <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){?>
-                            <td style="text-align:center;"><?php if(in_array($is,$courseISLOArr)){echo 'Yes';}?></td>
+                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($is,$courseISLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){?>
-                            <td style="text-align:center;"><?php if(in_array($gis,$courseGISLOArr)){echo 'Yes';}?></td>
+                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($gis,$courseGISLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){?>
-                            <td style="text-align:center;"><?php if(in_array($ps,$coursePSLOArr)){echo 'Yes';}?></td>
+                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($ps,$coursePSLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){?>
-                            <td style="text-align:center;"><?php if(in_array($gps,$courseGPSLOArr)){echo 'Yes';}?></td>
+                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($gps,$courseGPSLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
                             <td nowrap> 
-                                <a class="deBtn" id="editBtn<?php echo $row['mamCourseId'];?>" onclick="return manageCourseMAM('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');"> <i class="icon-sm" data-feather="edit"></i> </a> 
-                                &nbsp;&nbsp;<a class="deBtn" id="noteBtn<?php echo $row['mamCourseId'];?>" onclick="return viewNote('<?php echo $row['mamCourseId'];?>');"> <i class="icon-sm" data-feather="eye"></i> </a>
-                                &nbsp;&nbsp;<a class="btn btn-danger btn-sm" id="delcourse<?php echo $row['mamCourseId'];?>" onclick="return deleteSingleCourse('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');" style="margin-left:3px;"><i class="fa fa-trash"></i></a>
+                                <a class="mam-action-btn mam-btn-edit" id="editBtn<?php echo $row['mamCourseId'];?>" onclick="return manageCourseMAM('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');"> <i class="icon-sm" data-feather="edit"></i> </a>
+                                <a class="mam-action-btn mam-btn-view" id="noteBtn<?php echo $row['mamCourseId'];?>" onclick="return viewNote('<?php echo $row['mamCourseId'];?>');"> <i class="icon-sm" data-feather="eye"></i> </a>
+                                <a class="mam-action-btn mam-btn-delete" id="delcourse<?php echo $row['mamCourseId'];?>" onclick="return deleteSingleCourse('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         <?php $i++; }
