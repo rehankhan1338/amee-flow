@@ -2223,54 +2223,6 @@ body.af-system-admin #ntComViewModal .modal-body {
 	user-select: none;
 }
 
-/* ── MAM Data Legend ── */
-.mam-legend-section {
-	background: #f9fafb;
-	border: 1px solid #e5e7eb;
-	border-radius: 10px;
-	padding: 16px 20px 12px;
-	margin: 16px 12px 0;
-}
-.mam-legend-title {
-	font-size: 13px;
-	color: #6b7280;
-	margin: 0 0 12px;
-	font-weight: 600;
-}
-.mam-legend-grid {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0;
-}
-.mam-legend-item {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	width: 25%;
-	min-width: 180px;
-	padding: 6px 10px;
-	box-sizing: border-box;
-}
-.mam-legend-label {
-	font-size: 13px;
-	font-weight: 500;
-	color: #374151;
-	min-width: 60px;
-}
-.mam-legend-color {
-	display: inline-block;
-	width: 32px;
-	height: 18px;
-	border-radius: 3px;
-	flex-shrink: 0;
-}
-.mam-legend-pct {
-	font-size: 13px;
-	font-weight: 700;
-	color: #111827;
-	letter-spacing: .3px;
-}
-
 /* ── MAM Inline Toggle Switch ── */
 .mam-toggle {
 	position: relative;
