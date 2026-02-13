@@ -820,26 +820,28 @@ body.af-system-admin .table-responsive {
 body.af-system-admin .table thead th {
 	position: sticky;
 	z-index: 20;
-	background: #485b79;
-	color: #fff;
-	font-weight: 600;
-	font-size: .82rem;
+	background: #f8fafc;
+	color: #475569;
+	font-weight: 700;
+	font-size: .8rem;
 	text-transform: uppercase;
-	letter-spacing: .5px;
+	letter-spacing: .6px;
 	border: none;
-	padding: 11px 14px;
-	box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+	border-bottom: 2px solid #e2e8f0;
+	padding: 14px 16px;
 	white-space: nowrap;
+	transition: background .2s;
 }
-body.af-system-admin .table thead th a { color: #fff; }
-body.af-system-admin .table thead th:first-child { border-radius: 8px 0 0 0; }
-body.af-system-admin .table thead th:last-child  { border-radius: 0 8px 0 0; }
+body.af-system-admin .table thead th a { color: #475569; text-decoration: none; }
+body.af-system-admin .table thead th a:hover { color: #e18125; }
+body.af-system-admin .table thead th:first-child { border-radius: 12px 0 0 0; }
+body.af-system-admin .table thead th:last-child  { border-radius: 0 12px 0 0; }
 body.af-system-admin .dataTables_wrapper .table thead th {
 	position: sticky;
 	top: 60px;
 	z-index: 20;
-	background: #485b79;
-	color: #fff;
+	background: #f8fafc;
+	color: #475569;
 }
 
 /* ---------- Content area ---------- */
@@ -1583,7 +1585,7 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	}
 }
 .table.dataTable thead tr>.dtfc-fixed-left{
-	background-color: #485b79 !important;
+	background-color: #f8fafc !important;
 }
 
 /* ============================================================
