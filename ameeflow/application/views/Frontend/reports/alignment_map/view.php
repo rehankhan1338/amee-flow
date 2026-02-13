@@ -234,6 +234,7 @@ $(function(){
                         <?php 
                         $totalCols = 2 + $mamDetailsArr['ISLOCnt'] + $mamDetailsArr['GISLOCnt'] + $mamDetailsArr['PSLOCnt'] + $mamDetailsArr['GPSLOCnt'];
                         if(isset($sharePermission) && $sharePermission==1){ $totalCols++; }
+                        $mamSloOptions = array('','Yes','I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM');
 
                         // Helper: parse "1:I,3:ED" or legacy "1,3" into [1=>'I', 3=>'ED']
                         if(!function_exists('_parseSLOFront')){
@@ -268,16 +269,40 @@ $(function(){
                             <td> <?php echo $i;?> </td>
                             <td nowrap class="mam-course-name"> <?php echo $row['courseSubject'].'-'.$row['courseNBR']; ?> </td>
                             <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){ $curVal = isset($courseISLOMap[$is]) ? $courseISLOMap[$is] : ''; ?>
-                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>"><?php if($curVal!=''){echo '<span class="mam-slo-val'.($curVal!='Yes'?' mam-clr-'.$curVal:'').'">'.htmlspecialchars($curVal).'</span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>">
+                                <select class="mam-slo-select<?php if($curVal!='' && $curVal!='Yes') echo ' mam-clr-'.$curVal;?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="ISLO" data-slo-number="<?php echo $is;?>">
+                                    <?php foreach($mamSloOptions as $opt){ ?>
+                                    <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){ $curVal = isset($courseGISLOMap[$gis]) ? $courseGISLOMap[$gis] : ''; ?>
-                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>"><?php if($curVal!=''){echo '<span class="mam-slo-val'.($curVal!='Yes'?' mam-clr-'.$curVal:'').'">'.htmlspecialchars($curVal).'</span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>">
+                                <select class="mam-slo-select<?php if($curVal!='' && $curVal!='Yes') echo ' mam-clr-'.$curVal;?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GISLO" data-slo-number="<?php echo $gis;?>">
+                                    <?php foreach($mamSloOptions as $opt){ ?>
+                                    <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){ $curVal = isset($coursePSLOMap[$ps]) ? $coursePSLOMap[$ps] : ''; ?>
-                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>"><?php if($curVal!=''){echo '<span class="mam-slo-val'.($curVal!='Yes'?' mam-clr-'.$curVal:'').'">'.htmlspecialchars($curVal).'</span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>">
+                                <select class="mam-slo-select<?php if($curVal!='' && $curVal!='Yes') echo ' mam-clr-'.$curVal;?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="PSLO" data-slo-number="<?php echo $ps;?>">
+                                    <?php foreach($mamSloOptions as $opt){ ?>
+                                    <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){ $curVal = isset($courseGPSLOMap[$gps]) ? $courseGPSLOMap[$gps] : ''; ?>
-                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>"><?php if($curVal!=''){echo '<span class="mam-slo-val'.($curVal!='Yes'?' mam-clr-'.$curVal:'').'">'.htmlspecialchars($curVal).'</span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>">
+                                <select class="mam-slo-select<?php if($curVal!='' && $curVal!='Yes') echo ' mam-clr-'.$curVal;?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GPSLO" data-slo-number="<?php echo $gps;?>">
+                                    <?php foreach($mamSloOptions as $opt){ ?>
+                                    <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
                             <?php } } ?>
                             <?php if(isset($sharePermission) && $sharePermission==1){?>
                                 <td> <a class="mam-action-btn mam-btn-edit" id="editBtn<?php echo $row['mamCourseId'];?>" onclick="return manageNotesAM('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');"> <i class="icon-sm" data-feather="edit"></i> </a> </td>
@@ -387,6 +412,61 @@ $(document).ready(function () {
 });
 </script> 
 <?php } ?>
+<script>
+/* ── SLO Color helpers ── */
+var mamSloColors = ['I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM'];
+function mamApplyColor($sel, val){
+    var $td = $sel.closest('td');
+    for(var c=0;c<mamSloColors.length;c++){
+        $sel.removeClass('mam-clr-'+mamSloColors[c]);
+        $td.removeClass('mam-td-'+mamSloColors[c]);
+    }
+    if(val && val !== '' && val !== 'Yes'){
+        $sel.addClass('mam-clr-'+val);
+        $td.addClass('mam-td-'+val);
+    }
+}
+
+/* ── SLO Dropdown (inline value selector) ── */
+$(document).on('change', '.mam-slo-select', function(){
+    var $sel      = $(this);
+    var courseId   = $sel.data('course-id');
+    var sloType   = $sel.data('slo-type');
+    var sloNumber = $sel.data('slo-number');
+    var value     = $sel.val();
+    var prevValue = $sel.data('prev-value') || '';
+
+    $sel.data('prev-value', prevValue);
+    $sel.prop('disabled', true).addClass('mam-slo-saving');
+    mamApplyColor($sel, value);
+
+    $.ajax({
+        type: 'POST',
+        url: '<?php echo base_url();?>sampling_plan/toggleSLO',
+        data: { mamCourseId: courseId, sloType: sloType, sloNumber: sloNumber, value: value },
+        dataType: 'json',
+        success: function(res){
+            if(res.status === 'success'){
+                $sel.data('prev-value', value);
+            } else {
+                $sel.val(prevValue);
+                mamApplyColor($sel, prevValue);
+                alert(res.message || 'Save failed');
+            }
+        },
+        error: function(){
+            $sel.val(prevValue);
+            mamApplyColor($sel, prevValue);
+            alert('Server error – could not save');
+        },
+        complete: function(){
+            $sel.prop('disabled', false).removeClass('mam-slo-saving');
+        }
+    });
+});
+// Store initial values on page load for revert
+$(function(){ $('.mam-slo-select').each(function(){ $(this).data('prev-value', $(this).val()); }); });
+</script>
 <script> 
 function getOversigntData(val){
 	if(val!=''){

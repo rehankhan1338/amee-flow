@@ -210,6 +210,21 @@ class Sampling_plan extends CI_Controller {
 		$this->load->view('Frontend/includes/footer',$this->data);
 	}
 
+	public function toggleSLO(){
+		$mamCourseId = $this->input->post('mamCourseId');
+		$sloType     = $this->input->post('sloType');
+		$sloNumber   = $this->input->post('sloNumber');
+		$value       = $this->input->post('value');
+
+		if(!$mamCourseId || !$sloType || !$sloNumber){
+			echo json_encode(array('status'=>'error','message'=>'Missing parameters'));
+			return;
+		}
+		if($value === false || $value === null) $value = '';
+		$result = $this->Master_alignment_map_mdl->toggleCourseSLO($mamCourseId, $sloType, $sloNumber, $value);
+		echo json_encode($result);
+	}
+
 	public function ajaxAMnotesField(){
         if(isset($_GET['mamCourseId']) && $_GET['mamCourseId']!='' && $_GET['mamCourseId']>0){
             $this->data['courseDetails'] = $this->Master_alignment_map_mdl->courseDetailsArr($_GET['mamCourseId']);
