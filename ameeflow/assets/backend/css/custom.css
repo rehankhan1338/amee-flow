@@ -838,7 +838,6 @@ body.af-system-admin .table thead th:first-child { border-radius: 12px 0 0 0; }
 body.af-system-admin .table thead th:last-child  { border-radius: 0 12px 0 0; }
 body.af-system-admin .dataTables_wrapper .table thead th {
 	position: sticky;
-	top: 60px;
 	z-index: 20;
 	background: #f8fafc;
 	color: #475569;
