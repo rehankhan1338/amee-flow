@@ -4,12 +4,28 @@ if(isset($courseDetails['mamCourseId']) && $courseDetails['mamCourseId']!=''){
 }else{
     $mamCourseId = 0;
 }
+
+// Helper: parse "1:I,3:ED" or legacy "1,3" into [1=>'I', 3=>'ED']
+if(!function_exists('_parseSLOModal')){
+    function _parseSLOModal($str){
+        $r = array();
+        if(!isset($str) || $str==='') return $r;
+        foreach(explode(',',$str) as $item){
+            $item = trim($item);
+            if($item==='') continue;
+            if(strpos($item,':')!==false){
+                list($n,$v) = explode(':',$item,2);
+                $r[trim($n)] = trim($v);
+            } else {
+                $r[$item] = 'Yes';
+            }
+        }
+        return $r;
+    }
+}
+
+$modalSloOptions = array('','I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM','Yes');
 ?>
-<script>
-    $(document).ready(function () {
-        $('input[type="checkbox"][data-toggle="toggle"]').bootstrapToggle();
-    });
-</script>
  
 <input type="hidden" id="txtmamCourseId" name="txtmamCourseId" value="<?php echo $mamCourseId;?>" />
 <input type="hidden" id="txtoversigntId" name="txtoversigntId" value="<?php echo $seloversigntId;?>" />
@@ -38,39 +54,26 @@ $ISLOCnt = $mamDetails['ISLOCnt'];
 $GISLOCnt = $mamDetails['GISLOCnt'];
 $PSLOCnt = $mamDetails['PSLOCnt'];
 $GPSLOCnt = $mamDetails['GPSLOCnt'];
-if(isset($courseDetails['courseISLO']) && $courseDetails['courseISLO']!=''){
-    $courseISLOArr = explode(',',$courseDetails['courseISLO']);
-}else{
-    $courseISLOArr = array();
-}
-if(isset($courseDetails['courseGISLO']) && $courseDetails['courseGISLO']!=''){
-    $courseGISLOArr = explode(',',$courseDetails['courseGISLO']);
-}else{
-    $courseGISLOArr = array();
-}
-if(isset($courseDetails['coursePSLO']) && $courseDetails['coursePSLO']!=''){
-    $coursePSLOArr = explode(',',$courseDetails['coursePSLO']);
-}else{
-    $coursePSLOArr = array();
-}
-if(isset($courseDetails['courseGPSLO']) && $courseDetails['courseGPSLO']!=''){
-    $courseGPSLOArr = explode(',',$courseDetails['courseGPSLO']);
-}else{
-    $courseGPSLOArr = array();
-}
+
+$courseISLOMap  = _parseSLOModal(isset($courseDetails['courseISLO']) ? $courseDetails['courseISLO'] : '');
+$courseGISLOMap = _parseSLOModal(isset($courseDetails['courseGISLO']) ? $courseDetails['courseGISLO'] : '');
+$coursePSLOMap = _parseSLOModal(isset($courseDetails['coursePSLO']) ? $courseDetails['coursePSLO'] : '');
+$courseGPSLOMap = _parseSLOModal(isset($courseDetails['courseGPSLO']) ? $courseDetails['courseGPSLO'] : '');
 ?>
 
-<!-- SLO Toggles in 2-Column Grid -->
+<!-- SLO Dropdowns in 2-Column Grid -->
 <?php if($mamDetails['ISLOCnt']>0){ ?>
 <div class="af-toggle-section">
     <div class="af-toggle-section-title">ISLO</div>
     <div class="af-toggle-grid">
-        <?php for($is=1;$is<=$mamDetails['ISLOCnt'];$is++){?>
+        <?php for($is=1;$is<=$mamDetails['ISLOCnt'];$is++){ $cv = isset($courseISLOMap[$is]) ? $courseISLOMap[$is] : ''; ?>
         <div class="af-toggle-item">
             <span class="af-toggle-label">ISLO <?php echo $is;?></span>
-            <div class="modalbsToggle">
-                <input <?php if(in_array($is,$courseISLOArr)){?> checked="checked" <?php } ?> name="chkISLO[]" id="chkISLO<?php echo $is;?>" value="<?php echo $is;?>" data-toggle="toggle" data-size="" data-onstyle="success" data-offstyle="danger" data-on="Yes" data-off="No" type="checkbox">
-            </div>
+            <select name="sloISLO[<?php echo $is;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='') echo ' has-value';?>">
+                <?php foreach($modalSloOptions as $opt){ ?>
+                <option value="<?php echo $opt;?>"<?php if($cv==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '– None –' : $opt;?></option>
+                <?php } ?>
+            </select>
         </div>
         <?php } ?>
     </div>
@@ -81,12 +84,14 @@ if(isset($courseDetails['courseGPSLO']) && $courseDetails['courseGPSLO']!=''){
 <div class="af-toggle-section">
     <div class="af-toggle-section-title">GISLO</div>
     <div class="af-toggle-grid">
-        <?php for($gis=1;$gis<=$mamDetails['GISLOCnt'];$gis++){?>
+        <?php for($gis=1;$gis<=$mamDetails['GISLOCnt'];$gis++){ $cv = isset($courseGISLOMap[$gis]) ? $courseGISLOMap[$gis] : ''; ?>
         <div class="af-toggle-item">
             <span class="af-toggle-label">GISLO <?php echo $gis;?></span>
-            <div class="modalbsToggle">
-                <input <?php if(in_array($gis,$courseGISLOArr)){?> checked="checked" <?php } ?> name="chkGISLO[]" id="chkGISLO<?php echo $gis;?>" value="<?php echo $gis;?>" data-toggle="toggle" data-size="" data-onstyle="success" data-offstyle="danger" data-on="Yes" data-off="No" type="checkbox">
-            </div>
+            <select name="sloGISLO[<?php echo $gis;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='') echo ' has-value';?>">
+                <?php foreach($modalSloOptions as $opt){ ?>
+                <option value="<?php echo $opt;?>"<?php if($cv==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '– None –' : $opt;?></option>
+                <?php } ?>
+            </select>
         </div>
         <?php } ?>
     </div>
@@ -97,12 +102,14 @@ if(isset($courseDetails['courseGPSLO']) && $courseDetails['courseGPSLO']!=''){
 <div class="af-toggle-section">
     <div class="af-toggle-section-title">PSLO</div>
     <div class="af-toggle-grid">
-        <?php for($ps=1;$ps<=$mamDetails['PSLOCnt'];$ps++){?>
+        <?php for($ps=1;$ps<=$mamDetails['PSLOCnt'];$ps++){ $cv = isset($coursePSLOMap[$ps]) ? $coursePSLOMap[$ps] : ''; ?>
         <div class="af-toggle-item">
             <span class="af-toggle-label">PSLO <?php echo $ps;?></span>
-            <div class="modalbsToggle">
-                <input <?php if(in_array($ps,$coursePSLOArr)){?> checked="checked" <?php } ?> name="chkPSLO[]" id="chkPSLO<?php echo $ps;?>" value="<?php echo $ps;?>" data-toggle="toggle" data-size="" data-onstyle="success" data-offstyle="danger" data-on="Yes" data-off="No" type="checkbox">
-            </div>
+            <select name="sloPSLO[<?php echo $ps;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='') echo ' has-value';?>">
+                <?php foreach($modalSloOptions as $opt){ ?>
+                <option value="<?php echo $opt;?>"<?php if($cv==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '– None –' : $opt;?></option>
+                <?php } ?>
+            </select>
         </div>
         <?php } ?>
     </div>
@@ -113,14 +120,23 @@ if(isset($courseDetails['courseGPSLO']) && $courseDetails['courseGPSLO']!=''){
 <div class="af-toggle-section">
     <div class="af-toggle-section-title">GPSLO</div>
     <div class="af-toggle-grid">
-        <?php for($gps=1;$gps<=$mamDetails['GPSLOCnt'];$gps++){?>
+        <?php for($gps=1;$gps<=$mamDetails['GPSLOCnt'];$gps++){ $cv = isset($courseGPSLOMap[$gps]) ? $courseGPSLOMap[$gps] : ''; ?>
         <div class="af-toggle-item">
             <span class="af-toggle-label">GPSLO <?php echo $gps;?></span>
-            <div class="modalbsToggle">
-                <input <?php if(in_array($gps,$courseGPSLOArr)){?> checked="checked" <?php } ?> name="chkGPSLO[]" id="chkGPSLO<?php echo $gps;?>" value="<?php echo $gps;?>" data-toggle="toggle" data-size="" data-onstyle="success" data-offstyle="danger" data-on="Yes" data-off="No" type="checkbox">
-            </div>
+            <select name="sloGPSLO[<?php echo $gps;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='') echo ' has-value';?>">
+                <?php foreach($modalSloOptions as $opt){ ?>
+                <option value="<?php echo $opt;?>"<?php if($cv==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '– None –' : $opt;?></option>
+                <?php } ?>
+            </select>
         </div>
         <?php } ?>
     </div>
 </div>
 <?php } ?>
+
+<script>
+// Toggle green styling on modal dropdowns when value changes
+$(document).off('change','.mam-modal-slo-select').on('change','.mam-modal-slo-select',function(){
+    if($(this).val()!==''){$(this).addClass('has-value');}else{$(this).removeClass('has-value');}
+});
+</script>

@@ -246,7 +246,7 @@ $(function(){
                     <tbody id="append_company_products">
                         <?php 
                         $totalCols = 3 + $mamDetailsArr['ISLOCnt'] + $mamDetailsArr['GISLOCnt'] + $mamDetailsArr['PSLOCnt'] + $mamDetailsArr['GPSLOCnt'];
-                        $mamSloOptions = array('','I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM');
+                        $mamSloOptions = array('','I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM','Yes');
 
                         // Helper: parse "1:I,3:ED" or legacy "1,3" into [1=>'I', 3=>'ED']
                         if(!function_exists('_parseSLO')){

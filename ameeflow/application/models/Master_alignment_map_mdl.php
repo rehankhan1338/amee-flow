@@ -46,6 +46,23 @@ class Master_alignment_map_mdl extends CI_Model {
 		$query = $this->db->get('master_alignment_maps_courses');
 		return $query->result_array();
 	}
+	/**
+	 * Build "num:value" storage string from posted SLO dropdown array.
+	 * e.g. $_POST['sloISLO'] = [1=>'I', 3=>'ED'] → "1:I,3:ED"
+	 */
+	private function _buildSLOString($postKey){
+		$parts = array();
+		if(isset($_POST[$postKey]) && is_array($_POST[$postKey])){
+			foreach($_POST[$postKey] as $num => $val){
+				$val = trim($val);
+				if($val !== ''){
+					$parts[] = intval($num).':'.$val;
+				}
+			}
+		}
+		return implode(',', $parts);
+	}
+
 	public function manageClassEntry(){
 		$mamCourseIdChk = trim($this->input->post('txtmamCourseId'));
 		$oversigntId = trim($this->input->post('txtoversigntId'));
@@ -57,30 +74,11 @@ class Master_alignment_map_mdl extends CI_Model {
 			$courseSubject = trim($this->input->post('txtcourseSubject'));
 			$courseNBR = trim($this->input->post('txtcourseNBR'));
 			$courseSlug = create_slug_ch($courseSubject.'-'.$courseNBR);
-			$courseISLO = '';
-			if(isset($_POST['chkISLO']) && $_POST['chkISLO']!=''){
-				if(count($_POST['chkISLO'])>0){
-					$courseISLO = implode(',',$_POST['chkISLO']);
-				}
-			}
-			$courseGISLO = '';
-			if(isset($_POST['chkGISLO']) && $_POST['chkGISLO']!=''){
-				if(count($_POST['chkGISLO'])>0){
-					$courseGISLO = implode(',',$_POST['chkGISLO']);
-				}
-			}
-			$coursePSLO = '';
-			if(isset($_POST['chkPSLO']) && $_POST['chkPSLO']!=''){
-				if(count($_POST['chkPSLO'])>0){
-					$coursePSLO = implode(',',$_POST['chkPSLO']);
-				}
-			}
-			$courseGPSLO = '';
-			if(isset($_POST['chkGPSLO']) && $_POST['chkGPSLO']!=''){
-				if(count($_POST['chkGPSLO'])>0){
-					$courseGPSLO = implode(',',$_POST['chkGPSLO']);
-				}
-			}
+
+			$courseISLO  = $this->_buildSLOString('sloISLO');
+			$courseGISLO = $this->_buildSLOString('sloGISLO');
+			$coursePSLO  = $this->_buildSLOString('sloPSLO');
+			$courseGPSLO = $this->_buildSLOString('sloGPSLO');
 			if(isset($mamCourseIdChk) && $mamCourseIdChk!='' && $mamCourseIdChk>0){
 				$this->db->where('mamCourseId != ', $mamCourseIdChk);
 			}
