@@ -2347,35 +2347,6 @@ body.af-system-admin #ntComViewModal .modal-body {
 	vertical-align: middle;
 	white-space: nowrap;
 }
-/* Pinned left/right columns in sticky clone */
-#mam-sticky-header table thead th.dtfc-fixed-left {
-	position: sticky !important;
-	z-index: 5 !important;
-	background: #f0f3f8 !important;
-}
-#mam-sticky-header table thead th.dtfc-fixed-right {
-	position: sticky !important;
-	z-index: 5 !important;
-	background: #f0f3f8 !important;
-}
-/* Separator shadows inside sticky clone */
-#mam-sticky-header table thead th.dtfc-fixed-left::after {
-	content: '';
-	position: absolute;
-	top: 0; right: -6px; bottom: 0;
-	width: 6px;
-	background: linear-gradient(to right, rgba(0,0,0,.06), transparent);
-	pointer-events: none;
-}
-#mam-sticky-header table thead th.dtfc-fixed-right::before {
-	content: '';
-	position: absolute;
-	top: 0; left: -6px; bottom: 0;
-	width: 6px;
-	background: linear-gradient(to left, rgba(0,0,0,.06), transparent);
-	pointer-events: none;
-}
-/* SLO color coding in sticky clone */
 #mam-sticky-header .mam-th-islo  { background: #eff6ff !important; color: #2563eb !important; }
 #mam-sticky-header .mam-th-gislo { background: #f0fdf4 !important; color: #16a34a !important; }
 #mam-sticky-header .mam-th-pslo  { background: #faf5ff !important; color: #9333ea !important; }

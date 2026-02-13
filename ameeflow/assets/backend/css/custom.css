@@ -1564,13 +1564,9 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	z-index: 1030;
 	background: #fff;
 	box-shadow: 0 3px 12px rgba(0,0,0,.08);
-	overflow-x: scroll;          /* scroll (not hidden) so position:sticky works inside */
-	overflow-y: hidden;
-	-ms-overflow-style: none;    /* hide scrollbar IE/Edge */
-	scrollbar-width: none;       /* hide scrollbar Firefox */
-}
-#mam-sticky-header::-webkit-scrollbar {
-	display: none;               /* hide scrollbar Chrome/Safari */
+	overflow: hidden;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 #mam-sticky-header .dataTables_scrollHeadInner {
 	box-sizing: content-box;
@@ -1587,17 +1583,6 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	letter-spacing: .3px;
 	text-transform: uppercase;
 	padding: 12px 10px;
-}
-/* Pinned columns inside the sticky clone */
-#mam-sticky-header table thead th.dtfc-fixed-left {
-	position: sticky !important;
-	z-index: 5 !important;
-	background: #f0f3f8 !important;
-}
-#mam-sticky-header table thead th.dtfc-fixed-right {
-	position: sticky !important;
-	z-index: 5 !important;
-	background: #f0f3f8 !important;
 }
 @media (max-width: 767px) {
 	#mam-sticky-header {
