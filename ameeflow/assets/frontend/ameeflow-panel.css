@@ -2108,14 +2108,19 @@ body.af-system-admin #ntComViewModal .modal-body {
 #mam-table-wrap {
 	position: relative;
 	border-radius: 12px;
-	overflow: hidden;
 	background: #fff;
 	border: 1px solid #e2e8f0;
 	box-shadow: 0 1px 4px rgba(0,0,0,.05);
 	padding: 0 !important;
+	/* NOTE: no overflow:hidden – required for position:sticky (FixedColumns) */
 }
 #mam-table-wrap .dataTables_wrapper {
 	padding: 0;
+}
+/* Let the DataTables scroll body handle clipping */
+#mam-table-wrap .dataTables_scrollBody {
+	overflow-x: auto !important;
+	overflow-y: auto !important;
 }
 
 /* --- Fixed sidebar columns (Course + Checkbox) --- */
@@ -2125,6 +2130,11 @@ body.af-system-admin #ntComViewModal .modal-body {
 	background: #f8fafd !important;
 	border-right: none !important;
 	z-index: 11 !important;
+	position: sticky !important;
+}
+/* Ensure the fixed header th stays above body cells when scrolling */
+#mam-table-wrap th.dtfc-fixed-left {
+	z-index: 22 !important;
 }
 /* Shadow separator between fixed sidebar and scrollable area */
 #mam-table-wrap .dtfc-fixed-left::after {
