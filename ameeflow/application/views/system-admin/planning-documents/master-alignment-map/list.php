@@ -7,7 +7,7 @@
 <script>
 $(function(){ 
     var mamTable = $('#table_recordtbl_mam').DataTable({
-        dom: "<'row'<'col-sm-12 col-md-12 mb-3 mt-3'f>>" +
+        dom: "<'row'<'col-sm-12 col-md-12 mb-3 mt-3 ms-3'f>>" +
              "<'row'<'col-sm-12'tr>>" +
              "<'row'<'col-sm-12 col-md-4'i><'col-sm-12 col-md-4 text-center'l><'col-sm-12 col-md-4'p>>",
         paging: true,
@@ -113,6 +113,57 @@ $(function(){
             $sticky.hide();          // rebuild on next scroll tick
         });
     })();
+
+    /* ── Department filter (dynamic) ── */
+    function populateDepartmentFilter(){
+        var departments = [];
+        // Scan ALL rows (not just current page) in column 1 (Course)
+        mamTable.column(1, { search: 'none' }).data().each(function(val){
+            var txt = $.trim(val);
+            if(txt.indexOf('-') !== -1){
+                var prefix = txt.split('-')[0].trim();
+                if(prefix && departments.indexOf(prefix) === -1){
+                    departments.push(prefix);
+                }
+            }
+        });
+        departments.sort();
+        var $dropdown = $('#afDepartmentDropdown');
+        $dropdown.find('.af-select-filter-option:not(:first)').remove();
+        $.each(departments, function(i, dept){
+            $dropdown.append('<a href="#" class="af-select-filter-option" data-value="'+dept+'">'+dept+'</a>');
+        });
+    }
+    populateDepartmentFilter();
+
+    // Toggle dropdown
+    $('#afDepartmentBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afDepartmentDropdown').toggleClass('show');
+        $('#afOversightDropdown').removeClass('show'); // close the other dropdown
+    });
+
+    // Handle department selection
+    $(document).on('click', '#afDepartmentDropdown .af-select-filter-option', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        $('#afDepartmentDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+        if(val && val !== ''){
+            $('#afDepartmentBtn .af-select-filter-label').text(val);
+            // Use regex to match course prefix before the dash
+            mamTable.column(1).search('^\\s*' + val + '\\s*-', true, false).draw();
+        } else {
+            $('#afDepartmentBtn .af-select-filter-label').text('All Departments');
+            mamTable.column(1).search('').draw();
+        }
+        $('#afDepartmentDropdown').removeClass('show');
+    });
+
+    // Close dropdown when clicking outside
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afDepartmentWrap').length){ $('#afDepartmentDropdown').removeClass('show'); }
+    });
     
 });
 </script>
@@ -145,6 +196,17 @@ $(function(){
                     <?php foreach($oversightsDataArr as $osd){?>
                         <a href="#" class="af-select-filter-option <?php if($seloversigntId==$osd['oversigntId']){?> selected <?php }?>" data-value="<?php echo $osd['oversigntId'];?>"><?php echo htmlspecialchars($osd['unitName']);?></a>
                     <?php } ?>
+                    </div>
+                </div>
+                <!-- Department Filter (dynamic, based on course prefix) -->
+                <div class="af-select-filter-wrap ms-3" id="afDepartmentWrap">
+                    <span class="af-select-filter-btn" id="afDepartmentBtn" role="button">
+                        <i class="fa fa-filter"></i>
+                        <span class="af-select-filter-label">All Departments</span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afDepartmentDropdown">
+                        <a href="#" class="af-select-filter-option selected" data-value="">All Departments</a>
                     </div>
                 </div>
             </div>
