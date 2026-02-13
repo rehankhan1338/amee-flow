@@ -24,7 +24,7 @@ if(!function_exists('_parseSLOModal')){
     }
 }
 
-$modalSloOptions = array('','I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM','Yes');
+$modalSloOptions = array('','Yes','I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM');
 ?>
  
 <input type="hidden" id="txtmamCourseId" name="txtmamCourseId" value="<?php echo $mamCourseId;?>" />
