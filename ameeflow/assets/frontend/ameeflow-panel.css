@@ -2362,25 +2362,7 @@ td[class*="mam-td-"] .mam-slo-select {
 	color: #374151;
 }
 
-/* --- Zebra striping for data rows --- */
-#mam-table-wrap table.dataTable tbody tr:nth-child(even) td {
-	background-color: #fafbfc;
-}
-#mam-table-wrap table.dataTable tbody tr:nth-child(even) td.dtfc-fixed-left,
-#mam-table-wrap table.dataTable tbody tr:nth-child(even) td.dtfc-fixed-right {
-	background-color: #f1f4f8 !important;
-}
-#mam-table-wrap table.dataTable tbody tr:nth-child(odd) td.dtfc-fixed-left,
-#mam-table-wrap table.dataTable tbody tr:nth-child(odd) td.dtfc-fixed-right {
-	background-color: #f8fafd !important;
-}
-#mam-table-wrap table.dataTable tbody tr:hover td {
-	background-color: #f0f4ff !important;
-}
-#mam-table-wrap table.dataTable tbody tr:hover td.dtfc-fixed-left,
-#mam-table-wrap table.dataTable tbody tr:hover td.dtfc-fixed-right {
-	background-color: #e8edf7 !important;
-}
+
 
 /* --- SLO data cell alignment --- */
 #mam-table-wrap table.dataTable td.mam-slo-cell {
