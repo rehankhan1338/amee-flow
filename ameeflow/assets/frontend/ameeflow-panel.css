@@ -2251,24 +2251,39 @@ body.af-system-admin #ntComViewModal .modal-body {
 	box-shadow: 0 0 0 2px rgba(99,102,241,.15);
 	background: #fff;
 }
-.mam-slo-select.has-value {
-	background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-	color: #fff;
-	border-color: #16a34a;
-	box-shadow: 0 2px 6px rgba(34,197,94,.22);
-}
-.mam-slo-select.has-value:hover {
-	border-color: #15803d;
-	box-shadow: 0 2px 8px rgba(34,197,94,.32);
-}
-.mam-slo-select.has-value:focus {
-	border-color: #15803d;
-	box-shadow: 0 0 0 2px rgba(34,197,94,.2);
-}
-.mam-slo-select.has-value option {
+/* ── SLO value color definitions ── */
+.mam-clr-I   { background:#FF6B6B !important; color:#fff !important; border-color:#FF6B6B !important; }
+.mam-clr-E   { background:#FFE066 !important; color:#6b5c00 !important; border-color:#FFE066 !important; }
+.mam-clr-D   { background:#6BA3FF !important; color:#fff !important; border-color:#6BA3FF !important; }
+.mam-clr-IE  { background:#FFA94D !important; color:#fff !important; border-color:#FFA94D !important; }
+.mam-clr-ID  { background:#B197FC !important; color:#fff !important; border-color:#B197FC !important; }
+.mam-clr-ED  { background:#51CF66 !important; color:#fff !important; border-color:#51CF66 !important; }
+.mam-clr-IED { background:#A0522D !important; color:#fff !important; border-color:#A0522D !important; }
+.mam-clr-M   { background:#74C0FC !important; color:#fff !important; border-color:#74C0FC !important; }
+.mam-clr-IP  { background:#FF922B !important; color:#fff !important; border-color:#FF922B !important; }
+.mam-clr-IM  { background:#5C7CFA !important; color:#fff !important; border-color:#5C7CFA !important; }
+.mam-clr-PM  { background:#A9E34B !important; color:#3d5c00 !important; border-color:#A9E34B !important; }
+.mam-clr-IPM { background:#8B7355 !important; color:#fff !important; border-color:#8B7355 !important; }
+
+/* Dropdown options should stay readable */
+.mam-slo-select[class*="mam-clr-"] option {
 	background: #fff;
 	color: #374151;
 }
+
+/* TD background colors when value is set */
+.mam-td-I   { background:rgba(255,107,107,.15) !important; }
+.mam-td-E   { background:rgba(255,224,102,.18) !important; }
+.mam-td-D   { background:rgba(107,163,255,.15) !important; }
+.mam-td-IE  { background:rgba(255,169,77,.15) !important; }
+.mam-td-ID  { background:rgba(177,151,252,.15) !important; }
+.mam-td-ED  { background:rgba(81,207,102,.15) !important; }
+.mam-td-IED { background:rgba(160,82,45,.12) !important; }
+.mam-td-M   { background:rgba(116,192,252,.15) !important; }
+.mam-td-IP  { background:rgba(255,146,43,.15) !important; }
+.mam-td-IM  { background:rgba(92,124,250,.15) !important; }
+.mam-td-PM  { background:rgba(169,227,75,.18) !important; }
+.mam-td-IPM { background:rgba(139,115,85,.12) !important; }
 .mam-slo-select:disabled {
 	opacity: .5;
 	cursor: not-allowed;
@@ -2279,6 +2294,47 @@ body.af-system-admin #ntComViewModal .modal-body {
 @keyframes mam-slo-pulse {
 	0%, 100% { opacity: 1; }
 	50%      { opacity: .45; }
+}
+
+/* ── MAM Color Legend ── */
+.mam-color-legend {
+	background: #f8f9fb;
+	border: 1px solid #e5e7eb;
+	border-radius: 10px;
+	padding: 14px 20px;
+	margin: 0 15px;
+}
+.mam-legend-title {
+	font-size: 13px;
+	font-weight: 600;
+	color: #6b7280;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+.mam-legend-title i { margin-right: 6px; }
+.mam-legend-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 24px;
+}
+.mam-legend-item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	min-width: 50px;
+}
+.mam-legend-label {
+	font-size: 12px;
+	font-weight: 700;
+	color: #374151;
+	min-width: 28px;
+}
+.mam-legend-swatch {
+	display: inline-block;
+	width: 22px;
+	height: 16px;
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,.08);
 }
 
 /* ── MAM Modal SLO Dropdown ── */
@@ -2295,12 +2351,7 @@ body.af-system-admin #ntComViewModal .modal-body {
 	border-color: #6366f1;
 	box-shadow: 0 0 0 2px rgba(99,102,241,.15);
 }
-.mam-modal-slo-select.has-value {
-	background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-	color: #fff;
-	border-color: #16a34a;
-}
-.mam-modal-slo-select.has-value option {
+.mam-modal-slo-select[class*="mam-clr-"] option {
 	background: #fff;
 	color: #374151;
 }

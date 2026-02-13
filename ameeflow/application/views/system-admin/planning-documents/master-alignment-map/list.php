@@ -217,6 +217,25 @@ $(function(){
             </div>
         </div>
        
+        <!-- SLO Color Legend -->
+        <div class="mam-color-legend mt-3">
+            <div class="mam-legend-title"><i class="fa fa-paint-brush"></i> Data legend for % of courses and SLO approaches:</div>
+            <div class="mam-legend-grid">
+                <div class="mam-legend-item"><span class="mam-legend-label">I</span><span class="mam-legend-swatch mam-clr-I"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">E</span><span class="mam-legend-swatch mam-clr-E"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">D</span><span class="mam-legend-swatch mam-clr-D"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IE</span><span class="mam-legend-swatch mam-clr-IE"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">ID</span><span class="mam-legend-swatch mam-clr-ID"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">ED</span><span class="mam-legend-swatch mam-clr-ED"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IED</span><span class="mam-legend-swatch mam-clr-IED"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">M</span><span class="mam-legend-swatch mam-clr-M"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IP</span><span class="mam-legend-swatch mam-clr-IP"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IM</span><span class="mam-legend-swatch mam-clr-IM"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">PM</span><span class="mam-legend-swatch mam-clr-PM"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IPM</span><span class="mam-legend-swatch mam-clr-IPM"></span></div>
+            </div>
+        </div>
+
         <div class="mam-note-info mt-3">
             <i class="fa fa-info-circle"></i>
             If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>.
@@ -281,8 +300,8 @@ $(function(){
                             <td> <input type="checkbox" class="case" id="courseIds[]" name="courseIds[]" value="<?php echo $row['mamCourseId'];?>" /> </td>
                             <td nowrap class="mam-course-name"> <?php echo $row['courseSubject'].'-'.$row['courseNBR']; ?> </td>
                             <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){ $curVal = isset($courseISLOMap[$is]) ? $courseISLOMap[$is] : ''; ?>
-                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?>">
-                                <select class="mam-slo-select<?php if($curVal!='') echo ' has-value';?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="ISLO" data-slo-number="<?php echo $is;?>">
+                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>">
+                                <select class="mam-slo-select<?php if($curVal!='' && $curVal!='Yes') echo ' mam-clr-'.$curVal;?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="ISLO" data-slo-number="<?php echo $is;?>">
                                     <?php foreach($mamSloOptions as $opt){ ?>
                                     <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
                                     <?php } ?>
@@ -290,8 +309,8 @@ $(function(){
                             </td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){ $curVal = isset($courseGISLOMap[$gis]) ? $courseGISLOMap[$gis] : ''; ?>
-                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?>">
-                                <select class="mam-slo-select<?php if($curVal!='') echo ' has-value';?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GISLO" data-slo-number="<?php echo $gis;?>">
+                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>">
+                                <select class="mam-slo-select<?php if($curVal!='' && $curVal!='Yes') echo ' mam-clr-'.$curVal;?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GISLO" data-slo-number="<?php echo $gis;?>">
                                     <?php foreach($mamSloOptions as $opt){ ?>
                                     <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
                                     <?php } ?>
@@ -299,8 +318,8 @@ $(function(){
                             </td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){ $curVal = isset($coursePSLOMap[$ps]) ? $coursePSLOMap[$ps] : ''; ?>
-                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?>">
-                                <select class="mam-slo-select<?php if($curVal!='') echo ' has-value';?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="PSLO" data-slo-number="<?php echo $ps;?>">
+                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>">
+                                <select class="mam-slo-select<?php if($curVal!='' && $curVal!='Yes') echo ' mam-clr-'.$curVal;?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="PSLO" data-slo-number="<?php echo $ps;?>">
                                     <?php foreach($mamSloOptions as $opt){ ?>
                                     <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
                                     <?php } ?>
@@ -308,8 +327,8 @@ $(function(){
                             </td>
                             <?php } } ?>
                             <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){ $curVal = isset($courseGPSLOMap[$gps]) ? $courseGPSLOMap[$gps] : ''; ?>
-                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?>">
-                                <select class="mam-slo-select<?php if($curVal!='') echo ' has-value';?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GPSLO" data-slo-number="<?php echo $gps;?>">
+                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>">
+                                <select class="mam-slo-select<?php if($curVal!='' && $curVal!='Yes') echo ' mam-clr-'.$curVal;?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GPSLO" data-slo-number="<?php echo $gps;?>">
                                     <?php foreach($mamSloOptions as $opt){ ?>
                                     <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
                                     <?php } ?>
@@ -431,6 +450,22 @@ function manageCourseMAM(mamCourseId,seloversigntId){
         }
     });	    
 }
+/* ── SLO Color helpers ── */
+var mamSloColors = ['I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM'];
+function mamApplyColor($sel, val){
+    // Remove all color classes from select and its parent td
+    var $td = $sel.closest('td');
+    for(var c=0;c<mamSloColors.length;c++){
+        $sel.removeClass('mam-clr-'+mamSloColors[c]);
+        $td.removeClass('mam-td-'+mamSloColors[c]);
+    }
+    $sel.removeClass('has-value');
+    if(val && val !== '' && val !== 'Yes'){
+        $sel.addClass('mam-clr-'+val);
+        $td.addClass('mam-td-'+val);
+    }
+}
+
 /* ── SLO Dropdown (inline value selector) ── */
 $(document).on('change', '.mam-slo-select', function(){
     var $sel      = $(this);
@@ -443,13 +478,9 @@ $(document).on('change', '.mam-slo-select', function(){
     // Store previous value for revert
     $sel.data('prev-value', prevValue);
 
-    // Optimistic UI
+    // Optimistic UI – apply color immediately
     $sel.prop('disabled', true).addClass('mam-slo-saving');
-    if(value !== ''){
-        $sel.addClass('has-value');
-    } else {
-        $sel.removeClass('has-value');
-    }
+    mamApplyColor($sel, value);
 
     $.ajax({
         type: 'POST',
@@ -458,18 +489,16 @@ $(document).on('change', '.mam-slo-select', function(){
         dataType: 'json',
         success: function(res){
             if(res.status === 'success'){
-                // Update stored prev value
                 $sel.data('prev-value', value);
             } else {
-                // Revert on failure
                 $sel.val(prevValue);
-                if(prevValue !== ''){ $sel.addClass('has-value'); } else { $sel.removeClass('has-value'); }
+                mamApplyColor($sel, prevValue);
                 alert(res.message || 'Save failed');
             }
         },
         error: function(){
             $sel.val(prevValue);
-            if(prevValue !== ''){ $sel.addClass('has-value'); } else { $sel.removeClass('has-value'); }
+            mamApplyColor($sel, prevValue);
             alert('Server error – could not save');
         },
         complete: function(){

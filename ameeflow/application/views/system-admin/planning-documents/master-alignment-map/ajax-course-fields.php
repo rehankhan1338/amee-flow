@@ -69,7 +69,7 @@ $courseGPSLOMap = _parseSLOModal(isset($courseDetails['courseGPSLO']) ? $courseD
         <?php for($is=1;$is<=$mamDetails['ISLOCnt'];$is++){ $cv = isset($courseISLOMap[$is]) ? $courseISLOMap[$is] : ''; ?>
         <div class="af-toggle-item">
             <span class="af-toggle-label">ISLO <?php echo $is;?></span>
-            <select name="sloISLO[<?php echo $is;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='') echo ' has-value';?>">
+            <select name="sloISLO[<?php echo $is;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='' && $cv!='Yes') echo ' mam-clr-'.$cv;?>">
                 <?php foreach($modalSloOptions as $opt){ ?>
                 <option value="<?php echo $opt;?>"<?php if($cv==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '– None –' : $opt;?></option>
                 <?php } ?>
@@ -87,7 +87,7 @@ $courseGPSLOMap = _parseSLOModal(isset($courseDetails['courseGPSLO']) ? $courseD
         <?php for($gis=1;$gis<=$mamDetails['GISLOCnt'];$gis++){ $cv = isset($courseGISLOMap[$gis]) ? $courseGISLOMap[$gis] : ''; ?>
         <div class="af-toggle-item">
             <span class="af-toggle-label">GISLO <?php echo $gis;?></span>
-            <select name="sloGISLO[<?php echo $gis;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='') echo ' has-value';?>">
+            <select name="sloGISLO[<?php echo $gis;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='' && $cv!='Yes') echo ' mam-clr-'.$cv;?>">
                 <?php foreach($modalSloOptions as $opt){ ?>
                 <option value="<?php echo $opt;?>"<?php if($cv==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '– None –' : $opt;?></option>
                 <?php } ?>
@@ -105,7 +105,7 @@ $courseGPSLOMap = _parseSLOModal(isset($courseDetails['courseGPSLO']) ? $courseD
         <?php for($ps=1;$ps<=$mamDetails['PSLOCnt'];$ps++){ $cv = isset($coursePSLOMap[$ps]) ? $coursePSLOMap[$ps] : ''; ?>
         <div class="af-toggle-item">
             <span class="af-toggle-label">PSLO <?php echo $ps;?></span>
-            <select name="sloPSLO[<?php echo $ps;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='') echo ' has-value';?>">
+            <select name="sloPSLO[<?php echo $ps;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='' && $cv!='Yes') echo ' mam-clr-'.$cv;?>">
                 <?php foreach($modalSloOptions as $opt){ ?>
                 <option value="<?php echo $opt;?>"<?php if($cv==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '– None –' : $opt;?></option>
                 <?php } ?>
@@ -123,7 +123,7 @@ $courseGPSLOMap = _parseSLOModal(isset($courseDetails['courseGPSLO']) ? $courseD
         <?php for($gps=1;$gps<=$mamDetails['GPSLOCnt'];$gps++){ $cv = isset($courseGPSLOMap[$gps]) ? $courseGPSLOMap[$gps] : ''; ?>
         <div class="af-toggle-item">
             <span class="af-toggle-label">GPSLO <?php echo $gps;?></span>
-            <select name="sloGPSLO[<?php echo $gps;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='') echo ' has-value';?>">
+            <select name="sloGPSLO[<?php echo $gps;?>]" class="form-select form-select-sm mam-modal-slo-select<?php if($cv!='' && $cv!='Yes') echo ' mam-clr-'.$cv;?>">
                 <?php foreach($modalSloOptions as $opt){ ?>
                 <option value="<?php echo $opt;?>"<?php if($cv==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '– None –' : $opt;?></option>
                 <?php } ?>
@@ -135,8 +135,11 @@ $courseGPSLOMap = _parseSLOModal(isset($courseDetails['courseGPSLO']) ? $courseD
 <?php } ?>
 
 <script>
-// Toggle green styling on modal dropdowns when value changes
+// Apply SLO color on modal dropdowns when value changes
+var _mamModalClrs = ['I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM'];
 $(document).off('change','.mam-modal-slo-select').on('change','.mam-modal-slo-select',function(){
-    if($(this).val()!==''){$(this).addClass('has-value');}else{$(this).removeClass('has-value');}
+    var $s = $(this), v = $s.val();
+    for(var i=0;i<_mamModalClrs.length;i++){ $s.removeClass('mam-clr-'+_mamModalClrs[i]); }
+    if(v && v !== '' && v !== 'Yes'){ $s.addClass('mam-clr-'+v); }
 });
 </script>
