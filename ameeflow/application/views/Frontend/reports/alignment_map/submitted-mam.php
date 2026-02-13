@@ -34,17 +34,15 @@
 
 	/* ── Top Bar ── */
 	.share-topbar {
-		background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+		background: linear-gradient(45deg, #485b79 25%, #e18125 100%);
 		color: #fff;
 		padding: 0;
 		position: sticky;
 		top: 0;
 		z-index: 1050;
-		box-shadow: 0 2px 16px rgba(0,0,0,.15);
+		box-shadow: 0 4px 24px rgba(0,0,0,.18);
 	}
 	.share-topbar-inner {
-		max-width: 1400px;
-		margin: 0 auto;
 		padding: 14px 28px;
 		display: flex;
 		align-items: center;
@@ -155,8 +153,7 @@
 
 	/* ── Feedback submitted banner ── */
 	.share-feedback-banner {
-		max-width: 1400px;
-		margin: 20px auto 0;
+		margin: 20px 0 0;
 		padding: 0 28px;
 	}
 	.share-feedback-banner-inner {
@@ -189,8 +186,6 @@
 
 	/* ── Main Content Area ── */
 	.share-main {
-		max-width: 1400px;
-		margin: 0 auto;
 		padding: 24px 28px 60px;
 	}
 
@@ -277,7 +272,7 @@
 		border-bottom: 1px solid #e2e8f0;
 	}
 	.share-modal .modal-header.modal-header-feedback {
-		background: linear-gradient(135deg, #1e293b, #334155);
+		background: linear-gradient(45deg, #485b79 25%, #e18125 100%);
 		color: #fff;
 	}
 	.share-modal .modal-header.modal-header-approve {
