@@ -275,17 +275,37 @@ $(function(){
                         <tr>
                             <td> <input type="checkbox" class="case" id="courseIds[]" name="courseIds[]" value="<?php echo $row['mamCourseId'];?>" /> </td>
                             <td nowrap class="mam-course-name"> <?php echo $row['courseSubject'].'-'.$row['courseNBR']; ?> </td>
-                            <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){?>
-                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($is,$courseISLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){ $isOn = in_array($is,$courseISLOArr); ?>
+                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?>">
+                                <label class="mam-toggle" title="Toggle ISLO <?php echo $is;?>">
+                                    <input type="checkbox" class="mam-toggle-input" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="ISLO" data-slo-number="<?php echo $is;?>" <?php if($isOn) echo 'checked';?>>
+                                    <span class="mam-toggle-slider"></span>
+                                </label>
+                            </td>
                             <?php } } ?>
-                            <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){?>
-                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($gis,$courseGISLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){ $gisOn = in_array($gis,$courseGISLOArr); ?>
+                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?>">
+                                <label class="mam-toggle" title="Toggle GISLO <?php echo $gis;?>">
+                                    <input type="checkbox" class="mam-toggle-input" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GISLO" data-slo-number="<?php echo $gis;?>" <?php if($gisOn) echo 'checked';?>>
+                                    <span class="mam-toggle-slider"></span>
+                                </label>
+                            </td>
                             <?php } } ?>
-                            <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){?>
-                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($ps,$coursePSLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){ $psOn = in_array($ps,$coursePSLOArr); ?>
+                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?>">
+                                <label class="mam-toggle" title="Toggle PSLO <?php echo $ps;?>">
+                                    <input type="checkbox" class="mam-toggle-input" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="PSLO" data-slo-number="<?php echo $ps;?>" <?php if($psOn) echo 'checked';?>>
+                                    <span class="mam-toggle-slider"></span>
+                                </label>
+                            </td>
                             <?php } } ?>
-                            <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){?>
-                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($gps,$courseGPSLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){ $gpsOn = in_array($gps,$courseGPSLOArr); ?>
+                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?>">
+                                <label class="mam-toggle" title="Toggle GPSLO <?php echo $gps;?>">
+                                    <input type="checkbox" class="mam-toggle-input" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GPSLO" data-slo-number="<?php echo $gps;?>" <?php if($gpsOn) echo 'checked';?>>
+                                    <span class="mam-toggle-slider"></span>
+                                </label>
+                            </td>
                             <?php } } ?>
                             <td nowrap> 
                                 <a class="mam-action-btn mam-btn-edit" id="editBtn<?php echo $row['mamCourseId'];?>" onclick="return manageCourseMAM('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');"> <i class="icon-sm" data-feather="edit"></i> </a>
@@ -402,6 +422,42 @@ function manageCourseMAM(mamCourseId,seloversigntId){
         }
     });	    
 }
+/* ── SLO Toggle (inline Yes/No) ── */
+$(document).on('change', '.mam-toggle-input', function(){
+    var $cb       = $(this);
+    var courseId  = $cb.data('course-id');
+    var sloType   = $cb.data('slo-type');
+    var sloNumber = $cb.data('slo-number');
+    var isChecked = $cb.is(':checked');
+    var action    = isChecked ? 'add' : 'remove';
+
+    // Optimistic UI – disable while saving
+    $cb.prop('disabled', true);
+    $cb.closest('.mam-toggle').addClass('mam-toggle-saving');
+
+    $.ajax({
+        type: 'POST',
+        url: '<?php echo base_url().$this->config->item('system_directory_name').'master_alignment_map/toggleSLO';?>',
+        data: { mamCourseId: courseId, sloType: sloType, sloNumber: sloNumber, action: action },
+        dataType: 'json',
+        success: function(res){
+            if(res.status !== 'success'){
+                // Revert on failure
+                $cb.prop('checked', !isChecked);
+                alert(res.message || 'Toggle failed');
+            }
+        },
+        error: function(){
+            $cb.prop('checked', !isChecked);
+            alert('Server error – could not save toggle');
+        },
+        complete: function(){
+            $cb.prop('disabled', false);
+            $cb.closest('.mam-toggle').removeClass('mam-toggle-saving');
+        }
+    });
+});
+
 $(document).ready(function () {
 	$('#popCMAMFrm').validate({
 		ignore: [], 

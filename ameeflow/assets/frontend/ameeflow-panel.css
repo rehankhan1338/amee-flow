@@ -2223,6 +2223,60 @@ body.af-system-admin #ntComViewModal .modal-body {
 	user-select: none;
 }
 
+/* ── MAM Inline Toggle Switch ── */
+.mam-toggle {
+	position: relative;
+	display: inline-block;
+	width: 36px;
+	height: 20px;
+	cursor: pointer;
+	margin: 0;
+	vertical-align: middle;
+}
+.mam-toggle .mam-toggle-input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+.mam-toggle .mam-toggle-slider {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: #e5e7eb;
+	border-radius: 20px;
+	transition: background .25s ease, box-shadow .25s ease;
+}
+.mam-toggle .mam-toggle-slider::before {
+	content: "";
+	position: absolute;
+	left: 3px;
+	top: 3px;
+	width: 14px;
+	height: 14px;
+	background: #fff;
+	border-radius: 50%;
+	transition: transform .25s ease;
+	box-shadow: 0 1px 3px rgba(0,0,0,.18);
+}
+.mam-toggle .mam-toggle-input:checked + .mam-toggle-slider {
+	background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+	box-shadow: 0 2px 6px rgba(34,197,94,.28);
+}
+.mam-toggle .mam-toggle-input:checked + .mam-toggle-slider::before {
+	transform: translateX(16px);
+}
+.mam-toggle .mam-toggle-input:disabled + .mam-toggle-slider {
+	opacity: .5;
+	cursor: not-allowed;
+}
+.mam-toggle.mam-toggle-saving .mam-toggle-slider {
+	animation: mam-toggle-pulse .8s infinite ease-in-out;
+}
+@keyframes mam-toggle-pulse {
+	0%, 100% { opacity: 1; }
+	50%      { opacity: .5; }
+}
+
 /* --- Zebra striping for data rows --- */
 #mam-table-wrap table.dataTable tbody tr:nth-child(even) td {
 	background-color: #fafbfc;

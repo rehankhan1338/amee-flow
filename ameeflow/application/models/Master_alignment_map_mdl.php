@@ -107,6 +107,58 @@ class Master_alignment_map_mdl extends CI_Model {
 			return 'error||Oops, please check the Oversight Units.';
 		}
 	}
+	public function toggleCourseSLO($mamCourseId, $sloType, $sloNumber, $action){
+		// Map sloType to the correct DB column
+		$columnMap = array(
+			'ISLO'  => 'courseISLO',
+			'GISLO' => 'courseGISLO',
+			'PSLO'  => 'coursePSLO',
+			'GPSLO' => 'courseGPSLO'
+		);
+		if(!isset($columnMap[$sloType])){
+			return array('status'=>'error','message'=>'Invalid SLO type');
+		}
+		$column = $columnMap[$sloType];
+
+		// Fetch current record
+		$this->db->where('mamCourseId', $mamCourseId);
+		$query = $this->db->get('master_alignment_maps_courses');
+		$row = $query->row_array();
+		if(!$row){
+			return array('status'=>'error','message'=>'Course not found');
+		}
+
+		// Parse current values
+		$currentValues = array();
+		if(isset($row[$column]) && $row[$column] != ''){
+			$currentValues = explode(',', $row[$column]);
+			$currentValues = array_map('trim', $currentValues);
+		}
+
+		$sloNumber = strval($sloNumber);
+
+		if($action === 'add'){
+			if(!in_array($sloNumber, $currentValues)){
+				$currentValues[] = $sloNumber;
+			}
+			$newState = 1;
+		} else {
+			$currentValues = array_diff($currentValues, array($sloNumber));
+			$newState = 0;
+		}
+
+		// Sort numerically and re-implode
+		$currentValues = array_filter($currentValues, function($v){ return $v !== ''; });
+		sort($currentValues, SORT_NUMERIC);
+		$newValue = implode(',', $currentValues);
+
+		// Update DB
+		$this->db->where('mamCourseId', $mamCourseId);
+		$this->db->update('master_alignment_maps_courses', array($column => $newValue));
+
+		return array('status'=>'success','newState'=>$newState,'newValue'=>$newValue);
+	}
+
 	public function uploadMasterAlignmentMap($path){
 		$uniAdminId = trim($this->input->post('mauniAdminId'));
 		$universityId = trim($this->input->post('mauniversityId'));

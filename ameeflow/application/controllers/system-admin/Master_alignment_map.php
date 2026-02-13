@@ -252,6 +252,20 @@ class Master_alignment_map extends CI_Controller {
         }
         
 	}
+    public function toggleSLO(){
+        $mamCourseId = $this->input->post('mamCourseId');
+        $sloType     = $this->input->post('sloType');   // ISLO, GISLO, PSLO, GPSLO
+        $sloNumber   = $this->input->post('sloNumber');  // e.g. 1,2,3...
+        $action      = $this->input->post('action');     // add or remove
+
+        if(!$mamCourseId || !$sloType || !$sloNumber || !$action){
+            echo json_encode(array('status'=>'error','message'=>'Missing parameters'));
+            return;
+        }
+        $result = $this->Master_alignment_map_mdl->toggleCourseSLO($mamCourseId, $sloType, $sloNumber, $action);
+        echo json_encode($result);
+    }
+
     public function download(){
         ini_set('memory_limit', '512M');
         set_time_limit(300);

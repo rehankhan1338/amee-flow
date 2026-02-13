@@ -21,6 +21,7 @@ $systemAdminDirName = str_replace('/','',$this->config->item('system_directory_n
 $route["$systemAdminDirName/profile"] = "$systemAdminDirName/home/profile";
 $route["$systemAdminDirName/updateProfile"] = "$systemAdminDirName/home/updateProfile";
 $route["$systemAdminDirName/master-alignment-map"] = "$systemAdminDirName/master_alignment_map";
+$route["$systemAdminDirName/master_alignment_map/toggleSLO"] = "$systemAdminDirName/master_alignment_map/toggleSLO";
 $route["$systemAdminDirName/course-enrollment"] = "$systemAdminDirName/course_enrollment";
 
 ///////////////// Backend Controller //////////////////////
