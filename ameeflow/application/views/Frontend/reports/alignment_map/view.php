@@ -137,6 +137,7 @@ $(function(){
 <section class="content"> 
     <div class="box <?php if(isset($sharePermission) && $sharePermission==0){ echo 'mt-4';}?>"> 
         
+        <?php if(!isset($sharePermission) || $sharePermission==1){ ?>
         <div class="box-header no-border">        
             <h3 class="box-title">Oversight Units</h3>
         </div>
@@ -153,54 +154,33 @@ $(function(){
                             }
                             echo htmlspecialchars($mamLabel);
                         ?></span>
-                        <?php if(!isset($sharePermission) || $sharePermission==1){ ?>
                         <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
-                        <?php } else { ?>
-                        <i class="fa fa-lock" style="font-size:.6rem; opacity:.5;"></i>
-                        <?php } ?>
                     </span>
-                    <?php if(!isset($sharePermission) || $sharePermission==1){ ?>
                     <div class="af-select-filter-dropdown" id="afOversightDropdown">
                         <a href="#" class="af-select-filter-option" data-value="">Select...</a>
                     <?php foreach($oversightsDataArr as $osd){?>
                         <a href="#" class="af-select-filter-option <?php if($seloversigntId==$osd['oversigntId']){?> selected <?php }?>" data-value="<?php echo $osd['oversigntId'];?>"><?php echo htmlspecialchars($osd['unitName']);?></a>
                     <?php } ?>
                     </div>
-                    <?php } ?>
                 </div>
                 <!-- Department Filter -->
                 <div class="af-select-filter-wrap ms-3" id="afDepartmentWrap">
                     <span class="af-select-filter-btn" id="afDepartmentBtn" role="button">
                         <i class="fa fa-filter"></i>
-                        <span class="af-select-filter-label"><?php 
-                            if(isset($shareDepartment) && $shareDepartment!='' && $shareDepartment!='all'){
-                                echo htmlspecialchars($shareDepartment);
-                            } else {
-                                echo 'All Departments';
-                            }
-                        ?></span>
-                        <?php if(!isset($sharePermission) || $sharePermission==1){ ?>
+                        <span class="af-select-filter-label">All Departments</span>
                         <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
-                        <?php } else if(isset($shareDepartment) && $shareDepartment!='' && $shareDepartment!='all'){ ?>
-                        <i class="fa fa-lock" style="font-size:.6rem; opacity:.5;"></i>
-                        <?php } else { ?>
-                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
-                        <?php } ?>
                     </span>
-                    <?php if(!isset($shareDepartment) || $shareDepartment=='' || $shareDepartment=='all'){ ?>
                     <div class="af-select-filter-dropdown" id="afDepartmentDropdown">
                         <a href="#" class="af-select-filter-option selected" data-value="">All Departments</a>
                     </div>
-                    <?php } ?>
                 </div>
             </div>
             <div class="af-roles-toolbar-right" style="flex-wrap:wrap; gap:6px;">
-                <?php if(isset($sharePermission) && $sharePermission==1){?>
                 <button id="feedbackBtn" type="button" onclick="return viewFeedback('<?php echo $mamDetailsArr['mamId'];?>','<?php echo $sessionDetailsArr['userId'];?>');" class='btn btn-warning btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-comments"></i> Feedback</button>
                 <button id="shareReportBtn" type="button" onclick="return shareReport();" class='btn btn-primary btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-share-alt"></i> Share</button>
-                <?php } ?>
             </div>
         </div>
+        <?php } ?>
 
         <!-- SLO Color Legend -->
         <div class="mam-color-legend mt-3">
