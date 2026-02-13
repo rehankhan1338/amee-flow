@@ -2101,6 +2101,87 @@ body.af-system-admin #ntComViewModal .modal-body {
 
 
 /* ============================================================
+   DataTables – Clean Sort Indicators (fix duplicate icons)
+   ============================================================ */
+
+/* Reset ALL default sort pseudo-elements from both CSS files */
+body.af-system-admin table.dataTable thead .sorting::before,
+body.af-system-admin table.dataTable thead .sorting::after,
+body.af-system-admin table.dataTable thead .sorting_asc::before,
+body.af-system-admin table.dataTable thead .sorting_asc::after,
+body.af-system-admin table.dataTable thead .sorting_desc::before,
+body.af-system-admin table.dataTable thead .sorting_desc::after,
+body.af-system-admin table.dataTable thead .sorting_asc_disabled::before,
+body.af-system-admin table.dataTable thead .sorting_asc_disabled::after,
+body.af-system-admin table.dataTable thead .sorting_desc_disabled::before,
+body.af-system-admin table.dataTable thead .sorting_desc_disabled::after {
+	display: none !important;
+	content: '' !important;
+	background-image: none !important;
+}
+
+/* Sortable column header – add right padding for icon space */
+body.af-system-admin table.dataTable thead th.sorting,
+body.af-system-admin table.dataTable thead th.sorting_asc,
+body.af-system-admin table.dataTable thead th.sorting_desc {
+	position: relative;
+	padding-right: 28px !important;
+	cursor: pointer;
+	background-image: none !important;
+}
+
+/* Single clean sort icon via ::after */
+body.af-system-admin table.dataTable thead th.sorting::after {
+	display: flex !important;
+	content: '↕' !important;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 13px;
+	color: #94a3b8;
+	opacity: .45;
+	font-style: normal;
+	line-height: 1;
+	transition: opacity .2s, color .2s;
+}
+body.af-system-admin table.dataTable thead th.sorting:hover::after {
+	opacity: .7;
+	color: #64748b;
+}
+
+/* Ascending – up arrow */
+body.af-system-admin table.dataTable thead th.sorting_asc::after {
+	display: flex !important;
+	content: '↑' !important;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 14px;
+	color: #3b82f6;
+	opacity: .85;
+	font-style: normal;
+	line-height: 1;
+}
+
+/* Descending – down arrow */
+body.af-system-admin table.dataTable thead th.sorting_desc::after {
+	display: flex !important;
+	content: '↓' !important;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 14px;
+	color: #3b82f6;
+	opacity: .85;
+	font-style: normal;
+	line-height: 1;
+}
+
+
+/* ============================================================
    MAM Table – Professional Alignment-Map Layout
    ============================================================ */
 
