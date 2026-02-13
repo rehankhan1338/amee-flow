@@ -2271,19 +2271,25 @@ body.af-system-admin #ntComViewModal .modal-body {
 	color: #374151;
 }
 
-/* TD background colors when value is set */
-.mam-td-I   { background:rgba(255,107,107,.15) !important; }
-.mam-td-E   { background:rgba(255,224,102,.18) !important; }
-.mam-td-D   { background:rgba(107,163,255,.15) !important; }
-.mam-td-IE  { background:rgba(255,169,77,.15) !important; }
-.mam-td-ID  { background:rgba(177,151,252,.15) !important; }
-.mam-td-ED  { background:rgba(81,207,102,.15) !important; }
-.mam-td-IED { background:rgba(160,82,45,.12) !important; }
-.mam-td-M   { background:rgba(116,192,252,.15) !important; }
-.mam-td-IP  { background:rgba(255,146,43,.15) !important; }
-.mam-td-IM  { background:rgba(92,124,250,.15) !important; }
-.mam-td-PM  { background:rgba(169,227,75,.18) !important; }
-.mam-td-IPM { background:rgba(139,115,85,.12) !important; }
+/* TD background colors when value is set (full opacity) */
+.mam-td-I   { background:#FF6B6B !important; }
+.mam-td-E   { background:#FFE066 !important; }
+.mam-td-D   { background:#6BA3FF !important; }
+.mam-td-IE  { background:#FFA94D !important; }
+.mam-td-ID  { background:#B197FC !important; }
+.mam-td-ED  { background:#51CF66 !important; }
+.mam-td-IED { background:#A0522D !important; }
+.mam-td-M   { background:#74C0FC !important; }
+.mam-td-IP  { background:#FF922B !important; }
+.mam-td-IM  { background:#5C7CFA !important; }
+.mam-td-PM  { background:#A9E34B !important; }
+.mam-td-IPM { background:#8B7355 !important; }
+
+/* White border on select inside colored td */
+td[class*="mam-td-"] .mam-slo-select {
+	border-color: #fff !important;
+	box-shadow: 0 0 0 1px rgba(255,255,255,.5);
+}
 .mam-slo-select:disabled {
 	opacity: .5;
 	cursor: not-allowed;
