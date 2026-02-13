@@ -52,18 +52,43 @@ function getCourseEnrollData(val){
 <section class="content">
     <div class="box">          
         <div class="box-header no-border">
-            <h3 class="box-title" style="font-size:15px; font-weight:500">Term - Year
-                <select class="form-control mt-2" onchange="return getCourseEnrollData(this.value);">
-                    <option value="">Select...</option>
-                    <?php foreach($courseEnrollmentDataArr as $course){?>
-                        <option value="<?php echo $course['ceId'];?>" <?php if($selceId==$course['ceId']){?> selected<?php } ?>> <?php echo $this->config->item('terms_assessment_array_config')[$course['termId']]['name'].' - '.$course['year']; ?> </option>
-                    <?php } ?>
-                </select>
-            </h3>
+            <h3 class="box-title" style="font-size:15px; font-weight:500">Recognition Flow</h3>
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="rfSearchInput" placeholder="Search faculty..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="rfClearSearch" type="button"><i class="fa fa-times"></i></button>
+                </div>
+                <!-- Term/Year Selector -->
+                <div class="af-select-filter-wrap" id="afRfTermWrap">
+                    <span class="af-select-filter-btn" id="afRfTermBtn" role="button">
+                        <i class="fa fa-calendar"></i>
+                        <span class="af-select-filter-label"><?php 
+                            $rfLabel = 'Select Term-Year';
+                            foreach($courseEnrollmentDataArr as $course){
+                                if($selceId==$course['ceId']){
+                                    $rfLabel = $this->config->item('terms_assessment_array_config')[$course['termId']]['name'].' - '.$course['year'];
+                                }
+                            }
+                            echo $rfLabel;
+                        ?></span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afRfTermDropdown">
+                        <a href="#" class="af-select-filter-option" data-value="">Select...</a>
+                        <?php foreach($courseEnrollmentDataArr as $course){?>
+                        <a href="#" class="af-select-filter-option <?php if($selceId==$course['ceId']){?> selected<?php } ?>" data-value="<?php echo $course['ceId'];?>"><?php echo $this->config->item('terms_assessment_array_config')[$course['termId']]['name'].' - '.$course['year']; ?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
             <?php if($pageCallFrom==1){?>
-            <div class="box-tools pull-right">                
-                <button id="resendCertBtn" type="button" onclick="return resendCertificate('<?php echo $selceId;?>');" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-warning'> Resend Certificate </button>                
-                <button type="button" class="btn btn-primary" id="addCeBtn" onclick="return uploadNewTermFaculty();" style="padding:3px 15px; font-size:15px;">Upload Faculty </button>
+            <div class="af-roles-toolbar-right" style="flex-wrap:wrap; gap:6px;">
+                <button id="resendCertBtn" type="button" onclick="return resendCertificate('<?php echo $selceId;?>');" class='btn btn-warning btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-envelope"></i> Resend Certificate </button>
+                <button type="button" class="btn btn-primary btn-sm" id="addCeBtn" onclick="return uploadNewTermFaculty();" style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-upload"></i> Upload Faculty </button>
             </div>
             <?php } ?>
         </div>
@@ -118,4 +143,36 @@ function getCourseEnrollData(val){
     </div>
 </section>
 
+<script>
+$(function(){
+    /* Search */
+    $('#rfSearchInput').on('input', function(){
+        var v = $(this).val().toLowerCase();
+        if(v.length > 0){ $('#rfClearSearch').css('display','flex'); } else { $('#rfClearSearch').hide(); }
+        $('#table_recordtbl tbody tr').each(function(){
+            var rowText = $(this).text().toLowerCase();
+            $(this).toggle(v === '' || rowText.indexOf(v) > -1);
+        });
+    });
+    $('#rfClearSearch').on('click', function(){
+        $('#rfSearchInput').val('');
+        $(this).hide();
+        $('#table_recordtbl tbody tr').show();
+    });
+    /* Term dropdown */
+    $('#afRfTermBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afRfTermDropdown').toggleClass('show');
+    });
+    $('#afRfTermDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        if(val && val !== ''){ getCourseEnrollData(val); }
+        $('#afRfTermDropdown').removeClass('show');
+    });
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afRfTermWrap').length){ $('#afRfTermDropdown').removeClass('show'); }
+    });
+});
+</script>
 <?php include(APPPATH.'views/system-admin/planning-documents/course-enrollment/recognition-flow-model.php');?>

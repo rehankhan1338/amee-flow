@@ -1,42 +1,89 @@
 <section class="content">
     <div class="box">         
        
-        <div class="box-header no-border">	
-            <div class="row align-items-end w-100">	
-                <div class="col-md-3">
-                    <label class="form-label fw600 mb-2">Year</label>
-                    <select class="form-control modern-select" id="yr" name="yr" onchange="return getSPTerms(this.value,'<?php if(isset($_GET['termId']) && $_GET['termId']!=''){echo $_GET['termId'];}else{echo '0';}?>');">
-                        <option value="0">All Years</option>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <!-- Year Filter -->
+                <div class="af-select-filter-wrap" id="afYearFilterWrap">
+                    <span class="af-select-filter-btn" id="afYearFilterBtn" role="button">
+                        <i class="fa fa-calendar-o"></i>
+                        <span class="af-select-filter-label"><?php echo (isset($_GET['yr']) && $_GET['yr']!='0' && $_GET['yr']!='') ? $_GET['yr'] : 'All Years'; ?></span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afYearDropdown">
+                        <a href="#" class="af-select-filter-option <?php if(!isset($_GET['yr']) || $_GET['yr']=='0' || $_GET['yr']==''){?> selected <?php }?>" data-value="0">All Years</a>
                         <?php foreach($spYearArr as $yr){?>
-                        <option <?php if(isset($_GET['yr']) && $_GET['yr']==$yr['year']){?> selected <?php }?> value="<?php echo $yr['year'];?>"><?php echo $yr['year'];?></option>
+                        <a href="#" class="af-select-filter-option <?php if(isset($_GET['yr']) && $_GET['yr']==$yr['year']){?> selected <?php }?>" data-value="<?php echo $yr['year'];?>"><?php echo $yr['year'];?></a>
                         <?php } ?>
-                    </select>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <label class="form-label fw600 mb-2"><span id="termLoader">Term</span></label>
-                    <select class="form-control modern-select" id="termId" name="termId">
-                        <option value="0">All Terms</option>
+                <!-- Term Filter -->
+                <div class="af-select-filter-wrap" id="afTermFilterWrap">
+                    <span class="af-select-filter-btn" id="afTermFilterBtn" role="button">
+                        <i class="fa fa-bookmark"></i>
+                        <span class="af-select-filter-label" id="termFilterLabel"><?php 
+                            if(isset($_GET['termId']) && $_GET['termId']!='' && $_GET['termId']!='0'){
+                                foreach($termsOptions as $t){
+                                    if($t['termId']==$_GET['termId']){
+                                        echo $this->config->item('terms_assessment_array_config')[$t['termId']]['name'];
+                                    }
+                                }
+                            } else { echo 'All Terms'; }
+                        ?></span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afTermDropdown">
+                        <a href="#" class="af-select-filter-option <?php if(!isset($_GET['termId']) || $_GET['termId']=='0' || $_GET['termId']==''){?> selected <?php }?>" data-value="0">All Terms</a>
                         <?php if(count($termsOptions)>0){ foreach($termsOptions as $term){?>
-                        <option <?php if(isset($_GET['termId']) && $_GET['termId']==$term['termId']){?> selected <?php }?> value="<?php echo $term['termId'];?>"><?php echo $this->config->item('terms_assessment_array_config')[$term['termId']]['name'];?></option>
+                        <a href="#" class="af-select-filter-option <?php if(isset($_GET['termId']) && $_GET['termId']==$term['termId']){?> selected <?php }?>" data-value="<?php echo $term['termId'];?>"><?php echo $this->config->item('terms_assessment_array_config')[$term['termId']]['name'];?></a>
                         <?php } } ?>
-                    </select>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <label class="form-label fw600 mb-2">Approval Status</label>
-                    <select class="form-control modern-select" id="approvalStatus" name="approvalStatus">
-                        <option value="all" <?php if(!isset($_GET['approvalStatus']) || $_GET['approvalStatus']=='all'){?> selected <?php }?>>All Status</option>
-                        <option value="pending" <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='pending'){?> selected <?php }?>>Pending</option>
-                        <option value="approved" <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='approved'){?> selected <?php }?>>Approved</option>
-                        <option value="fully_approved" <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='fully_approved'){?> selected <?php }?>>Fully Approved</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <button type="button" id="goBtn" onclick="return applySpFilter();" class="btn btn-primary btn-modern">
-                        <i class="fa fa-filter"></i> Apply Filter
-                    </button>
+                <!-- Approval Status Filter -->
+                <div class="af-select-filter-wrap" id="afApprovalFilterWrap">
+                    <span class="af-select-filter-btn" id="afApprovalFilterBtn" role="button">
+                        <i class="fa fa-check-circle"></i>
+                        <span class="af-select-filter-label"><?php 
+                            if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']!='all'){
+                                echo ucwords(str_replace('_',' ',$_GET['approvalStatus']));
+                            } else { echo 'All Status'; }
+                        ?></span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afApprovalDropdown">
+                        <a href="#" class="af-select-filter-option <?php if(!isset($_GET['approvalStatus']) || $_GET['approvalStatus']=='all'){?> selected <?php }?>" data-value="all">All Status</a>
+                        <a href="#" class="af-select-filter-option <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='pending'){?> selected <?php }?>" data-value="pending">Pending</a>
+                        <a href="#" class="af-select-filter-option <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='approved'){?> selected <?php }?>" data-value="approved">Approved</a>
+                        <a href="#" class="af-select-filter-option <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='fully_approved'){?> selected <?php }?>" data-value="fully_approved">Fully Approved</a>
+                    </div>
                 </div>
             </div>
+            <div class="af-roles-toolbar-right">
+                <button type="button" id="goBtn" onclick="return applySpFilter();" class="btn btn-primary btn-sm" style="border-radius:22px; padding:6px 18px; font-size:13px;">
+                    <i class="fa fa-filter"></i> Apply Filter
+                </button>
+            </div>
         </div>
+        <!-- Hidden selects for filter logic -->
+        <select class="d-none" id="yr" name="yr">
+            <option value="0">All Years</option>
+            <?php foreach($spYearArr as $yr){?>
+            <option <?php if(isset($_GET['yr']) && $_GET['yr']==$yr['year']){?> selected <?php }?> value="<?php echo $yr['year'];?>"><?php echo $yr['year'];?></option>
+            <?php } ?>
+        </select>
+        <select class="d-none" id="termId" name="termId">
+            <option value="0">All Terms</option>
+            <?php if(count($termsOptions)>0){ foreach($termsOptions as $term){?>
+            <option <?php if(isset($_GET['termId']) && $_GET['termId']==$term['termId']){?> selected <?php }?> value="<?php echo $term['termId'];?>"><?php echo $this->config->item('terms_assessment_array_config')[$term['termId']]['name'];?></option>
+            <?php } } ?>
+        </select>
+        <select class="d-none" id="approvalStatus" name="approvalStatus">
+            <option value="all" <?php if(!isset($_GET['approvalStatus']) || $_GET['approvalStatus']=='all'){?> selected <?php }?>>All Status</option>
+            <option value="pending" <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='pending'){?> selected <?php }?>>Pending</option>
+            <option value="approved" <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='approved'){?> selected <?php }?>>Approved</option>
+            <option value="fully_approved" <?php if(isset($_GET['approvalStatus']) && $_GET['approvalStatus']=='fully_approved'){?> selected <?php }?>>Fully Approved</option>
+        </select>
         <div class="box-body row">					 
             <div class="col-xs-12 table-responsive">
                 <table class="table table-striped" id="table_recordtbl1">
@@ -168,26 +215,113 @@ function getSPTerms(year,selTerm){
 		$.ajax({
 			url: '<?php echo base_url().$this->config->item('system_directory_name');?>reports/ajaxGetSPTerms?uniAdminId='+uniAdminId+'&year='+year+'&selTerm='+selTerm,
 			beforeSend: function(){
-				$('#termLoader').html('<i class="fa fa-spinner fa-spin"></i> Loading...');
+				$('#termFilterLabel').html('<i class="fa fa-spinner fa-spin"></i>');
 				$('#termId').html('<option value="0">Loading...</option>');
 				$('#termId').prop('disabled', true);
 			},
 			success: function(result, status, xhr){
 				$('#termId').html(result);
 				$('#termId').prop('disabled', false);
-				$('#termLoader').html('Term');
+				$('#termFilterLabel').text('All Terms');
+				// Rebuild term dropdown options
+				var newOptions = '<a href="#" class="af-select-filter-option selected" data-value="0">All Terms</a>';
+				$('#termId option').each(function(){
+					if($(this).val() !== '0'){
+						newOptions += '<a href="#" class="af-select-filter-option" data-value="'+$(this).val()+'">'+$(this).text()+'</a>';
+					}
+				});
+				$('#afTermDropdown').html(newOptions);
+				bindTermDropdown();
 			},
 			error: function(){
 				$('#termId').html('<option value="0">All Terms</option>');
 				$('#termId').prop('disabled', false);
-				$('#termLoader').html('Term');
+				$('#termFilterLabel').text('All Terms');
 			}
 		});
 	} else {
 		$('#termId').html('<option value="0">All Terms</option>');
 		$('#termId').prop('disabled', false);
+		$('#afTermDropdown').html('<a href="#" class="af-select-filter-option selected" data-value="0">All Terms</a>');
+		$('#termFilterLabel').text('All Terms');
 	}
 }
+
+$(function(){
+    /* Year dropdown */
+    $('#afYearFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afTermDropdown, #afApprovalDropdown').removeClass('show');
+        $('#afYearDropdown').toggleClass('show');
+    });
+    $('#afYearDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        $('#yr').val(val);
+        $('#afYearDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+        $('#afYearFilterBtn .af-select-filter-label').text($(this).text());
+        if(val && val !== '0' && val !== 0){
+            $('#afYearFilterBtn').addClass('active');
+        } else {
+            $('#afYearFilterBtn').removeClass('active');
+        }
+        $('#afYearDropdown').removeClass('show');
+        getSPTerms(val, '0');
+    });
+
+    /* Term dropdown */
+    function bindTermDropdown(){
+        $('#afTermDropdown .af-select-filter-option').off('click').on('click', function(e){
+            e.preventDefault(); e.stopPropagation();
+            var val = $(this).data('value');
+            $('#termId').val(val);
+            $('#afTermDropdown .af-select-filter-option').removeClass('selected');
+            $(this).addClass('selected');
+            $('#termFilterLabel').text($(this).text());
+            if(val && val !== '0' && val !== 0){
+                $('#afTermFilterBtn').addClass('active');
+            } else {
+                $('#afTermFilterBtn').removeClass('active');
+            }
+            $('#afTermDropdown').removeClass('show');
+        });
+    }
+    bindTermDropdown();
+    $('#afTermFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afYearDropdown, #afApprovalDropdown').removeClass('show');
+        $('#afTermDropdown').toggleClass('show');
+    });
+
+    /* Approval dropdown */
+    $('#afApprovalFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afYearDropdown, #afTermDropdown').removeClass('show');
+        $('#afApprovalDropdown').toggleClass('show');
+    });
+    $('#afApprovalDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        $('#approvalStatus').val(val);
+        $('#afApprovalDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+        $('#afApprovalFilterBtn .af-select-filter-label').text($(this).text());
+        if(val && val !== 'all'){
+            $('#afApprovalFilterBtn').addClass('active');
+        } else {
+            $('#afApprovalFilterBtn').removeClass('active');
+        }
+        $('#afApprovalDropdown').removeClass('show');
+    });
+
+    /* Close on outside click */
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afYearFilterWrap').length){ $('#afYearDropdown').removeClass('show'); }
+        if(!$(e.target).closest('#afTermFilterWrap').length){ $('#afTermDropdown').removeClass('show'); }
+        if(!$(e.target).closest('#afApprovalFilterWrap').length){ $('#afApprovalDropdown').removeClass('show'); }
+    });
+});
 </script>
 <?php 
 include(APPPATH.'views/Frontend/reports/sampling_plan/view-feedback.php');

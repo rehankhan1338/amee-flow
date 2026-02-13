@@ -479,8 +479,8 @@ table.table.odTbl td { font-size: 16px; font-weight: 500; }
 .dueDateBrdr { border: 2px solid #e1304c; padding: 5px; }
 
 
-input[type="text"]{
-	padding: 9px 38px !important;
+body.af-system-admin input[type="text"]:not(.af-roles-search-input):not(.datepicker) {
+	padding: 9px 18px !important;
 }
 
 

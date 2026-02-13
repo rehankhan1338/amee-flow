@@ -19,7 +19,9 @@
 	<!-- Datepicker -->
 	<link href="<?php echo base_url();?>assets/backend/css/datepicker.css" rel="stylesheet" type="text/css" /> 
 	<!-- Custom -->
-	<link href="<?php echo base_url();?>assets/backend/css/custom.css?v=<?php echo $v;?>" rel="stylesheet" type="text/css" /> 
+	<link href="<?php echo base_url();?>assets/backend/css/custom.css?v=<?php echo $v;?>" rel="stylesheet" type="text/css" />
+	<!-- AMEE Flow Panel -->
+	<link href="<?php echo base_url();?>assets/frontend/ameeflow-panel.css?v=<?php echo $v;?>" rel="stylesheet" type="text/css" /> 
 	<!-- jQuery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.5.2/jquery-migrate.min.js"></script>

@@ -1,33 +1,39 @@
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<style>
-    .select2-container--default .select2-selection--single { height:34px; border:1px solid #ced4da; border-radius:4px; }
-    .select2-container--default .select2-selection--single .select2-selection__rendered { line-height:32px; }
-    .select2-container--default .select2-selection--single .select2-selection__arrow { height:32px; }
-    .select2-container { vertical-align:middle; margin-right:10px; }
-</style>
-
 <section class="content">         
     <div class="box">  
         
         <div class="box-header no-border">
             <h3 class="box-title">Listing</h3>
-            <div class="box-tools pull-right">
-                <div class="input-group input-group-sm" style="display:inline-flex; width:250px; margin-right:10px; vertical-align:middle;">
-                    <input type="text" id="documentSearchInput" class="form-control" placeholder="Search documents..." style="height:34px;">
-                    <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearDocumentSearch"><i class="fa fa-times"></i></span>
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="documentSearchInput" placeholder="Search documents..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="clearDocumentSearch" type="button"><i class="fa fa-times"></i></button>
                 </div>
-                <select id="projectFilter" class="form-control form-control-sm" style="display:inline-block; width:200px; height:34px; margin-right:10px; vertical-align:middle;">
-                    <option value="">All Projects</option>
-                    <?php 
-                        if(isset($projectDataArr) && count($projectDataArr)>0){
-                            foreach($projectDataArr as $pro){
-                    ?>
-                    <option value="<?php echo $pro['projectId'];?>"><?php echo htmlspecialchars($pro['projectName']);?></option>
-                    <?php } } ?>
-                </select>
-                <button id="delProBtn" type="button" onclick="return deleteDoc();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-danger'> Delete </button>
-                <button id="addProBtn" type="button" style="padding: 3px 15px; font-size:15px;" onclick="return manageDoc('0');" class='btn btn-primary'> <i class="fa fa-plus"></i> Add New</button>               
+                <!-- Project Filter -->
+                <div class="af-select-filter-wrap" id="afDocProjectFilterWrap">
+                    <span class="af-select-filter-btn" id="afDocProjectFilterBtn" role="button">
+                        <i class="fa fa-folder"></i>
+                        <span class="af-select-filter-label">All Projects</span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                        <button class="af-select-filter-clear" id="afDocProjectClear" type="button"><i class="fa fa-times"></i></button>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afDocProjectDropdown">
+                        <a href="#" class="af-select-filter-option selected" data-value="">All Projects</a>
+                        <?php 
+                            if(isset($projectDataArr) && count($projectDataArr)>0){
+                                foreach($projectDataArr as $pro){
+                        ?>
+                        <a href="#" class="af-select-filter-option" data-value="<?php echo $pro['projectId'];?>"><?php echo htmlspecialchars($pro['projectName']);?></a>
+                        <?php } } ?>
+                    </div>
+                </div>
+            </div>
+            <div class="af-roles-toolbar-right">
+                <button id="delProBtn" type="button" onclick="return deleteDoc();" class='btn btn-danger btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-trash"></i> Delete </button>
+                <button id="addProBtn" type="button" onclick="return manageDoc('0');" class='btn btn-primary btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-plus"></i> Add New</button>
             </div>
         </div>
        
@@ -97,17 +103,14 @@ include(APPPATH.'views/system-admin/planning-documents/other-documents/pro-model
 
 <script type="text/javascript">
 $(function(){
-    // Initialize Select2 for project filter
-    $('#projectFilter').select2({ placeholder: 'All Projects', allowClear: true, width: '200px' });
+    var selectedProject = '';
 
-    // Filter function
     function filterDocumentsTable(){
         var searchText = $('#documentSearchInput').val().toLowerCase();
-        var selectedProject = $('#projectFilter').val();
-
-        $('#table_recordtbl1 tbody tr').each(function(){
-            var rowText = $(this).text().toLowerCase();
-            var rowProjectIds = String($(this).data('project-ids') || '');
+        $('#table_recordtbl1 tbody tr').not('.no-data-row').each(function(){
+            var $row = $(this);
+            var rowText = $row.text().toLowerCase();
+            var rowProjectIds = String($row.data('project-ids') || '');
             var projectIdsArr = rowProjectIds ? rowProjectIds.split(',') : [];
             
             var matchesSearch = (searchText === '' || rowText.indexOf(searchText) > -1);
@@ -115,25 +118,58 @@ $(function(){
             if(selectedProject !== ''){
                 matchesProject = (projectIdsArr.indexOf(selectedProject) > -1);
             }
-            
-            $(this).toggle(matchesSearch && matchesProject);
+            if(matchesSearch && matchesProject){ $row.show(); } else { $row.hide(); }
         });
     }
 
-    // Search input event
-    $('#documentSearchInput').on('keyup', function(){
+    /* Search bar */
+    $('#documentSearchInput').on('input', function(){
+        var v = $(this).val();
+        if(v.length > 0){ $('#clearDocumentSearch').css('display','flex'); } else { $('#clearDocumentSearch').hide(); }
         filterDocumentsTable();
     });
-
-    // Clear search button
     $('#clearDocumentSearch').on('click', function(){
         $('#documentSearchInput').val('');
+        $(this).hide();
         filterDocumentsTable();
     });
 
-    // Project filter change event
-    $('#projectFilter').on('change', function(){
+    /* Project filter dropdown */
+    $('#afDocProjectFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afDocProjectDropdown').toggleClass('show');
+    });
+    $('#afDocProjectDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        selectedProject = val ? val.toString() : '';
+        $('#afDocProjectDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+        if(selectedProject !== ''){
+            $('#afDocProjectFilterBtn .af-select-filter-label').text($(this).text());
+            $('#afDocProjectFilterBtn').addClass('active');
+            $('#afDocProjectClear').css('display','inline-block');
+        } else {
+            $('#afDocProjectFilterBtn .af-select-filter-label').text('All Projects');
+            $('#afDocProjectFilterBtn').removeClass('active');
+            $('#afDocProjectClear').hide();
+        }
+        $('#afDocProjectDropdown').removeClass('show');
         filterDocumentsTable();
+    });
+    $('#afDocProjectClear').on('click', function(e){
+        e.stopPropagation();
+        selectedProject = '';
+        $('#afDocProjectFilterBtn .af-select-filter-label').text('All Projects');
+        $('#afDocProjectFilterBtn').removeClass('active');
+        $(this).hide();
+        $('#afDocProjectDropdown .af-select-filter-option').removeClass('selected');
+        filterDocumentsTable();
+    });
+
+    /* Close on outside click */
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afDocProjectFilterWrap').length){ $('#afDocProjectDropdown').removeClass('show'); }
     });
 });
 </script>

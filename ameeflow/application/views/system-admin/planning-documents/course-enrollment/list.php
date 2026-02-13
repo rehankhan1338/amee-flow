@@ -5,20 +5,45 @@
 <section class="content">
     <div class="box">          
         <div class="box-header no-border">
-            <h3 class="box-title" style="font-size:15px; font-weight:500">Term - Year
-                <select class="form-control mt-2" onchange="return getCourseEnrollData(this.value);">
-                    <option value="">Select...</option>
-                    <?php foreach($courseEnrollmentDataArr as $course){?>
-                        <option value="<?php echo $course['ceId'];?>" <?php if($selceId==$course['ceId']){?> selected<?php } ?>> <?php echo $this->config->item('terms_assessment_array_config')[$course['termId']]['name'].' - '.$course['year']; ?> </option>
-                    <?php } ?>
-                </select>
-            </h3>
-            <div class="box-tools pull-right">                
-                <button id="recognitionFlowBtn" type="button" onclick="return addIntoRecognitionFlow('<?php echo $selceId;?>');" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-secondary'> Add to Recognition Flow </button>
-                <a href="<?php echo base_url().$this->config->item('system_directory_name').'course_enrollment/create'; ?>" class="btn btn-info" style="padding: 3px 15px; font-size:15px;margin-right:5px;">Add New SOC</a>
-                <button id="downloadCourseBtn" type="button" onclick="return downloadCourse('<?php echo $selceId;?>');" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-warning'> Download </button>
-                <button id="delProBtn" type="button" onclick="return deleteClass('<?php echo $selceId;?>');" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-danger'> Delete </button>
-                <button id="addSocBtn" type="button" style="padding: 3px 15px; font-size:15px;" onclick="return manageCCE('0','<?php echo $selceId;?>');" class='btn btn-primary'> Add New Course </button>               
+            <h3 class="box-title" style="font-size:15px; font-weight:500">Oversight Units</h3>
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="ceSearchInput" placeholder="Search courses..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="ceClearSearch" type="button"><i class="fa fa-times"></i></button>
+                </div>
+                <!-- Term/Year Selector -->
+                <div class="af-select-filter-wrap" id="afCeTermWrap">
+                    <span class="af-select-filter-btn" id="afCeTermBtn" role="button">
+                        <i class="fa fa-calendar"></i>
+                        <span class="af-select-filter-label"><?php 
+                            $selectedLabel = 'Select Term-Year';
+                            foreach($courseEnrollmentDataArr as $course){
+                                if($selceId==$course['ceId']){
+                                    $selectedLabel = $this->config->item('terms_assessment_array_config')[$course['termId']]['name'].' - '.$course['year'];
+                                }
+                            }
+                            echo $selectedLabel;
+                        ?></span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afCeTermDropdown">
+                        <a href="#" class="af-select-filter-option" data-value="">Select...</a>
+                        <?php foreach($courseEnrollmentDataArr as $course){?>
+                        <a href="#" class="af-select-filter-option <?php if($selceId==$course['ceId']){?> selected<?php } ?>" data-value="<?php echo $course['ceId'];?>"><?php echo $this->config->item('terms_assessment_array_config')[$course['termId']]['name'].' - '.$course['year']; ?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <div class="af-roles-toolbar-right" style="flex-wrap:wrap; gap:6px;">
+                <button id="recognitionFlowBtn" type="button" onclick="return addIntoRecognitionFlow('<?php echo $selceId;?>');" class='btn btn-secondary btn-sm' style="border-radius:22px; padding:6px 14px; font-size:13px;"> <i class="fa fa-random"></i> Recognition Flow </button>
+                <a href="<?php echo base_url().$this->config->item('system_directory_name').'course_enrollment/create'; ?>" class="btn btn-info btn-sm" style="border-radius:22px; padding:6px 14px; font-size:13px;"> <i class="fa fa-plus"></i> New SOC</a>
+                <button id="downloadCourseBtn" type="button" onclick="return downloadCourse('<?php echo $selceId;?>');" class='btn btn-warning btn-sm' style="border-radius:22px; padding:6px 14px; font-size:13px;"> <i class="fa fa-download"></i> Download </button>
+                <button id="delProBtn" type="button" onclick="return deleteClass('<?php echo $selceId;?>');" class='btn btn-danger btn-sm' style="border-radius:22px; padding:6px 14px; font-size:13px;"> <i class="fa fa-trash"></i> Delete </button>
+                <button id="addSocBtn" type="button" onclick="return manageCCE('0','<?php echo $selceId;?>');" class='btn btn-primary btn-sm' style="border-radius:22px; padding:6px 14px; font-size:13px;"> <i class="fa fa-plus"></i> Add Course </button>
             </div>
         </div>
        
@@ -259,4 +284,39 @@ $(document).ready(function () {
 });
 </script>
 <?php include(APPPATH.'views/system-admin/planning-documents/course-enrollment/ce-model.php');?>
+<script>
+$(function(){
+    /* Search */
+    $('#ceSearchInput').on('input', function(){
+        var v = $(this).val().toLowerCase();
+        if(v.length > 0){ $('#ceClearSearch').css('display','flex'); } else { $('#ceClearSearch').hide(); }
+        $('#table_recordtbl tbody tr').not('.no-data-row').each(function(){
+            var rowText = $(this).text().toLowerCase();
+            $(this).toggle(v === '' || rowText.indexOf(v) > -1);
+        });
+    });
+    $('#ceClearSearch').on('click', function(){
+        $('#ceSearchInput').val('');
+        $(this).hide();
+        $('#table_recordtbl tbody tr').not('.no-data-row').show();
+    });
+
+    /* Term/Year dropdown */
+    $('#afCeTermBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afCeTermDropdown').toggleClass('show');
+    });
+    $('#afCeTermDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        if(val && val !== ''){
+            getCourseEnrollData(val);
+        }
+        $('#afCeTermDropdown').removeClass('show');
+    });
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afCeTermWrap').length){ $('#afCeTermDropdown').removeClass('show'); }
+    });
+});
+</script>
 </section>

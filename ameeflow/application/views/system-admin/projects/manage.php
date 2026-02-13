@@ -5,30 +5,45 @@
         
         <div class="box-header no-border">
             <h3 class="box-title">Project Listing</h3>
-            <div class="box-tools pull-right">                
-                <select id="termYearFilter" class="form-control form-control-sm" style="display:inline-block; width:180px; height:34px; margin-right:10px; vertical-align:middle;">
-                    <option value="">All Terms</option>
-                    <?php 
-                        $termYearOptions = array();
-                        foreach($projectDataArr as $pro){
-                            $termYearLabel = $this->config->item('terms_assessment_array_config')[$pro['termId']]['name'].' - '.$pro['year'];
-                            if(!in_array($termYearLabel, $termYearOptions)){
-                                $termYearOptions[] = $termYearLabel;
-                            }
-                        }
-                        sort($termYearOptions);
-                        foreach($termYearOptions as $opt){
-                    ?>
-                    <option value="<?php echo $opt;?>"><?php echo $opt;?></option>
-                    <?php } ?>
-                </select>
-                <div class="input-group input-group-sm" style="display:inline-flex; width:250px; margin-right:10px; vertical-align:middle;">
-                    <input type="text" id="projectSearchInput" class="form-control" placeholder="Search projects..." style="height:34px;">
-                    <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearProjectSearch"><i class="fa fa-times"></i></span>
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="projectSearchInput" placeholder="Search projects..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="clearProjectSearch" type="button"><i class="fa fa-times"></i></button>
                 </div>
-                <button id="delProBtn" type="button" onclick="return deleteProject();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-danger'> Delete </button>
-                <button id="copyProBtn" type="button" onclick="return copyProject();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-warning'> Copy Project </button>
-                <button id="addProBtn" type="button" style="padding: 3px 15px; font-size:15px;" onclick="return manageProject('0');" class='btn btn-primary'> <i class="fa fa-plus"></i> Project</button>               
+                <!-- Term/Year Filter -->
+                <div class="af-select-filter-wrap" id="afTermYearFilterWrap">
+                    <span class="af-select-filter-btn" id="afTermYearFilterBtn" role="button">
+                        <i class="fa fa-calendar"></i>
+                        <span class="af-select-filter-label">All Terms</span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                        <button class="af-select-filter-clear" id="afTermYearClear" type="button"><i class="fa fa-times"></i></button>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afTermYearDropdown">
+                        <a href="#" class="af-select-filter-option selected" data-value="">All Terms</a>
+                        <?php 
+                            $termYearOptions = array();
+                            foreach($projectDataArr as $pro){
+                                $termYearLabel = $this->config->item('terms_assessment_array_config')[$pro['termId']]['name'].' - '.$pro['year'];
+                                if(!in_array($termYearLabel, $termYearOptions)){
+                                    $termYearOptions[] = $termYearLabel;
+                                }
+                            }
+                            sort($termYearOptions);
+                            foreach($termYearOptions as $opt){
+                        ?>
+                        <a href="#" class="af-select-filter-option" data-value="<?php echo $opt;?>"><?php echo $opt;?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <div class="af-roles-toolbar-right">
+                <button id="delProBtn" type="button" onclick="return deleteProject();" class='btn btn-danger btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-trash"></i> Delete </button>
+                <button id="copyProBtn" type="button" onclick="return copyProject();" class='btn btn-warning btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-copy"></i> Copy </button>
+                <button id="addProBtn" type="button" onclick="return manageProject('0');" class='btn btn-primary btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-plus"></i> Project</button>
             </div>
         </div>
        
@@ -103,31 +118,79 @@ include(APPPATH.'views/system-admin/projects/copy-pro.php');
 
 <script type="text/javascript">
 $(function(){
+    var selectedTermYear = '';
+
     function filterProjectTable(){
         var searchText = $('#projectSearchInput').val().toLowerCase();
-        var selectedTerm = $('#termYearFilter').val();
+        var visibleCount = 0;
 
-        $('#table_recordtbl1 tbody tr').each(function(){
-            var rowText = $(this).text().toLowerCase();
-            var rowTermYear = $(this).data('term-year');
+        $('#table_recordtbl1 tbody tr').not('.no-data-row').each(function(){
+            var $row = $(this);
+            var rowText = $row.text().toLowerCase();
+            var rowTermYear = $row.data('term-year');
             var matchesSearch = (searchText === '' || rowText.indexOf(searchText) > -1);
-            var matchesTerm = (selectedTerm === '' || rowTermYear === selectedTerm);
-            $(this).toggle(matchesSearch && matchesTerm);
+            var matchesTerm = (selectedTermYear === '' || rowTermYear === selectedTermYear);
+            if(matchesSearch && matchesTerm){
+                $row.show();
+                visibleCount++;
+            } else {
+                $row.hide();
+            }
         });
     }
 
-    $('#projectSearchInput').on('keyup', function(){
+    /* Search bar */
+    $('#projectSearchInput').on('input', function(){
+        var v = $(this).val();
+        if(v.length > 0){ $('#clearProjectSearch').css('display','flex'); } else { $('#clearProjectSearch').hide(); }
         filterProjectTable();
     });
-
-    $('#termYearFilter').on('change', function(){
-        filterProjectTable();
-    });
-
     $('#clearProjectSearch').on('click', function(){
         $('#projectSearchInput').val('');
+        $(this).hide();
         filterProjectTable();
         $('#projectSearchInput').focus();
+    });
+
+    /* Term/Year filter dropdown */
+    $('#afTermYearFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afTermYearDropdown').toggleClass('show');
+    });
+    $('#afTermYearDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var val = $(this).data('value');
+        selectedTermYear = val || '';
+        $('#afTermYearDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+        if(selectedTermYear !== ''){
+            $('#afTermYearFilterBtn .af-select-filter-label').text($(this).text());
+            $('#afTermYearFilterBtn').addClass('active');
+            $('#afTermYearClear').css('display','inline-block');
+        } else {
+            $('#afTermYearFilterBtn .af-select-filter-label').text('All Terms');
+            $('#afTermYearFilterBtn').removeClass('active');
+            $('#afTermYearClear').hide();
+        }
+        $('#afTermYearDropdown').removeClass('show');
+        filterProjectTable();
+    });
+    $('#afTermYearClear').on('click', function(e){
+        e.stopPropagation();
+        selectedTermYear = '';
+        $('#afTermYearFilterBtn .af-select-filter-label').text('All Terms');
+        $('#afTermYearFilterBtn').removeClass('active');
+        $(this).hide();
+        $('#afTermYearDropdown .af-select-filter-option').removeClass('selected');
+        filterProjectTable();
+    });
+
+    /* Close dropdowns on outside click */
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afTermYearFilterWrap').length){
+            $('#afTermYearDropdown').removeClass('show');
+        }
     });
 });
 </script>

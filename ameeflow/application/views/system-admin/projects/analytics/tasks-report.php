@@ -25,32 +25,58 @@ $proName = $projectDetails['projectName'].' - '.$this->config->item('terms_asses
 ?>
     <div class="box-header">
         <h5>Project: <?php echo $proName;?></h5>
-        <div class="box-tools pull-right">
-            <div class="input-group input-group-sm" style="display:inline-flex; width:250px; margin-right:10px; vertical-align:middle;">
-                <input type="text" id="taskSearchInput" class="form-control" placeholder="Search tasks..." style="height:34px;">
-                <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearTaskSearch"><i class="fa fa-times"></i></span>
+    </div>
+    <!-- Modern Toolbar -->
+    <div class="af-roles-toolbar">
+        <div class="af-roles-toolbar-left">
+            <div class="af-roles-search-wrap">
+                <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                <input type="text" class="af-roles-search-input" id="taskSearchInput" placeholder="Search tasks..." autocomplete="off" />
+                <button class="af-roles-search-clear" id="clearTaskSearch" type="button"><i class="fa fa-times"></i></button>
             </div>
-            <select id="priorityFilter" class="form-control form-control-sm" style="display:inline-block; width:180px; height:34px; margin-right:10px; vertical-align:middle;">
-                <option value="">All Priorities</option>
-                <?php 
-                    $task_priority = $this->config->item('task_priority_options_array_config');
-                    foreach($task_priority as $key=>$value){ 
-                        if($value['status']==0){
-                ?>
-                <option value="<?php echo $key;?>"><?php echo $value['name'];?></option>
-                <?php 
-                        }
-                    } 
-                ?>
-            </select>
-            <div class="input-group input-group-sm" style="display:inline-flex; width:200px; margin-right:10px; vertical-align:middle;">
-                <input type="text" id="dueDateFilter" class="form-control datepicker" placeholder="Select due date..." style="height:34px;" autocomplete="off">
-                <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearDueDateFilter"><i class="fa fa-times"></i></span>
+            <!-- Priority Filter -->
+            <div class="af-select-filter-wrap" id="afPriorityFilterWrap">
+                <span class="af-select-filter-btn" id="afPriorityFilterBtn" role="button">
+                    <i class="fa fa-flag"></i>
+                    <span class="af-select-filter-label">All Priorities</span>
+                    <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    <button class="af-select-filter-clear" id="afPriorityClear" type="button"><i class="fa fa-times"></i></button>
+                </span>
+                <div class="af-select-filter-dropdown" id="afPriorityDropdown">
+                    <a href="#" class="af-select-filter-option selected" data-value="">All Priorities</a>
+                    <?php 
+                        $task_priority = $this->config->item('task_priority_options_array_config');
+                        foreach($task_priority as $key=>$value){ 
+                            if($value['status']==0){
+                    ?>
+                    <a href="#" class="af-select-filter-option" data-value="<?php echo $key;?>"><?php echo $value['name'];?></a>
+                    <?php 
+                            }
+                        } 
+                    ?>
+                </div>
             </div>
-            <a href="<?php echo base_url().$this->config->item('system_directory_name').'analytics/download/'.$projectDetails['proencryptId'];?>" style="padding: 3px 15px; font-size:15px; margin-right:5px;" class="btn btn-warning"> <i class="fa fa-download"></i> Download </a>                
-            <a href="<?php echo base_url().$this->config->item('system_directory_name').'analytics';?>" style="padding: 3px 15px; font-size:15px;" class="btn btn-primary"> <i class="fa fa-long-arrow-left"></i> Back </a>                
+            <!-- Due Date Filter -->
+            <div class="af-date-filter-wrap" id="afDueDateFilterWrap">
+                <span class="af-select-filter-btn" id="afDueDateFilterBtn" role="button">
+                    <i class="fa fa-calendar"></i>
+                    <span class="af-select-filter-label">Due Date</span>
+                    <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    <button class="af-select-filter-clear" id="afDueDateClear" type="button"><i class="fa fa-times"></i></button>
+                </span>
+                <div class="af-select-filter-dropdown" id="afDueDateDropdown" style="padding:10px;">
+                    <div id="afDueDatePicker"></div>
+                </div>
+            </div>
+        </div>
+        <div class="af-roles-toolbar-right" style="flex-wrap:wrap; gap:6px;">
+            <a href="<?php echo base_url().$this->config->item('system_directory_name').'analytics/download/'.$projectDetails['proencryptId'];?>" class="btn btn-warning btn-sm" style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-download"></i> Download </a>
+            <a href="<?php echo base_url().$this->config->item('system_directory_name').'analytics';?>" class="btn btn-primary btn-sm" style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-long-arrow-left"></i> Back </a>
         </div>
     </div>
+    <!-- Hidden fields for filter logic -->
+    <input type="hidden" id="priorityFilter" value="" />
+    <input type="hidden" id="dueDateFilter" value="" />
 <div class="box-body userTaskPage">
  
  <div class="row mt-0 mb-4">
@@ -197,99 +223,135 @@ $emptyCount = $totalSquares - $fullCount - $halfCount;
             </div>
 <script type="text/javascript">
 $(function(){
+    var selectedPriority = '';
+    var selectedDueDate = '';
+
     // Helper function to normalize timestamp to start of day
     function getStartOfDay(timestamp){
         var date = new Date(timestamp * 1000);
         date.setHours(0, 0, 0, 0);
         return Math.floor(date.getTime() / 1000);
     }
-    
-    // Helper function to normalize timestamp to end of day
-    function getEndOfDay(timestamp){
-        var date = new Date(timestamp * 1000);
-        date.setHours(23, 59, 59, 999);
-        return Math.floor(date.getTime() / 1000);
-    }
 
-    // Initialize datepicker
-    $('#dueDateFilter').datepicker({
+    // Initialize datepicker in dropdown
+    $('#afDueDatePicker').datepicker({
         format: "mm/dd/yyyy",
-        autoclose: true,
-        todayHighlight: true,
-        clearBtn: false
+        todayHighlight: true
     }).on('changeDate', function(e){
-        filterTasksTable();
+        var d = e.format();
+        if(d){
+            selectedDueDate = d;
+            $('#dueDateFilter').val(d);
+            $('#afDueDateFilterBtn .af-select-filter-label').text(d);
+            $('#afDueDateFilterBtn').addClass('active');
+            $('#afDueDateClear').css('display','inline-block');
+            filterTasksTable();
+        }
     });
 
     // Filter function
     function filterTasksTable(){
         var searchText = $('#taskSearchInput').val().toLowerCase();
-        var selectedPriority = $('#priorityFilter').val();
-        var selectedDueDate = $('#dueDateFilter').val();
 
         $('#table_recordtbl1 tbody tr').each(function(){
-            var rowText = $(this).text().toLowerCase();
-            var rowPriorityId = String($(this).data('priority-id') || '0');
-            var rowDueDate = parseInt($(this).data('due-date') || 0);
+            var $row = $(this);
+            var rowText = $row.text().toLowerCase();
+            var rowPriorityId = String($row.data('priority-id') || '0');
+            var rowDueDate = parseInt($row.data('due-date') || 0);
             
-            // Search filter
             var matchesSearch = (searchText === '' || rowText.indexOf(searchText) > -1);
+            var matchesPriority = (selectedPriority === '' || rowPriorityId === selectedPriority);
             
-            // Priority filter
-            var matchesPriority = true;
-            if(selectedPriority !== ''){
-                matchesPriority = (rowPriorityId === selectedPriority);
-            }
-            
-            // Due Date filter
             var matchesDueDate = true;
             if(selectedDueDate !== '' && rowDueDate > 0){
-                // Parse selected date (format: mm/dd/yyyy)
                 var dateParts = selectedDueDate.split('/');
                 if(dateParts.length === 3){
-                    var selectedDate = new Date(parseInt(dateParts[2]), parseInt(dateParts[0]) - 1, parseInt(dateParts[1]));
-                    selectedDate.setHours(0, 0, 0, 0);
-                    var selectedDateStart = Math.floor(selectedDate.getTime() / 1000);
-                    var selectedDateEnd = selectedDateStart + 86399; // End of selected day
-                    
+                    var selDate = new Date(parseInt(dateParts[2]), parseInt(dateParts[0]) - 1, parseInt(dateParts[1]));
+                    selDate.setHours(0, 0, 0, 0);
+                    var selDateStart = Math.floor(selDate.getTime() / 1000);
+                    var selDateEnd = selDateStart + 86399;
                     var taskDueDateStart = getStartOfDay(rowDueDate);
-                    var taskDueDateEnd = getEndOfDay(rowDueDate);
-                    
-                    // Match if task due date falls on the selected date
-                    matchesDueDate = (taskDueDateStart >= selectedDateStart && taskDueDateStart <= selectedDateEnd);
+                    matchesDueDate = (taskDueDateStart >= selDateStart && taskDueDateStart <= selDateEnd);
                 } else {
                     matchesDueDate = false;
                 }
             } else if(selectedDueDate !== '' && rowDueDate === 0){
-                // If filter is selected but task has no due date, hide it
                 matchesDueDate = false;
             }
             
-            $(this).toggle(matchesSearch && matchesPriority && matchesDueDate);
+            $row.toggle(matchesSearch && matchesPriority && matchesDueDate);
         });
     }
 
-    // Search input event
-    $('#taskSearchInput').on('keyup', function(){
+    /* Search bar */
+    $('#taskSearchInput').on('input', function(){
+        var v = $(this).val();
+        if(v.length > 0){ $('#clearTaskSearch').css('display','flex'); } else { $('#clearTaskSearch').hide(); }
         filterTasksTable();
     });
-
-    // Clear search button
     $('#clearTaskSearch').on('click', function(){
         $('#taskSearchInput').val('');
+        $(this).hide();
         filterTasksTable();
     });
 
-    // Priority filter change event
-    $('#priorityFilter').on('change', function(){
+    /* Priority dropdown */
+    $('#afPriorityFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afDueDateDropdown').removeClass('show');
+        $('#afPriorityDropdown').toggleClass('show');
+    });
+    $('#afPriorityDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        selectedPriority = val ? val.toString() : '';
+        $('#priorityFilter').val(selectedPriority);
+        $('#afPriorityDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+        if(selectedPriority !== ''){
+            $('#afPriorityFilterBtn .af-select-filter-label').text($(this).text());
+            $('#afPriorityFilterBtn').addClass('active');
+            $('#afPriorityClear').css('display','inline-block');
+        } else {
+            $('#afPriorityFilterBtn .af-select-filter-label').text('All Priorities');
+            $('#afPriorityFilterBtn').removeClass('active');
+            $('#afPriorityClear').hide();
+        }
+        $('#afPriorityDropdown').removeClass('show');
+        filterTasksTable();
+    });
+    $('#afPriorityClear').on('click', function(e){
+        e.stopPropagation();
+        selectedPriority = '';
+        $('#priorityFilter').val('');
+        $('#afPriorityFilterBtn .af-select-filter-label').text('All Priorities');
+        $('#afPriorityFilterBtn').removeClass('active');
+        $(this).hide();
+        $('#afPriorityDropdown .af-select-filter-option').removeClass('selected');
         filterTasksTable();
     });
 
-    // Clear due date filter button
-    $('#clearDueDateFilter').on('click', function(){
+    /* Due Date dropdown */
+    $('#afDueDateFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afPriorityDropdown').removeClass('show');
+        $('#afDueDateDropdown').toggleClass('show');
+    });
+    $('#afDueDateClear').on('click', function(e){
+        e.stopPropagation();
+        selectedDueDate = '';
         $('#dueDateFilter').val('');
-        $('#dueDateFilter').datepicker('update', '');
+        $('#afDueDatePicker').datepicker('update', '');
+        $('#afDueDateFilterBtn .af-select-filter-label').text('Due Date');
+        $('#afDueDateFilterBtn').removeClass('active');
+        $(this).hide();
         filterTasksTable();
+    });
+
+    /* Close on outside click */
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afPriorityFilterWrap').length){ $('#afPriorityDropdown').removeClass('show'); }
+        if(!$(e.target).closest('#afDueDateFilterWrap').length && !$(e.target).closest('.datepicker').length){ $('#afDueDateDropdown').removeClass('show'); }
     });
 });
 

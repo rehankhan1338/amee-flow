@@ -8,12 +8,20 @@ $tdAddSign = '<i class="fa fa-plus-square-o"></i>';
     <div class="box">  
         
         <div class="box-header no-border">
-            <div class="box-title">Project: &nbsp;<?php echo $projectDetails['projectName'];?>  <?php echo ' ('.$this->config->item('terms_assessment_array_config')[$projectDetails['termId']]['name'].' - '.$projectDetails['year'].')';?></div> 
-            <div class="box-tools pull-right">
-            <button id="delTaskBtn" type="button" onclick="return deleteTask('<?php echo $projectDetails['proencryptId'];?>','<?php echo $projectDetails['projectId'];?>');" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-danger'> Delete </button>
-            <a href="<?php echo base_url().$this->config->item('system_directory_name').'projects';?>" style="padding: 3px 15px; font-size:15px;" class='btn btn-primary'> <i class="fa fa-long-arrow-left"></i> Back </a>
-                
-                
+            <div class="box-title">Project: &nbsp;<?php echo $projectDetails['projectName'];?>  <?php echo ' ('.$this->config->item('terms_assessment_array_config')[$projectDetails['termId']]['name'].' - '.$projectDetails['year'].')';?></div>
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="taskSearchInput" placeholder="Search tasks..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="taskClearSearch" type="button"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="af-roles-toolbar-right">
+                <button id="delTaskBtn" type="button" onclick="return deleteTask('<?php echo $projectDetails['proencryptId'];?>','<?php echo $projectDetails['projectId'];?>');" class='btn btn-danger btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-trash"></i> Delete </button>
+                <a href="<?php echo base_url().$this->config->item('system_directory_name').'projects';?>" class='btn btn-primary btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-long-arrow-left"></i> Back </a>
             </div>
         </div>
        
@@ -222,6 +230,21 @@ function updateTaskPri(taskId,val){
     }
 }
 // $('#reminderSts').bootstrapToggle();
+
+/* Task search */
+$('#taskSearchInput').on('input', function(){
+    var v = $(this).val().toLowerCase();
+    if(v.length > 0){ $('#taskClearSearch').css('display','flex'); } else { $('#taskClearSearch').hide(); }
+    $('#table_recordtbl1 tbody tr').not('.no-data-row').each(function(){
+        var rowText = $(this).text().toLowerCase();
+        $(this).toggle(v === '' || rowText.indexOf(v) > -1);
+    });
+});
+$('#taskClearSearch').on('click', function(){
+    $('#taskSearchInput').val('');
+    $(this).hide();
+    $('#table_recordtbl1 tbody tr').not('.no-data-row').show();
+});
 </script>
 <?php 
 include(APPPATH.'views/system-admin/projects/tasks/manage.php');

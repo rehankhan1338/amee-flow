@@ -3,9 +3,19 @@
  
         <div class="box-header no-border">
             <h3 class="box-title">Guest Access</h3>
-            <div class="box-tools pull-right">
-                <button id="delBtn" type="button" onclick="return deleteAccess();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-danger'> Delete </button>
-                <button id="addBtn" type="button" style="padding: 3px 15px; font-size:15px;" onclick="return manageAccess('0');" class='btn btn-primary'> <i class="fa fa-plus"></i> Add New</button>               
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="guestSearchInput" placeholder="Search guests..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="guestClearSearch" type="button"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="af-roles-toolbar-right">
+                <button id="delBtn" type="button" onclick="return deleteAccess();" class='btn btn-danger btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-trash"></i> Delete </button>
+                <button id="addBtn" type="button" onclick="return manageAccess('0');" class='btn btn-primary btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-plus"></i> Add New</button>
             </div>
         </div>
        
@@ -64,4 +74,21 @@
 <?php 
 include(APPPATH.'views/system-admin/guest-access/pop-model.php');
 ?>
+<script>
+$(function(){
+    $('#guestSearchInput').on('input', function(){
+        var v = $(this).val().toLowerCase();
+        if(v.length > 0){ $('#guestClearSearch').css('display','flex'); } else { $('#guestClearSearch').hide(); }
+        $('#table_recordtbl1 tbody tr').not('.no-data-row').each(function(){
+            var rowText = $(this).text().toLowerCase();
+            $(this).toggle(v === '' || rowText.indexOf(v) > -1);
+        });
+    });
+    $('#guestClearSearch').on('click', function(){
+        $('#guestSearchInput').val('');
+        $(this).hide();
+        $('#table_recordtbl1 tbody tr').not('.no-data-row').show();
+    });
+});
+</script>
 </section>

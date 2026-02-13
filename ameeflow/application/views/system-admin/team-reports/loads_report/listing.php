@@ -1,7 +1,15 @@
 <section class="content">
     <div class="box">  
- 
-         
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="loadsSearchInput" placeholder="Search reports..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="loadsClearSearch" type="button"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+        </div>
        
         <div class="box-body row">					 
             <div class="col-xs-12 table-responsive">
@@ -21,7 +29,7 @@
                         ?>
                         <tr>
                             <td> <?php echo $i; ?> </td>
- 
+
 <td class="fw600"> <a class="cp" onclick="return viewCompleteReport('<?php echo $row['rId'];?>','<?php echo $row['erId'];?>','<?php echo $row['userId'];?>','<?php echo $shareReportFor;?>');"> <?php echo $this->config->item('terms_assessment_array_config')[$row['termId']]['name'].' - '.$row['year']; ?> &nbsp;<i id="vrpt<?php echo $row['rId'];?>" class="fa fa-info-circle"></i> </a>  </td>
                             <td class="fw600"> <a id="vfbkLnk<?php echo $row['rId'];?>" class="pro_name" onclick="return viewFeedback('<?php echo $row['rId'];?>','<?php echo $shareReportFor;?>');">View</a> &nbsp;<?php echo '('.$row['feedbackCnt'].')';?> </td>
                             <td>
@@ -56,4 +64,21 @@
 include(APPPATH.'views/Frontend/reports/sampling_plan/view-feedback.php');
 include(APPPATH.'views/system-admin/team-reports/view-report-modal.php');
 ?>
+<script>
+$(function(){
+    $('#loadsSearchInput').on('input', function(){
+        var v = $(this).val().toLowerCase();
+        if(v.length > 0){ $('#loadsClearSearch').css('display','flex'); } else { $('#loadsClearSearch').hide(); }
+        $('#table_recordtbl1 tbody tr').each(function(){
+            var rowText = $(this).text().toLowerCase();
+            $(this).toggle(v === '' || rowText.indexOf(v) > -1);
+        });
+    });
+    $('#loadsClearSearch').on('click', function(){
+        $('#loadsSearchInput').val('');
+        $(this).hide();
+        $('#table_recordtbl1 tbody tr').show();
+    });
+});
+</script>
 </section>

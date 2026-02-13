@@ -2,10 +2,14 @@
 	<div class="box">
 		<div class="box-header no-border">
             <h3 class="box-title">These email templates are automatically sent when users are added to your team.</h3>
-            <div class="box-tools pull-right">
-                <div class="input-group input-group-sm" style="display:inline-flex; width:250px; margin-right:10px; vertical-align:middle;">
-                    <input type="text" id="emailSearchInput" class="form-control" placeholder="Search email templates..." style="height:34px;">
-                    <span class="input-group-text" style="height:34px; cursor:pointer;" id="clearEmailSearch"><i class="fa fa-times"></i></span>
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="emailSearchInput" placeholder="Search email templates..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="clearEmailSearch" type="button"><i class="fa fa-times"></i></button>
                 </div>
             </div>
         </div>
@@ -86,22 +90,20 @@ $(document).ready(function () {
 	// Search functionality
 	function filterEmailsTable(){
 		var searchText = $('#emailSearchInput').val().toLowerCase();
-		
 		$('#table_recordtbl12 tbody tr').each(function(){
 			var rowText = $(this).text().toLowerCase();
-			var matchesSearch = (searchText === '' || rowText.indexOf(searchText) > -1);
-			$(this).toggle(matchesSearch);
+			$(this).toggle(searchText === '' || rowText.indexOf(searchText) > -1);
 		});
 	}
 
-	// Search input event
-	$('#emailSearchInput').on('keyup', function(){
+	$('#emailSearchInput').on('input', function(){
+		var v = $(this).val();
+		if(v.length > 0){ $('#clearEmailSearch').css('display','flex'); } else { $('#clearEmailSearch').hide(); }
 		filterEmailsTable();
 	});
-
-	// Clear search button
 	$('#clearEmailSearch').on('click', function(){
 		$('#emailSearchInput').val('');
+		$(this).hide();
 		filterEmailsTable();
 	});
 

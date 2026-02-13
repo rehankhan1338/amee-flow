@@ -1,49 +1,69 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<style>
-    .select2-container--default .select2-selection--single { height:34px; border:1px solid #ced4da; border-radius:4px; }
-    .select2-container--default .select2-selection--single .select2-selection__rendered { line-height:32px; }
-    .select2-container--default .select2-selection--single .select2-selection__arrow { height:32px; }
-    .select2-container { vertical-align:middle; margin-right:10px; }
-</style>
     
 <section class="content">
     <div class="box">  
         
         <div class="box-header no-border">
             <h3 class="box-title">Area Expert</h3>
-            <div class="box-tools pull-right">                
-                <select id="unitFilter" class="form-control form-control-sm" style="display:inline-block; width:200px; height:34px; margin-right:10px; vertical-align:middle;">
-                    <option value="">All Units</option>
-                    <?php 
-                        $unitOptions = array();
-                        foreach($uniUsersDataArr as $row){
-                            $unitLabel = trim($row['unitName']);
-                            if($unitLabel != '' && !in_array($unitLabel, $unitOptions)){
-                                $unitOptions[] = $unitLabel;
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="rolesSearchInput" placeholder="Search users..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="rolesClearSearch" type="button"><i class="fa fa-times"></i></button>
+                </div>
+                <!-- Unit Filter -->
+                <div class="af-select-filter-wrap" id="afUnitFilterWrap">
+                    <span class="af-select-filter-btn" id="afUnitFilterBtn" role="button">
+                        <i class="fa fa-building"></i>
+                        <span class="af-select-filter-label">All Units</span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                        <button class="af-select-filter-clear" id="afUnitClear" type="button"><i class="fa fa-times"></i></button>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afUnitDropdown">
+                        <a href="#" class="af-select-filter-option selected" data-value="">All Units</a>
+                        <?php 
+                            $unitOptions = array();
+                            foreach($uniUsersDataArr as $row){
+                                $unitLabel = trim($row['unitName']);
+                                if($unitLabel != '' && !in_array($unitLabel, $unitOptions)){
+                                    $unitOptions[] = $unitLabel;
+                                }
                             }
-                        }
-                        sort($unitOptions);
-                        foreach($unitOptions as $opt){
-                    ?>
-                    <option value="<?php echo htmlspecialchars($opt);?>"><?php echo htmlspecialchars($opt);?></option>
-                    <?php } ?>
-                </select>
-                <select id="projectFilter" class="form-control form-control-sm" style="display:inline-block; width:200px; height:34px; margin-right:10px; vertical-align:middle;">
-                    <option value="">All Projects</option>
-                    <?php 
-                        if(isset($projectDataArr) && count($projectDataArr)>0){
-                            foreach($projectDataArr as $pro){
-                    ?>
-                    <option value="<?php echo $pro['projectId'];?>"><?php echo htmlspecialchars($pro['projectName']);?></option>
-                    <?php } } ?>
-                </select>
-                <button id="delBtn" type="button" onclick="return deleteUser();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-danger'> Delete </button>
-                <button id="resendBtn" type="button" onclick="return resendLoginDetails();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-warning'> Resend Login </button>
-                <button id="addBtn" type="button" style="padding: 3px 15px; font-size:15px;" onclick="return manageUser('0');" class='btn btn-primary'> <i class="fa fa-plus"></i> Add New</button>               
+                            sort($unitOptions);
+                            foreach($unitOptions as $opt){
+                        ?>
+                        <a href="#" class="af-select-filter-option" data-value="<?php echo htmlspecialchars($opt);?>"><?php echo htmlspecialchars($opt);?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+                <!-- Project Filter -->
+                <div class="af-select-filter-wrap" id="afProjectFilterWrap">
+                    <span class="af-select-filter-btn" id="afProjectFilterBtn" role="button">
+                        <i class="fa fa-folder"></i>
+                        <span class="af-select-filter-label">All Projects</span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                        <button class="af-select-filter-clear" id="afProjectClear" type="button"><i class="fa fa-times"></i></button>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afProjectDropdown">
+                        <a href="#" class="af-select-filter-option selected" data-value="">All Projects</a>
+                        <?php 
+                            if(isset($projectDataArr) && count($projectDataArr)>0){
+                                foreach($projectDataArr as $pro){
+                        ?>
+                        <a href="#" class="af-select-filter-option" data-value="<?php echo $pro['projectId'];?>"><?php echo htmlspecialchars($pro['projectName']);?></a>
+                        <?php } } ?>
+                    </div>
+                </div>
+            </div>
+            <div class="af-roles-toolbar-right">
+                <button id="delBtn" type="button" onclick="return deleteUser();" class='btn btn-danger btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-trash"></i> Delete </button>
+                <button id="resendBtn" type="button" onclick="return resendLoginDetails();" class='btn btn-warning btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-envelope"></i> Resend Login </button>
+                <button id="addBtn" type="button" onclick="return manageUser('0');" class='btn btn-primary btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-plus"></i> Add New</button>
             </div>
         </div>
        
@@ -131,29 +151,115 @@ include(APPPATH.'views/system-admin/role-assignments/its-senior-roles.php');
 
 <script type="text/javascript">
 $(function(){
-    $('#unitFilter').select2({ placeholder: 'All Units', allowClear: true, width: '200px' });
-    $('#projectFilter').select2({ placeholder: 'All Projects', allowClear: true, width: '200px' });
+    var selectedUnit = '';
+    var selectedProject = '';
 
     function filterRolesTable(){
-        var selectedUnit = $('#unitFilter').val();
-        var selectedProject = $('#projectFilter').val();
-        $('#table_recordtbl tbody tr').each(function(){
-            var rowUnit = $(this).data('unit');
-            var rowProjectIds = String($(this).data('project-ids'));
+        var searchText = $('#rolesSearchInput').val().toLowerCase();
+        $('#table_recordtbl tbody tr').not('.no-data-row').each(function(){
+            var $row = $(this);
+            var rowText = $row.text().toLowerCase();
+            var rowUnit = ($row.data('unit') || '').toString();
+            var rowProjectIds = String($row.data('project-ids') || '');
             var projectIdsArr = rowProjectIds ? rowProjectIds.split(',') : [];
+
+            var matchesSearch = (searchText === '' || rowText.indexOf(searchText) > -1);
             var matchesUnit = (selectedUnit === '' || rowUnit === selectedUnit);
             var matchesProject = true;
             if(selectedProject !== ''){
                 matchesProject = (projectIdsArr.indexOf(selectedProject) > -1);
             }
-            $(this).toggle(matchesUnit && matchesProject);
+            if(matchesSearch && matchesUnit && matchesProject){
+                $row.show();
+            } else {
+                $row.hide();
+            }
         });
     }
-    $('#unitFilter').on('change', function(){
+
+    /* Search bar */
+    $('#rolesSearchInput').on('input', function(){
+        var v = $(this).val();
+        if(v.length > 0){ $('#rolesClearSearch').css('display','flex'); } else { $('#rolesClearSearch').hide(); }
         filterRolesTable();
     });
-    $('#projectFilter').on('change', function(){
+    $('#rolesClearSearch').on('click', function(){
+        $('#rolesSearchInput').val('');
+        $(this).hide();
         filterRolesTable();
+    });
+
+    /* Unit filter dropdown */
+    $('#afUnitFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afProjectDropdown').removeClass('show');
+        $('#afUnitDropdown').toggleClass('show');
+    });
+    $('#afUnitDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        selectedUnit = $(this).data('value') || '';
+        $('#afUnitDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+        if(selectedUnit !== ''){
+            $('#afUnitFilterBtn .af-select-filter-label').text($(this).text());
+            $('#afUnitFilterBtn').addClass('active');
+            $('#afUnitClear').css('display','inline-block');
+        } else {
+            $('#afUnitFilterBtn .af-select-filter-label').text('All Units');
+            $('#afUnitFilterBtn').removeClass('active');
+            $('#afUnitClear').hide();
+        }
+        $('#afUnitDropdown').removeClass('show');
+        filterRolesTable();
+    });
+    $('#afUnitClear').on('click', function(e){
+        e.stopPropagation();
+        selectedUnit = '';
+        $('#afUnitFilterBtn .af-select-filter-label').text('All Units');
+        $('#afUnitFilterBtn').removeClass('active');
+        $(this).hide();
+        $('#afUnitDropdown .af-select-filter-option').removeClass('selected');
+        filterRolesTable();
+    });
+
+    /* Project filter dropdown */
+    $('#afProjectFilterBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afUnitDropdown').removeClass('show');
+        $('#afProjectDropdown').toggleClass('show');
+    });
+    $('#afProjectDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        selectedProject = val ? val.toString() : '';
+        $('#afProjectDropdown .af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+        if(selectedProject !== ''){
+            $('#afProjectFilterBtn .af-select-filter-label').text($(this).text());
+            $('#afProjectFilterBtn').addClass('active');
+            $('#afProjectClear').css('display','inline-block');
+        } else {
+            $('#afProjectFilterBtn .af-select-filter-label').text('All Projects');
+            $('#afProjectFilterBtn').removeClass('active');
+            $('#afProjectClear').hide();
+        }
+        $('#afProjectDropdown').removeClass('show');
+        filterRolesTable();
+    });
+    $('#afProjectClear').on('click', function(e){
+        e.stopPropagation();
+        selectedProject = '';
+        $('#afProjectFilterBtn .af-select-filter-label').text('All Projects');
+        $('#afProjectFilterBtn').removeClass('active');
+        $(this).hide();
+        $('#afProjectDropdown .af-select-filter-option').removeClass('selected');
+        filterRolesTable();
+    });
+
+    /* Close dropdowns on outside click */
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afUnitFilterWrap').length){ $('#afUnitDropdown').removeClass('show'); }
+        if(!$(e.target).closest('#afProjectFilterWrap').length){ $('#afProjectDropdown').removeClass('show'); }
     });
 });
 </script>

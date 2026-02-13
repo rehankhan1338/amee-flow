@@ -123,20 +123,36 @@ $(function(){
             <div class="fs14 mx-2 my-2 col-12"><strong>Note -</strong> If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>. Missing or incomplete data may prevent the system from processing your submission correctly.</div>
         </div>
         <div class="box-header no-border">
-        
-            <h3 class="box-title">Oversight Units
-                <select class="form-control mt-2" onchange="return getOversigntData(this.value);">
-                    <option value="">Select...</option>
-                    <?php foreach($oversightsDataArr as $osd){?>
-                        <option value="<?php echo $osd['oversigntId'];?>" <?php if($seloversigntId==$osd['oversigntId']){?> selected<?php } ?>> <?php echo $osd['unitName'];?> </option>
-                    <?php } ?>
-                </select>
-            </h3>
-            <div class="box-tools pull-right">                
-                <!-- <button id="downloadCourseBtn" type="button" onclick="return mapInfo();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-info'> Info</button> -->
-                <button id="downloadCourseBtn" type="button" onclick="return downloadMap();" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-warning'> Download Excel</button>
-                <button id="delProBtn" type="button" onclick="return deleteCourse('<?php echo $seloversigntId;?>');" style="margin-right:5px;padding: 3px 15px; font-size:15px;" class='btn btn-danger'> Delete </button>
-                <button id="emamBtn" type="button" style="padding: 3px 15px; font-size:15px;" onclick="return manageMam('<?php echo $mamDetailsArr['mamId'];?>');" class='btn btn-primary'> Update Map </button>               
+            <h3 class="box-title">Oversight Units</h3>
+        </div>
+        <!-- Modern Toolbar -->
+        <div class="af-roles-toolbar">
+            <div class="af-roles-toolbar-left">
+                <!-- Oversight Unit Selector -->
+                <div class="af-select-filter-wrap" id="afOversightWrap">
+                    <span class="af-select-filter-btn" id="afOversightBtn" role="button">
+                        <i class="fa fa-building"></i>
+                        <span class="af-select-filter-label"><?php 
+                            $mamLabel = 'Select Unit';
+                            foreach($oversightsDataArr as $osd){
+                                if($seloversigntId==$osd['oversigntId']){ $mamLabel = $osd['unitName']; }
+                            }
+                            echo htmlspecialchars($mamLabel);
+                        ?></span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afOversightDropdown">
+                        <a href="#" class="af-select-filter-option" data-value="">Select...</a>
+                        <?php foreach($oversightsDataArr as $osd){?>
+                        <a href="#" class="af-select-filter-option <?php if($seloversigntId==$osd['oversigntId']){?> selected <?php }?>" data-value="<?php echo $osd['oversigntId'];?>"><?php echo htmlspecialchars($osd['unitName']);?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <div class="af-roles-toolbar-right" style="flex-wrap:wrap; gap:6px;">
+                <button id="downloadCourseBtn" type="button" onclick="return downloadMap();" class='btn btn-warning btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-download"></i> Download Excel</button>
+                <button id="delProBtn" type="button" onclick="return deleteCourse('<?php echo $seloversigntId;?>');" class='btn btn-danger btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-trash"></i> Delete </button>
+                <button id="emamBtn" type="button" onclick="return manageMam('<?php echo $mamDetailsArr['mamId'];?>');" class='btn btn-primary btn-sm' style="border-radius:22px; padding:6px 16px; font-size:13px;"> <i class="fa fa-pencil"></i> Update Map </button>
             </div>
         </div>
        
@@ -369,4 +385,24 @@ $(document).ready(function () {
 </script>
 <?php include(APPPATH.'views/system-admin/planning-documents/master-alignment-map/mam-model.php');
 include(APPPATH.'views/system-admin/planning-documents/master-alignment-map/notes-modal.php');?>
+<script>
+$(function(){
+    /* Oversight dropdown */
+    $('#afOversightBtn').on('click', function(e){
+        e.stopPropagation();
+        $('#afOversightDropdown').toggleClass('show');
+    });
+    $('#afOversightDropdown .af-select-filter-option').on('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var val = $(this).data('value');
+        if(val && val !== ''){
+            getOversigntData(val);
+        }
+        $('#afOversightDropdown').removeClass('show');
+    });
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('#afOversightWrap').length){ $('#afOversightDropdown').removeClass('show'); }
+    });
+});
+</script>
 </section>
