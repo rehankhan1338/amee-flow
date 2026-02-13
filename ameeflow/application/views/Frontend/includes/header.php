@@ -206,14 +206,12 @@
 								</a>
 							</li>
 							<?php } ?>
-							<li><hr class="dropdown-divider"></li>
-							<?php if($sessionDetailsArr['lightAccess']==0){ ?>
-							<li>
-								<a class="dropdown-item af-logout-link" href="<?php echo base_url();?>signin/logout">
-									<i class="fa fa-sign-out"></i> Logout
-								</a>
-							</li>
-							<?php } ?>
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item af-logout-link" href="<?php echo base_url();?>signin/logout">
+								<i class="fa fa-sign-out"></i> Logout
+							</a>
+						</li>
 						</ul>
 					</li>
 				</ul>
