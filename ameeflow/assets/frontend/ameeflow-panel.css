@@ -739,7 +739,7 @@ body.af-system-admin input[type="text"]:not(.af-roles-search-input):not(.datepic
 .af-select-filter-dropdown {
 	position: absolute;
 	top: calc(100% + 6px);
-	right: 0;
+	left: 0;
 	z-index: 1050;
 	background: #fff;
 	border: 1px solid #e0e3ea;
@@ -777,7 +777,7 @@ body.af-system-admin input[type="text"]:not(.af-roles-search-input):not(.datepic
 	.af-roles-search-wrap { width: 100%; }
 	.af-roles-toolbar { padding: 12px 14px; }
 	.af-date-filter-dropdown { right: -10px; min-width: 240px; }
-	.af-select-filter-dropdown { right: -10px; min-width: 200px; }
+	.af-select-filter-dropdown { left: 0; min-width: 200px; }
 }
 
 /* ============================================================
