@@ -143,9 +143,9 @@ $(function(){
                     </span>
                     <div class="af-select-filter-dropdown" id="afOversightDropdown">
                         <a href="#" class="af-select-filter-option" data-value="">Select...</a>
-                        <?php foreach($oversightsDataArr as $osd){?>
+                    <?php foreach($oversightsDataArr as $osd){?>
                         <a href="#" class="af-select-filter-option <?php if($seloversigntId==$osd['oversigntId']){?> selected <?php }?>" data-value="<?php echo $osd['oversigntId'];?>"><?php echo htmlspecialchars($osd['unitName']);?></a>
-                        <?php } ?>
+                    <?php } ?>
                     </div>
                 </div>
             </div>
@@ -245,21 +245,19 @@ $(function(){
         </div>
     </div>
 <div class="modal fade" id="popCMAMModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="popCMAMModelLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">	
       <div class="modal-header">
-        <h5 class="modal-title" id="popCMAMModelLabel">Update your master alignment map</h5>
+        <h5 class="modal-title" id="popCMAMModelLabel"><i class="fa fa-pencil-square-o" style="margin-right:6px;"></i> Update your master alignment map</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 		<form id="popCMAMFrm" action="master_alignment_map/manageClassEntry" method="post">
 			<div id="resCMAM" class="ajaxFrmRes"></div>
-			 <div class="row">	
-				<div id="manageCMAMFieldSec"></div>				 
-				<div class="col-12 mt-2">
-					<button type="submit" id="popCMAMSaveBtn" class="btn btn-primary" style="padding:5px 50px;">Save</button>
-				</div>
-			 </div>
+			<div id="manageCMAMFieldSec"></div>				 
+			<div class="mt-3 pt-3" style="border-top:1px solid #e5e7eb;">
+				<button type="submit" id="popCMAMSaveBtn" class="af-noti-btn af-noti-btn-primary" style="padding:10px 40px;"><i class="fa fa-check"></i> Save</button>
+			</div>
 		 </form>		 
       </div>      
     </div>

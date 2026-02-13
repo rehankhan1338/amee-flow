@@ -95,17 +95,20 @@
     </div>
 <?php if(isset($sharePermission) && $sharePermission==1){?>
 <div class="modal fade" id="popCMAMModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="popCMAMModelLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog">
     <div class="modal-content">	
       <div class="modal-header">
-        <h5 class="modal-title" id="popCMAMModelLabel"><i class="fa fa-pencil-square-o" style="margin-right:6px;"></i> Update your master alignment map</h5>
+        <h5 class="modal-title" id="popCMAMModelLabel">Update your master alignment map</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" style="padding:24px 28px;">
+      <div class="modal-body">
 		<form id="popCMAMFrm" action="sampling_plan/saveNotesAM" method="post">
 			<div id="resCMAM" class="ajaxFrmRes"></div>
-			<div id="manageCMAMFieldSec"></div>
-		</form>
+			 <div class="row">	
+				<div id="manageCMAMFieldSec"></div>				 
+				
+			 </div>
+		 </form>		 
       </div>      
     </div>
   </div>

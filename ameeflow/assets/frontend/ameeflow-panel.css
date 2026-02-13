@@ -1442,6 +1442,56 @@ body.af-system-admin .table-responsive{
 }
 
 /* ===================================================================
+   Toggle Grid – 2-Column Layout for SLO toggles in modals
+   =================================================================== */
+.af-toggle-section {
+	margin-bottom: 18px;
+}
+.af-toggle-section-title {
+	font-size: .82rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .6px;
+	color: #485b79;
+	padding: 8px 14px;
+	background: #f1f5f9;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	border-left: 3px solid #e18125;
+}
+.af-toggle-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px 18px;
+}
+.af-toggle-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 8px 14px;
+	background: #fafbfc;
+	border: 1px solid #eef0f4;
+	border-radius: 10px;
+	transition: background .15s, border-color .15s;
+}
+.af-toggle-item:hover {
+	background: #f1f5f9;
+	border-color: #d0d5dd;
+}
+.af-toggle-label {
+	font-size: .9rem;
+	font-weight: 600;
+	color: #334155;
+	white-space: nowrap;
+}
+@media (max-width: 576px) {
+	.af-toggle-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ===================================================================
    SEND NOTIFICATION MODAL – Modern Fullscreen Layout
    =================================================================== */
 
@@ -1919,88 +1969,58 @@ body.af-system-admin #sendNotiModal .modal-body {
 .af-recipients-panel {
 	margin-top: 8px;
 }
-.af-recipients-panel > h5 {
+.af-recipients-panel h5 {
 	font-size: 1rem;
 	font-weight: 700;
 	color: #1e293b;
-	margin: 0 0 14px;
+	margin: 0 0 16px;
 	display: flex;
 	align-items: center;
 	gap: 8px;
 }
-.af-recipients-panel > h5 i {
+.af-recipients-panel h5 i {
 	color: #485b79;
 }
-
-/* Roles: horizontal pill/tag flow */
-.af-recipients-roles-label {
-	font-size: .82rem;
-	font-weight: 600;
-	color: #64748b;
-	text-transform: uppercase;
-	letter-spacing: .5px;
-	margin-bottom: 10px;
-	display: block;
+.af-recipients-layout {
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: 18px;
+	min-height: 200px;
 }
 .af-recipients-roles {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-	padding: 14px 16px;
 	background: #f8fafc;
 	border: 1px solid #e5e7eb;
 	border-radius: 14px;
-	margin-bottom: 16px;
+	padding: 16px 18px;
 }
-.af-role-chip {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	padding: 6px 14px;
-	border-radius: 38px;
-	background: #fff;
-	border: 1px solid #d0d5dd;
+.af-recipients-roles .af-role-check-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	padding: 8px 4px;
+	border-radius: 8px;
 	cursor: pointer;
-	transition: all .2s;
-	font-size: .84rem;
-	font-weight: 500;
-	color: #475569;
-	white-space: nowrap;
-	line-height: 1.3;
+	transition: background .15s;
 }
-.af-role-chip:hover {
-	border-color: #485b79;
+.af-recipients-roles .af-role-check-item:hover {
 	background: #eef2f7;
 }
-.af-role-chip input[type="checkbox"] {
+.af-recipients-roles .af-role-check-item input[type="checkbox"] {
+	margin-top: 3px;
 	accent-color: #485b79;
-	margin: 0;
-	width: 15px;
-	height: 15px;
-	cursor: pointer;
 }
-.af-role-chip input[type="checkbox"]:checked + .af-role-chip-label {
-	color: #1e293b;
-	font-weight: 600;
+.af-recipients-roles .af-role-check-item span {
+	font-size: .88rem;
+	font-weight: 500;
+	color: #334155;
+	line-height: 1.4;
 }
-.af-role-chip:has(input:checked) {
-	background: #e8edf3;
-	border-color: #485b79;
-}
-.af-role-chip-label {
-	pointer-events: none;
-}
-.af-role-chip-desc {
-	display: none;
-}
-
-/* Users area */
 .af-recipients-users {
 	background: #fff;
 	border: 1px solid #e5e7eb;
 	border-radius: 14px;
 	padding: 16px 18px;
-	min-height: 120px;
+	min-height: 200px;
 }
 .af-recipients-users .af-check-all-btn {
 	display: inline-flex;
@@ -2019,52 +2039,6 @@ body.af-system-admin #sendNotiModal .modal-body {
 }
 .af-recipients-users .af-check-all-btn:hover {
 	box-shadow: 0 3px 10px rgba(225,129,37,.3);
-}
-
-/* Individual user items in AJAX list */
-.af-user-check-item {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	padding: 7px 14px;
-	border-radius: 10px;
-	background: #f8fafc;
-	border: 1px solid #e5e7eb;
-	cursor: pointer;
-	transition: all .15s;
-	font-size: .85rem;
-	font-weight: 500;
-	color: #334155;
-	margin: 0 0 8px;
-	width: 100%;
-}
-.af-user-check-item:hover {
-	background: #eef2f7;
-	border-color: #c8cdd5;
-}
-.af-user-check-item:has(input:checked) {
-	background: #e8edf3;
-	border-color: #485b79;
-}
-.af-user-check-item input[type="checkbox"] {
-	accent-color: #485b79;
-	width: 15px;
-	height: 15px;
-	margin: 0;
-	cursor: pointer;
-	flex-shrink: 0;
-}
-.af-user-check-name {
-	font-weight: 600;
-	color: #1e293b;
-	line-height: 1.2;
-}
-.af-user-check-role {
-	display: block;
-	font-size: .76rem;
-	font-weight: 500;
-	color: #64748b;
-	margin-top: 1px;
 }
 
 /* --- Form Submit Row --- */
@@ -2110,6 +2084,9 @@ body.af-system-admin #ntComViewModal .modal-body {
 	.af-noti-toolbar {
 		flex-direction: column;
 		align-items: flex-start;
+	}
+	.af-recipients-layout {
+		grid-template-columns: 1fr;
 	}
 	.af-noti-form-row.cols-3 {
 		grid-template-columns: 1fr;
