@@ -125,7 +125,7 @@ $(function(){
             If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>.
         </div>
        
-        <div class="box-body row">					 
+        <div class="box-body">					 
             <div class="col-xs-12" id="mam-table-wrap">
                 <table class="table" id="table_recordtbl1">
                     <thead>
