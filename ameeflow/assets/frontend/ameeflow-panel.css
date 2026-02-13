@@ -2107,11 +2107,10 @@ body.af-system-admin #ntComViewModal .modal-body {
 /* --- Wrapper container --- */
 #mam-table-wrap {
 	position: relative;
-	border-radius: 12px;
+	border-radius: 0px;
 	background: #fff;
 	border: 1px solid #e2e8f0;
-	box-shadow: 0 1px 4px rgba(0,0,0,.05);
-	padding: 0 !important;
+	padding: 10px;
 	/* NOTE: no overflow:hidden – required for position:sticky (FixedColumns) */
 }
 #mam-table-wrap .dataTables_wrapper {
