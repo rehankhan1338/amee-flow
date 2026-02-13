@@ -2384,16 +2384,28 @@ body.af-system-admin table.dataTable thead th.sorting_desc::after {
 	border-spacing: 0;
 	margin: 0 !important;
 }
+
+/* --- Polished scroll-head (non-sticky original header) --- */
+#mam-table-wrap .dataTables_scrollHead {
+	background: #fff;
+	border-bottom: 2px solid #e2e8f0;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+	position: relative;
+	z-index: 12;
+}
+
 #mam-table-wrap table.dataTable thead th {
 	vertical-align: middle;
 	text-align: center;
-	padding: 12px 10px;
+	padding: 14px 12px;
 	font-size: .78rem;
 	font-weight: 700;
-	letter-spacing: .3px;
+	letter-spacing: .4px;
 	text-transform: uppercase;
-	border-bottom: 2px solid #e2e8f0;
+	border-bottom: none;
 	white-space: nowrap;
+	background: #fff;
+	color: #475569;
 }
 #mam-table-wrap table.dataTable tbody td {
 	padding: 10px 12px;
@@ -2408,13 +2420,11 @@ body.af-system-admin table.dataTable thead th.sorting_desc::after {
 	background: #f0f3f8 !important;
 	color: #334155 !important;
 	text-align: left;
-	border-bottom-color: #d0d5dd !important;
 }
 /* --- "Action" header pinned right --- */
 #mam-table-wrap table.dataTable thead th.dtfc-fixed-right {
 	background: #f0f3f8 !important;
 	color: #334155 !important;
-	border-bottom-color: #d0d5dd !important;
 }
 
 /* Sticky header clone (mam-specific) */
@@ -2423,9 +2433,16 @@ body.af-system-admin table.dataTable thead th.sorting_desc::after {
 	box-shadow: 0 3px 12px rgba(0,0,0,.08) !important;
 }
 #mam-sticky-header table thead th {
-	border-bottom: 2px solid #e2e8f0 !important;
 	vertical-align: middle;
 	white-space: nowrap;
+	padding: 14px 12px;
+	font-size: .78rem;
+	font-weight: 700;
+	letter-spacing: .4px;
+	text-transform: uppercase;
+	color: #475569;
+	background: #fff;
+	border-bottom: none !important;
 }
 #mam-sticky-header .mam-th-islo  { background: #eff6ff !important; color: #2563eb !important; }
 #mam-sticky-header .mam-th-gislo { background: #f0fdf4 !important; color: #16a34a !important; }

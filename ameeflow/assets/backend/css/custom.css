@@ -1572,14 +1572,16 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	margin-bottom: 0 !important;
 }
 #mam-sticky-header table thead th {
-	border-bottom: 2px solid #e2e8f0;
+	border-bottom: none;
 	vertical-align: middle;
 	white-space: nowrap;
 	font-size: .78rem;
 	font-weight: 700;
-	letter-spacing: .3px;
+	letter-spacing: .4px;
 	text-transform: uppercase;
-	padding: 12px 10px;
+	padding: 14px 12px;
+	color: #475569;
+	background: #fff;
 }
 @media (max-width: 767px) {
 	#mam-sticky-header {
