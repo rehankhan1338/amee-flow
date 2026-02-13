@@ -82,28 +82,29 @@ if(isset($subtaskDetails['subTaskId']) && $subtaskDetails['subTaskId']!='' && $s
             <!-- Recipients Panel -->
             <div class="af-recipients-panel">
                 <h5><i class="fa fa-users"></i> Assign Recipients</h5>
-                <div class="af-recipients-layout">
-                    <!-- Roles sidebar -->
-                    <div class="af-recipients-roles">
-                        <?php
-                        if(isset($notiDetailsArr['recipientsIds']) && $notiDetailsArr['recipientsIds']!=''){
-                            $userRoleTypesArr = explode(',',$notiDetailsArr['recipientsIds']);
-                        }else{
-                            $userRoleTypesArr = array();
-                        }
-                        $user_roles = $this->config->item('user_roles_array_config');
-                        foreach($user_roles as $key=>$value){ ?>
-                            <label class="af-role-check-item" for="userRole<?php echo $key;?>">
-                                <input onclick="return getSeniorRoleByuroleIds('<?php echo $nId;?>');" class="uroleCase" <?php if(in_array($key,$userRoleTypesArr)){?> checked<?php } ?> type="checkbox" id="userRole<?php echo $key;?>" name="userRoleTypes[]" value="<?php echo $key;?>" />
-                                <span><?php echo $value['name']; if(isset($value['shortDesc']) && $value['shortDesc']!=''){echo ' &ndash; '.$value['shortDesc'];}?></span>
-                            </label>
-                        <?php } ?>
-                    </div>
-                    <!-- Users area -->
-                    <div class="af-recipients-users">
-                        <button type="button" id="toggleCheckboxBtn" class="af-check-all-btn">Check All</button>
-                        <div class="row" id="uroleDataSec"></div>
-                    </div>
+
+                <!-- Roles: horizontal pill flow -->
+                <span class="af-recipients-roles-label">Select Roles</span>
+                <div class="af-recipients-roles">
+                    <?php
+                    if(isset($notiDetailsArr['recipientsIds']) && $notiDetailsArr['recipientsIds']!=''){
+                        $userRoleTypesArr = explode(',',$notiDetailsArr['recipientsIds']);
+                    }else{
+                        $userRoleTypesArr = array();
+                    }
+                    $user_roles = $this->config->item('user_roles_array_config');
+                    foreach($user_roles as $key=>$value){ ?>
+                        <label class="af-role-chip" for="userRole<?php echo $key;?>">
+                            <input onclick="return getSeniorRoleByuroleIds('<?php echo $nId;?>');" class="uroleCase" <?php if(in_array($key,$userRoleTypesArr)){?> checked<?php } ?> type="checkbox" id="userRole<?php echo $key;?>" name="userRoleTypes[]" value="<?php echo $key;?>" />
+                            <span class="af-role-chip-label"><?php echo $value['name'];?></span>
+                        </label>
+                    <?php } ?>
+                </div>
+
+                <!-- Users area -->
+                <div class="af-recipients-users">
+                    <button type="button" id="toggleCheckboxBtn" class="af-check-all-btn"><i class="fa fa-check-square-o"></i> Check All</button>
+                    <div class="row" id="uroleDataSec"></div>
                 </div>
             </div>
         </div>
