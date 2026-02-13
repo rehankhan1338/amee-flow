@@ -18,7 +18,8 @@ $(function(){
         autoWidth: true,
         scrollX: true,
         fixedColumns: {
-            leftColumns: 2
+            leftColumns: 2,
+            rightColumns: <?php echo (isset($sharePermission) && $sharePermission==1) ? '1' : '0'; ?>
         },
         columnDefs: [
             { orderable: false, targets: 0 }

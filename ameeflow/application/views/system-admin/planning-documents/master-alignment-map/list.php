@@ -19,7 +19,8 @@ $(function(){
         autoWidth: true,
         scrollX: true,   // enable horizontal scroll
         fixedColumns: {
-            leftColumns: 2 // fix first column
+            leftColumns: 2,
+            rightColumns: 1
         },
         columnDefs: [
             { orderable: false, targets: 0 } // Disable sorting on first column (index 0)

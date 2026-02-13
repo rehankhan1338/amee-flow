@@ -2148,6 +2148,30 @@ body.af-system-admin #ntComViewModal .modal-body {
 	pointer-events: none;
 }
 
+/* --- Fixed right column (Action) --- */
+#mam-table-wrap .dtfc-fixed-right,
+#mam-table-wrap td.dtfc-fixed-right,
+#mam-table-wrap th.dtfc-fixed-right {
+	background: #f8fafd !important;
+	border-left: none !important;
+	z-index: 11 !important;
+	position: sticky !important;
+}
+#mam-table-wrap th.dtfc-fixed-right {
+	z-index: 22 !important;
+}
+/* Shadow separator on left side of pinned right column */
+#mam-table-wrap .dtfc-fixed-right::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -6px;
+	bottom: 0;
+	width: 6px;
+	background: linear-gradient(to left, rgba(0,0,0,.06), transparent);
+	pointer-events: none;
+}
+
 /* --- Course name cell --- */
 .mam-course-name {
 	font-weight: 600;
@@ -2205,16 +2229,19 @@ body.af-system-admin #ntComViewModal .modal-body {
 #mam-table-wrap table.dataTable tbody tr:nth-child(even) td {
 	background-color: #fafbfc;
 }
-#mam-table-wrap table.dataTable tbody tr:nth-child(even) td.dtfc-fixed-left {
+#mam-table-wrap table.dataTable tbody tr:nth-child(even) td.dtfc-fixed-left,
+#mam-table-wrap table.dataTable tbody tr:nth-child(even) td.dtfc-fixed-right {
 	background-color: #f1f4f8 !important;
 }
-#mam-table-wrap table.dataTable tbody tr:nth-child(odd) td.dtfc-fixed-left {
+#mam-table-wrap table.dataTable tbody tr:nth-child(odd) td.dtfc-fixed-left,
+#mam-table-wrap table.dataTable tbody tr:nth-child(odd) td.dtfc-fixed-right {
 	background-color: #f8fafd !important;
 }
 #mam-table-wrap table.dataTable tbody tr:hover td {
 	background-color: #f0f4ff !important;
 }
-#mam-table-wrap table.dataTable tbody tr:hover td.dtfc-fixed-left {
+#mam-table-wrap table.dataTable tbody tr:hover td.dtfc-fixed-left,
+#mam-table-wrap table.dataTable tbody tr:hover td.dtfc-fixed-right {
 	background-color: #e8edf7 !important;
 }
 
@@ -2302,6 +2329,12 @@ body.af-system-admin #ntComViewModal .modal-body {
 	background: #f0f3f8 !important;
 	color: #334155 !important;
 	text-align: left;
+	border-bottom-color: #d0d5dd !important;
+}
+/* --- "Action" header pinned right --- */
+#mam-table-wrap table.dataTable thead th.dtfc-fixed-right {
+	background: #f0f3f8 !important;
+	color: #334155 !important;
 	border-bottom-color: #d0d5dd !important;
 }
 

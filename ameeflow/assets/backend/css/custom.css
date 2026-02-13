@@ -1590,12 +1590,14 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	}
 }
 /* Fixed-column backgrounds & sticky enforcement */
-.table.dataTable thead tr>.dtfc-fixed-left{
+.table.dataTable thead tr>.dtfc-fixed-left,
+.table.dataTable thead tr>.dtfc-fixed-right{
 	background-color: #f0f3f8 !important;
 	position: sticky !important;
 	z-index: 22 !important;
 }
-.table.dataTable tbody tr>.dtfc-fixed-left{
+.table.dataTable tbody tr>.dtfc-fixed-left,
+.table.dataTable tbody tr>.dtfc-fixed-right{
 	background-color: #f8fafd !important;
 	position: sticky !important;
 	z-index: 11 !important;
