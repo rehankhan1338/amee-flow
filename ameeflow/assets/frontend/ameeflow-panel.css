@@ -1440,3 +1440,613 @@ body.af-system-admin input[type="text"]:not(.af-roles-search-input):not(.datepic
 body.af-system-admin .table-responsive{
 	overflow: scroll !important;
 }
+
+/* ===================================================================
+   SEND NOTIFICATION MODAL – Modern Fullscreen Layout
+   =================================================================== */
+
+/* --- Modal Content Override --- */
+body.af-system-admin #sendNotiModal .modal-content {
+	background: #f4f6f9;
+	border: none !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	min-height: 100vh;
+}
+
+/* --- Modal Header --- */
+body.af-system-admin #sendNotiModal .modal-header {
+	background: linear-gradient(135deg, #485b79 0%, #e18125 100%) !important;
+	border-radius: 0 !important;
+	padding: 18px 28px !important;
+	border-bottom: none !important;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+body.af-system-admin #sendNotiModal .modal-header .modal-title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #fff !important;
+	letter-spacing: .3px;
+}
+body.af-system-admin #sendNotiModal .modal-header .btn-close {
+	filter: brightness(0) invert(1);
+	opacity: .85;
+	transition: opacity .2s, transform .2s;
+}
+body.af-system-admin #sendNotiModal .modal-header .btn-close:hover {
+	opacity: 1;
+	transform: scale(1.15);
+}
+
+/* --- Modal Body --- */
+body.af-system-admin #sendNotiModal .modal-body {
+	padding: 28px 32px;
+	max-width: 1400px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* --- Section Toolbar (title + action buttons row) --- */
+.af-noti-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 22px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #e5e7eb;
+}
+.af-noti-toolbar-title {
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: #1e293b;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.af-noti-toolbar-title i,
+.af-noti-toolbar-title svg {
+	color: #e18125;
+	width: 20px;
+	height: 20px;
+}
+.af-noti-toolbar-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+}
+.af-noti-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 20px;
+	border-radius: 38px;
+	font-size: .875rem;
+	font-weight: 600;
+	border: none;
+	cursor: pointer;
+	transition: all .2s ease;
+	text-decoration: none;
+	line-height: 1.4;
+}
+.af-noti-btn-primary {
+	background: linear-gradient(135deg, #485b79, #3a4d6b);
+	color: #fff;
+}
+.af-noti-btn-primary:hover {
+	background: linear-gradient(135deg, #3a4d6b, #2d3e57);
+	box-shadow: 0 4px 12px rgba(72,91,121,.3);
+	color: #fff;
+}
+.af-noti-btn-secondary {
+	background: #f1f5f9;
+	color: #485b79;
+	border: 1px solid #d0d5dd;
+}
+.af-noti-btn-secondary:hover {
+	background: #e2e8f0;
+	border-color: #b8bfca;
+	color: #485b79;
+}
+.af-noti-btn-warning {
+	background: linear-gradient(135deg, #e18125, #d97706);
+	color: #fff;
+}
+.af-noti-btn-warning:hover {
+	background: linear-gradient(135deg, #d97706, #b45309);
+	box-shadow: 0 4px 12px rgba(225,129,37,.3);
+	color: #fff;
+}
+.af-noti-btn i,
+.af-noti-btn svg {
+	width: 15px;
+	height: 15px;
+}
+
+/* --- Task Detail Card (ajax-sub-task.php) --- */
+.af-task-detail-card {
+	background: #fff;
+	border-radius: 16px;
+	border: 1px solid #e5e7eb;
+	box-shadow: 0 1px 4px rgba(0,0,0,.04);
+	overflow: hidden;
+	margin-bottom: 24px;
+}
+.af-task-detail-header {
+	background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+	padding: 22px 26px 18px;
+	border-bottom: 1px solid #e5e7eb;
+}
+.af-task-detail-header h5 {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #1e293b;
+	margin: 0 0 6px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.af-task-detail-header h5 i {
+	color: #e18125;
+}
+.af-task-due-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	background: #fff3e6;
+	color: #b45309;
+	border: 1px solid #fcd9b0;
+	padding: 4px 14px;
+	border-radius: 20px;
+	font-size: .82rem;
+	font-weight: 600;
+	margin-top: 4px;
+}
+.af-task-due-badge i {
+	font-size: .78rem;
+}
+.af-task-detail-desc {
+	padding: 20px 26px;
+	color: #475569;
+	font-size: .93rem;
+	line-height: 1.65;
+}
+.af-task-detail-body {
+	padding: 0 26px 22px;
+}
+
+/* --- Sub Task Table --- */
+.af-subtask-section {
+	margin-top: 6px;
+}
+.af-subtask-section h5 {
+	font-size: 1rem;
+	font-weight: 700;
+	color: #1e293b;
+	margin: 0 0 14px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.af-subtask-section h5 i,
+.af-subtask-section h5 svg {
+	color: #485b79;
+	width: 18px;
+	height: 18px;
+}
+.af-subtask-table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	overflow: hidden;
+}
+.af-subtask-table thead th {
+	background: #f8fafc;
+	color: #64748b;
+	font-weight: 600;
+	font-size: .82rem;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	padding: 12px 16px;
+	border-bottom: 1px solid #e5e7eb;
+}
+.af-subtask-table tbody td {
+	padding: 14px 16px;
+	color: #334155;
+	font-size: .9rem;
+	border-bottom: 1px solid #f1f5f9;
+	vertical-align: middle;
+}
+.af-subtask-table tbody tr:last-child td {
+	border-bottom: none;
+}
+.af-subtask-table tbody tr:hover {
+	background: #f8fafc;
+}
+.af-subtask-noti-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #e18125, #d97706);
+	color: #fff;
+	cursor: pointer;
+	transition: all .2s;
+	border: none;
+}
+.af-subtask-noti-btn:hover {
+	box-shadow: 0 3px 10px rgba(225,129,37,.35);
+	transform: translateY(-1px);
+}
+.af-subtask-noti-btn i,
+.af-subtask-noti-btn svg {
+	width: 15px;
+	height: 15px;
+}
+
+/* --- Single task (no sub-tasks) action area --- */
+.af-task-single-action {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 16px 0;
+}
+
+/* --- Attachments Grid --- */
+.af-attach-section {
+	margin-top: 8px;
+}
+.af-attach-section h5 {
+	font-size: 1rem;
+	font-weight: 700;
+	color: #1e293b;
+	margin: 0 0 14px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.af-attach-section h5 i {
+	color: #485b79;
+}
+.af-attach-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 12px;
+}
+.af-attach-card {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	padding: 14px 16px;
+	text-decoration: none !important;
+	color: #334155 !important;
+	transition: all .2s;
+}
+.af-attach-card:hover {
+	border-color: #e18125;
+	box-shadow: 0 3px 10px rgba(0,0,0,.06);
+	transform: translateY(-1px);
+}
+.af-attach-icon {
+	width: 42px;
+	height: 42px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	flex-shrink: 0;
+}
+.af-attach-icon-link { background: #e0f2fe; color: #0284c7; }
+.af-attach-icon-pdf  { background: #fee2e2; color: #dc2626; }
+.af-attach-icon-word { background: #dbeafe; color: #2563eb; }
+.af-attach-icon-excel{ background: #dcfce7; color: #16a34a; }
+.af-attach-icon-ppt  { background: #fef3c7; color: #d97706; }
+.af-attach-icon-file { background: #f1f5f9; color: #64748b; }
+.af-attach-name {
+	font-size: .88rem;
+	font-weight: 600;
+	color: #334155;
+	line-height: 1.3;
+	word-break: break-word;
+}
+.af-attach-name .fa-external-link {
+	font-size: .72rem;
+	color: #94a3b8;
+	margin-left: 4px;
+}
+
+/* --- Notification List Table --- */
+.af-noti-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+	align-items: center;
+	margin-bottom: 18px;
+	padding: 12px 18px;
+	background: #fff;
+	border-radius: 10px;
+	border: 1px solid #e5e7eb;
+}
+.af-noti-legend-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: .85rem;
+	font-weight: 500;
+	color: #475569;
+}
+.af-noti-legend-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	display: inline-block;
+}
+.af-noti-legend-dot.sent    { background-color: #01c875; }
+.af-noti-legend-dot.pending { background-color: #fdab3d; }
+.af-noti-legend-dot.failed  { background-color: #e1304c; }
+
+.af-noti-table-wrap {
+	background: #fff;
+	border-radius: 14px;
+	border: 1px solid #e5e7eb;
+	overflow: hidden;
+	box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+.af-noti-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0;
+}
+.af-noti-table thead th {
+	background: #f8fafc;
+	color: #64748b;
+	font-weight: 600;
+	font-size: .8rem;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	padding: 13px 16px;
+	border-bottom: 2px solid #e5e7eb;
+	white-space: nowrap;
+}
+.af-noti-table tbody td {
+	padding: 14px 16px;
+	color: #334155;
+	font-size: .9rem;
+	border-bottom: 1px solid #f1f5f9;
+	vertical-align: middle;
+}
+.af-noti-table tbody tr:last-child td {
+	border-bottom: none;
+}
+.af-noti-table tbody tr:hover {
+	background: #f8fafc;
+}
+.af-noti-table .af-noti-view-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	color: #485b79;
+	font-weight: 600;
+	font-size: .85rem;
+	cursor: pointer;
+	padding: 4px 12px;
+	border-radius: 20px;
+	background: #f1f5f9;
+	transition: all .2s;
+	text-decoration: none;
+}
+.af-noti-table .af-noti-view-link:hover {
+	background: #e2e8f0;
+	color: #1e293b;
+}
+.af-noti-table .af-noti-edit-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: #f1f5f9;
+	color: #485b79;
+	cursor: pointer;
+	transition: all .2s;
+	border: none;
+}
+.af-noti-table .af-noti-edit-btn:hover {
+	background: #485b79;
+	color: #fff;
+}
+.af-noti-table .af-noti-edit-btn i,
+.af-noti-table .af-noti-edit-btn svg {
+	width: 14px;
+	height: 14px;
+}
+
+/* --- Notification Form Card --- */
+.af-noti-form-card {
+	background: #fff;
+	border-radius: 16px;
+	border: 1px solid #e5e7eb;
+	box-shadow: 0 1px 4px rgba(0,0,0,.04);
+	overflow: hidden;
+}
+.af-noti-form-header {
+	background: linear-gradient(135deg, #f8fafc, #eef2f7);
+	padding: 20px 26px;
+	border-bottom: 1px solid #e5e7eb;
+}
+.af-noti-form-header h5 {
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: #1e293b;
+	margin: 0;
+}
+.af-noti-form-body {
+	padding: 24px 26px;
+}
+.af-noti-form-row {
+	display: grid;
+	gap: 18px;
+	margin-bottom: 18px;
+}
+.af-noti-form-row.cols-1 { grid-template-columns: 1fr; }
+.af-noti-form-row.cols-2 { grid-template-columns: 1fr 1fr; }
+.af-noti-form-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.af-noti-form-group label {
+	display: block;
+	font-size: .85rem;
+	font-weight: 600;
+	color: #475569;
+	margin-bottom: 6px;
+}
+.af-noti-form-group .form-control,
+.af-noti-form-group select {
+	width: 100%;
+}
+
+/* --- Recipients Panel --- */
+.af-recipients-panel {
+	margin-top: 8px;
+}
+.af-recipients-panel h5 {
+	font-size: 1rem;
+	font-weight: 700;
+	color: #1e293b;
+	margin: 0 0 16px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.af-recipients-panel h5 i {
+	color: #485b79;
+}
+.af-recipients-layout {
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: 18px;
+	min-height: 200px;
+}
+.af-recipients-roles {
+	background: #f8fafc;
+	border: 1px solid #e5e7eb;
+	border-radius: 14px;
+	padding: 16px 18px;
+}
+.af-recipients-roles .af-role-check-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	padding: 8px 4px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background .15s;
+}
+.af-recipients-roles .af-role-check-item:hover {
+	background: #eef2f7;
+}
+.af-recipients-roles .af-role-check-item input[type="checkbox"] {
+	margin-top: 3px;
+	accent-color: #485b79;
+}
+.af-recipients-roles .af-role-check-item span {
+	font-size: .88rem;
+	font-weight: 500;
+	color: #334155;
+	line-height: 1.4;
+}
+.af-recipients-users {
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 14px;
+	padding: 16px 18px;
+	min-height: 200px;
+}
+.af-recipients-users .af-check-all-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 18px;
+	border-radius: 38px;
+	font-size: .82rem;
+	font-weight: 600;
+	background: linear-gradient(135deg, #e18125, #d97706);
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	margin-bottom: 14px;
+	transition: all .2s;
+}
+.af-recipients-users .af-check-all-btn:hover {
+	box-shadow: 0 3px 10px rgba(225,129,37,.3);
+}
+
+/* --- Form Submit Row --- */
+.af-noti-form-footer {
+	padding: 18px 26px;
+	border-top: 1px solid #e5e7eb;
+	background: #f8fafc;
+}
+.af-noti-form-footer .af-noti-save-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 10px 36px;
+	border-radius: 38px;
+	font-size: .9rem;
+	font-weight: 600;
+	background: linear-gradient(135deg, #485b79, #3a4d6b);
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	transition: all .2s;
+}
+.af-noti-form-footer .af-noti-save-btn:hover {
+	box-shadow: 0 4px 14px rgba(72,91,121,.3);
+}
+
+/* --- View Modal (ntComViewModal) --- */
+body.af-system-admin #ntComViewModal .modal-content {
+	border-radius: 18px;
+	border: none;
+	overflow: hidden;
+	box-shadow: 0 20px 60px rgba(0,0,0,.15);
+}
+body.af-system-admin #ntComViewModal .modal-body {
+	padding: 24px 28px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+	body.af-system-admin #sendNotiModal .modal-body {
+		padding: 18px 14px;
+	}
+	.af-noti-toolbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.af-recipients-layout {
+		grid-template-columns: 1fr;
+	}
+	.af-noti-form-row.cols-3 {
+		grid-template-columns: 1fr;
+	}
+	.af-noti-form-row.cols-2 {
+		grid-template-columns: 1fr;
+	}
+	.af-attach-grid {
+		grid-template-columns: 1fr;
+	}
+}

@@ -95,25 +95,28 @@ function backsubTaskList(taskId, projectId, proencryptId){
 }
 </script>
 <div class="modal fade" id="sendNotiModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="sendNotiModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen"> <!-- modal-sm -->
-        <div class="modal-content ">	
-            <div class="modal-header lgtBlue-mh">
-                <h5 class="modal-title" id="sendNotiModalTitle"><?php echo 'Project: &nbsp;'.$proName;?></h5>
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">	
+            <div class="modal-header">
+                <h5 class="modal-title" id="sendNotiModalTitle">
+                    <i class="fa fa-folder-open" style="margin-right:6px;"></i> <?php echo $proName;?>
+                </h5>
                 <button type="button" class="btn-close" onclick="return closeTaskModal();"></button>
             </div>
             <div class="modal-body">
                 <div id="resNotiModel" class="ajaxFrmRes"></div>
-                <div id="sendNotiFieldSec">
-                </div>		 		 
+                <div id="sendNotiFieldSec"></div>
             </div>
         </div>
     </div>
 </div>
 <div class="modal fade" id="ntComViewModal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header lgtBlue-mh">
-        <h5 class="modal-title" id="ntComModalTitle">Message</h5>
+      <div class="modal-header">
+        <h5 class="modal-title" id="ntComModalTitle">
+            <i class="fa fa-envelope" style="margin-right:6px;"></i> Message
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
