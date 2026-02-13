@@ -201,7 +201,7 @@
 							</li>
 							<?php if (isset($_SESSION['AFSESS_userType']) && $_SESSION['AFSESS_userType'] == 'system-admin') { ?>
 							<li>
-								<a class="dropdown-item" href="<?php echo base_url();?>settings/emails">
+								<a class="dropdown-item amee-buton" href="<?php echo base_url();?>settings/emails">
 									<i class="fa fa-cog"></i> System Settings
 								</a>
 							</li>
