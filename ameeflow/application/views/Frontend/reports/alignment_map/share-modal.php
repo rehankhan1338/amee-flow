@@ -29,6 +29,29 @@ $msgContent = '<p>Dear {receiverName}</p>
             <input type="hidden" id="auEmailId" name="auEmailId" value="<?php echo $sessionDetailsArr['auEmailId'];?>" />
 			 <div class="row">	
 				<div id="popShareFieldSec">
+                    <!-- Oversight & Department Row -->
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="form-fields">
+                                <label class="form-label">Oversight Unit *</label>
+                                <select id="shareOversigntId" name="shareOversigntId" class="form-control required" onchange="return populateShareDepartments(this.value);">
+                                    <option value="">Select Oversight Unit...</option>
+                                    <?php foreach($oversightsDataArr as $osd){ ?>
+                                    <option value="<?php echo $osd['oversigntId'];?>" <?php if($seloversigntId==$osd['oversigntId']) echo 'selected';?>><?php echo htmlspecialchars($osd['unitName']);?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-fields">
+                                <label class="form-label">Department *</label>
+                                <select id="shareDepartment" name="shareDepartment" class="form-control required">
+                                    <option value="">Select Department...</option>
+                                    <option value="all">All Departments</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-6">
                             <div class="form-fields">
@@ -115,6 +138,38 @@ function ajaxGetRoles(rtype){
         });
     }
 }
+/* ── Populate department dropdown from courses in selected oversight ── */
+function populateShareDepartments(oversigntId){
+    var $dept = $('#shareDepartment');
+    $dept.html('<option value="">Loading...</option>');
+    if(!oversigntId || oversigntId===''){
+        $dept.html('<option value="">Select Department...</option><option value="all">All Departments</option>');
+        return;
+    }
+    $.ajax({
+        type: 'GET',
+        url: '<?php echo base_url();?>sampling_plan/ajaxGetDepartments?oversigntId='+oversigntId,
+        dataType: 'json',
+        success: function(res){
+            var html = '<option value="">Select Department...</option><option value="all">All Departments</option>';
+            if(res && res.length > 0){
+                for(var i=0; i<res.length; i++){
+                    html += '<option value="'+res[i]+'">'+res[i]+'</option>';
+                }
+            }
+            $dept.html(html);
+        },
+        error: function(){
+            $dept.html('<option value="">Select Department...</option><option value="all">All Departments</option>');
+        }
+    });
+}
+/* auto-populate departments for the currently selected oversight on modal open */
+$(document).on('shown.bs.modal', '#popShareModel', function(){
+    var curOsd = $('#shareOversigntId').val();
+    if(curOsd && curOsd !== '') populateShareDepartments(curOsd);
+});
+
 $(document).ready(function () {
 	let allChecked = false;
 	$('#toggleCheckboxBtn').on('click', function () {

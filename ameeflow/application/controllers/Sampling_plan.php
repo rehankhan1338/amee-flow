@@ -210,6 +210,18 @@ class Sampling_plan extends CI_Controller {
 		$this->load->view('Frontend/includes/footer',$this->data);
 	}
 
+	public function ajaxGetDepartments(){
+		$oversigntId = $this->input->get('oversigntId');
+		if(!$oversigntId){
+			echo json_encode(array());
+			return;
+		}
+		$universityId = $this->data['sessionDetailsArr']['universityId'];
+		$uniAdminId = $this->data['sessionDetailsArr']['uniAdminId'];
+		$departments = $this->Master_alignment_map_mdl->getDepartmentsByOversight($universityId, $uniAdminId, $oversigntId);
+		echo json_encode($departments);
+	}
+
 	public function toggleSLO(){
 		$mamCourseId = $this->input->post('mamCourseId');
 		$sloType     = $this->input->post('sloType');

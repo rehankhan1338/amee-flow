@@ -430,7 +430,20 @@
 				</div>
 				<div>
 					<h2 class="share-doc-title">Master Alignment Map</h2>
-					<p class="share-doc-subtitle">Shared alignment map document for review</p>
+					<p class="share-doc-subtitle">Shared alignment map document for review
+					<?php 
+						$sharedOversightName = '';
+						if(isset($oversightsDataArr) && count($oversightsDataArr)>0){
+							$sharedOversightName = $oversightsDataArr[0]['unitName'];
+						}
+						if($sharedOversightName != ''){
+							echo ' &mdash; <strong>'.htmlspecialchars($sharedOversightName).'</strong>';
+						}
+						if(isset($shareDepartment) && $shareDepartment!='' && $shareDepartment!='all'){
+							echo ' / <strong>'.htmlspecialchars($shareDepartment).'</strong>';
+						}
+					?>
+					</p>
 				</div>
 			</div>
 		</div>

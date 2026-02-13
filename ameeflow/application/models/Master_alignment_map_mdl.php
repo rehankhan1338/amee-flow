@@ -9,6 +9,21 @@ class Master_alignment_map_mdl extends CI_Model {
         $config['wordwrap'] = TRUE;
         $config['mailtype'] = 'html';
         $this->email->initialize($config);
+		// Auto-migrate: add shareOversigntId & shareDepartment columns if missing
+		$this->_ensureShareColumns();
+	}
+
+	private static $_shareColumnsChecked = false;
+	private function _ensureShareColumns(){
+		if(self::$_shareColumnsChecked) return;
+		self::$_shareColumnsChecked = true;
+		$fields = $this->db->list_fields('alignment_map_share');
+		if(!in_array('shareOversigntId', $fields)){
+			$this->db->query("ALTER TABLE `".$this->db->dbprefix('alignment_map_share')."` ADD COLUMN `shareOversigntId` INT(11) DEFAULT 0 AFTER `sentOn`");
+		}
+		if(!in_array('shareDepartment', $fields)){
+			$this->db->query("ALTER TABLE `".$this->db->dbprefix('alignment_map_share')."` ADD COLUMN `shareDepartment` VARCHAR(100) DEFAULT '' AFTER `shareOversigntId`");
+		}
 	}
 	public function courseDetailsArr($mamCourseId){
 		$this->db->where('mamCourseId', $mamCourseId);
@@ -36,15 +51,36 @@ class Master_alignment_map_mdl extends CI_Model {
 		$query = $this->db->get('master_alignment_maps_oversights');
 		return $query->result_array();
 	}
-	public function alignmentCousesDataArr($universityId,$uniAdminId,$oversigntId){
+	public function alignmentCousesDataArr($universityId,$uniAdminId,$oversigntId,$department=''){
 		$this->db->where('universityId', $universityId);
 		$this->db->where('uniAdminId', $uniAdminId);
 		$this->db->where('oversigntId', $oversigntId);
 		$this->db->where('isActive', 0);
 		$this->db->where('isDeleted', 0);
+		if($department!='' && $department!='all'){
+			$this->db->where('courseSubject', $department);
+		}
 		$this->db->order_by('courseSubject,courseNBR', 'asc');
 		$query = $this->db->get('master_alignment_maps_courses');
 		return $query->result_array();
+	}
+	public function getDepartmentsByOversight($universityId,$uniAdminId,$oversigntId){
+		$this->db->select('DISTINCT(courseSubject) as dept', false);
+		$this->db->where('universityId', $universityId);
+		$this->db->where('uniAdminId', $uniAdminId);
+		$this->db->where('oversigntId', $oversigntId);
+		$this->db->where('isActive', 0);
+		$this->db->where('isDeleted', 0);
+		$this->db->order_by('courseSubject', 'asc');
+		$query = $this->db->get('master_alignment_maps_courses');
+		$result = $query->result_array();
+		$departments = array();
+		foreach($result as $row){
+			if(isset($row['dept']) && trim($row['dept'])!=''){
+				$departments[] = trim($row['dept']);
+			}
+		}
+		return $departments;
 	}
 	/**
 	 * Build "num:value" storage string from posted SLO dropdown array.
@@ -260,6 +296,8 @@ class Master_alignment_map_mdl extends CI_Model {
 		$userAccessId = trim($this->input->post('userAccessId'));
 		$universityId = trim($this->input->post('universityId'));
 		$oversigntId = trim($this->input->post('seloversigntId'));
+		$shareOversigntId = trim($this->input->post('shareOversigntId'));
+		$shareDepartment = trim($this->input->post('shareDepartment'));
 
 		$roleType = trim($this->input->post('txt_roleType'));		 
 
@@ -277,7 +315,7 @@ class Master_alignment_map_mdl extends CI_Model {
 				$todayDate = strtotime(date('Y-m-d'));	
 				$curTime = time();	
 
-				$this->db->insert('alignment_map_share', array('shareFrom'=>$shareFrom, 'mamId'=>$mamId, 'userId'=>$userId, 'universityId'=>$universityId, 'userAccessId'=>$userAccessId, 'sentMsg'=>$sentMsg, 'roleType'=>$roleType, 'roleIds'=>$roleIdsStr, 'sentDate'=>$todayDate, 'sentOn'=>$curTime));
+				$this->db->insert('alignment_map_share', array('shareFrom'=>$shareFrom, 'mamId'=>$mamId, 'userId'=>$userId, 'universityId'=>$universityId, 'userAccessId'=>$userAccessId, 'sentMsg'=>$sentMsg, 'roleType'=>$roleType, 'roleIds'=>$roleIdsStr, 'sentDate'=>$todayDate, 'sentOn'=>$curTime, 'shareOversigntId'=>$shareOversigntId, 'shareDepartment'=>$shareDepartment));
 				$shareId = $this->db->insert_id();
 				$eshareId = generateRandomNumStringCh(3).'sam'.$shareId.generateRandomNumStringCh(3);
 				$this->db->where('shareId',$shareId); 

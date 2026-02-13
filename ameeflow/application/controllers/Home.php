@@ -373,21 +373,40 @@ class Home extends CI_Controller {
 			$this->data['mamDetailsArr'] = $this->Master_alignment_map_mdl->mamDetailsArr($mamId);
 			$universityId = $this->data['mamDetailsArr']['universityId'];
 			$uniAdminId = $this->data['mamDetailsArr']['uniAdminId'];
-			$this->data['oversightsDataArr'] = $this->Master_alignment_map_mdl->oversightsDataArr($universityId,$uniAdminId);
-			if(isset($_GET['osd']) && $_GET['osd']!='' && $_GET['osd']>0){
-				$oversigntId = $_GET['osd'];
-			}else{
-				$oversigntId = $this->data['oversightsDataArr'][0]['oversigntId'];            
+
+			// Use the oversight & department that were selected when sharing
+			$shareOversigntId = isset($this->data['sharedWith']['shareOversigntId']) ? $this->data['sharedWith']['shareOversigntId'] : '';
+			$shareDepartment  = isset($this->data['sharedWith']['shareDepartment'])  ? $this->data['sharedWith']['shareDepartment']  : '';
+
+			if($shareOversigntId!='' && $shareOversigntId > 0){
+				// Lock to the shared oversight unit only
+				$oversigntId = $shareOversigntId;
+				// Only show the shared oversight in the dropdown
+				$allOversights = $this->Master_alignment_map_mdl->oversightsDataArr($universityId,$uniAdminId);
+				$filteredOversights = array();
+				foreach($allOversights as $osd){
+					if($osd['oversigntId'] == $shareOversigntId){
+						$filteredOversights[] = $osd;
+					}
+				}
+				$this->data['oversightsDataArr'] = $filteredOversights;
+			} else {
+				// Legacy shares without oversight filter – show all
+				$this->data['oversightsDataArr'] = $this->Master_alignment_map_mdl->oversightsDataArr($universityId,$uniAdminId);
+				if(isset($_GET['osd']) && $_GET['osd']!='' && $_GET['osd']>0){
+					$oversigntId = $_GET['osd'];
+				}else{
+					$oversigntId = $this->data['oversightsDataArr'][0]['oversigntId'];            
+				}
 			}
-			$this->data['seloversigntId'] = $oversigntId;            
-			$this->data['cousesDataArr'] = $this->Master_alignment_map_mdl->alignmentCousesDataArr($universityId,$uniAdminId,$oversigntId);
+
+			$this->data['seloversigntId'] = $oversigntId;
+			$this->data['shareDepartment'] = $shareDepartment;
+			$this->data['cousesDataArr'] = $this->Master_alignment_map_mdl->alignmentCousesDataArr($universityId,$uniAdminId,$oversigntId,$shareDepartment);
 			
 			$this->data['sharePermission'] = 0;
 			$this->data['title'] = 'Master Alignment Map';
 			$this->data['sessionDetailsArr'] = $this->Users_mdl->userDetails($userId);
-			//   echo '<pre>';print_r($this->data['sharedWith']);die;			
-			
-			// $this->data['reportDetails'] = $this->Loads_report_mdl->reportDetailsByeIdArr($chkenId);
 						
 			$this->load->view('Frontend/reports/alignment_map/submitted-mam',$this->data);
 		}else{
