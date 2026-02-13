@@ -2191,7 +2191,6 @@ body.af-system-admin table.dataTable thead th.sorting_desc::after {
 	border-radius: 0px;
 	background: #fff;
 	border: 1px solid #e2e8f0;
-	padding: 10px;
 	/* NOTE: no overflow:hidden – required for position:sticky (FixedColumns) */
 }
 #mam-table-wrap .dataTables_wrapper {
