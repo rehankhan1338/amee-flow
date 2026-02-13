@@ -1565,8 +1565,6 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	background: #fff;
 	box-shadow: 0 3px 12px rgba(0,0,0,.08);
 	overflow: hidden;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 #mam-sticky-header .dataTables_scrollHeadInner {
 	box-sizing: content-box;
