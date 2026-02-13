@@ -2223,58 +2223,62 @@ body.af-system-admin #ntComViewModal .modal-body {
 	user-select: none;
 }
 
-/* ── MAM Inline Toggle Switch ── */
-.mam-toggle {
-	position: relative;
-	display: inline-block;
-	width: 36px;
-	height: 20px;
+/* ── MAM Inline SLO Dropdown ── */
+.mam-slo-select {
+	width: 52px;
+	min-width: 42px;
+	padding: 3px 2px;
+	font-size: 11px;
+	font-weight: 600;
+	text-align: center;
+	border: 1.5px solid #e5e7eb;
+	border-radius: 6px;
+	background: #f9fafb;
+	color: #9ca3af;
 	cursor: pointer;
-	margin: 0;
-	vertical-align: middle;
+	outline: none;
+	transition: border-color .2s, background .2s, color .2s, box-shadow .2s;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
-.mam-toggle .mam-toggle-input {
-	opacity: 0;
-	width: 0;
-	height: 0;
-	position: absolute;
-}
-.mam-toggle .mam-toggle-slider {
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	background: #e5e7eb;
-	border-radius: 20px;
-	transition: background .25s ease, box-shadow .25s ease;
-}
-.mam-toggle .mam-toggle-slider::before {
-	content: "";
-	position: absolute;
-	left: 3px;
-	top: 3px;
-	width: 14px;
-	height: 14px;
+.mam-slo-select:hover {
+	border-color: #a5b4fc;
 	background: #fff;
-	border-radius: 50%;
-	transition: transform .25s ease;
-	box-shadow: 0 1px 3px rgba(0,0,0,.18);
 }
-.mam-toggle .mam-toggle-input:checked + .mam-toggle-slider {
+.mam-slo-select:focus {
+	border-color: #6366f1;
+	box-shadow: 0 0 0 2px rgba(99,102,241,.15);
+	background: #fff;
+}
+.mam-slo-select.has-value {
 	background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-	box-shadow: 0 2px 6px rgba(34,197,94,.28);
+	color: #fff;
+	border-color: #16a34a;
+	box-shadow: 0 2px 6px rgba(34,197,94,.22);
 }
-.mam-toggle .mam-toggle-input:checked + .mam-toggle-slider::before {
-	transform: translateX(16px);
+.mam-slo-select.has-value:hover {
+	border-color: #15803d;
+	box-shadow: 0 2px 8px rgba(34,197,94,.32);
 }
-.mam-toggle .mam-toggle-input:disabled + .mam-toggle-slider {
+.mam-slo-select.has-value:focus {
+	border-color: #15803d;
+	box-shadow: 0 0 0 2px rgba(34,197,94,.2);
+}
+.mam-slo-select.has-value option {
+	background: #fff;
+	color: #374151;
+}
+.mam-slo-select:disabled {
 	opacity: .5;
 	cursor: not-allowed;
 }
-.mam-toggle.mam-toggle-saving .mam-toggle-slider {
-	animation: mam-toggle-pulse .8s infinite ease-in-out;
+.mam-slo-select.mam-slo-saving {
+	animation: mam-slo-pulse .8s infinite ease-in-out;
 }
-@keyframes mam-toggle-pulse {
+@keyframes mam-slo-pulse {
 	0%, 100% { opacity: 1; }
-	50%      { opacity: .5; }
+	50%      { opacity: .45; }
 }
 
 /* --- Zebra striping for data rows --- */

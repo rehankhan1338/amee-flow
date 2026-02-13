@@ -107,7 +107,42 @@ class Master_alignment_map_mdl extends CI_Model {
 			return 'error||Oops, please check the Oversight Units.';
 		}
 	}
-	public function toggleCourseSLO($mamCourseId, $sloType, $sloNumber, $action){
+	/**
+	 * Parse SLO column value into associative array.
+	 * Supports new format "1:I,3:ED" and legacy format "1,3" (treated as number => 'Yes')
+	 */
+	public function parseSLOValues($str){
+		$result = array();
+		if(!isset($str) || $str === '') return $result;
+		$items = explode(',', $str);
+		foreach($items as $item){
+			$item = trim($item);
+			if($item === '') continue;
+			if(strpos($item, ':') !== false){
+				list($num, $val) = explode(':', $item, 2);
+				$result[trim($num)] = trim($val);
+			} else {
+				// Legacy format: just a number means it was "Yes"
+				$result[$item] = 'Yes';
+			}
+		}
+		return $result;
+	}
+
+	/**
+	 * Encode associative SLO array back to storage string "1:I,3:ED"
+	 */
+	public function encodeSLOValues($arr){
+		$parts = array();
+		// Sort by key numerically
+		ksort($arr, SORT_NUMERIC);
+		foreach($arr as $num => $val){
+			$parts[] = $num.':'.$val;
+		}
+		return implode(',', $parts);
+	}
+
+	public function toggleCourseSLO($mamCourseId, $sloType, $sloNumber, $value){
 		// Map sloType to the correct DB column
 		$columnMap = array(
 			'ISLO'  => 'courseISLO',
@@ -128,35 +163,25 @@ class Master_alignment_map_mdl extends CI_Model {
 			return array('status'=>'error','message'=>'Course not found');
 		}
 
-		// Parse current values
-		$currentValues = array();
-		if(isset($row[$column]) && $row[$column] != ''){
-			$currentValues = explode(',', $row[$column]);
-			$currentValues = array_map('trim', $currentValues);
-		}
-
+		// Parse current values into associative array
+		$currentValues = $this->parseSLOValues(isset($row[$column]) ? $row[$column] : '');
 		$sloNumber = strval($sloNumber);
 
-		if($action === 'add'){
-			if(!in_array($sloNumber, $currentValues)){
-				$currentValues[] = $sloNumber;
-			}
-			$newState = 1;
+		if($value === '' || $value === null){
+			// Remove entry (user selected empty / no value)
+			unset($currentValues[$sloNumber]);
 		} else {
-			$currentValues = array_diff($currentValues, array($sloNumber));
-			$newState = 0;
+			// Set or update the value
+			$currentValues[$sloNumber] = $value;
 		}
 
-		// Sort numerically and re-implode
-		$currentValues = array_filter($currentValues, function($v){ return $v !== ''; });
-		sort($currentValues, SORT_NUMERIC);
-		$newValue = implode(',', $currentValues);
+		// Encode back and update DB
+		$newValue = $this->encodeSLOValues($currentValues);
 
-		// Update DB
 		$this->db->where('mamCourseId', $mamCourseId);
 		$this->db->update('master_alignment_maps_courses', array($column => $newValue));
 
-		return array('status'=>'success','newState'=>$newState,'newValue'=>$newValue);
+		return array('status'=>'success','value'=>$value,'newValue'=>$newValue);
 	}
 
 	public function uploadMasterAlignmentMap($path){

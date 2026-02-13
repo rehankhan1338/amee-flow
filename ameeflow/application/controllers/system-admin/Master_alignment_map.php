@@ -256,13 +256,15 @@ class Master_alignment_map extends CI_Controller {
         $mamCourseId = $this->input->post('mamCourseId');
         $sloType     = $this->input->post('sloType');   // ISLO, GISLO, PSLO, GPSLO
         $sloNumber   = $this->input->post('sloNumber');  // e.g. 1,2,3...
-        $action      = $this->input->post('action');     // add or remove
+        $value       = $this->input->post('value');      // I, E, D, IE, ID, ED, IED, M, IP, IM, PM, IPM or empty
 
-        if(!$mamCourseId || !$sloType || !$sloNumber || !$action){
+        if(!$mamCourseId || !$sloType || !$sloNumber){
             echo json_encode(array('status'=>'error','message'=>'Missing parameters'));
             return;
         }
-        $result = $this->Master_alignment_map_mdl->toggleCourseSLO($mamCourseId, $sloType, $sloNumber, $action);
+        // Allow empty value (to clear the selection)
+        if($value === false || $value === null) $value = '';
+        $result = $this->Master_alignment_map_mdl->toggleCourseSLO($mamCourseId, $sloType, $sloNumber, $value);
         echo json_encode($result);
     }
 

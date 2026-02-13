@@ -246,65 +246,74 @@ $(function(){
                     <tbody id="append_company_products">
                         <?php 
                         $totalCols = 3 + $mamDetailsArr['ISLOCnt'] + $mamDetailsArr['GISLOCnt'] + $mamDetailsArr['PSLOCnt'] + $mamDetailsArr['GPSLOCnt'];
+                        $mamSloOptions = array('','I','E','D','IE','ID','ED','IED','M','IP','IM','PM','IPM');
+
+                        // Helper: parse "1:I,3:ED" or legacy "1,3" into [1=>'I', 3=>'ED']
+                        if(!function_exists('_parseSLO')){
+                            function _parseSLO($str){
+                                $r = array();
+                                if(!isset($str) || $str==='') return $r;
+                                foreach(explode(',',$str) as $item){
+                                    $item = trim($item);
+                                    if($item==='') continue;
+                                    if(strpos($item,':')!==false){
+                                        list($n,$v) = explode(':',$item,2);
+                                        $r[trim($n)] = trim($v);
+                                    } else {
+                                        $r[$item] = 'Yes';
+                                    }
+                                }
+                                return $r;
+                            }
+                        }
+
                         if(count($cousesDataArr) > 0){
                             $i = 1;
                             foreach($cousesDataArr as $row){ 
                                 
-                                if(isset($row['courseISLO']) && $row['courseISLO']!=''){
-                                    $courseISLOArr = explode(',',$row['courseISLO']);
-                                }else{
-                                    $courseISLOArr = array();
-                                }
-                                
-                                if(isset($row['courseGISLO']) && $row['courseGISLO']!=''){
-                                    $courseGISLOArr = explode(',',$row['courseGISLO']);
-                                }else{
-                                    $courseGISLOArr = array();
-                                }
-                                if(isset($row['coursePSLO']) && $row['coursePSLO']!=''){
-                                    $coursePSLOArr = explode(',',$row['coursePSLO']);
-                                }else{
-                                    $coursePSLOArr = array();
-                                }
-                                if(isset($row['courseGPSLO']) && $row['courseGPSLO']!=''){
-                                    $courseGPSLOArr = explode(',',$row['courseGPSLO']);
-                                }else{
-                                    $courseGPSLOArr = array();
-                                }
+                                // Parse SLO values into associative arrays  key=>value  e.g. [1=>'I', 3=>'ED']
+                                $courseISLOMap = _parseSLO(isset($row['courseISLO']) ? $row['courseISLO'] : '');
+                                $courseGISLOMap = _parseSLO(isset($row['courseGISLO']) ? $row['courseGISLO'] : '');
+                                $coursePSLOMap = _parseSLO(isset($row['coursePSLO']) ? $row['coursePSLO'] : '');
+                                $courseGPSLOMap = _parseSLO(isset($row['courseGPSLO']) ? $row['courseGPSLO'] : '');
                         ?>
                         <tr>
                             <td> <input type="checkbox" class="case" id="courseIds[]" name="courseIds[]" value="<?php echo $row['mamCourseId'];?>" /> </td>
                             <td nowrap class="mam-course-name"> <?php echo $row['courseSubject'].'-'.$row['courseNBR']; ?> </td>
-                            <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){ $isOn = in_array($is,$courseISLOArr); ?>
+                            <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){ $curVal = isset($courseISLOMap[$is]) ? $courseISLOMap[$is] : ''; ?>
                             <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?>">
-                                <label class="mam-toggle" title="Toggle ISLO <?php echo $is;?>">
-                                    <input type="checkbox" class="mam-toggle-input" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="ISLO" data-slo-number="<?php echo $is;?>" <?php if($isOn) echo 'checked';?>>
-                                    <span class="mam-toggle-slider"></span>
-                                </label>
+                                <select class="mam-slo-select<?php if($curVal!='') echo ' has-value';?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="ISLO" data-slo-number="<?php echo $is;?>">
+                                    <?php foreach($mamSloOptions as $opt){ ?>
+                                    <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
+                                    <?php } ?>
+                                </select>
                             </td>
                             <?php } } ?>
-                            <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){ $gisOn = in_array($gis,$courseGISLOArr); ?>
+                            <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){ $curVal = isset($courseGISLOMap[$gis]) ? $courseGISLOMap[$gis] : ''; ?>
                             <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?>">
-                                <label class="mam-toggle" title="Toggle GISLO <?php echo $gis;?>">
-                                    <input type="checkbox" class="mam-toggle-input" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GISLO" data-slo-number="<?php echo $gis;?>" <?php if($gisOn) echo 'checked';?>>
-                                    <span class="mam-toggle-slider"></span>
-                                </label>
+                                <select class="mam-slo-select<?php if($curVal!='') echo ' has-value';?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GISLO" data-slo-number="<?php echo $gis;?>">
+                                    <?php foreach($mamSloOptions as $opt){ ?>
+                                    <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
+                                    <?php } ?>
+                                </select>
                             </td>
                             <?php } } ?>
-                            <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){ $psOn = in_array($ps,$coursePSLOArr); ?>
+                            <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){ $curVal = isset($coursePSLOMap[$ps]) ? $coursePSLOMap[$ps] : ''; ?>
                             <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?>">
-                                <label class="mam-toggle" title="Toggle PSLO <?php echo $ps;?>">
-                                    <input type="checkbox" class="mam-toggle-input" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="PSLO" data-slo-number="<?php echo $ps;?>" <?php if($psOn) echo 'checked';?>>
-                                    <span class="mam-toggle-slider"></span>
-                                </label>
+                                <select class="mam-slo-select<?php if($curVal!='') echo ' has-value';?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="PSLO" data-slo-number="<?php echo $ps;?>">
+                                    <?php foreach($mamSloOptions as $opt){ ?>
+                                    <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
+                                    <?php } ?>
+                                </select>
                             </td>
                             <?php } } ?>
-                            <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){ $gpsOn = in_array($gps,$courseGPSLOArr); ?>
+                            <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){ $curVal = isset($courseGPSLOMap[$gps]) ? $courseGPSLOMap[$gps] : ''; ?>
                             <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?>">
-                                <label class="mam-toggle" title="Toggle GPSLO <?php echo $gps;?>">
-                                    <input type="checkbox" class="mam-toggle-input" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GPSLO" data-slo-number="<?php echo $gps;?>" <?php if($gpsOn) echo 'checked';?>>
-                                    <span class="mam-toggle-slider"></span>
-                                </label>
+                                <select class="mam-slo-select<?php if($curVal!='') echo ' has-value';?>" data-course-id="<?php echo $row['mamCourseId'];?>" data-slo-type="GPSLO" data-slo-number="<?php echo $gps;?>">
+                                    <?php foreach($mamSloOptions as $opt){ ?>
+                                    <option value="<?php echo $opt;?>"<?php if($curVal==$opt && $opt!='') echo ' selected';?>><?php echo $opt==='' ? '–' : $opt;?></option>
+                                    <?php } ?>
+                                </select>
                             </td>
                             <?php } } ?>
                             <td nowrap> 
@@ -422,41 +431,54 @@ function manageCourseMAM(mamCourseId,seloversigntId){
         }
     });	    
 }
-/* ── SLO Toggle (inline Yes/No) ── */
-$(document).on('change', '.mam-toggle-input', function(){
-    var $cb       = $(this);
-    var courseId  = $cb.data('course-id');
-    var sloType   = $cb.data('slo-type');
-    var sloNumber = $cb.data('slo-number');
-    var isChecked = $cb.is(':checked');
-    var action    = isChecked ? 'add' : 'remove';
+/* ── SLO Dropdown (inline value selector) ── */
+$(document).on('change', '.mam-slo-select', function(){
+    var $sel      = $(this);
+    var courseId   = $sel.data('course-id');
+    var sloType   = $sel.data('slo-type');
+    var sloNumber = $sel.data('slo-number');
+    var value     = $sel.val();
+    var prevValue = $sel.data('prev-value') || '';
 
-    // Optimistic UI – disable while saving
-    $cb.prop('disabled', true);
-    $cb.closest('.mam-toggle').addClass('mam-toggle-saving');
+    // Store previous value for revert
+    $sel.data('prev-value', prevValue);
+
+    // Optimistic UI
+    $sel.prop('disabled', true).addClass('mam-slo-saving');
+    if(value !== ''){
+        $sel.addClass('has-value');
+    } else {
+        $sel.removeClass('has-value');
+    }
 
     $.ajax({
         type: 'POST',
         url: '<?php echo base_url().$this->config->item('system_directory_name').'master_alignment_map/toggleSLO';?>',
-        data: { mamCourseId: courseId, sloType: sloType, sloNumber: sloNumber, action: action },
+        data: { mamCourseId: courseId, sloType: sloType, sloNumber: sloNumber, value: value },
         dataType: 'json',
         success: function(res){
-            if(res.status !== 'success'){
+            if(res.status === 'success'){
+                // Update stored prev value
+                $sel.data('prev-value', value);
+            } else {
                 // Revert on failure
-                $cb.prop('checked', !isChecked);
-                alert(res.message || 'Toggle failed');
+                $sel.val(prevValue);
+                if(prevValue !== ''){ $sel.addClass('has-value'); } else { $sel.removeClass('has-value'); }
+                alert(res.message || 'Save failed');
             }
         },
         error: function(){
-            $cb.prop('checked', !isChecked);
-            alert('Server error – could not save toggle');
+            $sel.val(prevValue);
+            if(prevValue !== ''){ $sel.addClass('has-value'); } else { $sel.removeClass('has-value'); }
+            alert('Server error – could not save');
         },
         complete: function(){
-            $cb.prop('disabled', false);
-            $cb.closest('.mam-toggle').removeClass('mam-toggle-saving');
+            $sel.prop('disabled', false).removeClass('mam-slo-saving');
         }
     });
 });
+// Store initial values on page load for revert
+$(function(){ $('.mam-slo-select').each(function(){ $(this).data('prev-value', $(this).val()); }); });
 
 $(document).ready(function () {
 	$('#popCMAMFrm').validate({
