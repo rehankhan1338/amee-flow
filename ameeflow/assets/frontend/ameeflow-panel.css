@@ -2101,87 +2101,6 @@ body.af-system-admin #ntComViewModal .modal-body {
 
 
 /* ============================================================
-   DataTables – Clean Sort Indicators (fix duplicate icons)
-   ============================================================ */
-
-/* Reset ALL default sort pseudo-elements from both CSS files */
-body.af-system-admin table.dataTable thead .sorting::before,
-body.af-system-admin table.dataTable thead .sorting::after,
-body.af-system-admin table.dataTable thead .sorting_asc::before,
-body.af-system-admin table.dataTable thead .sorting_asc::after,
-body.af-system-admin table.dataTable thead .sorting_desc::before,
-body.af-system-admin table.dataTable thead .sorting_desc::after,
-body.af-system-admin table.dataTable thead .sorting_asc_disabled::before,
-body.af-system-admin table.dataTable thead .sorting_asc_disabled::after,
-body.af-system-admin table.dataTable thead .sorting_desc_disabled::before,
-body.af-system-admin table.dataTable thead .sorting_desc_disabled::after {
-	display: none !important;
-	content: '' !important;
-	background-image: none !important;
-}
-
-/* Sortable column header – add right padding for icon space */
-body.af-system-admin table.dataTable thead th.sorting,
-body.af-system-admin table.dataTable thead th.sorting_asc,
-body.af-system-admin table.dataTable thead th.sorting_desc {
-	position: relative;
-	padding-right: 28px !important;
-	cursor: pointer;
-	background-image: none !important;
-}
-
-/* Single clean sort icon via ::after */
-body.af-system-admin table.dataTable thead th.sorting::after {
-	display: flex !important;
-	content: '↕' !important;
-	position: absolute;
-	right: 8px;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 13px;
-	color: #94a3b8;
-	opacity: .45;
-	font-style: normal;
-	line-height: 1;
-	transition: opacity .2s, color .2s;
-}
-body.af-system-admin table.dataTable thead th.sorting:hover::after {
-	opacity: .7;
-	color: #64748b;
-}
-
-/* Ascending – up arrow */
-body.af-system-admin table.dataTable thead th.sorting_asc::after {
-	display: flex !important;
-	content: '↑' !important;
-	position: absolute;
-	right: 8px;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 14px;
-	color: #3b82f6;
-	opacity: .85;
-	font-style: normal;
-	line-height: 1;
-}
-
-/* Descending – down arrow */
-body.af-system-admin table.dataTable thead th.sorting_desc::after {
-	display: flex !important;
-	content: '↓' !important;
-	position: absolute;
-	right: 8px;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 14px;
-	color: #3b82f6;
-	opacity: .85;
-	font-style: normal;
-	line-height: 1;
-}
-
-
-/* ============================================================
    MAM Table – Professional Alignment-Map Layout
    ============================================================ */
 
@@ -2191,6 +2110,7 @@ body.af-system-admin table.dataTable thead th.sorting_desc::after {
 	border-radius: 0px;
 	background: #fff;
 	border: 1px solid #e2e8f0;
+	padding: 10px;
 	/* NOTE: no overflow:hidden – required for position:sticky (FixedColumns) */
 }
 #mam-table-wrap .dataTables_wrapper {
@@ -2384,28 +2304,16 @@ body.af-system-admin table.dataTable thead th.sorting_desc::after {
 	border-spacing: 0;
 	margin: 0 !important;
 }
-
-/* --- Polished scroll-head (non-sticky original header) --- */
-#mam-table-wrap .dataTables_scrollHead {
-	background: #fff;
-	border-bottom: 2px solid #e2e8f0;
-	box-shadow: 0 2px 8px rgba(0,0,0,.05);
-	position: relative;
-	z-index: 12;
-}
-
 #mam-table-wrap table.dataTable thead th {
 	vertical-align: middle;
 	text-align: center;
-	padding: 14px 12px;
+	padding: 12px 10px;
 	font-size: .78rem;
 	font-weight: 700;
-	letter-spacing: .4px;
+	letter-spacing: .3px;
 	text-transform: uppercase;
-	border-bottom: none;
+	border-bottom: 2px solid #e2e8f0;
 	white-space: nowrap;
-	background: #fff;
-	color: #475569;
 }
 #mam-table-wrap table.dataTable tbody td {
 	padding: 10px 12px;
@@ -2420,11 +2328,13 @@ body.af-system-admin table.dataTable thead th.sorting_desc::after {
 	background: #f0f3f8 !important;
 	color: #334155 !important;
 	text-align: left;
+	border-bottom-color: #d0d5dd !important;
 }
 /* --- "Action" header pinned right --- */
 #mam-table-wrap table.dataTable thead th.dtfc-fixed-right {
 	background: #f0f3f8 !important;
 	color: #334155 !important;
+	border-bottom-color: #d0d5dd !important;
 }
 
 /* Sticky header clone (mam-specific) */
@@ -2433,16 +2343,9 @@ body.af-system-admin table.dataTable thead th.sorting_desc::after {
 	box-shadow: 0 3px 12px rgba(0,0,0,.08) !important;
 }
 #mam-sticky-header table thead th {
+	border-bottom: 2px solid #e2e8f0 !important;
 	vertical-align: middle;
 	white-space: nowrap;
-	padding: 14px 12px;
-	font-size: .78rem;
-	font-weight: 700;
-	letter-spacing: .4px;
-	text-transform: uppercase;
-	color: #475569;
-	background: #fff;
-	border-bottom: none !important;
 }
 #mam-sticky-header .mam-th-islo  { background: #eff6ff !important; color: #2563eb !important; }
 #mam-sticky-header .mam-th-gislo { background: #f0fdf4 !important; color: #16a34a !important; }

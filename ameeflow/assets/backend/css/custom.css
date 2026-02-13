@@ -838,6 +838,7 @@ body.af-system-admin .table thead th:first-child { border-radius: 12px 0 0 0; }
 body.af-system-admin .table thead th:last-child  { border-radius: 0 12px 0 0; }
 body.af-system-admin .dataTables_wrapper .table thead th {
 	position: sticky;
+	top: 60px;
 	z-index: 20;
 	background: #f8fafc;
 	color: #475569;
@@ -1564,6 +1565,8 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	background: #fff;
 	box-shadow: 0 3px 12px rgba(0,0,0,.08);
 	overflow: hidden;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 #mam-sticky-header .dataTables_scrollHeadInner {
 	box-sizing: content-box;
@@ -1572,16 +1575,14 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	margin-bottom: 0 !important;
 }
 #mam-sticky-header table thead th {
-	border-bottom: none;
+	border-bottom: 2px solid #e2e8f0;
 	vertical-align: middle;
 	white-space: nowrap;
 	font-size: .78rem;
 	font-weight: 700;
-	letter-spacing: .4px;
+	letter-spacing: .3px;
 	text-transform: uppercase;
-	padding: 14px 12px;
-	color: #475569;
-	background: #fff;
+	padding: 12px 10px;
 }
 @media (max-width: 767px) {
 	#mam-sticky-header {
