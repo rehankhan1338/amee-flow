@@ -155,7 +155,7 @@ $(function(){
             </div>
         </div>
        
-        <div class="mam-note-info">
+        <div class="mam-note-info mt-3">
             <i class="fa fa-info-circle"></i>
             If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>.
         </div>
