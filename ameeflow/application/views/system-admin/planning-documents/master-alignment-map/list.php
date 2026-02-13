@@ -221,6 +221,74 @@ $(function(){
             <i class="fa fa-info-circle"></i>
             If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>.
         </div>
+
+        <?php
+        /* ── Compute SLO percentages for legend ── */
+        $totalCourses = count($cousesDataArr);
+        $sloStats = array();
+
+        if($totalCourses > 0){
+            // ISLO counts
+            if($mamDetailsArr['ISLOCnt'] > 0){
+                for($s = 1; $s <= $mamDetailsArr['ISLOCnt']; $s++){
+                    $cnt = 0;
+                    foreach($cousesDataArr as $c){
+                        $arr = (isset($c['courseISLO']) && $c['courseISLO'] != '') ? explode(',', $c['courseISLO']) : array();
+                        if(in_array($s, $arr)) $cnt++;
+                    }
+                    $sloStats[] = array('label' => 'ISLO '.$s, 'color' => '#2563eb', 'pct' => ($cnt / $totalCourses) * 100);
+                }
+            }
+            // GISLO counts
+            if($mamDetailsArr['GISLOCnt'] > 0){
+                for($s = 1; $s <= $mamDetailsArr['GISLOCnt']; $s++){
+                    $cnt = 0;
+                    foreach($cousesDataArr as $c){
+                        $arr = (isset($c['courseGISLO']) && $c['courseGISLO'] != '') ? explode(',', $c['courseGISLO']) : array();
+                        if(in_array($s, $arr)) $cnt++;
+                    }
+                    $sloStats[] = array('label' => 'GISLO '.$s, 'color' => '#16a34a', 'pct' => ($cnt / $totalCourses) * 100);
+                }
+            }
+            // PSLO counts
+            if($mamDetailsArr['PSLOCnt'] > 0){
+                for($s = 1; $s <= $mamDetailsArr['PSLOCnt']; $s++){
+                    $cnt = 0;
+                    foreach($cousesDataArr as $c){
+                        $arr = (isset($c['coursePSLO']) && $c['coursePSLO'] != '') ? explode(',', $c['coursePSLO']) : array();
+                        if(in_array($s, $arr)) $cnt++;
+                    }
+                    $sloStats[] = array('label' => 'PSLO '.$s, 'color' => '#9333ea', 'pct' => ($cnt / $totalCourses) * 100);
+                }
+            }
+            // GPSLO counts
+            if($mamDetailsArr['GPSLOCnt'] > 0){
+                for($s = 1; $s <= $mamDetailsArr['GPSLOCnt']; $s++){
+                    $cnt = 0;
+                    foreach($cousesDataArr as $c){
+                        $arr = (isset($c['courseGPSLO']) && $c['courseGPSLO'] != '') ? explode(',', $c['courseGPSLO']) : array();
+                        if(in_array($s, $arr)) $cnt++;
+                    }
+                    $sloStats[] = array('label' => 'GPSLO '.$s, 'color' => '#ea580c', 'pct' => ($cnt / $totalCourses) * 100);
+                }
+            }
+        }
+        ?>
+        <?php if(count($sloStats) > 0){ ?>
+        <div class="mam-legend-section">
+            <h6 class="mam-legend-title"><i>Data legend for % of courses and SLO approaches:</i></h6>
+            <div class="mam-legend-grid">
+                <?php foreach($sloStats as $stat){ ?>
+                <div class="mam-legend-item">
+                    <span class="mam-legend-label"><?php echo $stat['label'];?></span>
+                    <span class="mam-legend-color" style="background:<?php echo $stat['color'];?>;"></span>
+                    <span class="mam-legend-pct"><?php echo number_format($stat['pct'], 2);?>%</span>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+        <?php } ?>
+
         <div class="box-body">					 
             <div class="col-xs-12" id="mam-table-wrap">
                 <table class="table" id="table_recordtbl_mam">
