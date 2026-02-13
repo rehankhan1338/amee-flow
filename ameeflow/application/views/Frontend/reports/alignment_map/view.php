@@ -128,6 +128,11 @@ $(function(){
     });
 });
 </script>
+<style>
+	.af-sticky-header{
+		padding: 0 !important;
+	}
+	</style>
 
 <section class="content"> 
     <div class="box <?php if(isset($sharePermission) && $sharePermission==0){ echo 'mt-4';}?>"> 
