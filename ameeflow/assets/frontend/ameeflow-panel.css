@@ -2223,6 +2223,20 @@ body.af-system-admin #ntComViewModal .modal-body {
 	user-select: none;
 }
 
+/* SLO value label (frontend read-only view) */
+.mam-slo-val {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 28px;
+	padding: 2px 7px;
+	border-radius: 6px;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: .3px;
+	user-select: none;
+}
+
 /* ── MAM Inline SLO Dropdown ── */
 .mam-slo-select {
 	width: 52px;

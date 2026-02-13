@@ -177,6 +177,25 @@ $(function(){
             </div>
         </div>
 
+        <!-- SLO Color Legend -->
+        <div class="mam-color-legend mt-3">
+            <div class="mam-legend-title"><i class="fa fa-paint-brush"></i> Data legend for % of courses and SLO approaches:</div>
+            <div class="mam-legend-grid">
+                <div class="mam-legend-item"><span class="mam-legend-label">I</span><span class="mam-legend-swatch mam-clr-I"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">E</span><span class="mam-legend-swatch mam-clr-E"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">D</span><span class="mam-legend-swatch mam-clr-D"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IE</span><span class="mam-legend-swatch mam-clr-IE"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">ID</span><span class="mam-legend-swatch mam-clr-ID"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">ED</span><span class="mam-legend-swatch mam-clr-ED"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IED</span><span class="mam-legend-swatch mam-clr-IED"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">M</span><span class="mam-legend-swatch mam-clr-M"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IP</span><span class="mam-legend-swatch mam-clr-IP"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IM</span><span class="mam-legend-swatch mam-clr-IM"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">PM</span><span class="mam-legend-swatch mam-clr-PM"></span></div>
+                <div class="mam-legend-item"><span class="mam-legend-label">IPM</span><span class="mam-legend-swatch mam-clr-IPM"></span></div>
+            </div>
+        </div>
+
         <div class="mam-note-info mt-3">
             <i class="fa fa-info-circle"></i>
             If your alignment map appears blank or incomplete, please verify that <strong>all required fields are fully and accurately filled out</strong>.
@@ -210,46 +229,50 @@ $(function(){
                         <?php 
                         $totalCols = 2 + $mamDetailsArr['ISLOCnt'] + $mamDetailsArr['GISLOCnt'] + $mamDetailsArr['PSLOCnt'] + $mamDetailsArr['GPSLOCnt'];
                         if(isset($sharePermission) && $sharePermission==1){ $totalCols++; }
+
+                        // Helper: parse "1:I,3:ED" or legacy "1,3" into [1=>'I', 3=>'ED']
+                        if(!function_exists('_parseSLOFront')){
+                            function _parseSLOFront($str){
+                                $r = array();
+                                if(!isset($str) || $str==='') return $r;
+                                foreach(explode(',',$str) as $item){
+                                    $item = trim($item);
+                                    if($item==='') continue;
+                                    if(strpos($item,':')!==false){
+                                        list($n,$v) = explode(':',$item,2);
+                                        $r[trim($n)] = trim($v);
+                                    } else {
+                                        $r[$item] = 'Yes';
+                                    }
+                                }
+                                return $r;
+                            }
+                        }
+
                         if(count($cousesDataArr) > 0){
                             $i = 1;
                             foreach($cousesDataArr as $row){ 
                                 
-                                if(isset($row['courseISLO']) && $row['courseISLO']!=''){
-                                    $courseISLOArr = explode(',',$row['courseISLO']);
-                                }else{
-                                    $courseISLOArr = array();
-                                }
-                                
-                                if(isset($row['courseGISLO']) && $row['courseGISLO']!=''){
-                                    $courseGISLOArr = explode(',',$row['courseGISLO']);
-                                }else{
-                                    $courseGISLOArr = array();
-                                }
-                                if(isset($row['coursePSLO']) && $row['coursePSLO']!=''){
-                                    $coursePSLOArr = explode(',',$row['coursePSLO']);
-                                }else{
-                                    $coursePSLOArr = array();
-                                }
-                                if(isset($row['courseGPSLO']) && $row['courseGPSLO']!=''){
-                                    $courseGPSLOArr = explode(',',$row['courseGPSLO']);
-                                }else{
-                                    $courseGPSLOArr = array();
-                                }
+                                // Parse SLO values into associative arrays  key=>value  e.g. [1=>'I', 3=>'ED']
+                                $courseISLOMap  = _parseSLOFront(isset($row['courseISLO'])  ? $row['courseISLO']  : '');
+                                $courseGISLOMap = _parseSLOFront(isset($row['courseGISLO']) ? $row['courseGISLO'] : '');
+                                $coursePSLOMap = _parseSLOFront(isset($row['coursePSLO']) ? $row['coursePSLO'] : '');
+                                $courseGPSLOMap = _parseSLOFront(isset($row['courseGPSLO']) ? $row['courseGPSLO'] : '');
                         ?>
                         <tr>
                             <td> <?php echo $i;?> </td>
                             <td nowrap class="mam-course-name"> <?php echo $row['courseSubject'].'-'.$row['courseNBR']; ?> </td>
-                            <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){?>
-                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($is,$courseISLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <?php if($mamDetailsArr['ISLOCnt']>0){ for($is=1;$is<=$mamDetailsArr['ISLOCnt'];$is++){ $curVal = isset($courseISLOMap[$is]) ? $courseISLOMap[$is] : ''; ?>
+                            <td class="mam-slo-cell<?php if($is==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>"><?php if($curVal!=''){echo '<span class="mam-slo-val'.($curVal!='Yes'?' mam-clr-'.$curVal:'').'">'.htmlspecialchars($curVal).'</span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
-                            <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){?>
-                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($gis,$courseGISLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <?php if($mamDetailsArr['GISLOCnt']>0){ for($gis=1;$gis<=$mamDetailsArr['GISLOCnt'];$gis++){ $curVal = isset($courseGISLOMap[$gis]) ? $courseGISLOMap[$gis] : ''; ?>
+                            <td class="mam-slo-cell<?php if($gis==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>"><?php if($curVal!=''){echo '<span class="mam-slo-val'.($curVal!='Yes'?' mam-clr-'.$curVal:'').'">'.htmlspecialchars($curVal).'</span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
-                            <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){?>
-                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($ps,$coursePSLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <?php if($mamDetailsArr['PSLOCnt']>0){ for($ps=1;$ps<=$mamDetailsArr['PSLOCnt'];$ps++){ $curVal = isset($coursePSLOMap[$ps]) ? $coursePSLOMap[$ps] : ''; ?>
+                            <td class="mam-slo-cell<?php if($ps==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>"><?php if($curVal!=''){echo '<span class="mam-slo-val'.($curVal!='Yes'?' mam-clr-'.$curVal:'').'">'.htmlspecialchars($curVal).'</span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
-                            <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){?>
-                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?>"><?php if(in_array($gps,$courseGPSLOArr)){echo '<span class="mam-yes-badge"><i class="fa fa-check"></i></span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
+                            <?php if($mamDetailsArr['GPSLOCnt']>0){ for($gps=1;$gps<=$mamDetailsArr['GPSLOCnt'];$gps++){ $curVal = isset($courseGPSLOMap[$gps]) ? $courseGPSLOMap[$gps] : ''; ?>
+                            <td class="mam-slo-cell<?php if($gps==1){echo ' mam-slo-group-start';}?><?php if($curVal!='' && $curVal!='Yes') echo ' mam-td-'.$curVal;?>"><?php if($curVal!=''){echo '<span class="mam-slo-val'.($curVal!='Yes'?' mam-clr-'.$curVal:'').'">'.htmlspecialchars($curVal).'</span>';}else{echo '<span class="mam-no-badge">&ndash;</span>';}?></td>
                             <?php } } ?>
                             <?php if(isset($sharePermission) && $sharePermission==1){?>
                                 <td> <a class="mam-action-btn mam-btn-edit" id="editBtn<?php echo $row['mamCourseId'];?>" onclick="return manageNotesAM('<?php echo $row['mamCourseId'];?>','<?php echo $seloversigntId;?>');"> <i class="icon-sm" data-feather="edit"></i> </a> </td>
