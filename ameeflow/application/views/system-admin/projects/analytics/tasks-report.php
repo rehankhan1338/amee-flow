@@ -350,6 +350,8 @@ $(function(){
 
     /* Close on outside click */
     $(document).on('click', function(e){
+        // If the click target was removed from DOM (e.g. datepicker nav rebuild), skip closing
+        if(!document.body.contains(e.target)) return;
         if(!$(e.target).closest('#afPriorityFilterWrap').length){ $('#afPriorityDropdown').removeClass('show'); }
         if(!$(e.target).closest('#afDueDateFilterWrap').length && !$(e.target).closest('.datepicker').length){ $('#afDueDateDropdown').removeClass('show'); }
     });

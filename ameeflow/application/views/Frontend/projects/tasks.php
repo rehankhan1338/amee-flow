@@ -484,6 +484,8 @@ $(document).ready(function(){
 
     /* --- Close dropdowns on outside click --- */
     $(document).on('click', function(e){
+        // If the click target was removed from DOM (e.g. datepicker nav rebuild), skip closing
+        if(!document.body.contains(e.target)) return;
         var $target = $(e.target);
         // Priority
         if(!$target.closest('#afPriorityFilterWrap').length){

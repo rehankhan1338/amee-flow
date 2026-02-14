@@ -280,6 +280,8 @@ $(function(){
 
     // Close dropdowns on outside click
     $(document).on('click', function(e){
+        // If the click target was removed from DOM (e.g. datepicker nav rebuild), skip closing
+        if(!document.body.contains(e.target)) return;
         if(!$(e.target).closest('#afTermFilterWrap').length){
             $termDrop.removeClass('show');
         }
