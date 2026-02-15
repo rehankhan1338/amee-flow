@@ -1553,6 +1553,21 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	}
 }
 
+/* MAM table – top horizontal scrollbar */
+#mam-top-scrollbar {
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 100%;
+	margin-bottom: 0;
+}
+#mam-top-scrollbar::-webkit-scrollbar { height: 18px; }
+#mam-top-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 0; }
+#mam-top-scrollbar::-webkit-scrollbar-thumb { background: #485b79; border-radius: 0; }
+#mam-top-scrollbar::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
+#mam-top-scrollbar-inner {
+	height: 1px;
+}
+
 /* MAM table – sticky header clone */
 #mam-sticky-header {
 	display: none;

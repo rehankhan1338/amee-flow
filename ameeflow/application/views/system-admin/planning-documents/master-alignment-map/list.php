@@ -30,6 +30,46 @@ $(function(){
         }
     });
 
+    /* ── Top horizontal scrollbar (above table header) ── */
+    (function(){
+        var $wrapper    = $('#table_recordtbl_mam_wrapper');
+        var $scrollBody = $wrapper.find('.dataTables_scrollBody');
+        if(!$scrollBody.length) return;
+
+        // Create the top scrollbar div and insert it right before the scrollBody's parent row
+        var $topBar  = $('<div id="mam-top-scrollbar"><div id="mam-top-scrollbar-inner"></div></div>');
+        // Insert above the row that contains the table (the <tr> row in DataTables dom)
+        $scrollBody.closest('.dataTables_scroll').before($topBar);
+
+        function syncWidth(){
+            var sw = $scrollBody[0].scrollWidth;
+            $('#mam-top-scrollbar-inner').css('width', sw + 'px');
+            $topBar.css('width', $scrollBody.outerWidth() + 'px');
+        }
+        syncWidth();
+
+        // Sync: top → body
+        var syncingFromBody = false;
+        var syncingFromTop  = false;
+        $topBar.on('scroll', function(){
+            if(syncingFromBody) return;
+            syncingFromTop = true;
+            $scrollBody.scrollLeft($topBar.scrollLeft());
+            syncingFromTop = false;
+        });
+        // Sync: body → top
+        $scrollBody.on('scroll.topbar', function(){
+            if(syncingFromTop) return;
+            syncingFromBody = true;
+            $topBar.scrollLeft($scrollBody.scrollLeft());
+            syncingFromBody = false;
+        });
+
+        // Re-sync widths on draw, resize
+        mamTable.on('draw.topbar', function(){ setTimeout(syncWidth, 50); });
+        $(window).on('resize.topbar', function(){ syncWidth(); });
+    })();
+
     /* ── Sticky thead under fixed navbar ── */
     (function(){
         var $wrapper   = $('#table_recordtbl_mam_wrapper');
