@@ -1579,7 +1579,7 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	z-index: 1029;
 	overflow-x: auto;
 	overflow-y: hidden;
-	height: 18px;
+	height: 24px;
 }
 #mam-sticky-scrollbar::-webkit-scrollbar { height: 18px; width: 18px; }
 #mam-sticky-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 0; }
