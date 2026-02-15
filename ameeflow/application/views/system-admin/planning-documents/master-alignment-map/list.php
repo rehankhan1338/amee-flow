@@ -30,25 +30,26 @@ $(function(){
         }
     });
 
-    /* ── Top horizontal scrollbar (above table header) ── */
+    /* ── Top horizontal scrollbar (between thead and tbody) ── */
+    /* ── + Sticky thead under fixed navbar ── */
     (function(){
         var $wrapper    = $('#table_recordtbl_mam_wrapper');
+        var $scrollHead = $wrapper.find('.dataTables_scrollHead');
         var $scrollBody = $wrapper.find('.dataTables_scrollBody');
-        if(!$scrollBody.length) return;
+        if(!$scrollHead.length || !$scrollBody.length) return;
 
-        // Create the top scrollbar div and insert it right before the scrollBody's parent row
-        var $topBar  = $('<div id="mam-top-scrollbar"><div id="mam-top-scrollbar-inner"></div></div>');
-        // Insert above the row that contains the table (the <tr> row in DataTables dom)
-        $scrollBody.closest('.dataTables_scroll').before($topBar);
+        // ── Create top scrollbar and insert between scrollHead and scrollBody ──
+        var $topBar = $('<div id="mam-top-scrollbar"><div id="mam-top-scrollbar-inner"></div></div>');
+        $scrollHead.after($topBar);
 
-        function syncWidth(){
+        function syncTopBarWidth(){
             var sw = $scrollBody[0].scrollWidth;
             $('#mam-top-scrollbar-inner').css('width', sw + 'px');
             $topBar.css('width', $scrollBody.outerWidth() + 'px');
         }
-        syncWidth();
+        syncTopBarWidth();
 
-        // Sync: top → body
+        // Bidirectional scroll sync (top scrollbar ↔ table body)
         var syncingFromBody = false;
         var syncingFromTop  = false;
         $topBar.on('scroll', function(){
@@ -57,7 +58,6 @@ $(function(){
             $scrollBody.scrollLeft($topBar.scrollLeft());
             syncingFromTop = false;
         });
-        // Sync: body → top
         $scrollBody.on('scroll.topbar', function(){
             if(syncingFromTop) return;
             syncingFromBody = true;
@@ -65,65 +65,64 @@ $(function(){
             syncingFromBody = false;
         });
 
-        // Re-sync widths on draw, resize
-        mamTable.on('draw.topbar', function(){ setTimeout(syncWidth, 50); });
-        $(window).on('resize.topbar', function(){ syncWidth(); });
-    })();
+        mamTable.on('draw.topbar', function(){ setTimeout(syncTopBarWidth, 50); });
+        $(window).on('resize.topbar', function(){ syncTopBarWidth(); });
 
-    /* ── Sticky thead under fixed navbar ── */
-    (function(){
-        var $wrapper   = $('#table_recordtbl_mam_wrapper');
-        var $scrollHead = $wrapper.find('.dataTables_scrollHead');
-        var $scrollBody = $wrapper.find('.dataTables_scrollBody');
-        if(!$scrollHead.length) return;
-
-        // Create the fixed clone container
+        // ── Sticky header clone ──
         var $sticky = $('<div id="mam-sticky-header"></div>');
         $('body').append($sticky);
 
-        var navH = $('.af-navbar').outerHeight() || 60; // actual navbar height
+        // Sticky scrollbar clone (appears right below sticky header)
+        var $stickyBar = $('<div id="mam-sticky-scrollbar"><div id="mam-sticky-scrollbar-inner"></div></div>');
+        $('body').append($stickyBar);
+
+        var navH = $('.af-navbar').outerHeight() || 60;
 
         function buildClone(){
             $sticky.empty();
-            // Clone the entire scrollHead contents (inner wrapper + table)
             var $clone = $scrollHead.children().clone(false);
             $sticky.append($clone);
 
-            // Copy computed widths for every <th>
-            var $origThs = $scrollHead.find('th');
+            var $origThs  = $scrollHead.find('th');
             var $cloneThs = $sticky.find('th');
             $origThs.each(function(i){
                 var w = $(this).outerWidth();
                 $cloneThs.eq(i).css({ 'min-width': w, 'max-width': w, 'width': w, 'box-sizing': 'border-box' });
             });
 
-            // Match inner wrapper + table widths
-            var $origInner = $scrollHead.find('.dataTables_scrollHeadInner');
+            var $origInner  = $scrollHead.find('.dataTables_scrollHeadInner');
             var $cloneInner = $sticky.find('.dataTables_scrollHeadInner');
             if($origInner.length){
                 $cloneInner.css('width', $origInner[0].style.width || $origInner.outerWidth());
             }
-            var $origTable = $scrollHead.find('table').first();
+            var $origTable  = $scrollHead.find('table').first();
             var $cloneTable = $sticky.find('table').first();
             if($origTable.length){
                 $cloneTable.css('width', $origTable[0].style.width || $origTable.outerWidth());
             }
+
+            // Update sticky scrollbar inner width
+            var sw = $scrollBody[0].scrollWidth;
+            $('#mam-sticky-scrollbar-inner').css('width', sw + 'px');
         }
 
         function syncScroll(){
             $sticky.scrollLeft($scrollBody.scrollLeft());
+            $stickyBar.scrollLeft($scrollBody.scrollLeft());
         }
 
         function positionSticky(){
             var el = document.getElementById('mam-table-wrap');
             if(!el) return;
             var r = el.getBoundingClientRect();
+            var stickyH = $sticky.outerHeight() || 0;
             $sticky.css({ left: r.left, width: r.width });
+            $stickyBar.css({ left: r.left, width: r.width, top: navH + stickyH });
         }
 
         function onScroll(){
-            var headRect   = $scrollHead[0].getBoundingClientRect();
-            var wrapEl     = document.getElementById('mam-table-wrap');
+            var headRect = $scrollHead[0].getBoundingClientRect();
+            var wrapEl   = document.getElementById('mam-table-wrap');
             if(!wrapEl) return;
             var wrapBottom = wrapEl.getBoundingClientRect().bottom;
 
@@ -134,23 +133,36 @@ $(function(){
                 positionSticky();
                 syncScroll();
                 $sticky.show();
+                $stickyBar.show();
             } else {
                 $sticky.hide();
+                $stickyBar.hide();
             }
         }
 
-        // Sync horizontal scroll both ways
-        $scrollBody.on('scroll', function(){ if($sticky.is(':visible')) syncScroll(); });
-        $sticky.on('scroll', function(){ $scrollBody.scrollLeft($sticky.scrollLeft()); });
+        // Sync horizontal scroll: body ↔ sticky header ↔ sticky scrollbar
+        $scrollBody.on('scroll', function(){
+            if($sticky.is(':visible')) syncScroll();
+        });
+        $sticky.on('scroll', function(){
+            $scrollBody.scrollLeft($sticky.scrollLeft());
+            $stickyBar.scrollLeft($sticky.scrollLeft());
+        });
+        $stickyBar.on('scroll', function(){
+            $scrollBody.scrollLeft($stickyBar.scrollLeft());
+            $sticky.scrollLeft($stickyBar.scrollLeft());
+        });
 
         $(window).on('scroll', onScroll);
         $(window).on('resize', function(){
             navH = $('.af-navbar').outerHeight() || 60;
-            $sticky.hide();          // will rebuild on next scroll tick
+            $sticky.hide();
+            $stickyBar.hide();
         });
 
         mamTable.on('draw', function(){
-            $sticky.hide();          // rebuild on next scroll tick
+            $sticky.hide();
+            $stickyBar.hide();
         });
     })();
 

@@ -1568,6 +1568,25 @@ body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 	height: 1px;
 }
 
+/* MAM table – sticky scrollbar (fixed below sticky header) */
+#mam-sticky-scrollbar {
+	display: none;
+	position: fixed;
+	top: 60px; /* adjusted dynamically via JS */
+	left: 0;
+	right: 0;
+	z-index: 1029;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+#mam-sticky-scrollbar::-webkit-scrollbar { height: 18px; }
+#mam-sticky-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 0; }
+#mam-sticky-scrollbar::-webkit-scrollbar-thumb { background: #485b79; border-radius: 0; }
+#mam-sticky-scrollbar::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
+#mam-sticky-scrollbar-inner {
+	height: 1px;
+}
+
 /* MAM table – sticky header clone */
 #mam-sticky-header {
 	display: none;
