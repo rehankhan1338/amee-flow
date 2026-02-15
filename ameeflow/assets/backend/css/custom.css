@@ -1503,9 +1503,9 @@ body.af-system-admin .modal-body textarea {
 }
 
 /* ---------- Scrollbar (system-admin only) ---------- */
-body.af-system-admin ::-webkit-scrollbar { width: 6px; }
+body.af-system-admin ::-webkit-scrollbar { width: 18px; }
 body.af-system-admin ::-webkit-scrollbar-track { background: #f1f1f1; }
-body.af-system-admin ::-webkit-scrollbar-thumb { background: #485b79; border-radius: 3px; }
+body.af-system-admin ::-webkit-scrollbar-thumb { background: #485b79; border-radius: 0px; }
 body.af-system-admin ::-webkit-scrollbar-thumb:hover { background: #3a4a63; }
 
 .box-header>.box-tools{
