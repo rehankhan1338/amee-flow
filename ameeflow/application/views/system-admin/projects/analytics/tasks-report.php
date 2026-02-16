@@ -104,7 +104,7 @@ $proName = $projectDetails['projectName'].' - '.$this->config->item('terms_asses
                 <table class="table table-striped12" id="table_recordtbl1">
                     <thead>
                         <tr>
-                            <th>Main Task</th>
+                            <th>Main Task(s)</th>
                             <th>Priority</th>
                             <th>Due Date</th>
                             <th class="text-center">Completed Tasks</th>

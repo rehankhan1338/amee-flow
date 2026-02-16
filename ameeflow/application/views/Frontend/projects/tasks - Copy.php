@@ -23,7 +23,7 @@
                 <table class="table table-striped12" id="table_recordtbl1">
                     <thead>
                         <tr>
-                            <th>Main Task</th>
+                            <th>Main Task(s)</th>
                             <th>Priority</th>
                             <th>Due Date</th>
                             <th>Status</th>
