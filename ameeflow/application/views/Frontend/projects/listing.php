@@ -63,7 +63,7 @@
 
 				<!-- Footer with CTA -->
 				<div class="af-pro-footer" style="background:<?php echo $bgColor;?>;">
-					<span class="af-pro-cta" >
+					<span class="af-pro-cta" style="background: linear-gradient(45deg, #485b79 25%, #e18125 100%); color: #fff;">
 						Go to Tasks <i class="fa fa-arrow-right"></i>
 					</span>
 				</div>
