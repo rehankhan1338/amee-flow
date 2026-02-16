@@ -1788,3 +1788,51 @@ span[style*="cursor: not-allowed"] {
 .btn-success{
 	border-radius: 38px !important;
 }
+
+/* ============================================================
+   DataTables Sorting Icons – Font Awesome replacement
+   (Glyphicons not available in Bootstrap 5)
+   ============================================================ */
+body.af-system-admin table.dataTable thead .sorting:after,
+body.af-system-admin table.dataTable thead .sorting_asc:after,
+body.af-system-admin table.dataTable thead .sorting_desc:after,
+body.af-system-admin table.dataTable thead .sorting_asc_disabled:after,
+body.af-system-admin table.dataTable thead .sorting_desc_disabled:after {
+	font-family: 'FontAwesome' !important;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-block !important;
+	font-size: .72rem;
+}
+body.af-system-admin table.dataTable thead .sorting:after {
+	content: "\f0dc" !important; /* fa-sort (up+down arrows) */
+	opacity: 0.3;
+	color: #8b97a8;
+}
+body.af-system-admin table.dataTable thead .sorting_asc:after {
+	content: "\f0de" !important; /* fa-sort-asc (up arrow) */
+	opacity: 0.7;
+	color: #485b79;
+}
+body.af-system-admin table.dataTable thead .sorting_desc:after {
+	content: "\f0dd" !important; /* fa-sort-desc (down arrow) */
+	opacity: 0.7;
+	color: #485b79;
+}
+body.af-system-admin table.dataTable thead .sorting_asc_disabled:after {
+	content: "\f0de" !important;
+	opacity: 0.15;
+	color: #ccc;
+}
+body.af-system-admin table.dataTable thead .sorting_desc_disabled:after {
+	content: "\f0dd" !important;
+	opacity: 0.15;
+	color: #ccc;
+}
+body.af-system-admin table.dataTable thead > tr > th {
+	padding-right: 30px;
+	position: relative;
+	cursor: pointer;
+}

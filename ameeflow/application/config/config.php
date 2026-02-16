@@ -13,7 +13,7 @@ $config['admin_directory_name'] = 'super-admin/';
 
 $config['aiButtonTxt'] = 'AI Assistant';
 
-$config['gptApiKey'] = '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'; 
+$config['gptApiKey'] = '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'; 
 
 $config['admin_email_sent_to'] = 'sakilekai@yahoo.com||Sakile';
 $config['admin_email_sent_to_cc'] = 'sakilekai@yahoo.com||Sakile';
