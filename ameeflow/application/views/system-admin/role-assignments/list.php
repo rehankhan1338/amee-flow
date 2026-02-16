@@ -154,6 +154,46 @@ $(function(){
     var selectedUnit = '';
     var selectedProject = '';
 
+    /* Filter unit dropdown options based on selected project */
+    function filterUnitOptions(){
+        var $unitOptions = $('#afUnitDropdown .af-select-filter-option');
+        if(selectedProject === ''){
+            // No project filter — show all unit options
+            $unitOptions.show();
+        } else {
+            // Collect units that have at least one user in the selected project
+            var validUnits = {};
+            $('#table_recordtbl tbody tr').not('.no-data-row').each(function(){
+                var rowUnit = ($(this).data('unit') || '').toString();
+                var rowProjectIds = String($(this).data('project-ids') || '');
+                var projectIdsArr = rowProjectIds ? rowProjectIds.split(',') : [];
+                if(rowUnit !== '' && projectIdsArr.indexOf(selectedProject) > -1){
+                    validUnits[rowUnit] = true;
+                }
+            });
+            $unitOptions.each(function(){
+                var val = $(this).data('value');
+                if(val === '' || val === undefined){
+                    // "All Units" option — always show
+                    $(this).show();
+                } else if(validUnits[val]){
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+            // If the currently selected unit is no longer valid, reset it
+            if(selectedUnit !== '' && !validUnits[selectedUnit]){
+                selectedUnit = '';
+                $('#afUnitFilterBtn .af-select-filter-label').text('All Units');
+                $('#afUnitFilterBtn').removeClass('active');
+                $('#afUnitClear').hide();
+                $unitOptions.removeClass('selected');
+                $unitOptions.first().addClass('selected');
+            }
+        }
+    }
+
     function filterRolesTable(){
         var searchText = $('#rolesSearchInput').val().toLowerCase();
         $('#table_recordtbl tbody tr').not('.no-data-row').each(function(){
@@ -244,6 +284,7 @@ $(function(){
             $('#afProjectClear').hide();
         }
         $('#afProjectDropdown').removeClass('show');
+        filterUnitOptions();
         filterRolesTable();
     });
     $('#afProjectClear').on('click', function(e){
@@ -253,6 +294,7 @@ $(function(){
         $('#afProjectFilterBtn').removeClass('active');
         $(this).hide();
         $('#afProjectDropdown .af-select-filter-option').removeClass('selected');
+        filterUnitOptions();
         filterRolesTable();
     });
 
