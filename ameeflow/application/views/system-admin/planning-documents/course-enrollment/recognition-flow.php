@@ -52,7 +52,7 @@ function getCourseEnrollData(val){
 <section class="content">
     <div class="box">          
         <div class="box-header no-border">
-            <h3 class="box-title" style="font-size:15px; font-weight:500">Recognition Flow</h3>
+            <h3 class="box-title" style="font-size:15px; font-weight:500"><?php echo ($pageCallFrom==1) ? 'Recognition Flow' : 'Recognition Recipients'; ?></h3>
         </div>
         <!-- Modern Toolbar -->
         <div class="af-roles-toolbar">

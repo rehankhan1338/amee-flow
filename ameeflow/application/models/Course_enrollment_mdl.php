@@ -18,11 +18,18 @@ class Course_enrollment_mdl extends CI_Model {
 	}
 
 	public function recognitionFlowDataArr($universityId,$uniAdminId,$ceId){
-		$this->db->where('ceId', $ceId);
-		$this->db->where('universityId', $universityId);
-		$this->db->where('uniAdminId', $uniAdminId);
-		$this->db->where('isDeleted', 0);
-		$query = $this->db->get('faculty_recognition_flow');
+		$this->db->select("rf.*, 
+			COALESCE(NULLIF(rf.deptName,''), GROUP_CONCAT(DISTINCT cec.deptName SEPARATOR ', ')) as deptName,
+			COALESCE(NULLIF(rf.courseAssessed,''), GROUP_CONCAT(DISTINCT cec.courseTitle SEPARATOR ', ')) as courseAssessed,
+			COALESCE(NULLIF(rf.nofSections,''), CAST(COUNT(DISTINCT cec.sectionNo) AS CHAR)) as nofSections", FALSE);
+		$this->db->from('faculty_recognition_flow as rf');
+		$this->db->join('course_enrollment_classes as cec', 'cec.ceId = rf.ceId AND cec.facultyEmail = rf.facultyEmail AND cec.isDeleted = 0 AND cec.isActive = 0', 'LEFT');
+		$this->db->where('rf.ceId', $ceId);
+		$this->db->where('rf.universityId', $universityId);
+		$this->db->where('rf.uniAdminId', $uniAdminId);
+		$this->db->where('rf.isDeleted', 0);
+		$this->db->group_by('rf.rfId');
+		$query = $this->db->get();
 		return $query->result_array();	
 	}
 
@@ -97,12 +104,25 @@ class Course_enrollment_mdl extends CI_Model {
 			 	foreach($resData as $res){
 					$facultyEmail = $res['facultyEmail'];
 					$facultyName = ucwords(str_replace('-',' ',$res['facultyNameSlug']));
+
+					// Fetch deptName, courseAssessed, nofSections from course_enrollment_classes
+					$this->db->select("GROUP_CONCAT(DISTINCT deptName SEPARATOR ', ') as deptName, GROUP_CONCAT(DISTINCT courseTitle SEPARATOR ', ') as courseAssessed, COUNT(DISTINCT sectionNo) as nofSections", FALSE);
+					$this->db->where('ceId', $ceId);
+					$this->db->where('facultyEmail', $facultyEmail);
+					$this->db->where('isActive', 0);
+					$this->db->where('isDeleted', 0);
+					$cecQry = $this->db->get('course_enrollment_classes');
+					$cecRow = $cecQry->row_array();
+					$deptName = isset($cecRow['deptName']) ? $cecRow['deptName'] : '';
+					$courseAssessed = isset($cecRow['courseAssessed']) ? $cecRow['courseAssessed'] : '';
+					$nofSections = isset($cecRow['nofSections']) ? $cecRow['nofSections'] : '';
+
 					$this->db->where('facultyEmail', $facultyEmail);
 					$this->db->where('ceId', $ceId);
 					$qry = $this->db->get('faculty_recognition_flow');
 					$cntChk = $qry->num_rows();
 					if($cntChk==0){
-						$this->db->insert('faculty_recognition_flow', array('universityId'=>$universityId, 'uniAdminId'=>$uniAdminId, 'ceId'=>$ceId, 'facultyEmail'=>$facultyEmail, 'facultyName'=>$facultyName, 'lastUpdatedOn'=>$curTime, 'addDate'=>$addDate, "emailSentCnt"=>1));
+						$this->db->insert('faculty_recognition_flow', array('universityId'=>$universityId, 'uniAdminId'=>$uniAdminId, 'ceId'=>$ceId, 'facultyEmail'=>$facultyEmail, 'facultyName'=>$facultyName, 'deptName'=>$deptName, 'courseAssessed'=>$courseAssessed, 'nofSections'=>$nofSections, 'lastUpdatedOn'=>$curTime, 'addDate'=>$addDate, "emailSentCnt"=>1));
 						$rfId = $this->db->insert_id();
 						$encryptId = generateRandomNumStringCh(4).'rf'.$rfId.generateRandomNumStringCh(4);
 						$this->db->where('rfId',$rfId); 
