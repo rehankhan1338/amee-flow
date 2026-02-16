@@ -33,7 +33,7 @@
 				$taskUrl = base_url().'projects/tasks/'.$pro['proencryptId'];
 			?>
 			<a href="<?php echo $taskUrl; ?>" class="af-pro-card-link">
-			<div class="af-pro-card">
+			<div class="af-pro-card" style="--card-color:<?php echo $bgColor;?>;">
 				<!-- Accent strip uses project colour -->
 				<div class="af-pro-accent" style="background:<?php echo $bgColor;?>;"></div>
 
