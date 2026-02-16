@@ -173,7 +173,7 @@ $proName = $projectDetails['projectName'].' - '.$this->config->item('terms_asses
                             ?>
                         <tr id="taskRow<?php echo $task['taskId'];?>" data-priority-id="<?php echo isset($task['priorityId']) && $task['priorityId']!='' ? $task['priorityId'] : '0';?>" data-due-date="<?php echo isset($task['dueDateStr']) && $task['dueDateStr']!='' && $task['dueDateStr']>0 ? $task['dueDateStr'] : '0';?>">
                            
-                            <td class="fw600"> <a class="cp" id="coltName<?php echo $task['taskId'];?>" onclick="return viewTaskDetails('<?php echo $task['taskId'];?>','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <?php echo $task['taskName'];?>  <i id="inIcon<?php echo $task['taskId'];?>" class="fa fa-info-circle"></i> </a> </td>
+                            <td class="fw600"> <a  class="cp" id="coltName<?php echo $task['taskId'];?>" onclick="return viewTaskDetails('<?php echo $task['taskId'];?>','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <?php echo $task['taskName'];?>  <i id="inIcon<?php echo $task['taskId'];?>" class="fa fa-info-circle"></i> </a> </td>
                             <td nowrap class="<?php echo $priClsname;?>"> <span class="fw600" ><?php 
                             if(isset($task['priorityId']) && $task['priorityId']!='' && $task['priorityId']>0){
                                 echo $this->config->item('task_priority_options_array_config')[$task['priorityId']]['name'];

@@ -43,7 +43,7 @@
                             ?>
                         <tr id="taskRow<?php echo $task['taskId'];?>">
                            
-                            <td style="font-weight:600;"> <a data-bs-toggle="tooltip" data-bs-placement="top" title="Yes" class="pro_name cp" id="coltName<?php echo $task['taskId'];?>" onclick="return viewTaskDetails('<?php echo $task['taskId'];?>','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <?php echo $task['taskName'];?> </a> <i id="inIcon<?php echo $task['taskId'];?>" class="fa fa-info-circle"></i> </td>
+                            <td style="font-weight:600;"> <a style="text-decoration: underline;color: #4343d8;" data-bs-toggle="tooltip" data-bs-placement="top" title="Yes" class="pro_name cp" id="coltName<?php echo $task['taskId'];?>" onclick="return viewTaskDetails('<?php echo $task['taskId'];?>','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <?php echo $task['taskName'];?> </a> </td>
                             <td class="<?php echo $priClsname;?>"> <span class="cp fw600" ><?php 
                             if(isset($task['priorityId']) && $task['priorityId']!='' && $task['priorityId']>0){
                                 echo $this->config->item('task_priority_options_array_config')[$task['priorityId']]['name'];

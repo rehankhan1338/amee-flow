@@ -187,7 +187,7 @@ $todayDate = strtotime(date('Y-m-d'));
                             <td class="fw600"> 
                                  
                             <?php echo $ic.'. &nbsp;'; if($chkTaskSts==0 && $todayDate>=$task['dueDateStr']){ echo '<i class="fa fa-flag-o fw600 flagSts notStarted"></i>';}else{echo '<i class="fa fa-flag-o fw600 flagSts pendingBg"></i>';}?>
-                            <a  class="cp" id="coltName<?php echo $task['taskId'];?>" onclick="return viewTaskDetails('<?php echo $task['taskId'];?>','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <?php echo $task['taskName'];?> <i id="inIcon<?php echo $task['taskId'];?>" class="fa fa-info-circle"></i> </a> </td>
+                            <a style="text-decoration: underline;color: #4343d8;" class="cp" id="coltName<?php echo $task['taskId'];?>" onclick="return viewTaskDetails('<?php echo $task['taskId'];?>','<?php echo $projectDetails['projectId'];?>','<?php echo $projectDetails['proencryptId'];?>');"> <?php echo $task['taskName'];?></a></td>
                             <td nowrap class="<?php echo $priClsname;?>"> <span class="cp fw600" ><?php 
                             if(isset($task['priorityId']) && $task['priorityId']!='' && $task['priorityId']>0){
                                 echo $this->config->item('task_priority_options_array_config')[$task['priorityId']]['name'];
