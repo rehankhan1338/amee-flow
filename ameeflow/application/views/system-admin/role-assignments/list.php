@@ -11,10 +11,23 @@
         <!-- Modern Toolbar -->
         <div class="af-roles-toolbar">
             <div class="af-roles-toolbar-left">
-                <div class="af-roles-search-wrap">
-                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
-                    <input type="text" class="af-roles-search-input" id="rolesSearchInput" placeholder="Search users..." autocomplete="off" />
-                    <button class="af-roles-search-clear" id="rolesClearSearch" type="button"><i class="fa fa-times"></i></button>
+                <!-- Project Filter -->
+                <div class="af-select-filter-wrap" id="afProjectFilterWrap">
+                    <span class="af-select-filter-btn" id="afProjectFilterBtn" role="button">
+                        <i class="fa fa-folder"></i>
+                        <span class="af-select-filter-label">All Projects</span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                        <button class="af-select-filter-clear" id="afProjectClear" type="button"><i class="fa fa-times"></i></button>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afProjectDropdown">
+                        <a href="#" class="af-select-filter-option selected" data-value="">All Projects</a>
+                        <?php 
+                            if(isset($projectDataArr) && count($projectDataArr)>0){
+                                foreach($projectDataArr as $pro){
+                        ?>
+                        <a href="#" class="af-select-filter-option" data-value="<?php echo $pro['projectId'];?>"><?php echo htmlspecialchars($pro['projectName']);?></a>
+                        <?php } } ?>
+                    </div>
                 </div>
                 <!-- Unit Filter -->
                 <div class="af-select-filter-wrap" id="afUnitFilterWrap">
@@ -41,23 +54,10 @@
                         <?php } ?>
                     </div>
                 </div>
-                <!-- Project Filter -->
-                <div class="af-select-filter-wrap" id="afProjectFilterWrap">
-                    <span class="af-select-filter-btn" id="afProjectFilterBtn" role="button">
-                        <i class="fa fa-folder"></i>
-                        <span class="af-select-filter-label">All Projects</span>
-                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
-                        <button class="af-select-filter-clear" id="afProjectClear" type="button"><i class="fa fa-times"></i></button>
-                    </span>
-                    <div class="af-select-filter-dropdown" id="afProjectDropdown">
-                        <a href="#" class="af-select-filter-option selected" data-value="">All Projects</a>
-                        <?php 
-                            if(isset($projectDataArr) && count($projectDataArr)>0){
-                                foreach($projectDataArr as $pro){
-                        ?>
-                        <a href="#" class="af-select-filter-option" data-value="<?php echo $pro['projectId'];?>"><?php echo htmlspecialchars($pro['projectName']);?></a>
-                        <?php } } ?>
-                    </div>
+                <div class="af-roles-search-wrap">
+                    <span class="af-roles-search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="af-roles-search-input" id="rolesSearchInput" placeholder="Search users..." autocomplete="off" />
+                    <button class="af-roles-search-clear" id="rolesClearSearch" type="button"><i class="fa fa-times"></i></button>
                 </div>
             </div>
             <div class="af-roles-toolbar-right">
