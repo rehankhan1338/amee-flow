@@ -48,4 +48,15 @@ if(isset($reportDetailsArr['rId']) && $reportDetailsArr['rId']!=''){
         <label class="form-label">Planned Follow-Up *</label>
         <textarea id="planFollowup" name="planFollowup" placeholder="add details" rows="3" class="form-control required"><?php if(isset($reportDetailsArr['planFollowup']) && $reportDetailsArr['planFollowup']!=''){echo $reportDetailsArr['planFollowup'];}?></textarea>                
     </div>    	 
-</div> 
+</div>
+<script>
+(function(){
+    var editorIds = ['courseProgram','strengths','areaImprovement','imdtNextStep','recdProgram','planFollowup'];
+    for(var i=0; i<editorIds.length; i++){
+        if(CKEDITOR.instances[editorIds[i]]){
+            CKEDITOR.instances[editorIds[i]].destroy(true);
+        }
+        CKEDITOR.replace(editorIds[i], { height: '150px' });
+    }
+})();
+</script>
