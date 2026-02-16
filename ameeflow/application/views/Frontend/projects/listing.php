@@ -24,39 +24,47 @@
 
 		<!-- Project cards grid -->
 		<div class="af-projects-grid">
-			<?php foreach($assignProjectsDataArr as $pro){
-				$taskCnt = getUserAssignProTaskCnt($pro['projectId'], $sessionDetailsArr['userId']);
-				$termLabel = $this->config->item('terms_assessment_array_config')[$pro['termId']]['name'].' - '.$pro['year'];
-				$bgColor = isset($pro['bgColor']) && $pro['bgColor'] != '' ? $pro['bgColor'] : '#485b79';
-				$fontColor = isset($pro['fontColor']) && $pro['fontColor'] != '' ? $pro['fontColor'] : '#fff';
-				$btnColor = isset($pro['btnColor']) && $pro['btnColor'] != '' ? $pro['btnColor'] : '#e18125';
-				$taskUrl = base_url().'projects/tasks/'.$pro['proencryptId'];
-			?>
-			<a href="<?php echo $taskUrl; ?>" class="af-pro-card-link">
-			<div class="af-pro-card" style="--card-color:<?php echo $bgColor;?>;">
-				<!-- Accent strip uses project colour -->
-				<div class="af-pro-accent" style="background:<?php echo $bgColor;?>;"></div>
+		<?php foreach($assignProjectsDataArr as $pro){
+			$taskCnt = getUserAssignProTaskCnt($pro['projectId'], $sessionDetailsArr['userId']);
+			$redFlagCnt = getRedFlaggedTaskCnt($pro['projectId'], $sessionDetailsArr['userId']);
+			$termLabel = $this->config->item('terms_assessment_array_config')[$pro['termId']]['name'].' - '.$pro['year'];
+			$bgColor = isset($pro['bgColor']) && $pro['bgColor'] != '' ? $pro['bgColor'] : '#485b79';
+			$fontColor = isset($pro['fontColor']) && $pro['fontColor'] != '' ? $pro['fontColor'] : '#fff';
+			$btnColor = isset($pro['btnColor']) && $pro['btnColor'] != '' ? $pro['btnColor'] : '#e18125';
+			$taskUrl = base_url().'projects/tasks/'.$pro['proencryptId'];
+		?>
+		<a href="<?php echo $taskUrl; ?>" class="af-pro-card-link">
+		<div class="af-pro-card" style="--card-color:<?php echo $bgColor;?>;">
+			<!-- Accent strip uses project colour -->
+			<div class="af-pro-accent" style="background:<?php echo $bgColor;?>;"></div>
 
-				<div class="af-pro-body">
-					<!-- Icon badge -->
-					<div class="af-pro-icon" style="background:<?php echo $bgColor;?>15;">
-						<i data-feather="clipboard" style="color:<?php echo $bgColor;?>;"></i>
-					</div>
+			<div class="af-pro-body">
+				<!-- Icon badge -->
+				<div class="af-pro-icon" style="background:<?php echo $bgColor;?>15;">
+					<i data-feather="clipboard" style="color:<?php echo $bgColor;?>;"></i>
+				</div>
 
-					<!-- Title -->
-					<h4 class="af-pro-title"><?php echo $pro['projectName'];?></h4>
+				<!-- Red flag badge (overdue incomplete tasks) -->
+				<?php if($redFlagCnt > 0){ ?>
+				<span class="af-pro-red-flag-badge" title="<?php echo $redFlagCnt; ?> overdue task<?php echo $redFlagCnt != 1 ? 's' : ''; ?>">
+					<i class="fa fa-flag"></i> <?php echo $redFlagCnt; ?>
+				</span>
+				<?php } ?>
 
-					<!-- Meta badges -->
-					<div class="af-pro-meta">
-						<span class="af-pro-badge">
-							<i data-feather="calendar"></i>
-							<?php echo $termLabel; ?>
-						</span>
-						<span class="af-pro-badge">
-							<i data-feather="check-circle"></i>
-							<?php echo $taskCnt; ?> Task<?php echo $taskCnt != 1 ? 's' : ''; ?>
-						</span>
-					</div>
+				<!-- Title -->
+				<h4 class="af-pro-title"><?php echo $pro['projectName'];?></h4>
+
+				<!-- Meta badges -->
+				<div class="af-pro-meta">
+					<span class="af-pro-badge">
+						<i data-feather="calendar"></i>
+						<?php echo $termLabel; ?>
+					</span>
+					<span class="af-pro-badge">
+						<i data-feather="check-circle"></i>
+						<?php echo $taskCnt; ?> Task<?php echo $taskCnt != 1 ? 's' : ''; ?>
+					</span>
+				</div>
 
 					<div class="af-pro-spacer"></div>
 				</div>

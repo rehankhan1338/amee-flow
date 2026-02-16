@@ -103,6 +103,12 @@
 		return $CI->Projects_mdl->getUserAssignProTaskCnt($projectId,$userId);
 	}
 
+	function getRedFlaggedTaskCnt($projectId,$userId){
+		$CI = & get_instance();
+		$CI->load->model('Projects_mdl');
+		return $CI->Projects_mdl->getRedFlaggedTaskCnt($projectId,$userId);
+	}
+
 	function chkStsofUserTakeActionCh($userId,$taskId){
 		$CI = & get_instance();
 		$CI->load->model('Projects_mdl');

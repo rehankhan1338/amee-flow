@@ -174,6 +174,42 @@ class Projects_mdl extends CI_Model {
 		$query = $this->db->get('projects_assign_roles');
 		return $query->num_rows();
     }
+    public function getRedFlaggedTaskCnt($projectId,$userId){
+        $todayDate = strtotime(date('Y-m-d'));
+        $dbprefix = $this->db->dbprefix;
+        // Get user's overdue tasks for this project
+        $this->db->where('projectId', $projectId);
+        $where = ' taskId in (select taskId from '.$dbprefix.'projects_assign_roles where assignSts="0" and userId="'.$userId.'")';
+        $this->db->where($where);
+        $this->db->where('dueDateStr <=', $todayDate);
+        $this->db->where('dueDateStr >', 0);
+        $query = $this->db->get('projects_tasks');
+        $tasks = $query->result_array();
+        if(count($tasks)==0) return 0;
+        // Get all completed task records for this user in this project
+        $this->db->where('userId', $userId);
+        $this->db->where('projectId', $projectId);
+        $this->db->where('actionSts', 1);
+        $qry = $this->db->get('projects_tasks_users_sts');
+        $completedArr = $qry->result_array();
+        $completedByTask = array();
+        foreach($completedArr as $c){
+            if(!isset($completedByTask[$c['taskId']])) $completedByTask[$c['taskId']] = 0;
+            $completedByTask[$c['taskId']]++;
+        }
+        $redFlagCnt = 0;
+        foreach($tasks as $task){
+            $taskId = $task['taskId'];
+            $subTskCnt = isset($task['subTskCnt']) ? $task['subTskCnt'] : 0;
+            $completedCnt = isset($completedByTask[$taskId]) ? $completedByTask[$taskId] : 0;
+            if($subTskCnt > 0){
+                if($completedCnt < $subTskCnt) $redFlagCnt++;
+            } else {
+                if($completedCnt == 0) $redFlagCnt++;
+            }
+        }
+        return $redFlagCnt;
+    }
     public function proTaskListDataArr($projectId){
         $this->db->where('projectId', $projectId);
         $this->db->order_by('dueDateStr', 'asc');

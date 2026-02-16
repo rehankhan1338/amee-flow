@@ -124,6 +124,28 @@ a.af-pro-card-link .af-pro-card {
 	stroke-width: 2;
 }
 
+/* Red flag badge */
+.af-pro-red-flag-badge {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	background: #e74c3c;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 3px 9px;
+	border-radius: 20px;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	line-height: 1;
+	box-shadow: 0 2px 6px rgba(231,76,60,0.35);
+	z-index: 2;
+}
+.af-pro-red-flag-badge .fa {
+	font-size: 10px;
+}
+
 /* Title */
 .af-pro-title {
 	font-size: 1.1rem;
