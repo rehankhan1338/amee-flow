@@ -63,7 +63,7 @@
 
 				<!-- Footer with CTA -->
 				<div class="af-pro-footer">
-					<span class="af-pro-cta">
+					<span class="af-pro-cta" style="background:<?php echo $bgColor;?>;">
 						Go to Tasks <i class="fa fa-arrow-right"></i>
 					</span>
 				</div>
