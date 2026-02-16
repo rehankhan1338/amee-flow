@@ -1,35 +1,83 @@
 <section class="content">
-	<div class="box no-border" style="margin-bottom:10px">
-<style>
-.ttHead{ text-align:center; margin:0}
-.ttCnt{ text-align:center; margin-top:10px; margin-bottom:0;}
-.tINst{background-color: #eee;padding: 10px;margin: -5px 10px 20px 10px;font-weight: 600;letter-spacing: 0.5px;}
-	</style>
-		<div class="box-body row" >
-			<div class="col-md-4">
-				<h4 class="ttHead">Total Tickets</h4>
-				<h2 class="ttCnt"><?php echo count($my_tickets_listing);?></h2>
+
+	<!-- ===== Summary Cards ===== -->
+	<div class="row mb-3">
+		<div class="col-md-4 mb-2">
+			<div class="box af-card" style="margin-bottom:0">
+				<div class="box-body text-center" style="padding:18px 10px">
+					<div style="font-size:.82rem;color:#8b97a8;text-transform:uppercase;letter-spacing:.5px;font-weight:600">Total Tickets</div>
+					<div style="font-size:1.8rem;font-weight:700;color:#485b79;margin-top:4px"><?php echo count($my_tickets_listing);?></div>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<h4 class="ttHead">Open Tickets</h4>
-				<h2 class="ttCnt"><?php echo $openTickets;?></h2>
+		</div>
+		<div class="col-md-4 mb-2">
+			<div class="box af-card" style="margin-bottom:0">
+				<div class="box-body text-center" style="padding:18px 10px">
+					<div style="font-size:.82rem;color:#8b97a8;text-transform:uppercase;letter-spacing:.5px;font-weight:600">Open Tickets</div>
+					<div style="font-size:1.8rem;font-weight:700;color:#27ae60;margin-top:4px"><?php echo $openTickets;?></div>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<h4 class="ttHead">Closed Tickets</h4>
-				<h2 class="ttCnt"><?php echo $closedTickets;?></h2> 
+		</div>
+		<div class="col-md-4 mb-2">
+			<div class="box af-card" style="margin-bottom:0">
+				<div class="box-body text-center" style="padding:18px 10px">
+					<div style="font-size:.82rem;color:#8b97a8;text-transform:uppercase;letter-spacing:.5px;font-weight:600">Closed Tickets</div>
+					<div style="font-size:1.8rem;font-weight:700;color:#e74c3c;margin-top:4px"><?php echo $closedTickets;?></div>
+				</div>
 			</div>
-		</div> 
+		</div>
 	</div>
-	 <div class="box no-border">
-		<div class="box-body row" >
-			<!-- <div class="row tINst">
-				<div class="col-xs-2"> <span style="color: #008000;font-size:10px;"><i class="fa fa-circle"></i></span> &nbsp;Alert Level 1</div>
-				<div class="col-xs-2"> <span style="color: #FFBF00;font-size:10px;"><i class="fa fa-circle"></i></span> &nbsp;Alert Level 2 </div> 
-				<div class="col-xs-2"> <span style="color: #FF681F;font-size:10px;"><i class="fa fa-circle"></i></span> &nbsp;Alert Level 3 </div> 
-				<div class="col-xs-2"> <span style="color: #FF0000;font-size:10px;"><i class="fa fa-circle"></i></span> &nbsp;Alert Level 4</div>
-			</div> -->
-			<div class="col-xs-12 table-responsive">
-				 
+
+	<!-- ===== Tickets Table ===== -->
+	<div class="box af-card">
+		<div class="box-header no-border af-card-header">
+			<h3 class="box-title af-card-title">Support Tickets</h3>
+		</div>
+
+		<!-- ===== Filter Bar ===== -->
+		<div class="af-filter-bar" style="padding:14px 20px;background:#f8fafc;border-bottom:1px solid #eef0f3;display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;">
+			<!-- Status Filter -->
+			<div style="min-width:150px">
+				<label style="display:block;font-size:.72rem;font-weight:600;color:#8b97a8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Status</label>
+				<select id="af_filter_status" class="form-control af-form-input" style="height:36px;font-size:.85rem;padding:4px 10px">
+					<option value="">All</option>
+					<option value="Open">Open</option>
+					<option value="Closed">Closed</option>
+				</select>
+			</div>
+			<!-- Type Filter -->
+			<div style="min-width:170px">
+				<label style="display:block;font-size:.72rem;font-weight:600;color:#8b97a8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Type</label>
+				<select id="af_filter_type" class="form-control af-form-input" style="height:36px;font-size:.85rem;padding:4px 10px">
+					<option value="">All</option>
+					<?php foreach($this->config->item('support_types_array_config') as $st){ ?>
+						<option value="<?php echo $st['name'];?>"><?php echo $st['name'];?></option>
+					<?php } ?>
+				</select>
+			</div>
+			<!-- Date From -->
+			<div style="min-width:150px">
+				<label style="display:block;font-size:.72rem;font-weight:600;color:#8b97a8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">From Date</label>
+				<input type="text" id="af_filter_date_from" class="form-control af-form-input" style="height:36px;font-size:.85rem;padding:4px 10px" placeholder="mm/dd/yyyy" autocomplete="off" />
+			</div>
+			<!-- Date To -->
+			<div style="min-width:150px">
+				<label style="display:block;font-size:.72rem;font-weight:600;color:#8b97a8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">To Date</label>
+				<input type="text" id="af_filter_date_to" class="form-control af-form-input" style="height:36px;font-size:.85rem;padding:4px 10px" placeholder="mm/dd/yyyy" autocomplete="off" />
+			</div>
+			<!-- Buttons -->
+			<div style="display:flex;gap:6px;padding-bottom:1px">
+				<button type="button" id="af_filter_apply" class="btn af-button af-button-primary" style="height:36px;padding:0 18px;font-size:.82rem">
+					<i class="fa fa-filter"></i> Filter
+				</button>
+				<button type="button" id="af_filter_reset" class="btn af-button" style="height:36px;padding:0 14px;font-size:.82rem;background:#e2e8f0;color:#485b79;border:none">
+					<i class="fa fa-times"></i> Reset
+				</button>
+			</div>
+		</div>
+
+		<div class="box-body af-card-body">
+			<div class="col-xs-12 col-12 table-responsive">
 				<table class="table table-striped" id="table_recordtbl">
 					<thead>
 						<tr>
@@ -66,29 +114,107 @@
 										$color = '#FF0000';
 									}
 
-									?><span style="color: <?php echo $color;?>;font-size:10px;"><i class="fa fa-circle"></i></span> &nbsp;<?php } ?><a class="pro_name" href="<?php echo base_url(). $this->config->item('admin_directory_name');?>tickets/conversations/<?php echo $row->unique_ticket_id;
-								// if(isset($row->unread_admin_status) && $row->unread_admin_status==1){echo '?u=1';}?>"><?php echo $row->unique_ticket_id;?></a></td>
-								<td><?php echo date('m/d/Y',$row->generated_time);?>  <small><?php echo date('h:i A',$row->generated_time);?></small> </td>
+									?><span style="color: <?php echo $color;?>;font-size:10px;"><i class="fa fa-circle"></i></span> &nbsp;<?php } ?><a class="pro_name" href="<?php echo base_url(). $this->config->item('admin_directory_name');?>tickets/conversations/<?php echo $row->unique_ticket_id;?>"><?php echo $row->unique_ticket_id;?></a></td>
+								<td data-sort-value="<?php echo $row->generated_time;?>"><?php echo date('m/d/Y',$row->generated_time);?>  <small><?php echo date('h:i A',$row->generated_time);?></small></td>
 								<td><?php echo $this->config->item('support_types_array_config')[$row->type_of_support]['name'];?></td>
-								<td><?php //echo ucwords($row->fullName);									 
+								<td><?php
 									if($row->createdBy==1){
-										//echo getStudentNameCh($row->createdById);
 										echo '<small>Area Expert</small>';
 									}else{
-										//echo getFacultyNameCh($row->createdById);
 										echo '<small>Project Manager</small>';
 									}
 								?></td>
 								<td><?php echo $row->conversation_cnt;?></td>
-								<td><?php echo date('m/d/Y',$row->last_modification_date);?> <small><?php echo date('h:i A',$row->last_modification_date);?></small></td>
+								<td data-sort-value="<?php echo $row->last_modification_date;?>"><?php echo date('m/d/Y',$row->last_modification_date);?> <small><?php echo date('h:i A',$row->last_modification_date);?></small></td>
 								<td><?php if($row->ticket_status==0){?><label class="mstus accepted">Open</label><?php }else{?><label class="mstus rejected">Closed</label><?php } ?></td>
 								<td class="action_icons">
-									<a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this ticket?');" href="<?php echo base_url();?>home/ticket_delete?utId=<?php echo $row->unique_ticket_id;?>&r=<?php echo $ticketSecBaseUrl;?>" ><i class="fa fa-trash"></i></a></td>
+									<a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this ticket?');" href="<?php echo base_url();?>home/ticket_delete?utId=<?php echo $row->unique_ticket_id;?>&r=<?php echo $ticketSecBaseUrl;?>" ><i class="fa fa-trash"></i></a>
+								</td>
 							</tr>
 						<?php $i++;} } ?>
 					</tbody>
 				</table>
-			</div> 
+			</div>
 		</div>
 	</div>
-</section>  
+</section>
+
+<script>
+$(function(){
+
+	/* ---------- Datepicker on filter fields ---------- */
+	$('#af_filter_date_from, #af_filter_date_to').datepicker({
+		format: "mm/dd/yyyy",
+		autoclose: true,
+		todayHighlight: true,
+		clearBtn: true
+	});
+
+	/* ---------- Custom DataTables filter ---------- */
+	/* Status column = index 7, Type column = index 3, Date column = index 2 */
+	$.fn.dataTable.ext.search.push(function(settings, data, dataIndex){
+		/* Only apply to #table_recordtbl */
+		if(settings.nTable.id !== 'table_recordtbl') return true;
+
+		var filterStatus = $('#af_filter_status').val();
+		var filterType   = $('#af_filter_type').val();
+		var filterFrom   = $('#af_filter_date_from').val();
+		var filterTo     = $('#af_filter_date_to').val();
+
+		/* --- Status filter (column 7) --- */
+		if(filterStatus !== ''){
+			var cellStatus = data[7] || '';
+			if(cellStatus.indexOf(filterStatus) === -1) return false;
+		}
+
+		/* --- Type filter (column 3) --- */
+		if(filterType !== ''){
+			var cellType = data[3] || '';
+			if(cellType.indexOf(filterType) === -1) return false;
+		}
+
+		/* --- Date range filter (column 2 – mm/dd/yyyy) --- */
+		if(filterFrom !== '' || filterTo !== ''){
+			var cellDateStr = (data[2] || '').trim();
+			/* Extract mm/dd/yyyy from the beginning of the cell text */
+			var dateMatch = cellDateStr.match(/^(\d{2})\/(\d{2})\/(\d{4})/);
+			if(dateMatch){
+				var cellDate = new Date(parseInt(dateMatch[3]), parseInt(dateMatch[1])-1, parseInt(dateMatch[2]));
+				cellDate.setHours(0,0,0,0);
+
+				if(filterFrom !== ''){
+					var parts = filterFrom.split('/');
+					var fromDate = new Date(parseInt(parts[2]), parseInt(parts[0])-1, parseInt(parts[1]));
+					fromDate.setHours(0,0,0,0);
+					if(cellDate < fromDate) return false;
+				}
+				if(filterTo !== ''){
+					var parts2 = filterTo.split('/');
+					var toDate = new Date(parseInt(parts2[2]), parseInt(parts2[0])-1, parseInt(parts2[1]));
+					toDate.setHours(23,59,59,999);
+					if(cellDate > toDate) return false;
+				}
+			} else {
+				/* Can't parse date – exclude if filter is active */
+				return false;
+			}
+		}
+
+		return true;
+	});
+
+	/* ---------- Filter button click ---------- */
+	$('#af_filter_apply').on('click', function(){
+		$('#table_recordtbl').DataTable().draw();
+	});
+
+	/* ---------- Reset button click ---------- */
+	$('#af_filter_reset').on('click', function(){
+		$('#af_filter_status').val('');
+		$('#af_filter_type').val('');
+		$('#af_filter_date_from').val('');
+		$('#af_filter_date_to').val('');
+		$('#table_recordtbl').DataTable().draw();
+	});
+});
+</script>
