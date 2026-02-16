@@ -8,6 +8,37 @@
         <!-- Toolbar: Search + File Type Filter -->
         <div class="af-roles-toolbar">
             <div class="af-roles-toolbar-left">
+                <!-- Project Filter -->
+                <div class="af-select-filter-wrap" id="afProjectFilterWrap">
+                    <span class="af-select-filter-btn" id="afProjectFilterBtn" role="button">
+                        <i class="fa fa-folder"></i>
+                        <span class="af-select-filter-label">All Projects</span>
+                        <i class="fa fa-chevron-down" style="font-size:.6rem;"></i>
+                        <button class="af-select-filter-clear" id="afProjectFilterClear" type="button"><i class="fa fa-times"></i></button>
+                    </span>
+                    <div class="af-select-filter-dropdown" id="afProjectFilterDropdown">
+                        <a href="#" class="af-select-filter-option selected" data-value="">All Projects</a>
+                        <?php 
+                            // Collect unique projects that appear in documents
+                            $docProjectIds = array();
+                            foreach($documentsDataArr as $doc){
+                                if(isset($doc['projectIds']) && $doc['projectIds']!=''){
+                                    $pIds = explode(',', $doc['projectIds']);
+                                    foreach($pIds as $pid){
+                                        $pid = trim($pid);
+                                        if($pid!='' && !in_array($pid, $docProjectIds)){
+                                            $docProjectIds[] = $pid;
+                                        }
+                                    }
+                                }
+                            }
+                            foreach($projectDataArr as $pro){
+                                if(in_array($pro['projectId'], $docProjectIds)){
+                        ?>
+                        <a href="#" class="af-select-filter-option" data-value="<?php echo $pro['projectId'];?>"><?php echo htmlspecialchars($pro['projectName']);?></a>
+                        <?php } } ?>
+                    </div>
+                </div>
                 <div class="af-roles-search-wrap">
                     <span class="af-roles-search-icon"><i data-feather="search"></i></span>
                     <input type="text" class="af-roles-search-input" id="afDocSearchInput" placeholder="Search documents..." autocomplete="off">
@@ -78,7 +109,7 @@
                                     $fileTypeLabel = strtoupper($row['docFileExt']);
                                 }
                         ?>
-                        <tr data-filetype="<?php echo $fileTypeLabel; ?>">
+                        <tr data-filetype="<?php echo $fileTypeLabel; ?>" data-project-ids="<?php echo isset($row['projectIds']) && $row['projectIds']!='' ? htmlspecialchars($row['projectIds']) : ''; ?>">
                             <td><?php echo $i;?></td>
                             <td class="fw600"> <a <?php if($row['docType']==1 || $row['docFileExt']=='pdf'){ ?> target="_blank"<?php } ?> id="proTitle<?php echo $row['docId'];?>" class="cp" href="<?php echo $rLnk;?>"> <?php echo $row['docTitle']; ?> <i class="fa fa-external-link" aria-hidden="true"></i> </a> </td>
                             <td> <?php 
@@ -117,8 +148,9 @@ $(function(){
         $table       = $('#table_recordtbl1');
 
     function filterTable(){
-        var query      = $.trim($searchInput.val()).toLowerCase();
-        var typeFilter = $('#afFileTypeFilterWrap').data('selectedType') || '';
+        var query         = $.trim($searchInput.val()).toLowerCase();
+        var typeFilter    = $('#afFileTypeFilterWrap').data('selectedType') || '';
+        var projectFilter = $('#afProjectFilterWrap').data('selectedProject') || '';
 
         $searchClear.css('display', query.length ? 'flex' : 'none');
 
@@ -129,11 +161,14 @@ $(function(){
 
             var text   = $tr.text().toLowerCase();
             var trType = $tr.attr('data-filetype') || '';
+            var trProjectIds = ($tr.attr('data-project-ids') || '').toString();
+            var projectIdsArr = trProjectIds ? trProjectIds.split(',') : [];
 
-            var matchSearch = !query || text.indexOf(query) !== -1;
-            var matchType   = !typeFilter || trType === typeFilter;
+            var matchSearch  = !query || text.indexOf(query) !== -1;
+            var matchType    = !typeFilter || trType === typeFilter;
+            var matchProject = !projectFilter || projectIdsArr.indexOf(projectFilter) > -1;
 
-            if(matchSearch && matchType){
+            if(matchSearch && matchType && matchProject){
                 $tr.show();
                 visible++;
             } else {
@@ -143,7 +178,7 @@ $(function(){
 
         // No results message
         $('#afDocNoResults').remove();
-        if(visible === 0 && (query || typeFilter)){
+        if(visible === 0 && (query || typeFilter || projectFilter)){
             var colCount = $table.find('thead th').length;
             $table.find('tbody').append(
                 '<tr id="afDocNoResults" class="af-roles-no-results"><td colspan="'+colCount+'">' +
@@ -158,15 +193,23 @@ $(function(){
     $searchClear.on('click', function(){ $searchInput.val('').trigger('input').focus(); });
     $searchInput.on('keydown', function(e){ if(e.key==='Escape') $(this).val('').trigger('input'); });
 
-    // --- File Type filter ---
+    // --- Filter variable declarations ---
     var $ftBtn   = $('#afFileTypeFilterBtn'),
         $ftDrop  = $('#afFileTypeFilterDropdown'),
         $ftClear = $('#afFileTypeFilterClear'),
         $ftLabel = $ftBtn.find('.af-select-filter-label'),
         $ftWrap  = $('#afFileTypeFilterWrap');
 
+    var $prBtn   = $('#afProjectFilterBtn'),
+        $prDrop  = $('#afProjectFilterDropdown'),
+        $prClear = $('#afProjectFilterClear'),
+        $prLabel = $prBtn.find('.af-select-filter-label'),
+        $prWrap  = $('#afProjectFilterWrap');
+
+    // --- File Type filter ---
     $ftBtn.on('click', function(e){
         if($(e.target).closest('.af-select-filter-clear').length) return;
+        $prDrop.removeClass('show');
         $ftDrop.toggleClass('show');
     });
 
@@ -193,10 +236,52 @@ $(function(){
         filterTable();
     });
 
-    // Close dropdown on outside click
+    // --- Project filter ---
+
+    $prBtn.on('click', function(e){
+        if($(e.target).closest('.af-select-filter-clear').length) return;
+        $ftDrop.removeClass('show');
+        $prDrop.toggleClass('show');
+    });
+
+    $prDrop.on('click', '.af-select-filter-option', function(e){
+        e.preventDefault();
+        var val = $(this).data('value');
+        $prDrop.find('.af-select-filter-option').removeClass('selected');
+        $(this).addClass('selected');
+        if(val !== '' && val !== undefined){
+            $prWrap.data('selectedProject', val.toString());
+            $prLabel.text($(this).text());
+            $prBtn.addClass('active');
+            $prClear.css('display', 'inline-block');
+        } else {
+            $prWrap.data('selectedProject', '');
+            $prLabel.text('All Projects');
+            $prBtn.removeClass('active');
+            $prClear.css('display', 'none');
+        }
+        $prDrop.removeClass('show');
+        filterTable();
+    });
+
+    $prClear.on('click', function(e){
+        e.stopPropagation();
+        $prWrap.data('selectedProject', '');
+        $prLabel.text('All Projects');
+        $prBtn.removeClass('active');
+        $prClear.css('display', 'none');
+        $prDrop.find('.af-select-filter-option').removeClass('selected');
+        $prDrop.find('.af-select-filter-option').first().addClass('selected');
+        filterTable();
+    });
+
+    // Close dropdowns on outside click
     $(document).on('click', function(e){
         if(!$(e.target).closest('#afFileTypeFilterWrap').length){
             $ftDrop.removeClass('show');
+        }
+        if(!$(e.target).closest('#afProjectFilterWrap').length){
+            $prDrop.removeClass('show');
         }
     });
 });
