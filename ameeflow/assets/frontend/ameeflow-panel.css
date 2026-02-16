@@ -1029,20 +1029,23 @@ body.af-system-admin input[type="text"]:not(.af-roles-search-input):not(.datepic
 	color: #2c3e50;
 }
 .af-report-summary-body {
-	font-size: .94rem;
-	line-height: 1.75;
+	font-size: .82rem;
+	line-height: 1.7;
 	color: #444;
 }
 .af-report-summary-body p {
-	margin-bottom: 12px;
+	margin-bottom: 10px;
+	font-size: .82rem;
 }
 .af-report-summary-body ul,
 .af-report-summary-body ol {
-	padding-left: 22px;
-	margin-bottom: 12px;
+	padding-left: 20px;
+	margin-bottom: 10px;
+	font-size: .82rem;
 }
 .af-report-summary-body li {
-	margin-bottom: 6px;
+	margin-bottom: 4px;
+	font-size: .82rem;
 }
 .af-report-summary-body h1,
 .af-report-summary-body h2,
@@ -1050,19 +1053,20 @@ body.af-system-admin input[type="text"]:not(.af-roles-search-input):not(.datepic
 .af-report-summary-body h4,
 .af-report-summary-body h5 {
 	color: #2c3e50;
-	margin-top: 18px;
-	margin-bottom: 10px;
+	margin-top: 14px;
+	margin-bottom: 8px;
+	font-size: .88rem;
 }
 .af-report-summary-body table {
 	width: 100%;
 	border-collapse: collapse;
-	margin-bottom: 14px;
+	margin-bottom: 12px;
 }
 .af-report-summary-body table th,
 .af-report-summary-body table td {
-	padding: 8px 12px;
+	padding: 7px 10px;
 	border: 1px solid #e5e8ec;
-	font-size: .88rem;
+	font-size: .82rem;
 }
 .af-report-summary-body table th {
 	background: #f4f6f8;
