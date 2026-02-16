@@ -38,6 +38,12 @@
                         <button class="af-select-filter-clear" id="afUnitClear" type="button"><i class="fa fa-times"></i></button>
                     </span>
                     <div class="af-select-filter-dropdown" id="afUnitDropdown">
+                        <div class="af-dropdown-search-wrap" style="padding:8px 10px 4px; position:sticky; top:0; background:#fff; z-index:1;">
+                            <input type="text" id="afUnitSearchInput" class="af-dropdown-search-input" placeholder="Search units..." autocomplete="off"
+                                style="width:100%; padding:6px 10px; font-size:.82rem; border:1px solid #dde1e8; border-radius:8px; outline:none; background:#f8f9fb; transition:border .2s;" 
+                                onfocus="this.style.borderColor='#485b79';this.style.background='#fff';" 
+                                onblur="this.style.borderColor='#dde1e8';this.style.background='#f8f9fb';" />
+                        </div>
                         <a href="#" class="af-select-filter-option selected" data-value="">All Units</a>
                         <?php 
                             $unitOptions = array();
@@ -154,15 +160,15 @@ $(function(){
     var selectedUnit = '';
     var selectedProject = '';
 
-    /* Filter unit dropdown options based on selected project */
+    /* Filter unit dropdown options based on selected project + search text */
     function filterUnitOptions(){
         var $unitOptions = $('#afUnitDropdown .af-select-filter-option');
-        if(selectedProject === ''){
-            // No project filter — show all unit options
-            $unitOptions.show();
-        } else {
-            // Collect units that have at least one user in the selected project
-            var validUnits = {};
+        var searchTerm = ($('#afUnitSearchInput').val() || '').toLowerCase();
+
+        // Build valid-units map based on selected project
+        var validUnits = null; // null = all valid
+        if(selectedProject !== ''){
+            validUnits = {};
             $('#table_recordtbl tbody tr').not('.no-data-row').each(function(){
                 var rowUnit = ($(this).data('unit') || '').toString();
                 var rowProjectIds = String($(this).data('project-ids') || '');
@@ -171,26 +177,28 @@ $(function(){
                     validUnits[rowUnit] = true;
                 }
             });
-            $unitOptions.each(function(){
-                var val = $(this).data('value');
-                if(val === '' || val === undefined){
-                    // "All Units" option — always show
-                    $(this).show();
-                } else if(validUnits[val]){
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
-            });
-            // If the currently selected unit is no longer valid, reset it
-            if(selectedUnit !== '' && !validUnits[selectedUnit]){
-                selectedUnit = '';
-                $('#afUnitFilterBtn .af-select-filter-label').text('All Units');
-                $('#afUnitFilterBtn').removeClass('active');
-                $('#afUnitClear').hide();
-                $unitOptions.removeClass('selected');
-                $unitOptions.first().addClass('selected');
+        }
+
+        $unitOptions.each(function(){
+            var val = $(this).data('value');
+            if(val === '' || val === undefined){
+                // "All Units" option — always show
+                $(this).show();
+            } else {
+                var projectMatch = (validUnits === null || validUnits[val]);
+                var searchMatch = (searchTerm === '' || $(this).text().toLowerCase().indexOf(searchTerm) > -1);
+                $(this).toggle(!!(projectMatch && searchMatch));
             }
+        });
+
+        // If the currently selected unit is no longer valid for the project, reset it
+        if(validUnits !== null && selectedUnit !== '' && !validUnits[selectedUnit]){
+            selectedUnit = '';
+            $('#afUnitFilterBtn .af-select-filter-label').text('All Units');
+            $('#afUnitFilterBtn').removeClass('active');
+            $('#afUnitClear').hide();
+            $unitOptions.removeClass('selected');
+            $unitOptions.first().addClass('selected');
         }
     }
 
@@ -229,11 +237,25 @@ $(function(){
         filterRolesTable();
     });
 
+    /* Unit dropdown search */
+    $('#afUnitSearchInput').on('input', function(e){
+        filterUnitOptions();
+    });
+    // Prevent clicks inside the search input from closing the dropdown
+    $('#afUnitSearchInput').on('click', function(e){ e.stopPropagation(); });
+
     /* Unit filter dropdown */
     $('#afUnitFilterBtn').on('click', function(e){
         e.stopPropagation();
         $('#afProjectDropdown').removeClass('show');
+        var wasOpen = $('#afUnitDropdown').hasClass('show');
         $('#afUnitDropdown').toggleClass('show');
+        if(!wasOpen){
+            // Reset search and re-apply project filter when opening
+            $('#afUnitSearchInput').val('');
+            filterUnitOptions();
+            setTimeout(function(){ $('#afUnitSearchInput').focus(); }, 50);
+        }
     });
     $('#afUnitDropdown .af-select-filter-option').on('click', function(e){
         e.preventDefault(); e.stopPropagation();
